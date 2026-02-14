@@ -1,17 +1,19 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="WorkInPrivate - Secure Private Work Environment" description="WorkInPrivate provides a secure, private work environment for professionals who value privacy and data protection.">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+        Welcome to <span class="text-indigo-600">WorkInPrivate</span>
+      </h1>
+      <p class="text-xl text-gray-600 mb-8">
+        Your secure, private work environment for professionals who value privacy and data protection.
+      </p>
+      <div class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition-colors">
+        Coming Soon
+      </div>
+    </div>
+  </div>
+</BaseLayout>
