@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Privacy Policy - WorkInPrivate" description="Privacy Policy for WorkInPrivate — learn how we handle your data. Spoiler: almost nothing leaves your machine.">
+
+  <section class="py-16 sm:py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto prose prose-gray prose-indigo">
+        <h1 class="text-4xl font-bold text-gray-900 mb-2">Privacy Policy</h1>
+        <p class="text-sm text-gray-500 mb-10">Last updated: February 15, 2026</p>
+
+        <p>WorkInPrivate is built on a simple principle: your data is yours. This Privacy Policy explains what information we collect, how we use it, and your rights regarding your data.</p>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">1. The Short Version</h2>
+        <div class="bg-indigo-50 rounded-xl p-6 not-prose mb-6">
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-indigo-600 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span>The WorkInPrivate app runs 100% locally — your prompts and generated content never leave your machine</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-indigo-600 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span>The app has no telemetry, no analytics, and no phone-home functionality</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-indigo-600 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span>We only collect data necessary to process your purchase (via Stripe)</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-indigo-600 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span>We do not sell, share, or trade your personal information</span>
+            </li>
+          </ul>
+        </div>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">2. The WorkInPrivate Application</h2>
+        <p>The WorkInPrivate desktop application is designed with privacy as a core feature:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Local processing:</strong> All content generation happens on your device using AI models running through Ollama. Your prompts, inputs, and generated content are processed locally and are never sent to our servers.</li>
+          <li><strong>No telemetry:</strong> The application does not collect usage data, crash reports, or analytics of any kind.</li>
+          <li><strong>No accounts:</strong> The application does not require you to create an account or sign in.</li>
+          <li><strong>Optional web search:</strong> If you enable the web search feature, search queries are sent to third-party search providers. This feature is optional and can be disabled. We do not log or store your search queries.</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">3. This Website</h2>
+        <p>When you visit www.workinprivate.com, we may collect:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Standard server logs:</strong> Your IP address, browser type, and pages visited may be logged by our hosting provider (GitHub Pages) as part of standard web server operations.</li>
+          <li><strong>No cookies:</strong> This website does not use tracking cookies or third-party analytics scripts.</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">4. Payment Processing</h2>
+        <p>When you purchase WorkInPrivate, your payment is processed by <strong>Stripe</strong>, a third-party payment processor. During this process:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Stripe collects your payment information (credit/debit card details, billing address, email) directly. We do not see or store your full card number.</li>
+          <li>We receive from Stripe: your name, email address, purchase details, and a transaction identifier.</li>
+          <li>We use this information solely to fulfill your order and provide customer support (e.g., processing refunds).</li>
+          <li>Stripe's handling of your payment data is governed by <a href="https://stripe.com/privacy" class="text-indigo-600 hover:text-indigo-700" target="_blank" rel="noopener noreferrer">Stripe's Privacy Policy</a>.</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">5. Third-Party AI Models</h2>
+        <p>WorkInPrivate uses Ollama to run AI models locally on your device. These models are downloaded from Ollama's model registry. While the models run locally, the initial download of models is subject to <a href="https://ollama.com" class="text-indigo-600 hover:text-indigo-700" target="_blank" rel="noopener noreferrer">Ollama's privacy practices</a>. Once downloaded, models operate entirely offline.</p>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">6. Data We Do NOT Collect</h2>
+        <p>To be explicit, we do <strong>not</strong> collect:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Your prompts or inputs to the application</li>
+          <li>Content generated by the application</li>
+          <li>Usage patterns or application analytics</li>
+          <li>Device information beyond what's in standard server logs</li>
+          <li>Location data</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">7. Data Retention</h2>
+        <p>Purchase records (name, email, transaction details) are retained for as long as necessary to provide customer support and comply with legal obligations (e.g., tax records). You may request deletion of your personal data by contacting us.</p>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">8. Your Rights</h2>
+        <p>Depending on your jurisdiction, you may have the right to:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Access the personal data we hold about you</li>
+          <li>Request correction of inaccurate data</li>
+          <li>Request deletion of your data</li>
+          <li>Object to or restrict processing of your data</li>
+        </ul>
+        <p>To exercise these rights, please contact us through our GitHub page.</p>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">9. Children's Privacy</h2>
+        <p>WorkInPrivate is not intended for use by anyone under 18 years of age. We do not knowingly collect personal information from children under 18.</p>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">10. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated date. We encourage you to review this policy periodically.</p>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">11. Contact</h2>
+        <p>For privacy-related questions or requests, please visit <a href="https://github.com/wallco26/workinprivate" class="text-indigo-600 hover:text-indigo-700" target="_blank" rel="noopener noreferrer">our GitHub page</a>.</p>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
