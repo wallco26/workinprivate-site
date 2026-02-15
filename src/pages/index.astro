@@ -4,6 +4,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="WorkInPrivate - AI Content Generation That Runs on YOUR Machine" description="WorkInPrivate is an AI-powered content generation tool that runs 100% locally using Ollama. No API costs, no cloud, complete privacy. 7 specialized modules for SEO, tech docs, academic, finance, healthcare, legal, and small business content.">
 
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "WorkInPrivate",
+    "description": "AI-powered content generation tool that runs 100% locally using Ollama. No API costs, no cloud, complete privacy.",
+    "url": "https://www.workinprivate.com",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Windows, macOS, Linux",
+    "offers": {
+      "@type": "Offer",
+      "price": "29.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "featureList": [
+      "100% local AI processing",
+      "7 specialized content modules",
+      "Multi-format output (Markdown, Text, HTML, PDF)",
+      "Zero API costs",
+      "Complete privacy - no telemetry",
+      "Cross-platform (Windows, macOS, Linux)"
+    ]
+  })} />
+
   <!-- Hero Section -->
   <section class="bg-gradient-to-br from-indigo-50 via-white to-indigo-50 py-20 sm:py-28">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
