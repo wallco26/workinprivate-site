@@ -39,7 +39,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </svg>
           </button>
           <div class="faq-content hidden px-6 pb-5">
-            <p class="text-gray-600">Ollama is a free, open-source AI model runtime that lets you run large language models locally on your computer. WorkInPrivate uses Ollama as its AI engine — this is what makes it possible to generate content without sending anything to the cloud. You can download Ollama for free at <a href="https://ollama.com" class="text-indigo-600 hover:text-indigo-700 underline" target="_blank" rel="noopener noreferrer">ollama.com</a>. It takes about 2 minutes to install.</p>
+            <p class="text-gray-600">Ollama is a free, open-source AI model runtime that lets you run large language models locally on your computer. WorkInPrivate uses Ollama as its AI engine — this is what makes it possible to generate content without sending anything to the cloud. WorkInPrivate automatically installs Ollama for you on first launch if it's not already on your system, so there's nothing extra to set up.</p>
           </div>
         </div>
 
@@ -89,12 +89,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="faq-content hidden px-6 pb-5">
             <div class="text-gray-600 space-y-2">
               <ol class="list-decimal list-inside space-y-1 ml-2">
-                <li>Install Ollama from <a href="https://ollama.com" class="text-indigo-600 hover:text-indigo-700 underline" target="_blank" rel="noopener noreferrer">ollama.com</a></li>
                 <li>Download WorkInPrivate for your platform (Windows, macOS, or Linux)</li>
                 <li>Extract the archive to a folder</li>
-                <li>Run the application — a first-run setup wizard will guide you through model selection</li>
+                <li>Run the application — on first launch, Ollama is installed automatically if needed, and a setup wizard guides you through model selection</li>
               </ol>
-              <p>No installation wizard or admin rights needed. Just extract and run.</p>
+              <p>No separate installations or admin rights needed. Just extract and run.</p>
             </div>
           </div>
         </div>
@@ -173,7 +172,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </svg>
           </button>
           <div class="faq-content hidden px-6 pb-5">
-            <p class="text-gray-600">Only for the initial setup — downloading Ollama and your first AI model. After that, WorkInPrivate works completely offline. The optional web search feature (for sourcing research and citations) does require an internet connection, but it's entirely optional and can be disabled.</p>
+            <p class="text-gray-600">Only for the initial setup — WorkInPrivate automatically installs Ollama and downloads your first AI model, which requires an internet connection. After that, it works completely offline. The optional web search feature (for sourcing research and citations) does require an internet connection, but it's entirely optional and can be disabled.</p>
           </div>
         </div>
 
