@@ -5,8 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://wallco26.github.io',
-  base: '/workinprivate-site',
+  site: 'https://www.workinprivate.com',
   output: 'static',
   integrations: [tailwind(), sitemap()]
 });
