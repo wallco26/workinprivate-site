@@ -92,9 +92,16 @@ test.describe('Homepage - Dark Terminal Theme', () => {
   });
 
   test('should display stats with monospace font', async ({ page }) => {
-    const stats = page.locator('.font-mono', { hasText: '7' }).first();
-    await expect(stats).toBeVisible();
-    const className = await stats.getAttribute('class');
+    // Scroll to stats section - use the specific div text to avoid h3 heading
+    await page.locator('div.text-sm', { hasText: 'Specialized Modules' }).scrollIntoViewIfNeeded();
+
+    // Target the specific stat number "7" in the stats section
+    const statsSection = page.locator('section').filter({ hasText: 'Ongoing API Costs' });
+    const sevenStat = statsSection.locator('div.font-mono', { hasText: '7' }).first();
+
+    await expect(sevenStat).toBeVisible();
+    const className = await sevenStat.getAttribute('class');
+    expect(className).toContain('font-mono');
     expect(className).toMatch(/text-(green|cyan)-400/);
   });
 
@@ -107,14 +114,20 @@ test.describe('Homepage - Dark Terminal Theme', () => {
   });
 
   test('should display comparison table with dark theme', async ({ page }) => {
-    await page.getByRole('heading', { name: /Stop Paying Monthly/i }).scrollIntoViewIfNeeded();
+    // Scroll to the comparison section
+    const heading = page.getByRole('heading', { name: /Stop Paying Monthly/i });
+    await heading.scrollIntoViewIfNeeded();
+    await expect(heading).toBeVisible();
 
     const table = page.locator('table').first();
     await expect(table).toBeVisible();
 
+    // Scroll the table into view to ensure SVGs are rendered
+    await table.scrollIntoViewIfNeeded();
+
     // Check for green checkmarks and red X marks
-    const greenCheck = table.locator('.text-green-400 svg').first();
-    const redX = table.locator('.text-red-400 svg').first();
+    const greenCheck = table.locator('svg.text-green-400, .text-green-400 svg').first();
+    const redX = table.locator('svg.text-red-400, .text-red-400 svg').first();
 
     await expect(greenCheck).toBeVisible();
     await expect(redX).toBeVisible();
@@ -123,15 +136,18 @@ test.describe('Homepage - Dark Terminal Theme', () => {
   test('should display sticky buy bar on scroll', async ({ page }) => {
     const stickyBar = page.locator('#sticky-buy-bar').first();
 
-    // Check initial class
+    // Verify sticky bar exists
+    await expect(stickyBar).toBeAttached();
+
+    // Check initial state - should be hidden (translated down)
     const initialClass = await stickyBar.getAttribute('class');
     expect(initialClass).toContain('translate-y-full');
 
-    // Scroll down
-    await page.evaluate(() => window.scrollTo(0, 1000));
-    await page.waitForTimeout(500);
+    // Scroll down past the hero section (scroll far enough to make hero not intersecting)
+    await page.evaluate(() => window.scrollTo(0, 2000));
+    await page.waitForTimeout(500); // Give IntersectionObserver time to trigger
 
-    // Should become visible (class removed)
+    // Verify the class was removed
     const scrolledClass = await stickyBar.getAttribute('class');
     expect(scrolledClass).not.toContain('translate-y-full');
   });
