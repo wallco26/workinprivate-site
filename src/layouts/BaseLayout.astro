@@ -53,11 +53,96 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-green-600 focus:text-black focus:rounded-lg focus:text-sm focus:font-semibold">
       Skip to main content
     </a>
+
+    <!-- Work In Progress Banner -->
+    <div class="bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-600 border-b-4 border-yellow-700 shadow-lg relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,.1) 10px, rgba(0,0,0,.1) 20px);"></div>
+      <div class="container mx-auto px-4 py-4 relative">
+        <div class="flex flex-col items-center justify-center gap-2 text-center">
+          <div class="flex items-center gap-2">
+            <svg class="w-6 h-6 text-black animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <span class="text-black font-bold text-lg font-mono">SITE PREVIEW - NOT YET LIVE</span>
+          </div>
+          <div class="text-black text-sm font-medium">
+            This is a preview of the WorkInPrivate website. All links are disabled. Check back soon!
+          </div>
+        </div>
+      </div>
+    </div>
+
     <Header />
     <main id="main-content" class="flex-grow">
       <slot />
     </main>
     <Footer />
+
+    <!-- Disable all links during site preview -->
+    <script is:inline>
+      (function() {
+        document.addEventListener('DOMContentLoaded', function() {
+          // Get all links on the page
+          const allLinks = document.querySelectorAll('a');
+
+          allLinks.forEach(function(link) {
+            // Skip skip-to-content link
+            if (link.getAttribute('href') === '#main-content') {
+              return;
+            }
+
+            // Skip same-page anchor links
+            if (link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
+              return;
+            }
+
+            // Add visual indicator that links are disabled
+            link.style.cursor = 'not-allowed';
+            link.style.opacity = '0.6';
+
+            // Prevent click events
+            link.addEventListener('click', function(e) {
+              e.preventDefault();
+              e.stopPropagation();
+
+              // Show notification
+              showNotification();
+            }, true);
+          });
+        });
+
+        let notificationShown = false;
+        function showNotification() {
+          if (notificationShown) return;
+          notificationShown = true;
+
+          const notification = document.createElement('div');
+          notification.innerHTML = `
+            <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; background: #1e293b; border: 3px solid #22c55e; border-radius: 12px; padding: 24px 32px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); max-width: 90%; width: 400px;">
+              <div style="color: #22c55e; font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: bold; margin-bottom: 12px; text-align: center;">
+                ⚠️ SITE PREVIEW
+              </div>
+              <div style="color: #e2e8f0; font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.6; text-align: center; margin-bottom: 16px;">
+                This site is not yet live. All links are disabled during preview. Check back soon for the official launch!
+              </div>
+              <button onclick="this.parentElement.remove(); notificationShown = false;" style="width: 100%; background: #22c55e; color: #000; font-family: 'JetBrains Mono', monospace; font-weight: bold; padding: 10px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px;">
+                Got It
+              </button>
+            </div>
+            <div onclick="this.parentElement.remove(); notificationShown = false;" style="position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 9998; backdrop-filter: blur(4px);"></div>
+          `;
+          document.body.appendChild(notification);
+
+          // Auto-dismiss after 5 seconds
+          setTimeout(() => {
+            if (notification && notification.parentElement) {
+              notification.remove();
+              notificationShown = false;
+            }
+          }, 5000);
+        }
+      })();
+    </script>
   </body>
 </html>
 
