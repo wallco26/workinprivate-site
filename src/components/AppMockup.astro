@@ -1,126 +1,204 @@
 ---
-// SVG mockup of the WorkInPrivate desktop app UI
+// Terminal window mockup showing actual WorkInPrivate CLI output
 ---
 
-<div class="app-mockup-wrapper relative mx-auto max-w-3xl">
-  <div class="relative rounded-xl shadow-2xl shadow-indigo-200/50 overflow-hidden border border-gray-200/80 bg-white">
-    <!-- Window Chrome -->
-    <div class="flex items-center gap-2 px-4 py-3 bg-gray-100 border-b border-gray-200">
-      <div class="flex gap-1.5">
-        <div class="w-3 h-3 rounded-full bg-red-400"></div>
-        <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-        <div class="w-3 h-3 rounded-full bg-green-400"></div>
+<div class="app-mockup-wrapper relative mx-auto max-w-4xl">
+  <!-- Terminal Window -->
+  <div class="terminal-window relative rounded-lg overflow-hidden border border-gray-800 bg-gray-900 shadow-2xl">
+    <!-- macOS-style Window Chrome -->
+    <div class="window-chrome flex items-center gap-2 px-4 py-3 bg-gray-900 border-b border-gray-800">
+      <div class="flex gap-2">
+        <div class="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors"></div>
+        <div class="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-600 transition-colors"></div>
+        <div class="w-3 h-3 rounded-full bg-green-500 hover:bg-green-600 transition-colors"></div>
       </div>
       <div class="flex-1 flex justify-center">
-        <div class="bg-white rounded-md px-4 py-1 text-xs text-gray-500 border border-gray-200 font-medium">WorkInPrivate</div>
+        <div class="text-xs text-gray-500 font-mono">WorkInPrivate — bash — 80×24</div>
       </div>
-      <div class="w-[54px]"></div>
+      <div class="w-[60px]"></div>
     </div>
 
-    <!-- App Body -->
-    <div class="flex min-h-[280px] sm:min-h-[340px]">
-      <!-- Sidebar -->
-      <div class="hidden sm:flex flex-col w-52 bg-gray-50 border-r border-gray-200 p-4 gap-1">
-        <div class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 px-2">Modules</div>
-        <div class="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-indigo-600 text-white text-sm font-medium">
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
-          SEO Writer
+    <!-- Terminal Body -->
+    <div class="terminal-body bg-[#0a0e17] p-6 sm:p-8 font-mono text-sm leading-relaxed overflow-x-auto">
+      <!-- ASCII Art Logo -->
+      <pre class="ascii-logo text-cyan-400 mb-4 select-none animate-[fadeIn_0.6s_ease-out]" aria-label="WorkInPrivate ASCII Logo"> __        __         _    ___       ____       _            _
+ \ \      / /__  _ __| | _|_ _|_ __ |  _ \ _ __(_)_   ____ _| |_ ___
+  \ \ /\ / / _ \| '__| |/ /| || '_ \| |_) | '__| \ \ / / _` | __/ _ \
+   \ V  V / (_) | |  |   &lt; | || | | |  __/| |  | |\ V / (_| | ||  __/
+    \_/\_/ \___/|_|  |_|\_\___|_| |_|_|   |_|  |_| \_/ \__,_|\__\___|</pre>
+
+      <!-- Tagline -->
+      <p class="text-gray-500 mb-6 animate-[fadeIn_0.8s_ease-out]">
+        <span class="inline-block mr-2">🚀</span>Your AI-powered content machine. No API costs. 100% local.
+      </p>
+
+      <!-- Green Prompt -->
+      <p class="text-green-400 mb-6 font-semibold animate-[fadeIn_1s_ease-out]">
+        What shall we write about today?
+      </p>
+
+      <!-- Model Info -->
+      <div class="space-y-1 mb-6 text-gray-400 animate-[fadeIn_1.2s_ease-out]">
+        <p>Current model: <span class="text-fuchsia-400 font-semibold">llama3.2:3b</span></p>
+        <p>Output directory: <span class="text-gray-300">./output</span></p>
+      </div>
+
+      <!-- Divider -->
+      <div class="border-t border-gray-800 my-6 animate-[fadeIn_1.4s_ease-out]"></div>
+
+      <!-- Available Modules Heading -->
+      <h3 class="text-cyan-400 font-bold mb-4 animate-[fadeIn_1.6s_ease-out]">Available Modules</h3>
+
+      <!-- Module List -->
+      <div class="space-y-3 mb-6">
+        <div class="module-item animate-[fadeIn_1.7s_ease-out]">
+          <div class="flex gap-3">
+            <span class="text-yellow-400 font-bold">1</span>
+            <div>
+              <div class="text-white font-semibold">SEO Writer</div>
+              <div class="text-gray-500 text-xs mt-0.5">Generate SEO-optimized blog articles with research and citations</div>
+            </div>
+          </div>
         </div>
-        <div class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 text-sm hover:bg-gray-100">
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
-          Tech Docs
+
+        <div class="module-item animate-[fadeIn_1.8s_ease-out]">
+          <div class="flex gap-3">
+            <span class="text-yellow-400 font-bold">2</span>
+            <div>
+              <div class="text-white font-semibold">Technical Documentation</div>
+              <div class="text-gray-500 text-xs mt-0.5">Generate README, ADRs, API docs, and changelogs from local repositories</div>
+            </div>
+          </div>
         </div>
-        <div class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 text-sm hover:bg-gray-100">
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
-          Academic
+
+        <div class="module-item animate-[fadeIn_1.9s_ease-out]">
+          <div class="flex gap-3">
+            <span class="text-yellow-400 font-bold">3</span>
+            <div>
+              <div class="text-white font-semibold">Academic & Research</div>
+              <div class="text-gray-500 text-xs mt-0.5">Generate literature reviews, research summaries, citations, and abstracts</div>
+            </div>
+          </div>
         </div>
-        <div class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 text-sm hover:bg-gray-100">
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-          Finance
+
+        <div class="module-item animate-[fadeIn_2s_ease-out]">
+          <div class="flex gap-3">
+            <span class="text-yellow-400 font-bold">4</span>
+            <div>
+              <div class="text-white font-semibold">Small Business & Freelancer</div>
+              <div class="text-gray-500 text-xs mt-0.5">Generate proposals, SOPs, and job descriptions</div>
+            </div>
+          </div>
         </div>
-        <div class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 text-sm hover:bg-gray-100">
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-          Healthcare
+
+        <div class="module-item animate-[fadeIn_2.1s_ease-out]">
+          <div class="flex gap-3">
+            <span class="text-yellow-400 font-bold">5</span>
+            <div>
+              <div class="text-white font-semibold">Legal</div>
+              <div class="text-gray-500 text-xs mt-0.5">Generate contract reviews and private data analysis reports</div>
+            </div>
+          </div>
         </div>
-        <div class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 text-sm hover:bg-gray-100">
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l3 9a5.002 5.002 0 01-6.001 0M18 7l-3 9m-4.529-7.03A3.001 3.001 0 009 10m5.457-3.03A3 3 0 0115 10" /></svg>
-          Legal
+
+        <div class="module-item animate-[fadeIn_2.2s_ease-out]">
+          <div class="flex gap-3">
+            <span class="text-yellow-400 font-bold">6</span>
+            <div>
+              <div class="text-white font-semibold">Healthcare</div>
+              <div class="text-gray-500 text-xs mt-0.5">Generate clinical notes summaries and medical case reports</div>
+            </div>
+          </div>
         </div>
-        <div class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-gray-600 text-sm hover:bg-gray-100">
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
-          Small Biz
+
+        <div class="module-item animate-[fadeIn_2.3s_ease-out]">
+          <div class="flex gap-3">
+            <span class="text-yellow-400 font-bold">7</span>
+            <div>
+              <div class="text-white font-semibold">Finance & Accounting</div>
+              <div class="text-gray-500 text-xs mt-0.5">Summarize SEC 10-K and 10-Q filings into key financial insights</div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Main Content Area -->
-      <div class="flex-1 p-5 sm:p-6">
-        <!-- Top Bar -->
-        <div class="flex items-center justify-between mb-5">
-          <div>
-            <h3 class="text-sm font-semibold text-gray-900">SEO Writer</h3>
-            <p class="text-xs text-gray-500">Generate SEO-optimized blog articles</p>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-green-100 text-green-700 text-xs font-medium">
-              <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-              Ollama Connected
-            </span>
-          </div>
-        </div>
+      <!-- Divider -->
+      <div class="border-t border-gray-800 my-6 animate-[fadeIn_2.4s_ease-out]"></div>
 
-        <!-- Input Area -->
-        <div class="space-y-3">
-          <div>
-            <label class="block text-xs font-medium text-gray-500 mb-1">Topic</label>
-            <div class="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-800">Best practices for local SEO in 2026</div>
-          </div>
-          <div class="grid grid-cols-2 gap-3">
-            <div>
-              <label class="block text-xs font-medium text-gray-500 mb-1">Model</label>
-              <div class="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-600 flex items-center justify-between">
-                llama3.1:8b
-                <svg class="w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
-              </div>
-            </div>
-            <div>
-              <label class="block text-xs font-medium text-gray-500 mb-1">Output Format</label>
-              <div class="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-600 flex items-center justify-between">
-                Markdown
-                <svg class="w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
-              </div>
-            </div>
-          </div>
-          <button class="w-full mt-2 px-4 py-2.5 rounded-lg bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 transition-colors flex items-center justify-center gap-2">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-            Generate Content
-          </button>
-        </div>
-
-        <!-- Output Preview -->
-        <div class="mt-4 rounded-lg border border-gray-200 bg-gray-50 p-3">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-xs font-medium text-gray-500">Output Preview</span>
-            <div class="flex gap-1.5">
-              <div class="w-5 h-5 rounded bg-gray-200 flex items-center justify-center">
-                <svg class="w-3 h-3 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
-              </div>
-              <div class="w-5 h-5 rounded bg-gray-200 flex items-center justify-center">
-                <svg class="w-3 h-3 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-              </div>
-            </div>
-          </div>
-          <div class="space-y-1.5 text-xs text-gray-600 leading-relaxed">
-            <div class="h-2.5 bg-gray-300 rounded w-3/4"></div>
-            <div class="h-2 bg-gray-200 rounded w-full"></div>
-            <div class="h-2 bg-gray-200 rounded w-5/6"></div>
-            <div class="h-2 bg-gray-200 rounded w-full"></div>
-            <div class="h-2 bg-gray-200 rounded w-2/3"></div>
-          </div>
-        </div>
+      <!-- Final Prompt with Blinking Cursor -->
+      <div class="text-green-400 font-semibold animate-[fadeIn_2.5s_ease-out]">
+        Choose a module (number): <span class="cursor-blink inline-block w-2 h-4 bg-green-400 ml-1 align-middle"></span>
       </div>
     </div>
   </div>
 
-  <!-- Glow effect behind the mockup -->
-  <div class="absolute -inset-4 -z-10 bg-gradient-to-r from-indigo-200 via-indigo-100 to-violet-200 rounded-2xl blur-2xl opacity-40"></div>
+  <!-- Terminal Glow Effect -->
+  <div class="absolute -inset-4 -z-10 bg-green-500/10 rounded-2xl blur-3xl opacity-60"></div>
+  <div class="absolute -inset-2 -z-10 bg-gradient-to-b from-green-500/5 to-cyan-500/5 rounded-xl"></div>
 </div>
+
+<style>
+  /* Blinking cursor animation */
+  @keyframes blink {
+    0%, 49% {
+      opacity: 1;
+    }
+    50%, 100% {
+      opacity: 0;
+    }
+  }
+
+  .cursor-blink {
+    animation: blink 1s step-end infinite;
+  }
+
+  /* Fade in animation for terminal content */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Ensure monospace font is applied */
+  .terminal-body {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+  }
+
+  /* Prevent text selection for ASCII art */
+  .ascii-logo {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+  }
+
+  /* Subtle scan-line effect on hover (optional terminal authenticity detail) */
+  .terminal-window:hover .terminal-body {
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.01) 0px,
+        transparent 1px,
+        transparent 2px
+      );
+  }
+
+  /* Smooth scrollbar for terminal */
+  .terminal-body::-webkit-scrollbar {
+    height: 8px;
+  }
+  .terminal-body::-webkit-scrollbar-track {
+    background: #0a0e17;
+  }
+  .terminal-body::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 4px;
+  }
+  .terminal-body::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+  }
+</style>

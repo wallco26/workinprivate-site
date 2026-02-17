@@ -2,30 +2,30 @@
 // Header component with navigation
 ---
 
-<header class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+<header class="sticky top-0 z-50 bg-[#0a0e17]/95 backdrop-blur border-b border-gray-800">
   <nav aria-label="Main" class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <!-- Logo / Brand -->
       <div class="flex-shrink-0">
         <a href="/" class="flex items-center">
-          <span class="text-xl font-bold text-indigo-600">WorkInPrivate</span>
+          <span class="text-xl font-bold text-green-400 font-mono">WorkInPrivate</span>
         </a>
       </div>
 
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center">
         <div class="flex items-baseline space-x-8 mr-6">
-          <a href="/" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">
+          <a href="/" class="text-gray-400 hover:text-green-400 px-3 py-2 text-sm font-medium transition-colors">
             Home
           </a>
-          <a href="/pricing" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">
+          <a href="/pricing" class="text-gray-400 hover:text-green-400 px-3 py-2 text-sm font-medium transition-colors">
             Pricing
           </a>
-          <a href="/faq" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">
+          <a href="/faq" class="text-gray-400 hover:text-green-400 px-3 py-2 text-sm font-medium transition-colors">
             FAQ
           </a>
         </div>
-        <a href="https://buy.stripe.com/test_9B6bJ05et2aW1aD1eeco000" class="inline-flex items-center px-4 py-2 text-sm font-semibold rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 transition-colors shadow-sm">
+        <a href="https://buy.stripe.com/test_9B6bJ05et2aW1aD1eeco000" class="inline-flex items-center px-4 py-2 text-sm font-bold rounded-lg text-black bg-green-600 hover:bg-green-500 transition-colors shadow-sm font-mono">
           Buy Now
         </a>
       </div>
@@ -34,7 +34,7 @@
       <div class="md:hidden">
         <button
           type="button"
-          class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-indigo-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+          class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-green-400 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500"
           aria-expanded="false"
           aria-label="Main menu"
         >
@@ -46,18 +46,18 @@
     </div>
 
     <!-- Mobile Navigation Menu -->
-    <div class="mobile-menu hidden md:hidden pb-3 pt-2">
+    <div class="mobile-menu hidden md:hidden pb-3 pt-2 bg-[#0a0e17]">
       <div class="flex flex-col space-y-1">
-        <a href="/" class="text-gray-700 hover:text-indigo-600 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">
+        <a href="/" class="text-gray-400 hover:text-green-400 hover:bg-gray-900 block px-3 py-2 rounded-md text-base font-medium">
           Home
         </a>
-        <a href="/pricing" class="text-gray-700 hover:text-indigo-600 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">
+        <a href="/pricing" class="text-gray-400 hover:text-green-400 hover:bg-gray-900 block px-3 py-2 rounded-md text-base font-medium">
           Pricing
         </a>
-        <a href="/faq" class="text-gray-700 hover:text-indigo-600 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">
+        <a href="/faq" class="text-gray-400 hover:text-green-400 hover:bg-gray-900 block px-3 py-2 rounded-md text-base font-medium">
           FAQ
         </a>
-        <a href="https://buy.stripe.com/test_9B6bJ05et2aW1aD1eeco000" class="mt-2 text-center text-white bg-indigo-600 hover:bg-indigo-700 block px-3 py-2.5 rounded-md text-base font-semibold transition-colors">
+        <a href="https://buy.stripe.com/test_9B6bJ05et2aW1aD1eeco000" class="mt-2 text-center text-black bg-green-600 hover:bg-green-500 block px-3 py-2.5 rounded-md text-base font-bold transition-colors font-mono">
           Buy Now &mdash; $29
         </a>
       </div>

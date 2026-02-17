@@ -43,14 +43,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
 
-    <!-- Google Fonts - Inter -->
+    <!-- Google Fonts - Inter & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
-  <body class="min-h-screen flex flex-col font-sans antialiased bg-gray-50 text-gray-900">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-indigo-600 focus:text-white focus:rounded-lg focus:text-sm focus:font-semibold">
+  <body class="min-h-screen flex flex-col font-sans antialiased bg-[#0a0e17] text-gray-200">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-green-600 focus:text-black focus:rounded-lg focus:text-sm focus:font-semibold">
       Skip to main content
     </a>
     <Header />
@@ -64,5 +64,30 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <style is:global>
   body {
     font-family: 'Inter', sans-serif;
+  }
+
+  /* Terminal-inspired dark theme scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0e17;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+  }
+
+  /* Terminal green text selection */
+  ::selection {
+    background-color: #22c55e;
+    color: #000;
+  }
+  ::-moz-selection {
+    background-color: #22c55e;
+    color: #000;
   }
 </style>
