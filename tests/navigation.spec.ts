@@ -17,11 +17,12 @@ test.describe('Navigation - Header & Footer', () => {
   });
 
   test('should have all navigation links', async ({ page }) => {
-    const nav = page.getByRole('navigation', { name: 'Main' });
+    const header = page.getByRole('banner');
 
-    const homeLink = nav.locator('a[href="/"]').first();
-    const pricingLink = nav.locator('a[href="/pricing"]');
-    const faqLink = nav.locator('a[href="/faq"]');
+    // Check for navigation links in the header (visible on desktop)
+    const homeLink = header.locator('a[href="/"]').first();
+    const pricingLink = header.locator('a[href="/pricing"]').first();
+    const faqLink = header.locator('a[href="/faq"]').first();
 
     await expect(homeLink).toBeVisible();
     await expect(pricingLink).toBeVisible();
@@ -73,23 +74,25 @@ test.describe('Navigation - Header & Footer', () => {
     // Wait for button to be visible and clickable
     await expect(mobileMenuButton).toBeVisible();
 
-    // Initially hidden
-    const initialClass = await mobileMenu.getAttribute('class');
-    expect(initialClass).toContain('hidden');
+    // Initially hidden - check for standalone 'hidden' class
+    const initialClasses = (await mobileMenu.getAttribute('class'))?.split(/\s+/) || [];
+    expect(initialClasses).toContain('hidden');
 
     // Click to open
     await mobileMenuButton.click();
     await page.waitForTimeout(200); // Wait for toggle
 
-    const openClass = await mobileMenu.getAttribute('class');
-    expect(openClass).not.toContain('hidden');
+    // Should not have standalone 'hidden' class when open (md:hidden is OK)
+    const openClasses = (await mobileMenu.getAttribute('class'))?.split(/\s+/) || [];
+    expect(openClasses).not.toContain('hidden');
 
     // Click to close
     await mobileMenuButton.click();
     await page.waitForTimeout(200);
 
-    const closedClass = await mobileMenu.getAttribute('class');
-    expect(closedClass).toContain('hidden');
+    // Should have standalone 'hidden' class when closed
+    const closedClasses = (await mobileMenu.getAttribute('class'))?.split(/\s+/) || [];
+    expect(closedClasses).toContain('hidden');
   });
 
   test('should display dark footer', async ({ page }) => {

@@ -5,11 +5,14 @@ test.describe('Accessibility & Responsiveness', () => {
     await page.goto('/');
 
     const skipLink = page.locator('a[href="#main-content"]');
-    await expect(skipLink).toBeInViewport({ ratio: 0 }); // Hidden but in DOM
+
+    // Should exist in DOM and have proper text
+    await expect(skipLink).toBeAttached();
+    await expect(skipLink).toHaveText('Skip to main content');
 
     // Should be visible when focused
     await skipLink.focus();
-    await expect(skipLink).toHaveClass(/focus:not-sr-only/);
+    await expect(skipLink).toBeVisible();
   });
 
   test('should have proper heading hierarchy on homepage', async ({ page }) => {
