@@ -1,21 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Base package Stripe Payment Links — one per module (TODO: replace placeholders after Stripe product creation)
-// Format: Base + <Module> at $29 each, with success/cancel redirect URLs baked in
+// Base package Stripe Payment Links — one per module (Base + Module at $29 each)
 const BASE_LINKS: Record<string, string> = {
-  seo_writer:     'https://buy.stripe.com/test_9B6bJ05et2aW1aD1eeco000', // TODO: create product in Stripe
-  tech_docs:      'https://buy.stripe.com/test_base_tech_docs_TODO',
-  academic:       'https://buy.stripe.com/test_base_academic_TODO',
-  small_business: 'https://buy.stripe.com/test_base_small_business_TODO',
-  legal:          'https://buy.stripe.com/test_base_legal_TODO',
-  healthcare:     'https://buy.stripe.com/test_base_healthcare_TODO',
-  finance:        'https://buy.stripe.com/test_base_finance_TODO',
+  seo_writer:     'https://buy.stripe.com/test_eVq5kC0YdbLwg5x9KKco009',
+  tech_docs:      'https://buy.stripe.com/test_bJe28qbCR02ObPh2iico00a',
+  academic:       'https://buy.stripe.com/test_9B6dR89uJ9Dof1tg98co00b',
+  finance:        'https://buy.stripe.com/test_3cIeVcbCReXI9H9f54co00c',
+  healthcare:     'https://buy.stripe.com/test_4gMaEW6ixbLwcTl6yyco00d',
+  legal:          'https://buy.stripe.com/test_aFafZg36l5n8g5xcWWco00e',
+  small_business: 'https://buy.stripe.com/test_00w3cugXb4j4aLd4qqco00f',
 };
 
 // Bundle Stripe Payment Link ($99, all 7 modules)
-// TODO: create bundle product in Stripe and replace this placeholder
-const BUNDLE_LINK = 'https://buy.stripe.com/test_bundle_all_modules_TODO';
+const BUNDLE_LINK = 'https://buy.stripe.com/test_28E8wO0Ydg1Mf1t4qqco008';
 ---
 
 <BaseLayout title="Pricing - WorkInPrivate" description="Get WorkInPrivate starting at $29 for the base package with one module. Add specialized modules for $19 each. No subscriptions, no API costs — pay once, own it forever.">
