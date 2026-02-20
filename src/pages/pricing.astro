@@ -1,5 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Base package Stripe Payment Links — one per module (TODO: replace placeholders after Stripe product creation)
+// Format: Base + <Module> at $29 each, with success/cancel redirect URLs baked in
+const BASE_LINKS: Record<string, string> = {
+  seo_writer:     'https://buy.stripe.com/test_9B6bJ05et2aW1aD1eeco000', // TODO: create product in Stripe
+  tech_docs:      'https://buy.stripe.com/test_base_tech_docs_TODO',
+  academic:       'https://buy.stripe.com/test_base_academic_TODO',
+  small_business: 'https://buy.stripe.com/test_base_small_business_TODO',
+  legal:          'https://buy.stripe.com/test_base_legal_TODO',
+  healthcare:     'https://buy.stripe.com/test_base_healthcare_TODO',
+  finance:        'https://buy.stripe.com/test_base_finance_TODO',
+};
+
+// Bundle Stripe Payment Link ($99, all 7 modules)
+// TODO: create bundle product in Stripe and replace this placeholder
+const BUNDLE_LINK = 'https://buy.stripe.com/test_bundle_all_modules_TODO';
 ---
 
 <BaseLayout title="Pricing - WorkInPrivate" description="Get WorkInPrivate starting at $29 for the base package with one module. Add specialized modules for $19 each. No subscriptions, no API costs — pay once, own it forever.">
@@ -28,7 +44,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <span class="text-5xl font-bold text-green-400 font-mono">$29</span>
               <span class="text-gray-500 ml-2">one-time</span>
             </div>
-            <ul class="text-left space-y-3 mb-8">
+            <ul class="text-left space-y-3 mb-6">
               <li class="flex items-start">
                 <svg class="w-5 h-5 text-green-400 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
                 <span class="text-gray-300">WorkInPrivate desktop app</span>
@@ -50,11 +66,46 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <span class="text-gray-300">100% local — no data leaves your machine</span>
               </li>
             </ul>
-            <a href="https://buy.stripe.com/test_9B6bJ05et2aW1aD1eeco000" class="block w-full text-center px-8 py-4 text-lg font-bold rounded-lg text-black bg-green-500 hover:bg-green-400 transition-colors shadow-lg font-mono">
+
+            <!-- Module selector -->
+            <div class="mb-6 text-left">
+              <label for="base-module-select" class="block text-sm font-semibold text-gray-300 mb-2">
+                Choose your module:
+              </label>
+              <select
+                id="base-module-select"
+                class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white font-mono text-sm focus:outline-none focus:border-green-500 cursor-pointer"
+              >
+                <option value="seo_writer">SEO Writer — blog &amp; keyword content</option>
+                <option value="tech_docs">Tech Docs — technical documentation</option>
+                <option value="academic">Academic — research papers &amp; essays</option>
+                <option value="small_business">Small Business — marketing &amp; ops</option>
+                <option value="legal">Legal — contracts &amp; compliance</option>
+                <option value="healthcare">Healthcare — medical &amp; patient content</option>
+                <option value="finance">Finance — reports &amp; market analysis</option>
+              </select>
+            </div>
+
+            <a
+              id="base-buy-btn"
+              href={BASE_LINKS.seo_writer}
+              class="block w-full text-center px-8 py-4 text-lg font-bold rounded-lg text-black bg-green-500 hover:bg-green-400 transition-colors shadow-lg font-mono"
+            >
               Get Started &mdash; $29
             </a>
           </div>
         </div>
+
+        <script define:vars={{ BASE_LINKS }}>
+          const select = document.getElementById('base-module-select');
+          const btn = document.getElementById('base-buy-btn');
+          if (select && btn) {
+            select.addEventListener('change', () => {
+              const url = BASE_LINKS[select.value];
+              if (url) btn.href = url;
+            });
+          }
+        </script>
 
         <!-- Complete Bundle -->
         <div class="rounded-2xl border-2 border-green-500 shadow-xl overflow-hidden relative bg-gray-900/70">
@@ -98,7 +149,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <span class="text-gray-300">Future module updates included</span>
               </li>
             </ul>
-            <a href="https://buy.stripe.com/test_9B6bJ05et2aW1aD1eeco000" class="block w-full text-center px-8 py-4 text-lg font-bold rounded-lg text-black bg-green-500 hover:bg-green-400 transition-all shadow-lg shadow-green-500/40 font-mono">
+            <a href={BUNDLE_LINK} class="block w-full text-center px-8 py-4 text-lg font-bold rounded-lg text-black bg-green-500 hover:bg-green-400 transition-all shadow-lg shadow-green-500/40 font-mono">
               Get Complete Bundle &mdash; $99
             </a>
           </div>
