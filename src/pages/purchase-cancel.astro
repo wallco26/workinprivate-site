@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Purchase Cancelled - WorkInPrivate" description="Your WorkInPrivate purchase was cancelled. No charges were made. Return to pricing when you're ready.">
+
+  <section class="bg-[#0a0e17] min-h-screen py-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-xl mx-auto text-center">
+
+        <!-- Cancel icon -->
+        <div class="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-8 border-2 border-gray-700">
+          <svg class="w-10 h-10 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">Purchase Cancelled</h1>
+        <p class="text-xl text-gray-400 mb-4">
+          No problem — no charge was made to your account.
+        </p>
+        <p class="text-gray-500 mb-12">
+          If you ran into an issue or have questions before purchasing, we're happy to help.
+        </p>
+
+        <!-- Actions -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <a href="/pricing" class="px-8 py-4 text-lg font-bold rounded-lg text-black bg-green-500 hover:bg-green-400 transition-colors shadow-lg font-mono">
+            Back to Pricing
+          </a>
+          <a href="/faq" class="px-8 py-4 text-lg font-semibold rounded-lg text-gray-300 border-2 border-gray-700 hover:border-green-600 hover:text-green-400 transition-colors font-mono">
+            Read the FAQ
+          </a>
+        </div>
+
+        <!-- Reassurance -->
+        <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6 text-left space-y-4">
+          <h3 class="text-white font-semibold">Things worth knowing</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <span class="text-gray-400 text-sm">One-time payment — no subscription, no recurring charges</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <span class="text-gray-400 text-sm">30-day money-back guarantee — no questions asked</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <span class="text-gray-400 text-sm">100% local — your content never leaves your machine</span>
+            </li>
+          </ul>
+        </div>
+
+        <p class="text-gray-600 text-sm mt-8">
+          Have a question?
+          <a href="mailto:support@workinprivate.com" class="text-gray-400 hover:text-green-400 transition-colors">support@workinprivate.com</a>
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
