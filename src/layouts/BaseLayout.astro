@@ -15,6 +15,10 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// Set PUBLIC_SITE_PREVIEW=false to hide the preview banner (e.g. for local testing).
+// Defaults to true (banner shown) when the env var is absent.
+const isPreview = import.meta.env.PUBLIC_SITE_PREVIEW !== 'false';
 ---
 
 <!DOCTYPE html>
@@ -54,8 +58,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       Skip to main content
     </a>
 
-    <!-- Work In Progress Banner -->
-    <div class="bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-600 border-b-4 border-yellow-700 shadow-lg relative overflow-hidden">
+    <!-- Work In Progress Banner (hidden when SITE_PREVIEW=false) -->
+    {isPreview && <div class="bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-600 border-b-4 border-yellow-700 shadow-lg relative overflow-hidden">
       <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,.1) 10px, rgba(0,0,0,.1) 20px);"></div>
       <div class="container mx-auto px-4 py-4 relative">
         <div class="flex flex-col items-center justify-center gap-2 text-center">
@@ -70,7 +74,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           </div>
         </div>
       </div>
-    </div>
+    </div>}
 
     <Header />
     <main id="main-content" class="flex-grow">
@@ -79,7 +83,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <Footer />
 
     <!-- Disable all links during site preview -->
-    <script is:inline>
+    {isPreview && <script is:inline>
       (function() {
         document.addEventListener('DOMContentLoaded', function() {
           // Get all links on the page
@@ -142,7 +146,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           }, 5000);
         }
       })();
-    </script>
+    </script>}
   </body>
 </html>
 
