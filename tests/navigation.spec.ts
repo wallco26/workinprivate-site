@@ -117,7 +117,7 @@ test.describe('Navigation - Header & Footer', () => {
   });
 
   test('should display copyright year', async ({ page }) => {
-    const copyright = page.locator('footer', { hasText: '2026 WorkInPrivate' });
+    const copyright = page.locator('footer', { hasText: '2026 Wallco Digital Labs LLC' });
     await expect(copyright).toBeVisible();
   });
 
