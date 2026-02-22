@@ -8,9 +8,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto prose prose-gray prose-indigo">
         <h1 class="text-4xl font-bold text-gray-900 mb-2">Privacy Policy</h1>
-        <p class="text-sm text-gray-500 mb-10">Last updated: February 15, 2026</p>
+        <p class="text-sm text-gray-500 mb-10">Last updated: February 22, 2026</p>
 
-        <p>WorkInPrivate is built on a simple principle: your data is yours. This Privacy Policy explains what information we collect, how we use it, and your rights regarding your data.</p>
+        <p>This Privacy Policy describes how Wallco Digital Labs LLC ("we," "us," or "our") collects, uses, and shares your personal information when you visit www.workinprivate.com ("Website"), purchase our software, or use our services.</p>
 
         <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">1. The Short Version</h2>
         <div class="bg-indigo-50 rounded-xl p-6 not-prose mb-6">
@@ -25,7 +25,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-indigo-600 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-              <span>We only collect data necessary to process your purchase (via Stripe)</span>
+              <span>We only collect data necessary to process your purchase and deliver your license</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-indigo-600 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
@@ -34,33 +34,79 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </ul>
         </div>
 
-        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">2. The WorkInPrivate Application</h2>
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">2. Information We Collect</h2>
+
+        <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Information You Provide</h3>
+        <p>When you make a purchase or interact with us, we may collect:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Email address</strong> — provided during checkout for license key delivery and account communication</li>
+          <li><strong>Name</strong> — if provided during checkout</li>
+          <li><strong>Purchase details</strong> — which products, modules, and OS version you selected</li>
+        </ul>
+
+        <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Payment Information</h3>
+        <p>Payment is processed by <strong>Stripe, Inc.</strong> We do <strong>not</strong> directly collect, store, or have access to your full credit card number, debit card number, or bank account details. Stripe handles all payment data in accordance with PCI-DSS standards. See <a href="https://stripe.com/privacy" class="text-indigo-600 hover:text-indigo-700" target="_blank" rel="noopener noreferrer">Stripe's Privacy Policy</a>.</p>
+
+        <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Information Collected Automatically</h3>
+        <p>When you visit the Website, we may automatically collect:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>IP address</li>
+          <li>Browser type and version</li>
+          <li>Operating system</li>
+          <li>Pages visited and time spent on pages</li>
+          <li>Referring website or source</li>
+        </ul>
+        <p>This information is collected through standard server logs by our hosting provider.</p>
+
+        <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Customer Database</h3>
+        <p>We use <strong>Supabase</strong> as our database provider to store your email address, purchase history, license key information, and account creation date. See <a href="https://supabase.com/privacy" class="text-indigo-600 hover:text-indigo-700" target="_blank" rel="noopener noreferrer">Supabase's Privacy Policy</a>.</p>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">3. How We Use Your Information</h2>
+        <p>We use the information we collect for:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>License delivery</strong> — Sending your license key via email after purchase</li>
+          <li><strong>Module ownership tracking</strong> — Recording which modules you have purchased</li>
+          <li><strong>Payment processing</strong> — Processing your purchase through Stripe</li>
+          <li><strong>Customer support</strong> — Responding to your questions and requests</li>
+          <li><strong>Order fulfillment</strong> — Delivering the correct OS version and modules</li>
+          <li><strong>Legal compliance</strong> — Meeting our legal obligations (e.g., tax records)</li>
+          <li><strong>Communication</strong> — Sending transactional emails (order confirmations, license delivery, important product updates)</li>
+        </ul>
+        <p>We do <strong>not</strong> use your information for selling to third parties, targeted advertising, or profiling.</p>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">4. The WorkInPrivate Application</h2>
         <p>The WorkInPrivate desktop application is designed with privacy as a core feature:</p>
         <ul class="list-disc pl-6 space-y-2">
-          <li><strong>Local processing:</strong> All content generation happens on your device using AI models running through Ollama. Your prompts, inputs, and generated content are processed locally and are never sent to our servers.</li>
+          <li><strong>Local processing:</strong> All content generation happens on your device using AI models running through Ollama. Your prompts, inputs, and generated content are processed locally and never sent to our servers.</li>
           <li><strong>No telemetry:</strong> The application does not collect usage data, crash reports, or analytics of any kind.</li>
           <li><strong>No accounts:</strong> The application does not require you to create an account or sign in.</li>
-          <li><strong>Optional web search:</strong> If you enable the web search feature, search queries are sent to third-party search providers. This feature is optional and can be disabled. We do not log or store your search queries.</li>
+          <li><strong>Optional web search:</strong> If you enable the web search feature, search queries are sent to DuckDuckGo. This feature is optional and can be disabled. We do not log or store your search queries.</li>
         </ul>
 
-        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">3. This Website</h2>
-        <p>When you visit www.workinprivate.com, we may collect:</p>
-        <ul class="list-disc pl-6 space-y-2">
-          <li><strong>Standard server logs:</strong> Your IP address, browser type, and pages visited may be logged by our hosting provider (GitHub Pages) as part of standard web server operations.</li>
-          <li><strong>No cookies:</strong> This website does not use tracking cookies or third-party analytics scripts.</li>
-        </ul>
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">5. Third-Party Services</h2>
+        <p>We share your information only with the following service providers:</p>
 
-        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">4. Payment Processing</h2>
-        <p>When you purchase WorkInPrivate, your payment is processed by <strong>Stripe</strong>, a third-party payment processor. During this process:</p>
-        <ul class="list-disc pl-6 space-y-2">
-          <li>Stripe collects your payment information (credit/debit card details, billing address, email) directly. We do not see or store your full card number.</li>
-          <li>We receive from Stripe: your name, email address, purchase details, and a transaction identifier.</li>
-          <li>We use this information solely to fulfill your order and provide customer support (e.g., processing refunds).</li>
-          <li>Stripe's handling of your payment data is governed by <a href="https://stripe.com/privacy" class="text-indigo-600 hover:text-indigo-700" target="_blank" rel="noopener noreferrer">Stripe's Privacy Policy</a>.</li>
-        </ul>
+        <div class="bg-indigo-50 rounded-xl p-6 not-prose mb-6">
+          <div class="space-y-4">
+            <div>
+              <p class="font-semibold text-gray-900">Stripe (Payment Processing)</p>
+              <p class="text-gray-700 text-sm">Receives: payment information, email, purchase details</p>
+              <p class="text-gray-700 text-sm">Policy: <a href="https://stripe.com/privacy" class="text-indigo-600 hover:text-indigo-700" target="_blank" rel="noopener noreferrer">stripe.com/privacy</a></p>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-900">Supabase (Database Hosting)</p>
+              <p class="text-gray-700 text-sm">Receives: email, purchase history, license information</p>
+              <p class="text-gray-700 text-sm">Policy: <a href="https://supabase.com/privacy" class="text-indigo-600 hover:text-indigo-700" target="_blank" rel="noopener noreferrer">supabase.com/privacy</a></p>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-900">GitHub Pages (Website Hosting)</p>
+              <p class="text-gray-700 text-sm">Receives: standard web server logs (IP address, browser info)</p>
+              <p class="text-gray-700 text-sm">Policy: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" class="text-indigo-600 hover:text-indigo-700" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a></p>
+            </div>
+          </div>
+        </div>
 
-        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">5. Third-Party AI Models</h2>
-        <p>WorkInPrivate uses Ollama to run AI models locally on your device. These models are downloaded from Ollama's model registry. While the models run locally, the initial download of models is subject to <a href="https://ollama.com" class="text-indigo-600 hover:text-indigo-700" target="_blank" rel="noopener noreferrer">Ollama's privacy practices</a>. Once downloaded, models operate entirely offline.</p>
+        <p>We may also disclose your information if required by law or in response to valid legal requests.</p>
 
         <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">6. Data We Do NOT Collect</h2>
         <p>To be explicit, we do <strong>not</strong> collect:</p>
@@ -68,31 +114,60 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <li>Your prompts or inputs to the application</li>
           <li>Content generated by the application</li>
           <li>Usage patterns or application analytics</li>
-          <li>Device information beyond what's in standard server logs</li>
           <li>Location data</li>
         </ul>
 
-        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">7. Data Retention</h2>
-        <p>Purchase records (name, email, transaction details) are retained for as long as necessary to provide customer support and comply with legal obligations (e.g., tax records). You may request deletion of your personal data by contacting us.</p>
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">7. Third-Party AI Models</h2>
+        <p>WorkInPrivate uses Ollama to run AI models locally on your device. Models are downloaded from Ollama's model registry. While the models run locally, the initial download is subject to <a href="https://ollama.com" class="text-indigo-600 hover:text-indigo-700" target="_blank" rel="noopener noreferrer">Ollama's privacy practices</a>. Once downloaded, models operate entirely offline.</p>
 
-        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">8. Your Rights</h2>
-        <p>Depending on your jurisdiction, you may have the right to:</p>
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">8. Cookies and Tracking</h2>
+        <p>This website uses only essential cookies required for the checkout process. We do not use tracking cookies or third-party analytics scripts. We respect Do Not Track (DNT) browser signals.</p>
+        <p>You can control cookies through your browser settings. Disabling essential cookies may affect checkout functionality.</p>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">9. Data Retention</h2>
         <ul class="list-disc pl-6 space-y-2">
-          <li>Access the personal data we hold about you</li>
-          <li>Request correction of inaccurate data</li>
-          <li>Request deletion of your data</li>
-          <li>Object to or restrict processing of your data</li>
+          <li><strong>Email address:</strong> Retained as long as your license is active, plus 3 years</li>
+          <li><strong>Purchase history:</strong> 7 years (tax and legal compliance)</li>
+          <li><strong>License key records:</strong> As long as your license is active, plus 1 year</li>
+          <li><strong>Website analytics:</strong> 26 months</li>
+          <li><strong>Support correspondence:</strong> 3 years after last communication</li>
         </ul>
-        <p>To exercise these rights, please contact us through our GitHub page.</p>
+        <p>After the retention period expires, we will securely delete or anonymize your data.</p>
 
-        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">9. Children's Privacy</h2>
-        <p>WorkInPrivate is not intended for use by anyone under 18 years of age. We do not knowingly collect personal information from children under 18.</p>
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">10. Data Security</h2>
+        <p>We implement appropriate measures to protect your personal information, including encrypted data transmission (HTTPS/TLS), secure third-party providers (Stripe is PCI-DSS certified; Supabase provides encryption at rest and in transit), and access controls. No method of transmission over the Internet is 100% secure, and we cannot guarantee absolute security.</p>
 
-        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">10. Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated date. We encourage you to review this policy periodically.</p>
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">11. Your Rights</h2>
+        <p>Regardless of your location, you have the right to:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Access</strong> — Request a copy of the personal information we hold about you</li>
+          <li><strong>Correction</strong> — Request correction of inaccurate personal information</li>
+          <li><strong>Deletion</strong> — Request deletion of your personal information</li>
+          <li><strong>Portability</strong> — Request a copy of your data in a machine-readable format</li>
+        </ul>
 
-        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">11. Contact</h2>
-        <p>For privacy-related questions or requests, please visit <a href="https://github.com/wallco26/workinprivate" class="text-indigo-600 hover:text-indigo-700" target="_blank" rel="noopener noreferrer">our GitHub page</a>.</p>
+        <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">California Residents (CCPA/CPRA)</h3>
+        <p>If you are a California resident, you have additional rights:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Right to Know</strong> — Request details about categories and specific pieces of personal information we have collected, sources, purposes, and third parties we share with.</li>
+          <li><strong>Right to Delete</strong> — Request deletion of your personal information, subject to certain exceptions.</li>
+          <li><strong>Right to Opt-Out of Sale</strong> — We do <strong>not</strong> sell your personal information.</li>
+          <li><strong>Right to Non-Discrimination</strong> — We will not discriminate against you for exercising your privacy rights.</li>
+          <li><strong>Right to Correct</strong> — Request correction of inaccurate personal information.</li>
+        </ul>
+        <p>To exercise any of these rights, contact us at <a href="mailto:support@workinprivate.com" class="text-indigo-600 hover:text-indigo-700">support@workinprivate.com</a>. We will respond to verifiable requests within 45 days.</p>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">12. International Users</h2>
+        <p>Our services are operated from the United States. If you access the Website from outside the US, your information may be transferred to, stored, and processed in the United States. By using the Website, you consent to this transfer. If you are in the EEA or UK, we process your data on the legal bases of contract performance and legitimate interests. You may have additional rights under the GDPR.</p>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">13. Children's Privacy</h2>
+        <p>WorkInPrivate is not intended for use by anyone under 18. We do not knowingly collect personal information from children under 18. If we discover we have inadvertently collected information from a child under 18, we will promptly delete it. If you are a parent or guardian and believe your child has provided us with personal information, contact us at <a href="mailto:support@workinprivate.com" class="text-indigo-600 hover:text-indigo-700">support@workinprivate.com</a>.</p>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">14. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. When we make changes, we will update the "Last Updated" date at the top of this page. For material changes, we will make reasonable efforts to notify you via email or by posting a prominent notice on the Website.</p>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">15. Contact</h2>
+        <p>For privacy-related questions or requests, contact us at <a href="mailto:support@workinprivate.com" class="text-indigo-600 hover:text-indigo-700">support@workinprivate.com</a>. Please include "Privacy" in the subject line.</p>
       </div>
     </div>
   </section>
