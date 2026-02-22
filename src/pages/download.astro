@@ -1,15 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-let version = 'latest';
-try {
-  const res = await fetch('https://api.github.com/repos/wallco26/workinprivate/releases/tags/latest');
-  if (res.ok) {
-    const data = await res.json();
-    const match = data.name?.match(/v?([\d.]+)/);
-    if (match) version = match[1];
-  }
-} catch {}
+const version = import.meta.env.CLI_VERSION || 'latest';
 
 const baseUrl = 'https://github.com/wallco26/workinprivate/releases/latest/download';
 ---
