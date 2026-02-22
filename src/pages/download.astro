@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const version = import.meta.env.CLI_VERSION || 'latest';
+const version = process.env.CLI_VERSION || 'latest';
 
 const baseUrl = 'https://github.com/wallco26/workinprivate/releases/latest/download';
 ---
