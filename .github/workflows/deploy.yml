@@ -35,6 +35,7 @@ jobs:
         run: npm run build
         env:
           CLI_VERSION: ${{ github.event.client_payload.version || '' }}
+          PUBLIC_SITE_PREVIEW: 'false'
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
