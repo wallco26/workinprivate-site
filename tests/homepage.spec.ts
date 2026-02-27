@@ -110,7 +110,7 @@ test.describe('Homepage - Dark Terminal Theme', () => {
     const href = await buyButton.getAttribute('href');
 
     expect(href).toContain('buy.stripe.com');
-    expect(href).toContain('test_'); // Test mode link
+    expect(href).not.toContain('test_'); // Live mode link
   });
 
   test('should display comparison table with dark theme', async ({ page }) => {

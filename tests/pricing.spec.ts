@@ -52,7 +52,7 @@ test.describe('Pricing Page - Dark Terminal Theme', () => {
     for (const button of await buyButtons.all()) {
       const href = await button.getAttribute('href');
       expect(href).toContain('buy.stripe.com');
-      expect(href).toContain('test_');
+      expect(href).not.toContain('test_');
     }
   });
 
