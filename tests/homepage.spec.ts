@@ -105,12 +105,11 @@ test.describe('Homepage - Dark Terminal Theme', () => {
     expect(className).toMatch(/text-(green|cyan)-400/);
   });
 
-  test('should have working Stripe payment link', async ({ page }) => {
+  test('should have working buy now link to pricing page', async ({ page }) => {
     const buyButton = page.getByRole('link', { name: /Buy Now.*\$29/i }).first();
     const href = await buyButton.getAttribute('href');
 
-    expect(href).toContain('buy.stripe.com');
-    expect(href).not.toContain('test_'); // Live mode link
+    expect(href).toBe('/pricing');
   });
 
   test('should display comparison table with dark theme', async ({ page }) => {

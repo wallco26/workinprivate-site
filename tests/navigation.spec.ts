@@ -51,7 +51,7 @@ test.describe('Navigation - Header & Footer', () => {
     expect(className).toContain('font-mono');
 
     const href = await buyButton.getAttribute('href');
-    expect(href).toContain('buy.stripe.com');
+    expect(href).toBe('/pricing');
   });
 
   test('should display mobile menu button on small screens', async ({ page }) => {
