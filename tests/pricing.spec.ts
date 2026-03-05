@@ -46,14 +46,12 @@ test.describe('Pricing Page - Dark Terminal Theme', () => {
     expect(className).toContain('text-green-400');
   });
 
-  test('should have working Stripe links on pricing cards', async ({ page }) => {
-    const buyButtons = page.getByRole('link', { name: /Get Started|Get Complete Bundle/ });
+  test('should have buy buttons on pricing cards', async ({ page }) => {
+    const baseBuy = page.getByRole('button', { name: /Get Started/ });
+    const bundleBuy = page.getByRole('button', { name: /Get Complete Bundle/ });
 
-    for (const button of await buyButtons.all()) {
-      const href = await button.getAttribute('href');
-      expect(href).toContain('buy.stripe.com');
-      expect(href).not.toContain('test_');
-    }
+    await expect(baseBuy).toBeVisible();
+    await expect(bundleBuy).toBeVisible();
   });
 
   test('should display all 7 add-on modules', async ({ page }) => {
@@ -80,18 +78,13 @@ test.describe('Pricing Page - Dark Terminal Theme', () => {
     await expect(modulePrice).toBeVisible();
   });
 
-  test('should have Stripe links on all add-on modules', async ({ page }) => {
+  test('should have buy buttons on all add-on modules', async ({ page }) => {
     await page.getByRole('heading', { name: /Add-on Modules/i }).scrollIntoViewIfNeeded();
 
-    const addButtons = page.getByRole('link', { name: /Add Module/i });
+    const addButtons = page.getByRole('button', { name: /Add Module/i });
     const count = await addButtons.count();
 
-    expect(count).toBe(7); // Should have 7 add-on modules
-
-    for (const button of await addButtons.all()) {
-      const href = await button.getAttribute('href');
-      expect(href).toContain('buy.stripe.com');
-    }
+    expect(count).toBe(7);
   });
 
   test('should display colored icon backgrounds for modules', async ({ page }) => {
@@ -155,5 +148,22 @@ test.describe('Pricing Page - Dark Terminal Theme', () => {
     const moduleCard = main.locator('.bg-gray-900\\/50').first();
     const className = await moduleCard.getAttribute('class');
     expect(className).toContain('hover:border-green-700');
+  });
+
+  test('should display promo code input', async ({ page }) => {
+    const promoInput = page.locator('#promo-input');
+    const applyBtn = page.getByRole('button', { name: 'Apply' });
+
+    await expect(promoInput).toBeVisible();
+    await expect(applyBtn).toBeVisible();
+  });
+
+  test('should have module selector dropdown', async ({ page }) => {
+    const select = page.locator('#base-module-select');
+    await expect(select).toBeVisible();
+
+    const options = select.locator('option');
+    const count = await options.count();
+    expect(count).toBe(7);
   });
 });
