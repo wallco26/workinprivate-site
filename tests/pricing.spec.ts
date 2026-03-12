@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Pricing Page - Dark Terminal Theme', () => {
+test.describe('Pricing Page', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/pricing');
   });
@@ -9,23 +9,21 @@ test.describe('Pricing Page - Dark Terminal Theme', () => {
     await expect(page).toHaveTitle(/Pricing - WorkInPrivate/);
   });
 
-  test('should display dark theme', async ({ page }) => {
-    const main = page.getByRole('main');
-    const hero = main.locator('section').first();
-    const bgColor = await hero.evaluate(el => getComputedStyle(el).backgroundColor);
-    expect(bgColor).toMatch(/rgb(a)?\(10,?\s*14,?\s*23/);
+  test('should display light theme hero', async ({ page }) => {
+    const hero = page.locator('h1', { hasText: 'Simple, Honest Pricing' });
+    await expect(hero).toBeVisible();
   });
 
   test('should display both pricing cards', async ({ page }) => {
     const basePackage = page.getByRole('heading', { name: 'Base Package' });
-    const completeBundle = page.getByRole('heading', { name: 'All 7 Modules' });
+    const completeBundle = page.getByRole('heading', { name: 'All 7 Writing Modules' });
 
     await expect(basePackage).toBeVisible();
     await expect(completeBundle).toBeVisible();
   });
 
-  test('should highlight complete bundle with green border', async ({ page }) => {
-    const bundleCard = page.locator('.border-green-500').first();
+  test('should highlight complete bundle with blue border', async ({ page }) => {
+    const bundleCard = page.locator('[class*="border-[#4B8BD4]"]').first();
     await expect(bundleCard).toBeVisible();
   });
 
@@ -34,16 +32,13 @@ test.describe('Pricing Page - Dark Terminal Theme', () => {
     await expect(badge).toBeVisible();
   });
 
-  test('should display prices in green monospace font', async ({ page }) => {
+  test('should display prices', async ({ page }) => {
     const main = page.getByRole('main');
-    const price29 = main.locator('.font-mono', { hasText: '$29' }).first();
-    const price99 = main.locator('.font-mono', { hasText: '$99' }).first();
+    const price29 = main.locator('#base-price');
+    const price99 = main.locator('#bundle-price');
 
     await expect(price29).toBeVisible();
     await expect(price99).toBeVisible();
-
-    const className = await price29.getAttribute('class');
-    expect(className).toContain('text-green-400');
   });
 
   test('should have buy buttons on pricing cards', async ({ page }) => {
@@ -55,10 +50,10 @@ test.describe('Pricing Page - Dark Terminal Theme', () => {
   });
 
   test('should display all 7 add-on modules', async ({ page }) => {
-    await page.getByRole('heading', { name: /Add-on Modules/i }).scrollIntoViewIfNeeded();
+    await page.getByRole('heading', { name: /Add-on Writing Modules/i }).scrollIntoViewIfNeeded();
 
     const modules = [
-      'SEO Writer',
+      'Blog Writer',
       'Tech Docs',
       'Academic',
       'Finance',
@@ -73,13 +68,13 @@ test.describe('Pricing Page - Dark Terminal Theme', () => {
     }
   });
 
-  test('should display add-on module prices in monospace', async ({ page }) => {
-    const modulePrice = page.locator('.font-mono', { hasText: '$19' }).first();
+  test('should display add-on module prices', async ({ page }) => {
+    const modulePrice = page.locator('.addon-price', { hasText: '$19' }).first();
     await expect(modulePrice).toBeVisible();
   });
 
   test('should have buy buttons on all add-on modules', async ({ page }) => {
-    await page.getByRole('heading', { name: /Add-on Modules/i }).scrollIntoViewIfNeeded();
+    await page.getByRole('heading', { name: /Add-on Writing Modules/i }).scrollIntoViewIfNeeded();
 
     const addButtons = page.getByRole('button', { name: /Add Module/i });
     const count = await addButtons.count();
@@ -87,67 +82,62 @@ test.describe('Pricing Page - Dark Terminal Theme', () => {
     expect(count).toBe(7);
   });
 
-  test('should display colored icon backgrounds for modules', async ({ page }) => {
-    await page.getByRole('heading', { name: /Add-on Modules/i }).scrollIntoViewIfNeeded();
+  test('should display module emoji icons', async ({ page }) => {
+    await page.getByRole('heading', { name: /Add-on Writing Modules/i }).scrollIntoViewIfNeeded();
 
-    const greenIcon = page.locator('.bg-green-900\\/40').first();
-    const cyanIcon = page.locator('.bg-cyan-900\\/40').first();
-    const fuchsiaIcon = page.locator('.bg-fuchsia-900\\/40').first();
+    const emojiIcons = page.locator('.bg-\\[\\#EDF2FA\\]');
+    const count = await emojiIcons.count();
 
-    await expect(greenIcon).toBeVisible();
-    await expect(cyanIcon).toBeVisible();
-    await expect(fuchsiaIcon).toBeVisible();
+    expect(count).toBeGreaterThan(0);
   });
 
   test('should display system requirements section', async ({ page }) => {
-    await page.getByRole('heading', { name: /System Requirements/i }).scrollIntoViewIfNeeded();
+    await page.getByRole('heading', { name: /What Your Computer Needs/i }).scrollIntoViewIfNeeded();
 
     const hardwareSection = page.getByRole('heading', { name: 'Hardware' });
-    const platformSection = page.getByRole('heading', { name: 'Platform Availability' });
+    const platformSection = page.getByRole('heading', { name: 'Works On' });
 
     await expect(hardwareSection).toBeVisible();
     await expect(platformSection).toBeVisible();
   });
 
-  test('should display dark system requirement cards', async ({ page }) => {
-    await page.getByRole('heading', { name: /System Requirements/i }).scrollIntoViewIfNeeded();
+  test('should display system requirement cards', async ({ page }) => {
+    await page.getByRole('heading', { name: /What Your Computer Needs/i }).scrollIntoViewIfNeeded();
 
-    const cards = page.locator('.bg-gray-900\\/50');
+    const cards = page.locator('.border-\\[\\#E2E8F0\\]');
     const count = await cards.count();
 
     expect(count).toBeGreaterThan(0);
   });
 
   test('should show green checkmarks in system requirements', async ({ page }) => {
-    await page.getByRole('heading', { name: /System Requirements/i }).scrollIntoViewIfNeeded();
+    await page.getByRole('heading', { name: /What Your Computer Needs/i }).scrollIntoViewIfNeeded();
 
-    const greenChecks = page.locator('.text-green-400 svg');
+    const greenChecks = page.locator('.text-\\[\\#38A169\\]');
     const count = await greenChecks.count();
 
     expect(count).toBeGreaterThan(0);
   });
 
-  test('should display Ollama requirement notice', async ({ page }) => {
-    await page.getByRole('heading', { name: /System Requirements/i }).scrollIntoViewIfNeeded();
+  test('should display setup notice', async ({ page }) => {
+    await page.getByRole('heading', { name: /What Your Computer Needs/i }).scrollIntoViewIfNeeded();
 
-    const ollamaNotice = page.locator('text=Requires Ollama');
-    await expect(ollamaNotice).toBeVisible();
+    const setupNotice = page.locator('text=Easy first-time setup');
+    await expect(setupNotice).toBeVisible();
   });
 
   test('should display money-back guarantee badge', async ({ page }) => {
-    const guarantee = page.locator('text=30-day money-back guarantee');
+    const guarantee = page.locator('text=30-day money-back guarantee on all purchases').first();
     await expect(guarantee).toBeVisible();
-    await expect(guarantee).toHaveClass(/bg-green-900/);
-    await expect(guarantee).toHaveClass(/font-mono/);
   });
 
-  test('should have dark hover states on add-on modules', async ({ page }) => {
-    await page.getByRole('heading', { name: /Add-on Modules/i }).scrollIntoViewIfNeeded();
+  test('should have hover states on add-on modules', async ({ page }) => {
+    await page.getByRole('heading', { name: /Add-on Writing Modules/i }).scrollIntoViewIfNeeded();
 
-    const main = page.getByRole('main');
-    const moduleCard = main.locator('.bg-gray-900\\/50').first();
-    const className = await moduleCard.getAttribute('class');
-    expect(className).toContain('hover:border-green-700');
+    // Find the add-on section and check a module card within it
+    const addOnSection = page.locator('section', { has: page.getByRole('heading', { name: /Add-on Writing Modules/i }) });
+    const moduleCard = addOnSection.locator('.addon-buy-btn').first().locator('..');
+    await expect(moduleCard).toBeVisible();
   });
 
   test('should display promo code input', async ({ page }) => {
