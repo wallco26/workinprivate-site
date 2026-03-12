@@ -278,6 +278,88 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  <!-- Cost Comparison Section -->
+  <section class="py-20 bg-[#F7F9FC] border-t-2 border-[#E2E8F0]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">How the Costs Compare</div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-4 leading-tight">Here's What You'd Spend on ChatGPT in a Year</h2>
+        <p class="text-lg text-[#5A6474] max-w-lg mx-auto">ChatGPT costs $20 every single month — that's $240 a year, and it never stops. WorkInPrivate is $29 once, and it's yours forever.</p>
+      </div>
+
+      <!-- Comparison cards -->
+      <div class="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+        <!-- ChatGPT card -->
+        <div class="bg-white border-2 border-[#E2E8F0] rounded-2xl p-8">
+          <div class="text-center mb-6">
+            <div class="text-sm font-bold text-[#5A6474] uppercase tracking-wider mb-1">ChatGPT Plus</div>
+            <div class="font-serif font-bold text-[#8A9AB5] mb-1" style="font-size: 3.5rem; line-height: 1;"><sup style="font-size: 1.4rem; vertical-align: super;">$</sup>20</div>
+            <div class="text-[#8A9AB5] font-semibold text-base">per month, forever</div>
+          </div>
+          <ul class="list-none p-0 m-0 space-y-0">
+            {[
+              ['Year 1 cost', '$240'],
+              ['Year 2 cost', '$240 again'],
+              ['3-year total', '$720'],
+              ['Privacy', 'Cloud servers'],
+              ['Usage limits', 'Limited messages/month'],
+              ['Internet required', 'Always'],
+            ].map(([label, value]) => (
+              <li class="flex items-center justify-between py-2.5 border-b border-[#F0F4F8] last:border-0">
+                <span class="text-[#5A6474] text-base">{label}</span>
+                <span class="font-semibold text-[#8A9AB5] text-sm flex items-center gap-1.5">
+                  <svg class="w-4 h-4 text-[#E53E3E] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                  {value}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- WorkInPrivate card -->
+        <div class="bg-white border-[3px] border-[#4B8BD4] rounded-2xl p-8 relative" style="box-shadow: 0 8px 32px rgba(75,139,212,0.12);">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#38A169] text-white text-xs font-bold uppercase tracking-widest px-4 py-1 rounded-full whitespace-nowrap">Pay Once, Use Forever</div>
+          <div class="text-center mb-6 mt-2">
+            <div class="text-sm font-bold text-[#4B8BD4] uppercase tracking-wider mb-1">WorkInPrivate</div>
+            <div class="font-serif font-bold text-[#4B8BD4] mb-1" style="font-size: 3.5rem; line-height: 1;"><sup style="font-size: 1.4rem; vertical-align: super;">$</sup>29</div>
+            <div class="text-[#38A169] font-bold text-base">one-time payment</div>
+          </div>
+          <ul class="list-none p-0 m-0 space-y-0">
+            {[
+              ['Year 1 cost', '$29'],
+              ['Year 2 cost', '$0 — already paid'],
+              ['3-year total', '$29'],
+              ['Privacy', 'Your computer only'],
+              ['Usage limits', 'Unlimited'],
+              ['Internet required', 'No internet needed'],
+            ].map(([label, value]) => (
+              <li class="flex items-center justify-between py-2.5 border-b border-[#EDF2FA] last:border-0">
+                <span class="text-[#2D3748] text-base">{label}</span>
+                <span class="font-semibold text-[#2D3748] text-sm flex items-center gap-1.5">
+                  <svg class="w-4 h-4 text-[#38A169] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                  {value}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Savings highlight bar -->
+      <div class="max-w-2xl mx-auto bg-[#F0FFF4] border-2 border-[#C6F6D5] rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
+        <div class="flex-shrink-0">
+          <div class="w-20 h-20 rounded-full bg-[#38A169] flex items-center justify-center mx-auto sm:mx-0">
+            <span class="text-white font-bold text-sm leading-tight text-center">SAVE<br/>$691</span>
+          </div>
+        </div>
+        <div>
+          <div class="font-serif font-bold text-[#1B3A5C] text-xl mb-1">Save $691 over three years — guaranteed.</div>
+          <div class="text-[#5A6474] text-base leading-relaxed">ChatGPT costs <strong class="text-[#E53E3E]">$720</strong> over three years. WorkInPrivate costs <strong class="text-[#38A169]">$29</strong> — once, forever. That's $211 back in your pocket in year one, and $240 every year after that.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Pricing Section -->
   <section class="py-20 bg-[#EDF2FA] border-t-2 border-[#D4E3F5] text-center">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
