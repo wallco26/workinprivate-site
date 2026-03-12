@@ -157,6 +157,16 @@ test.describe('Homepage - Friendly Neighbor Light Theme', () => {
     expect(href).toBe('/pricing');
   });
 
+  test('should display privacy section with three cards', async ({ page }) => {
+    const heading = page.getByRole('heading', { name: /Your Writing Stays Private/i });
+    await heading.scrollIntoViewIfNeeded();
+    await expect(heading).toBeVisible();
+
+    await expect(page.getByRole('heading', { name: /Stays on Your Computer/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /No One Can See What You Write/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /No Accounts or Sign-ups/i })).toBeVisible();
+  });
+
   test('should have all main sections visible', async ({ page }) => {
     const sections = [
       /Write Articles With AI/i,
@@ -164,6 +174,7 @@ test.describe('Homepage - Friendly Neighbor Light Theme', () => {
       /Three Simple Steps/i,
       /Simple, Private, and Affordable/i,
       /Seven Types of Content/i,
+      /Your Writing Stays Private/i,
       /One Simple Price/i,
       /You Might Be Wondering/i,
       /Ready to Give AI Writing a Try/i,
