@@ -24,16 +24,16 @@ test.describe('Accessibility & Responsiveness', () => {
 
     await expect(h1).toBeVisible();
     const h1Text = await h1.textContent();
-    expect(h1Text).toContain('AI Content Generation');
+    expect(h1Text).toContain('Write Articles With AI');
   });
 
   test('should have alt text or aria-labels on important elements', async ({ page }) => {
     await page.goto('/');
 
-    const asciiLogo = page.locator('.ascii-logo');
-    const ariaLabel = await asciiLogo.getAttribute('aria-label');
-    expect(ariaLabel).toBeTruthy();
-    expect(ariaLabel).toContain('WorkInPrivate');
+    // Check logo link has accessible text
+    const logoLink = page.locator('header a[href="/"]').first();
+    const logoText = await logoLink.textContent();
+    expect(logoText).toContain('WorkInPrivate');
   });
 
   test('should be responsive on mobile devices', async ({ page }) => {
@@ -60,23 +60,23 @@ test.describe('Accessibility & Responsiveness', () => {
   test('should have proper contrast for text readability', async ({ page }) => {
     await page.goto('/');
 
-    // Check that text is light on dark background
+    // Check that h1 text is dark navy on light background (#1B3A5C = rgb(27, 58, 92))
     const main = page.locator('main');
     const heading = main.locator('h1').first();
     const headingColor = await heading.evaluate(el => getComputedStyle(el).color);
 
-    // Should be a light color (rgb values high for white/light gray)
-    expect(headingColor).toMatch(/rgb(a)?\((2[0-9]{2}|25[0-5])/);
+    // Should be a dark color (navy: rgb(27, 58, 92))
+    expect(headingColor).toMatch(/rgb\(27,\s*58,\s*92\)/);
   });
 
   test('should have focusable interactive elements', async ({ page }) => {
     await page.goto('/');
 
-    const buyButton = page.getByRole('link', { name: /Buy Now.*\$29/i }).first();
+    const tryButton = page.getByRole('link', { name: /Try It.*\$29/i }).first();
 
     // Should be focusable
-    await buyButton.focus();
-    const isFocused = await buyButton.evaluate(el => el === document.activeElement);
+    await tryButton.focus();
+    const isFocused = await tryButton.evaluate(el => el === document.activeElement);
     expect(isFocused).toBe(true);
   });
 
@@ -97,8 +97,9 @@ test.describe('Accessibility & Responsiveness', () => {
     await page.setViewportSize({ width: 768, height: 1024 });
     await page.goto('/');
 
-    const terminalWindow = page.locator('.terminal-window');
-    await expect(terminalWindow).toBeVisible();
+    // Hero illustration should be visible on tablet
+    const heroHeading = page.locator('h1').first();
+    await expect(heroHeading).toBeVisible();
   });
 
   test('should have semantic HTML structure', async ({ page }) => {

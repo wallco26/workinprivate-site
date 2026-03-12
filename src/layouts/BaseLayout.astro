@@ -47,13 +47,13 @@ const isPreview = import.meta.env.PUBLIC_SITE_PREVIEW !== 'false';
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
 
-    <!-- Google Fonts - Inter & JetBrains Mono -->
+    <!-- Google Fonts - Source Sans 3 & Merriweather -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
   </head>
-  <body class="min-h-screen flex flex-col font-sans antialiased bg-[#0a0e17] text-gray-200">
+  <body class="min-h-screen flex flex-col font-sans antialiased bg-white text-fn-text" style="font-size: 18px; line-height: 1.8;">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-green-600 focus:text-black focus:rounded-lg focus:text-sm focus:font-semibold">
       Skip to main content
     </a>
@@ -152,31 +152,32 @@ const isPreview = import.meta.env.PUBLIC_SITE_PREVIEW !== 'false';
 
 <style is:global>
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
 
-  /* Terminal-inspired dark theme scrollbar */
+  /* Light theme scrollbar */
   ::-webkit-scrollbar {
     width: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #0a0e17;
+    background: #F7F9FC;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1e293b;
+    background: #D4E3F5;
     border-radius: 5px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #334155;
+    background: #4B8BD4;
   }
 
-  /* Terminal green text selection */
+  /* Sky blue text selection */
   ::selection {
-    background-color: #22c55e;
-    color: #000;
+    background-color: #4B8BD4;
+    color: #fff;
   }
   ::-moz-selection {
-    background-color: #22c55e;
-    color: #000;
+    background-color: #4B8BD4;
+    color: #fff;
   }
 </style>

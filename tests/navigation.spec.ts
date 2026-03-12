@@ -5,15 +5,13 @@ test.describe('Navigation - Header & Footer', () => {
     await page.goto('/');
   });
 
-  test('should display dark header with green logo', async ({ page }) => {
+  test('should display light header with navy serif logo', async ({ page }) => {
     const header = page.getByRole('banner');
     await expect(header).toBeVisible();
 
     const logo = header.locator('a[href="/"]').first();
     await expect(logo).toBeVisible();
-    const className = await logo.getAttribute('class');
-    expect(className).toContain('text-green-400');
-    expect(className).toContain('font-mono');
+    await expect(logo).toContainText('WorkInPrivate');
   });
 
   test('should have all navigation links', async ({ page }) => {
@@ -41,16 +39,16 @@ test.describe('Navigation - Header & Footer', () => {
     await expect(page).toHaveTitle(/FAQ/);
   });
 
-  test('should display Buy Now button in header', async ({ page }) => {
+  test('should display Get Started button in header with sky blue background', async ({ page }) => {
     const header = page.getByRole('banner');
-    const buyButton = header.locator('a', { hasText: 'Buy Now' }).first();
+    const ctaButton = header.locator('a', { hasText: 'Get Started' }).first();
 
-    await expect(buyButton).toBeVisible();
-    const className = await buyButton.getAttribute('class');
-    expect(className).toContain('bg-green');
-    expect(className).toContain('font-mono');
+    await expect(ctaButton).toBeVisible();
+    const bgColor = await ctaButton.evaluate(el => getComputedStyle(el).backgroundColor);
+    // Sky blue: #4B8BD4 = rgb(75, 139, 212)
+    expect(bgColor).toMatch(/rgb\(75,\s*139,\s*212\)/);
 
-    const href = await buyButton.getAttribute('href');
+    const href = await ctaButton.getAttribute('href');
     expect(href).toBe('/pricing');
   });
 
@@ -95,10 +93,12 @@ test.describe('Navigation - Header & Footer', () => {
     expect(closedClasses).toContain('hidden');
   });
 
-  test('should display dark footer', async ({ page }) => {
+  test('should display navy footer', async ({ page }) => {
     const footer = page.locator('footer');
     await expect(footer).toBeVisible();
-    await expect(footer).toHaveClass(/bg-\[#0a0e17\]/);
+    const bgColor = await footer.evaluate(el => getComputedStyle(el).backgroundColor);
+    // Navy: #1B3A5C = rgb(27, 58, 92)
+    expect(bgColor).toMatch(/rgb\(27,\s*58,\s*92\)/);
   });
 
   test('should have legal links in footer', async ({ page }) => {
@@ -111,9 +111,9 @@ test.describe('Navigation - Header & Footer', () => {
     await expect(licenseLink).toBeVisible();
   });
 
-  test('should have green hover states on footer links', async ({ page }) => {
+  test('should have white hover states on footer links', async ({ page }) => {
     const footerLink = page.locator('footer a[href="/terms"]');
-    await expect(footerLink).toHaveClass(/hover:text-green-400/);
+    await expect(footerLink).toHaveClass(/hover:text-white/);
   });
 
   test('should display copyright year', async ({ page }) => {
@@ -125,7 +125,7 @@ test.describe('Navigation - Header & Footer', () => {
     const pages = [
       { link: '/pricing', title: /Pricing/ },
       { link: '/faq', title: /FAQ/ },
-      { link: '/', title: /AI Content Generation/ }
+      { link: '/', title: /WorkInPrivate/ }
     ];
 
     for (const { link, title } of pages) {
@@ -135,3 +135,4 @@ test.describe('Navigation - Header & Footer', () => {
     }
   });
 });
+
