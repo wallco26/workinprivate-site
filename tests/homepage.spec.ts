@@ -157,6 +157,22 @@ test.describe('Homepage - Friendly Neighbor Light Theme', () => {
     expect(href).toBe('/pricing');
   });
 
+  test('should display sample output section with three article cards', async ({ page }) => {
+    const heading = page.getByRole('heading', { name: /See What WorkInPrivate Creates/i });
+    await heading.scrollIntoViewIfNeeded();
+    await expect(heading).toBeVisible();
+
+    const card1 = page.getByRole('heading', { name: /10 Easy Container Garden Ideas/i });
+    await card1.scrollIntoViewIfNeeded();
+    await expect(card1).toBeVisible();
+    await expect(page.getByRole('heading', { name: /Grand Opening Announcement/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /Understanding Seasonal Allergies/i })).toBeVisible();
+
+    await expect(page.locator('text=SEO Blog Post').first()).toBeVisible();
+    await expect(page.locator('text=Business Post').first()).toBeVisible();
+    await expect(page.locator('text=Health Guide').first()).toBeVisible();
+  });
+
   test('should display privacy section with three cards', async ({ page }) => {
     const heading = page.getByRole('heading', { name: /Your Writing Stays Private/i });
     await heading.scrollIntoViewIfNeeded();
@@ -172,6 +188,7 @@ test.describe('Homepage - Friendly Neighbor Light Theme', () => {
       /Write Articles With AI/i,
       /A Writing Helper That Runs on Your Computer/i,
       /Three Simple Steps/i,
+      /See What WorkInPrivate Creates/i,
       /Simple, Private, and Affordable/i,
       /Seven Types of Content/i,
       /Your Writing Stays Private/i,
