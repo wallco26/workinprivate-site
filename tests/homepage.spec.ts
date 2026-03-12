@@ -111,7 +111,7 @@ test.describe('Homepage - Friendly Neighbor Light Theme', () => {
   });
 
   test('should display pricing section with $29 price', async ({ page }) => {
-    await page.getByRole('heading', { name: /One Simple Price/i }).scrollIntoViewIfNeeded();
+    await page.getByRole('heading', { name: /Pay Once\. Keep It Forever/i }).scrollIntoViewIfNeeded();
     const price = page.locator('text=$29').first();
     await expect(price).toBeVisible();
   });
@@ -225,7 +225,7 @@ test.describe('Homepage - Friendly Neighbor Light Theme', () => {
       /Seven Types of Content/i,
       /Your Writing Stays Private/i,
       /What You'd Spend on ChatGPT/i,
-      /One Simple Price/i,
+      /Pay Once\. Keep It Forever/i,
       /You Might Be Wondering/i,
       /Ready to Give AI Writing a Try/i,
     ];
