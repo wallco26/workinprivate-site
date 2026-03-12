@@ -72,7 +72,7 @@ test.describe('Accessibility & Responsiveness', () => {
   test('should have focusable interactive elements', async ({ page }) => {
     await page.goto('/');
 
-    const tryButton = page.getByRole('link', { name: /Try It.*\$29/i }).first();
+    const tryButton = page.getByRole('link', { name: /Start Writing Today.*\$29/i }).first();
 
     // Should be focusable
     await tryButton.focus();
