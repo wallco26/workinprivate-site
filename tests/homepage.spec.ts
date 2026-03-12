@@ -64,7 +64,7 @@ test.describe('Homepage - Friendly Neighbor Light Theme', () => {
   });
 
   test('should display blue CTA button in hero', async ({ page }) => {
-    const buyButton = page.getByRole('link', { name: /Try It.*\$29/i }).first();
+    const buyButton = page.getByRole('link', { name: /Start Writing Today.*\$29/i }).first();
     await expect(buyButton).toBeVisible();
     const bgColor = await buyButton.evaluate(el => getComputedStyle(el).backgroundColor);
     // Sky blue: rgb(75, 139, 212)
@@ -152,7 +152,7 @@ test.describe('Homepage - Friendly Neighbor Light Theme', () => {
   });
 
   test('should have working pricing link from hero', async ({ page }) => {
-    const buyButton = page.getByRole('link', { name: /Try It.*\$29/i }).first();
+    const buyButton = page.getByRole('link', { name: /Start Writing Today.*\$29/i }).first();
     const href = await buyButton.getAttribute('href');
     expect(href).toBe('/pricing');
   });
