@@ -117,13 +117,16 @@ test.describe('Homepage - Friendly Neighbor Light Theme', () => {
   });
 
   test('should display FAQ section with at least 3 items', async ({ page }) => {
-    await page.getByRole('heading', { name: /You Might Be Wondering/i }).scrollIntoViewIfNeeded();
+    const faqSection = page.locator('section').filter({
+      has: page.getByRole('heading', { name: /You Might Be Wondering/i }),
+    });
+    await faqSection.scrollIntoViewIfNeeded();
 
-    const faqItems = page.locator('details');
+    const faqItems = faqSection.locator('details');
     const count = await faqItems.count();
     expect(count).toBeGreaterThanOrEqual(3);
 
-    const faqItem = page.locator('text=Do I need to be good with computers').first();
+    const faqItem = faqSection.locator('summary', { hasText: /Do I need to be good with computers/i }).first();
     await expect(faqItem).toBeVisible();
   });
 
@@ -188,16 +191,28 @@ test.describe('Homepage - Friendly Neighbor Light Theme', () => {
     await expect(page.getByRole('heading', { name: /No Accounts or Sign-ups/i })).toBeVisible();
   });
 
-  test('should display cost comparison section', async ({ page }) => {
+  test('should display cost comparison section with savings content', async ({ page }) => {
     const heading = page.getByRole('heading', { name: /What You'd Spend on ChatGPT/i });
     await heading.scrollIntoViewIfNeeded();
     await expect(heading).toBeVisible();
+
+    // Verify the comparison table content rendered (not just the heading)
+    await expect(page.locator('text=Save $691').first()).toBeVisible();
+    await expect(page.locator('text=3-year total').first()).toBeVisible();
   });
 
   test('hero CTA buttons should not use monospace font', async ({ page }) => {
-    const buyButton = page.getByRole('link', { name: /Start Writing Today.*\$29/i }).first();
-    const className = await buyButton.getAttribute('class');
-    expect(className).not.toContain('font-mono');
+    const ctaLinks = [
+      page.getByRole('link', { name: /Start Writing Today.*\$29/i }).first(),
+      page.getByRole('link', { name: 'Get Started' }).first(),
+    ];
+
+    for (const btn of ctaLinks) {
+      await expect(btn).toBeVisible();
+      const fontFamily = await btn.evaluate(el => getComputedStyle(el).fontFamily);
+      expect(fontFamily.toLowerCase()).not.toContain('monospace');
+      expect(fontFamily.toLowerCase()).not.toContain('courier');
+    }
   });
 
   test('should have all main sections visible', async ({ page }) => {
