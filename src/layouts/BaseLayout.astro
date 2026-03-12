@@ -47,13 +47,13 @@ const isPreview = import.meta.env.PUBLIC_SITE_PREVIEW !== 'false';
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
 
-    <!-- Google Fonts - Inter & JetBrains Mono -->
+    <!-- Google Fonts - Source Sans 3 & Merriweather -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
   </head>
-  <body class="min-h-screen flex flex-col font-sans antialiased bg-[#0a0e17] text-gray-200">
+  <body class="min-h-screen flex flex-col font-sans antialiased bg-white text-fn-text" style="font-size: 18px; line-height: 1.8;">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-green-600 focus:text-black focus:rounded-lg focus:text-sm focus:font-semibold">
       Skip to main content
     </a>
@@ -122,18 +122,18 @@ const isPreview = import.meta.env.PUBLIC_SITE_PREVIEW !== 'false';
 
           const notification = document.createElement('div');
           notification.innerHTML = `
-            <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; background: #1e293b; border: 3px solid #22c55e; border-radius: 12px; padding: 24px 32px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); max-width: 90%; width: 400px;">
-              <div style="color: #22c55e; font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: bold; margin-bottom: 12px; text-align: center;">
-                ⚠️ SITE PREVIEW
+            <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; background: #FFFFFF; border: 3px solid #4B8BD4; border-radius: 16px; padding: 28px 32px; box-shadow: 0 8px 40px rgba(75,139,212,0.2); max-width: 90%; width: 400px;">
+              <div style="color: #1B3A5C; font-family: 'Source Sans 3', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 12px; text-align: center;">
+                Site Preview
               </div>
-              <div style="color: #e2e8f0; font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.6; text-align: center; margin-bottom: 16px;">
-                This site is not yet live. All links are disabled during preview. Check back soon for the official launch!
+              <div style="color: #5A6474; font-family: 'Source Sans 3', sans-serif; font-size: 15px; line-height: 1.6; text-align: center; margin-bottom: 20px;">
+                This site is not yet live. All links are disabled during preview. Check back soon!
               </div>
-              <button onclick="this.parentElement.remove(); notificationShown = false;" style="width: 100%; background: #22c55e; color: #000; font-family: 'JetBrains Mono', monospace; font-weight: bold; padding: 10px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px;">
+              <button onclick="this.parentElement.remove(); notificationShown = false;" style="width: 100%; background: #4B8BD4; color: #fff; font-family: 'Source Sans 3', sans-serif; font-weight: 700; padding: 12px; border: none; border-radius: 10px; cursor: pointer; font-size: 15px;">
                 Got It
               </button>
             </div>
-            <div onclick="this.parentElement.remove(); notificationShown = false;" style="position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 9998; backdrop-filter: blur(4px);"></div>
+            <div onclick="this.parentElement.remove(); notificationShown = false;" style="position: fixed; inset: 0; background: rgba(27,58,92,0.4); z-index: 9998; backdrop-filter: blur(4px);"></div>
           `;
           document.body.appendChild(notification);
 
@@ -152,31 +152,32 @@ const isPreview = import.meta.env.PUBLIC_SITE_PREVIEW !== 'false';
 
 <style is:global>
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
 
-  /* Terminal-inspired dark theme scrollbar */
+  /* Light theme scrollbar */
   ::-webkit-scrollbar {
     width: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #0a0e17;
+    background: #F7F9FC;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1e293b;
+    background: #D4E3F5;
     border-radius: 5px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #334155;
+    background: #4B8BD4;
   }
 
-  /* Terminal green text selection */
+  /* Sky blue text selection */
   ::selection {
-    background-color: #22c55e;
-    color: #000;
+    background-color: #4B8BD4;
+    color: #fff;
   }
   ::-moz-selection {
-    background-color: #22c55e;
-    color: #000;
+    background-color: #4B8BD4;
+    color: #fff;
   }
 </style>

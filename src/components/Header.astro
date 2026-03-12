@@ -2,31 +2,43 @@
 // Header component with navigation
 ---
 
-<header class="sticky top-0 z-50 bg-[#0a0e17]/95 backdrop-blur border-b border-gray-800">
+<header class="sticky top-0 z-50 bg-white border-b-2 border-[#EDF2FA]">
   <nav aria-label="Main" class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <!-- Logo / Brand -->
       <div class="flex-shrink-0">
-        <a href="/" class="flex items-center text-green-400 font-mono">
-          <span class="text-xl font-bold">WorkInPrivate</span>
+        <a href="/" class="flex items-center gap-2.5 text-[#1B3A5C] font-serif font-bold text-xl no-underline" style="text-decoration: none;">
+          <div class="w-9 h-9 bg-[#4B8BD4] rounded-[10px] flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+              <polyline points="14,2 14,8 20,8"/>
+            </svg>
+          </div>
+          WorkInPrivate
         </a>
       </div>
 
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center">
-        <div class="flex items-baseline space-x-8 mr-6">
-          <a href="/" class="text-gray-400 hover:text-green-400 px-3 py-2 text-sm font-medium transition-colors">
-            Home
-          </a>
-          <a href="/pricing" class="text-gray-400 hover:text-green-400 px-3 py-2 text-sm font-medium transition-colors">
-            Pricing
-          </a>
-          <a href="/faq" class="text-gray-400 hover:text-green-400 px-3 py-2 text-sm font-medium transition-colors">
-            FAQ
-          </a>
-        </div>
-        <a href="/pricing" class="inline-flex items-center px-4 py-2 text-sm font-bold rounded-lg text-black bg-green-600 hover:bg-green-500 transition-colors shadow-sm font-mono">
-          Buy Now
+        <ul class="flex items-center gap-7 list-none mr-6">
+          <li>
+            <a href="/" class="text-[#5A6474] hover:text-[#4B8BD4] font-semibold text-base transition-colors no-underline" style="text-decoration: none;">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="/pricing" class="text-[#5A6474] hover:text-[#4B8BD4] font-semibold text-base transition-colors no-underline" style="text-decoration: none;">
+              Pricing
+            </a>
+          </li>
+          <li>
+            <a href="/faq" class="text-[#5A6474] hover:text-[#4B8BD4] font-semibold text-base transition-colors no-underline" style="text-decoration: none;">
+              FAQ
+            </a>
+          </li>
+        </ul>
+        <a href="/pricing" class="inline-flex items-center px-5 py-2.5 text-sm font-bold rounded-[10px] text-white bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-colors shadow-sm no-underline" style="text-decoration: none; box-shadow: 0 2px 8px rgba(75,139,212,0.3);">
+          Get Started
         </a>
       </div>
 
@@ -34,7 +46,7 @@
       <div class="md:hidden">
         <button
           type="button"
-          class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-green-400 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500"
+          class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-[#5A6474] hover:text-[#4B8BD4] hover:bg-[#EDF2FA] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#4B8BD4]"
           aria-expanded="false"
           aria-label="Main menu"
         >
@@ -46,19 +58,19 @@
     </div>
 
     <!-- Mobile Navigation Menu -->
-    <div class="mobile-menu hidden md:hidden pb-3 pt-2 bg-[#0a0e17]">
+    <div class="mobile-menu hidden md:hidden pb-3 pt-2 bg-white border-t border-[#EDF2FA]">
       <div class="flex flex-col space-y-1">
-        <a href="/" class="text-gray-400 hover:text-green-400 hover:bg-gray-900 block px-3 py-2 rounded-md text-base font-medium">
+        <a href="/" class="text-[#5A6474] hover:text-[#4B8BD4] hover:bg-[#EDF2FA] block px-3 py-2 rounded-md text-base font-semibold no-underline" style="text-decoration: none;">
           Home
         </a>
-        <a href="/pricing" class="text-gray-400 hover:text-green-400 hover:bg-gray-900 block px-3 py-2 rounded-md text-base font-medium">
+        <a href="/pricing" class="text-[#5A6474] hover:text-[#4B8BD4] hover:bg-[#EDF2FA] block px-3 py-2 rounded-md text-base font-semibold no-underline" style="text-decoration: none;">
           Pricing
         </a>
-        <a href="/faq" class="text-gray-400 hover:text-green-400 hover:bg-gray-900 block px-3 py-2 rounded-md text-base font-medium">
+        <a href="/faq" class="text-[#5A6474] hover:text-[#4B8BD4] hover:bg-[#EDF2FA] block px-3 py-2 rounded-md text-base font-semibold no-underline" style="text-decoration: none;">
           FAQ
         </a>
-        <a href="/pricing" class="mt-2 text-center text-black bg-green-600 hover:bg-green-500 block px-3 py-2.5 rounded-md text-base font-bold transition-colors font-mono">
-          Buy Now &mdash; $29
+        <a href="/pricing" class="mt-2 text-center text-white bg-[#4B8BD4] hover:bg-[#2E6BB5] block px-3 py-2.5 rounded-[10px] text-base font-bold transition-colors no-underline" style="text-decoration: none;">
+          Get Started
         </a>
       </div>
     </div>
