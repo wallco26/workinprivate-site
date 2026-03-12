@@ -35,7 +35,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <!-- Text content -->
         <div>
-          <div class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#F0FFF4] text-[#38A169] text-sm font-bold mb-5 border border-[#C6F6D5]" style="animation: fadeUp 0.5s ease both;">
+          <div class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#F0FFF4] text-[#38A169] text-sm font-bold mb-5 border border-[#C6F6D5]" style="animation: fadeUp 0.5s ease both;">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
             Easy to use — no tech experience needed
           </div>
@@ -361,5 +361,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </a>
     </div>
   </section>
+
+<style>
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
 
 </BaseLayout>
