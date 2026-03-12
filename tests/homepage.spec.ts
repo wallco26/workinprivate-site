@@ -116,8 +116,13 @@ test.describe('Homepage - Friendly Neighbor Light Theme', () => {
     await expect(price).toBeVisible();
   });
 
-  test('should display FAQ section', async ({ page }) => {
+  test('should display FAQ section with at least 3 items', async ({ page }) => {
     await page.getByRole('heading', { name: /You Might Be Wondering/i }).scrollIntoViewIfNeeded();
+
+    const faqItems = page.locator('details');
+    const count = await faqItems.count();
+    expect(count).toBeGreaterThanOrEqual(3);
+
     const faqItem = page.locator('text=Do I need to be good with computers').first();
     await expect(faqItem).toBeVisible();
   });
@@ -183,6 +188,18 @@ test.describe('Homepage - Friendly Neighbor Light Theme', () => {
     await expect(page.getByRole('heading', { name: /No Accounts or Sign-ups/i })).toBeVisible();
   });
 
+  test('should display cost comparison section', async ({ page }) => {
+    const heading = page.getByRole('heading', { name: /What You'd Spend on ChatGPT/i });
+    await heading.scrollIntoViewIfNeeded();
+    await expect(heading).toBeVisible();
+  });
+
+  test('hero CTA buttons should not use monospace font', async ({ page }) => {
+    const buyButton = page.getByRole('link', { name: /Start Writing Today.*\$29/i }).first();
+    const className = await buyButton.getAttribute('class');
+    expect(className).not.toContain('font-mono');
+  });
+
   test('should have all main sections visible', async ({ page }) => {
     const sections = [
       /Write Articles With AI/i,
@@ -192,6 +209,7 @@ test.describe('Homepage - Friendly Neighbor Light Theme', () => {
       /Simple, Private, and Affordable/i,
       /Seven Types of Content/i,
       /Your Writing Stays Private/i,
+      /What You'd Spend on ChatGPT/i,
       /One Simple Price/i,
       /You Might Be Wondering/i,
       /Ready to Give AI Writing a Try/i,
