@@ -2,29 +2,29 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="WorkInPrivate — Explore AI Writing From the Comfort of Home" description="WorkInPrivate is a simple program that helps you write blog posts, articles, and guides using artificial intelligence. It runs on your own computer, so your writing stays completely private.">
+<BaseLayout title="WorkInPrivate — Your Private AI Chatbot" description="WorkInPrivate is a private AI chatbot that runs 100% on your computer. No cloud, no accounts, no data leaves your machine. Chat, analyze files, and get AI help — all locally.">
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "WorkInPrivate",
-    "description": "A simple AI writing program that runs on your own computer. No monthly fees, no cloud, complete privacy.",
+    "description": "A private AI chatbot that runs entirely on your computer. No cloud, no accounts, no data leaves your machine.",
     "url": "https://www.workinprivate.com",
-    "applicationCategory": "BusinessApplication",
+    "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "Windows, macOS, Linux",
     "offers": {
       "@type": "Offer",
-      "price": "29.00",
+      "price": "39.00",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock"
     },
     "featureList": [
       "Runs 100% on your computer",
-      "7 specialized writing modules",
+      "Chat with AI like ChatGPT — but private",
+      "Analyze documents and images locally",
       "One-time purchase — no subscription",
-      "No internet required after setup",
-      "Complete privacy — your writing never leaves your computer",
+      "Works offline after setup",
       "Works on Windows, macOS, and Linux"
     ]
   })} />
@@ -36,54 +36,64 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <!-- Text content -->
         <div>
           <div class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#F0FFF4] text-[#38A169] text-sm font-bold mb-5 border border-[#C6F6D5]" style="animation: fadeUp 0.5s ease both;">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-            Easy to use — no tech experience needed
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            100% private — nothing leaves your computer
           </div>
           <h1 class="font-serif text-4xl sm:text-5xl font-bold text-[#1B3A5C] mb-5 leading-tight" style="animation: fadeUp 0.5s ease 0.1s both;">
-            Write Articles With AI,<br /><span class="text-[#4B8BD4]">Right From Your Computer</span>
+            Your Private AI Chatbot.<br /><span class="text-[#4B8BD4]">No Cloud. No Accounts.</span>
           </h1>
           <p class="text-lg text-[#5A6474] mb-8 max-w-lg leading-relaxed" style="animation: fadeUp 0.5s ease 0.2s both;">
-            WorkInPrivate is a simple program that helps you write blog posts, articles, and guides using artificial intelligence. It runs on your own computer — your writing never leaves your machine.
+            WorkInPrivate is a ChatGPT-like AI that runs entirely on your computer. Chat, write, analyze documents, and get AI help — without any of your data ever leaving your machine.
           </p>
           <div class="flex flex-wrap gap-4 mb-7" style="animation: fadeUp 0.5s ease 0.3s both;">
             <a href="/pricing" class="inline-flex items-center gap-2.5 px-8 py-4 rounded-[10px] text-white font-bold text-lg bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none; box-shadow: 0 2px 8px rgba(75,139,212,0.3);">
-              Start Writing Today — From $29
+              Buy Now — $39
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
             <a href="#how-it-works" class="inline-flex items-center gap-2 px-8 py-4 rounded-[10px] text-[#2E6BB5] font-bold text-lg bg-[#EDF2FA] hover:bg-[#D4E3F5] border-2 border-[#D4E3F5] hover:border-[#4B8BD4] transition-all no-underline" style="text-decoration: none;">
-              Learn How It Works
+              See How It Works
             </a>
           </div>
           <div class="flex items-center gap-2.5 bg-[#FEFCBF] text-yellow-900 px-4 py-3 rounded-lg border border-[#ECC94B] text-sm font-semibold" style="animation: fadeUp 0.5s ease 0.4s both;">
             <svg class="w-5 h-5 text-[#D69E2E] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <strong>30-day money-back guarantee — if you don't love it, get a full refund. No hassle.</strong>
+            <strong>30-day money-back guarantee — no questions asked.</strong>
           </div>
         </div>
-        <!-- Hero illustration -->
+        <!-- Chat UI Preview -->
         <div class="max-w-md mx-auto w-full">
-          <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] text-center mb-3">Example output:</div>
-          <div class="bg-[#EDF2FA] rounded-2xl p-10 border-2 border-[#D4E3F5] text-center">
-            <div class="w-24 h-24 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 border border-[#E2E8F0]" style="box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
-              <svg class="w-12 h-12 text-[#4B8BD4]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-                <polyline points="14,2 14,8 20,8"/>
-                <line x1="16" y1="13" x2="8" y2="13"/>
-                <line x1="16" y1="17" x2="8" y2="17"/>
-                <line x1="10" y1="9" x2="8" y2="9"/>
-              </svg>
+          <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] text-center mb-3">Preview:</div>
+          <div class="bg-white rounded-2xl border-2 border-[#D4E3F5] overflow-hidden" style="box-shadow: 0 8px 32px rgba(27,58,92,0.10);">
+            <!-- Chat header -->
+            <div class="flex items-center gap-2 px-4 py-3 bg-[#F7F9FC] border-b border-[#E2E8F0]">
+              <div class="w-3 h-3 rounded-full bg-[#38A169]"></div>
+              <span class="text-xs font-bold text-[#1B3A5C]">WorkInPrivate</span>
+              <span class="text-xs text-[#8A9AB5] ml-auto">100% local</span>
             </div>
-            <div class="font-serif font-bold text-[#1B3A5C] text-lg mb-2">Your Article Is Ready!</div>
-            <div class="text-[#5A6474] text-base mb-5">"Best Garden Tips for Spring 2026"</div>
-            <div class="text-left max-w-[280px] mx-auto space-y-2 mb-5">
-              <div class="h-2.5 rounded-full bg-[#D4E3F5] opacity-70" style="width: 90%;"></div>
-              <div class="h-2.5 rounded-full bg-[#D4E3F5] opacity-70" style="width: 75%;"></div>
-              <div class="h-2.5 rounded-full bg-[#D4E3F5] opacity-70" style="width: 85%;"></div>
-              <div class="h-2.5 rounded-full bg-[#D4E3F5] opacity-70" style="width: 60%;"></div>
-              <div class="h-2.5 rounded-full bg-[#D4E3F5] opacity-70" style="width: 80%;"></div>
+            <!-- Chat messages -->
+            <div class="p-4 space-y-4">
+              <div class="flex gap-3">
+                <div class="w-7 h-7 rounded-full bg-[#4B8BD4] flex items-center justify-center text-white text-[10px] font-bold flex-shrink-0">You</div>
+                <div class="bg-[#F7F9FC] rounded-xl px-3 py-2 text-sm text-[#1B3A5C]">Help me draft a cover letter for a marketing role</div>
+              </div>
+              <div class="flex gap-3">
+                <div class="w-7 h-7 rounded-full bg-[#EDF2FA] flex items-center justify-center text-[#4B8BD4] text-[10px] font-bold flex-shrink-0">AI</div>
+                <div class="bg-[#EDF2FA] rounded-xl px-3 py-2 text-sm text-[#1B3A5C]">
+                  <p class="mb-2">I'd be happy to help! Here's a professional cover letter draft:</p>
+                  <p class="text-[#5A6474] text-xs">Dear Hiring Manager,</p>
+                  <p class="text-[#5A6474] text-xs mt-1">I'm excited to apply for the Marketing Manager position at...</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <div class="w-7 h-7 rounded-full bg-[#4B8BD4] flex items-center justify-center text-white text-[10px] font-bold flex-shrink-0">You</div>
+                <div class="bg-[#F7F9FC] rounded-xl px-3 py-2 text-sm text-[#1B3A5C]">Make it more enthusiastic and mention my 5 years of experience</div>
+              </div>
             </div>
-            <div class="flex items-center justify-center gap-2 text-[#38A169] font-semibold text-sm">
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-              2,100 words &bull; Optimized for Google &bull; Ready to publish
+            <!-- Input bar -->
+            <div class="flex items-center gap-2 px-4 py-3 border-t border-[#E2E8F0]">
+              <div class="flex-1 h-8 bg-[#F7F9FC] rounded-lg border border-[#E2E8F0]"></div>
+              <div class="w-8 h-8 rounded-lg bg-[#4B8BD4] flex items-center justify-center">
+                <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+              </div>
             </div>
           </div>
         </div>
@@ -96,9 +106,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto text-center">
         <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">What Is This?</div>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-5 leading-tight">A Writing Helper That Runs on Your Computer</h2>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-5 leading-tight">Like ChatGPT, But On Your Computer</h2>
         <p class="text-lg text-[#5A6474] leading-relaxed">
-          You've probably heard about ChatGPT and AI writing tools. They're powerful, but they cost $20 or more every month and send your writing to remote servers. WorkInPrivate gives you the same writing power, but it runs right on your own computer. You pay once (starting at $29), and it's yours forever. No monthly bills. No one reading your writing. It's like having a helpful writing assistant that lives on your desktop.
+          You've probably used ChatGPT or Claude. They're great, but they cost $20+ per month and send everything you type to the cloud. WorkInPrivate gives you the same chat experience, but everything runs right on your computer. Pay once ($39), and it's yours forever. No monthly bills. No data collection. No one reading your conversations.
         </p>
       </div>
     </div>
@@ -110,121 +120,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="text-center mb-4">
         <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">How It Works</div>
         <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-4 leading-tight">Three Simple Steps</h2>
-        <p class="text-lg text-[#5A6474] max-w-lg mx-auto">No complicated setup. No technical knowledge required. If you can browse the internet, you can use WorkInPrivate.</p>
+        <p class="text-lg text-[#5A6474] max-w-lg mx-auto">No complicated setup. No technical knowledge required. If you can use a chat app, you can use WorkInPrivate.</p>
       </div>
       <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
         <!-- Step 1 -->
-        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-2xl p-9 text-center hover:border-[#D4E3F5] transition-all" style="box-shadow: none;">
+        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-2xl p-9 text-center hover:border-[#D4E3F5] transition-all">
           <div class="w-16 h-16 rounded-full bg-[#EDF2FA] border-2 border-[#D4E3F5] flex items-center justify-center mx-auto mb-5">
             <svg class="w-7 h-7 text-[#4B8BD4]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           </div>
           <div class="text-xs font-bold uppercase tracking-wider text-[#4B8BD4] mb-2.5">Step 1</div>
-          <h3 class="font-serif text-lg font-bold text-[#1B3A5C] mb-3">Download the Program</h3>
-          <p class="text-[#5A6474] text-base leading-relaxed">Click "Download" and save it to your computer. It works on Windows, Mac, and Linux. When you open it for the first time, it walks you through a quick one-time setup — the program does the hard parts for you.</p>
+          <h3 class="font-serif text-lg font-bold text-[#1B3A5C] mb-3">Download & Open</h3>
+          <p class="text-[#5A6474] text-base leading-relaxed">Download WorkInPrivate and double-click to open. A friendly setup wizard walks you through choosing an AI model that works best for your computer.</p>
         </div>
         <!-- Step 2 -->
         <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-2xl p-9 text-center hover:border-[#D4E3F5] transition-all">
           <div class="w-16 h-16 rounded-full bg-[#EDF2FA] border-2 border-[#D4E3F5] flex items-center justify-center mx-auto mb-5">
-            <svg class="w-7 h-7 text-[#4B8BD4]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            <svg class="w-7 h-7 text-[#4B8BD4]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
           </div>
           <div class="text-xs font-bold uppercase tracking-wider text-[#4B8BD4] mb-2.5">Step 2</div>
-          <h3 class="font-serif text-lg font-bold text-[#1B3A5C] mb-3">Type Your Topic</h3>
-          <p class="text-[#5A6474] text-base leading-relaxed">Tell the program what you want to write about. For example: "gardening tips for beginners" or "best recipes for Thanksgiving." Just plain English.</p>
+          <h3 class="font-serif text-lg font-bold text-[#1B3A5C] mb-3">Start Chatting</h3>
+          <p class="text-[#5A6474] text-base leading-relaxed">Type anything — ask questions, write emails, brainstorm ideas, analyze documents. Just like ChatGPT, but completely private.</p>
         </div>
         <!-- Step 3 -->
         <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-2xl p-9 text-center hover:border-[#D4E3F5] transition-all">
           <div class="w-16 h-16 rounded-full bg-[#EDF2FA] border-2 border-[#D4E3F5] flex items-center justify-center mx-auto mb-5">
-            <svg class="w-7 h-7 text-[#4B8BD4]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            <svg class="w-7 h-7 text-[#4B8BD4]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
           </div>
           <div class="text-xs font-bold uppercase tracking-wider text-[#4B8BD4] mb-2.5">Step 3</div>
-          <h3 class="font-serif text-lg font-bold text-[#1B3A5C] mb-3">Get Your Article</h3>
-          <p class="text-[#5A6474] text-base leading-relaxed">In a few minutes — or a bit longer on older computers — you'll have a complete, well-written article. Copy it into your blog, email, or document. Edit it if you like — it's all yours.</p>
+          <h3 class="font-serif text-lg font-bold text-[#1B3A5C] mb-3">Stay Private</h3>
+          <p class="text-[#5A6474] text-base leading-relaxed">Everything you type stays on your machine. No internet connection needed after setup. Your conversations are yours alone — forever.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Sample Output Section -->
-  <section id="sample-output" class="py-20 bg-white border-t-2 border-[#E2E8F0]">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">Real Examples</div>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-4 leading-tight">See What WorkInPrivate Creates</h2>
-        <p class="text-lg text-[#5A6474] max-w-lg mx-auto">Real examples generated by the app — not hand-crafted marketing copy.</p>
-      </div>
-      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Card 1: Blog Post -->
-        <div class="bg-white border-2 border-[#E2E8F0] rounded-2xl overflow-hidden hover:border-[#D4E3F5] transition-colors" style="box-shadow: 0 2px 12px rgba(27,58,92,0.06);">
-          <div class="p-6">
-            <div class="flex items-center gap-2 mb-3 flex-wrap">
-              <span class="text-[10px] font-bold uppercase tracking-wider bg-[#EDF2FA] text-[#4B8BD4] px-2.5 py-1 rounded-full">SEO Blog Post</span>
-              <span class="text-[10px] font-semibold text-[#8A9AB5]">1,847 words</span>
-            </div>
-            <h3 class="font-serif font-bold text-[#1B3A5C] text-base mb-3 leading-snug">10 Easy Container Garden Ideas for Small Spaces</h3>
-            <div class="relative overflow-hidden mb-4" style="height: 96px;">
-              <div class="text-[#5A6474] text-sm leading-relaxed">
-                <p>If you've always dreamed of growing your own herbs, vegetables, or flowers but don't have a backyard, container gardening is your answer. With just a few pots and some good soil, you can turn a balcony, patio, or even a sunny windowsill into a productive little garden.</p>
-                <p class="mt-2"><strong>1. Herb Garden Trio</strong></p>
-                <p class="mt-1">Start with the basics: basil, parsley, and chives. These three grow happily together in a single 12-inch pot and...</p>
-              </div>
-              <div class="absolute bottom-0 left-0 right-0 pointer-events-none" style="height: 48px; background: linear-gradient(to bottom, transparent, white);"></div>
-            </div>
-          </div>
-          <div class="px-6 py-3 bg-[#F7F9FC] border-t-2 border-[#E2E8F0]">
-            <span class="text-[#38A169] text-xs font-bold flex items-center gap-1.5">
-              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
-              Generated in ~3 min
-            </span>
-          </div>
-        </div>
-        <!-- Card 2: Small Business -->
-        <div class="bg-white border-2 border-[#E2E8F0] rounded-2xl overflow-hidden hover:border-[#D4E3F5] transition-colors" style="box-shadow: 0 2px 12px rgba(27,58,92,0.06);">
-          <div class="p-6">
-            <div class="flex items-center gap-2 mb-3 flex-wrap">
-              <span class="text-[10px] font-bold uppercase tracking-wider bg-[#F0FFF4] text-[#38A169] px-2.5 py-1 rounded-full">Business Post</span>
-              <span class="text-[10px] font-semibold text-[#8A9AB5]">892 words</span>
-            </div>
-            <h3 class="font-serif font-bold text-[#1B3A5C] text-base mb-3 leading-snug">Grand Opening Announcement for Your New Café</h3>
-            <div class="relative overflow-hidden mb-4" style="height: 96px;">
-              <div class="text-[#5A6474] text-sm leading-relaxed">
-                <p>Something exciting is coming to Maplewood. After months of planning, sourcing locally-roasted beans, and perfecting our signature pastry recipe, we are thrilled to announce the grand opening of The Corner Roast.</p>
-                <p class="mt-2">We believe a great café is more than coffee — it's a place where neighbors meet, ideas are born, and mornings get a little brighter...</p>
-              </div>
-              <div class="absolute bottom-0 left-0 right-0 pointer-events-none" style="height: 48px; background: linear-gradient(to bottom, transparent, white);"></div>
-            </div>
-          </div>
-          <div class="px-6 py-3 bg-[#F7F9FC] border-t-2 border-[#E2E8F0]">
-            <span class="text-[#38A169] text-xs font-bold flex items-center gap-1.5">
-              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
-              Generated in ~2 min
-            </span>
-          </div>
-        </div>
-        <!-- Card 3: Healthcare -->
-        <div class="bg-white border-2 border-[#E2E8F0] rounded-2xl overflow-hidden hover:border-[#D4E3F5] transition-colors" style="box-shadow: 0 2px 12px rgba(27,58,92,0.06);">
-          <div class="p-6">
-            <div class="flex items-center gap-2 mb-3 flex-wrap">
-              <span class="text-[10px] font-bold uppercase tracking-wider bg-[#FFF5F5] text-[#E53E3E] px-2.5 py-1 rounded-full">Health Guide</span>
-              <span class="text-[10px] font-semibold text-[#8A9AB5]">2,104 words</span>
-            </div>
-            <h3 class="font-serif font-bold text-[#1B3A5C] text-base mb-3 leading-snug">Understanding Seasonal Allergies: A Patient's Guide</h3>
-            <div class="relative overflow-hidden mb-4" style="height: 96px;">
-              <div class="text-[#5A6474] text-sm leading-relaxed">
-                <p>Every spring, millions of people experience the familiar misery of seasonal allergies — the sneezing, the itchy eyes, the congestion that makes it hard to enjoy the warm weather everyone else seems to love.</p>
-                <p class="mt-2">The good news is that understanding what's happening in your body can help you manage symptoms more effectively. Seasonal allergies, also known as...</p>
-              </div>
-              <div class="absolute bottom-0 left-0 right-0 pointer-events-none" style="height: 48px; background: linear-gradient(to bottom, transparent, white);"></div>
-            </div>
-          </div>
-          <div class="px-6 py-3 bg-[#F7F9FC] border-t-2 border-[#E2E8F0]">
-            <span class="text-[#38A169] text-xs font-bold flex items-center gap-1.5">
-              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
-              Generated in ~4 min
-            </span>
-          </div>
-        </div>
-      </div>
-      <p class="text-center text-[#8A9AB5] text-sm mt-8">Times vary depending on your computer's hardware. Older machines may take a bit longer.</p>
     </div>
   </section>
 
@@ -232,132 +158,128 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="py-20 bg-[#F7F9FC] border-t-2 border-[#E2E8F0]">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">Why People Choose WorkInPrivate</div>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] leading-tight">Simple, Private, and Affordable</h2>
+        <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">Features</div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] leading-tight">Everything You Need</h2>
       </div>
       <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <!-- Feature 1 -->
+        <div class="bg-white border-2 border-[#E2E8F0] rounded-xl p-7 flex gap-4 hover:border-[#D4E3F5] transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-[#EDF2FA] flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-[#4B8BD4]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-[#1B3A5C] text-base mb-1">Free-Form Chat</h3>
+            <p class="text-[#5A6474] text-sm leading-relaxed">Chat naturally with AI just like you would with ChatGPT. Ask questions, brainstorm, write, revise — anything you need.</p>
+          </div>
+        </div>
+        <div class="bg-white border-2 border-[#E2E8F0] rounded-xl p-7 flex gap-4 hover:border-[#D4E3F5] transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-[#F0FFF4] flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-[#38A169]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-[#1B3A5C] text-base mb-1">File Analysis</h3>
+            <p class="text-[#5A6474] text-sm leading-relaxed">Drop in PDFs, Word docs, images, and code files. The AI reads them and helps you understand, summarize, or work with the content.</p>
+          </div>
+        </div>
         <div class="bg-white border-2 border-[#E2E8F0] rounded-xl p-7 flex gap-4 hover:border-[#D4E3F5] transition-colors">
           <div class="w-12 h-12 rounded-xl bg-[#EDF2FA] flex items-center justify-center flex-shrink-0">
             <svg class="w-6 h-6 text-[#4B8BD4]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
           </div>
           <div>
-            <h3 class="font-bold text-[#1B3A5C] text-base mb-1">Completely Private</h3>
-            <p class="text-[#5A6474] text-sm leading-relaxed">Your writing never goes to the internet. It all stays right on your computer, where only you can see it.</p>
+            <h3 class="font-bold text-[#1B3A5C] text-base mb-1">Complete Privacy</h3>
+            <p class="text-[#5A6474] text-sm leading-relaxed">Everything runs locally. No cloud servers, no accounts, no telemetry. Your conversations never leave your computer.</p>
           </div>
         </div>
-        <!-- Feature 2 -->
         <div class="bg-white border-2 border-[#E2E8F0] rounded-xl p-7 flex gap-4 hover:border-[#D4E3F5] transition-colors">
           <div class="w-12 h-12 rounded-xl bg-[#F0FFF4] flex items-center justify-center flex-shrink-0">
             <svg class="w-6 h-6 text-[#38A169]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 000 4h4a2 2 0 010 4H8"/><line x1="12" y1="6" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="18"/></svg>
           </div>
           <div>
-            <h3 class="font-bold text-[#1B3A5C] text-base mb-1">No Monthly Bills</h3>
-            <p class="text-[#5A6474] text-sm leading-relaxed">Pay once and you own it forever. No subscription that keeps charging your credit card month after month.</p>
+            <h3 class="font-bold text-[#1B3A5C] text-base mb-1">One-Time Purchase</h3>
+            <p class="text-[#5A6474] text-sm leading-relaxed">$39 once. No subscription, no usage limits, no surprises on your credit card. Use it as much as you want, forever.</p>
           </div>
         </div>
-        <!-- Feature 3 -->
         <div class="bg-white border-2 border-[#E2E8F0] rounded-xl p-7 flex gap-4 hover:border-[#D4E3F5] transition-colors">
           <div class="w-12 h-12 rounded-xl bg-[#EDF2FA] flex items-center justify-center flex-shrink-0">
-            <svg class="w-6 h-6 text-[#4B8BD4]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <svg class="w-6 h-6 text-[#4B8BD4]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           </div>
           <div>
-            <h3 class="font-bold text-[#1B3A5C] text-base mb-1">Easy to Use</h3>
-            <p class="text-[#5A6474] text-sm leading-relaxed">No programming skills needed. Just open the program, type a topic, and get your article. It's designed to be straightforward.</p>
+            <h3 class="font-bold text-[#1B3A5C] text-base mb-1">Works Offline</h3>
+            <p class="text-[#5A6474] text-sm leading-relaxed">After the initial setup, no internet connection needed. Perfect for travel, restricted networks, or just peace of mind.</p>
           </div>
         </div>
-        <!-- Feature 4 -->
         <div class="bg-white border-2 border-[#E2E8F0] rounded-xl p-7 flex gap-4 hover:border-[#D4E3F5] transition-colors">
           <div class="w-12 h-12 rounded-xl bg-[#F0FFF4] flex items-center justify-center flex-shrink-0">
-            <svg class="w-6 h-6 text-[#38A169]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            <svg class="w-6 h-6 text-[#38A169]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
           <div>
-            <h3 class="font-bold text-[#1B3A5C] text-base mb-1">Works Without Internet</h3>
-            <p class="text-[#5A6474] text-sm leading-relaxed">Once it's set up, you don't need to be connected to the internet. Great if your connection is slow or unreliable.</p>
-          </div>
-        </div>
-        <!-- Feature 5 -->
-        <div class="bg-white border-2 border-[#E2E8F0] rounded-xl p-7 flex gap-4 hover:border-[#D4E3F5] transition-colors">
-          <div class="w-12 h-12 rounded-xl bg-[#EDF2FA] flex items-center justify-center flex-shrink-0">
-            <svg class="w-6 h-6 text-[#4B8BD4]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/></svg>
-          </div>
-          <div>
-            <h3 class="font-bold text-[#1B3A5C] text-base mb-1">No Account Needed</h3>
-            <p class="text-[#5A6474] text-sm leading-relaxed">No sign-ups. No passwords to remember. No email address required. Just download and start using it right away.</p>
-          </div>
-        </div>
-        <!-- Feature 6 -->
-        <div class="bg-white border-2 border-[#E2E8F0] rounded-xl p-7 flex gap-4 hover:border-[#D4E3F5] transition-colors">
-          <div class="w-12 h-12 rounded-xl bg-[#F0FFF4] flex items-center justify-center flex-shrink-0">
-            <svg class="w-6 h-6 text-[#38A169]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
-          </div>
-          <div>
-            <h3 class="font-bold text-[#1B3A5C] text-base mb-1">Helps People Find Your Writing</h3>
-            <p class="text-[#5A6474] text-sm leading-relaxed">Every article is written to appear in Google searches (that's called "SEO"). More people will discover your blog or website.</p>
+            <h3 class="font-bold text-[#1B3A5C] text-base mb-1">Smart Setup</h3>
+            <p class="text-[#5A6474] text-sm leading-relaxed">The app detects your hardware and recommends the best AI model for your computer. No technical knowledge needed.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Modules Section -->
-  <section class="py-20 bg-white">
+  <!-- Comparison Section -->
+  <section class="py-20 bg-white border-t-2 border-[#E2E8F0]">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">What It Can Write</div>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-4 leading-tight">Seven Types of Content</h2>
-        <p class="text-lg text-[#5A6474] max-w-lg mx-auto">Whatever you want to write about, there's probably a writing type for it. Each one is specially designed for its subject.</p>
+        <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">Compare</div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-4 leading-tight">Stop Paying Monthly</h2>
+        <p class="text-lg text-[#5A6474] max-w-lg mx-auto">See how WorkInPrivate compares to cloud-based AI assistants.</p>
       </div>
-      <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6 flex items-start gap-4 hover:border-[#D4E3F5] transition-colors">
-          <div class="w-12 h-12 rounded-xl bg-[#EDF2FA] flex items-center justify-center flex-shrink-0 text-2xl">✍️</div>
-          <div>
-            <h4 class="font-bold text-[#1B3A5C] text-base mb-1">Blog Writer</h4>
-            <p class="text-[#5A6474] text-sm leading-relaxed">Articles for your blog or website, written to attract readers from Google</p>
-          </div>
-        </div>
-        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6 flex items-start gap-4 hover:border-[#D4E3F5] transition-colors">
-          <div class="w-12 h-12 rounded-xl bg-[#EDF2FA] flex items-center justify-center flex-shrink-0 text-2xl">💼</div>
-          <div>
-            <h4 class="font-bold text-[#1B3A5C] text-base mb-1">Small Business</h4>
-            <p class="text-[#5A6474] text-sm leading-relaxed">Marketing descriptions and content for your business or side project</p>
-          </div>
-        </div>
-        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6 flex items-start gap-4 hover:border-[#D4E3F5] transition-colors">
-          <div class="w-12 h-12 rounded-xl bg-[#EDF2FA] flex items-center justify-center flex-shrink-0 text-2xl">💰</div>
-          <div>
-            <h4 class="font-bold text-[#1B3A5C] text-base mb-1">Finance</h4>
-            <p class="text-[#5A6474] text-sm leading-relaxed">Articles about money management, investing, and personal finance</p>
-          </div>
-        </div>
-        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6 flex items-start gap-4 hover:border-[#D4E3F5] transition-colors">
-          <div class="w-12 h-12 rounded-xl bg-[#EDF2FA] flex items-center justify-center flex-shrink-0 text-2xl">🩺</div>
-          <div>
-            <h4 class="font-bold text-[#1B3A5C] text-base mb-1">Healthcare</h4>
-            <p class="text-[#5A6474] text-sm leading-relaxed">Health and wellness articles, medical information guides</p>
-          </div>
-        </div>
-        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6 flex items-start gap-4 hover:border-[#D4E3F5] transition-colors">
-          <div class="w-12 h-12 rounded-xl bg-[#EDF2FA] flex items-center justify-center flex-shrink-0 text-2xl">📚</div>
-          <div>
-            <h4 class="font-bold text-[#1B3A5C] text-base mb-1">Academic</h4>
-            <p class="text-[#5A6474] text-sm leading-relaxed">Research-style writing for educational topics and in-depth guides</p>
-          </div>
-        </div>
-        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6 flex items-start gap-4 hover:border-[#D4E3F5] transition-colors">
-          <div class="w-12 h-12 rounded-xl bg-[#EDF2FA] flex items-center justify-center flex-shrink-0 text-2xl">⚖️</div>
-          <div>
-            <h4 class="font-bold text-[#1B3A5C] text-base mb-1">Legal</h4>
-            <p class="text-[#5A6474] text-sm leading-relaxed">Articles about legal topics, policies, and regulatory information</p>
-          </div>
-        </div>
-        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6 flex items-start gap-4 hover:border-[#D4E3F5] transition-colors sm:col-span-2 lg:col-span-1">
-          <div class="w-12 h-12 rounded-xl bg-[#EDF2FA] flex items-center justify-center flex-shrink-0 text-2xl">💻</div>
-          <div>
-            <h4 class="font-bold text-[#1B3A5C] text-base mb-1">Tech</h4>
-            <p class="text-[#5A6474] text-sm leading-relaxed">Technology guides, how-to articles, and software documentation</p>
-          </div>
-        </div>
+      <div class="max-w-3xl mx-auto overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b-2 border-[#E2E8F0]">
+              <th class="py-4 px-4 text-[#1B3A5C] font-bold"></th>
+              <th class="py-4 px-4 text-center">
+                <div class="font-bold text-[#4B8BD4]">WorkInPrivate</div>
+                <div class="text-xs text-[#5A6474]">$39 one-time</div>
+              </th>
+              <th class="py-4 px-4 text-center">
+                <div class="font-bold text-[#5A6474]">ChatGPT Plus</div>
+                <div class="text-xs text-[#8A9AB5]">$20/month</div>
+              </th>
+              <th class="py-4 px-4 text-center">
+                <div class="font-bold text-[#5A6474]">Claude Pro</div>
+                <div class="text-xs text-[#8A9AB5]">$20/month</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="text-sm">
+            <tr class="border-b border-[#E2E8F0]">
+              <td class="py-3 px-4 text-[#5A6474]">Data stays on your machine</td>
+              <td class="py-3 px-4 text-center text-[#38A169] font-bold">Yes</td>
+              <td class="py-3 px-4 text-center text-[#E53E3E]">No</td>
+              <td class="py-3 px-4 text-center text-[#E53E3E]">No</td>
+            </tr>
+            <tr class="border-b border-[#E2E8F0]">
+              <td class="py-3 px-4 text-[#5A6474]">Works offline</td>
+              <td class="py-3 px-4 text-center text-[#38A169] font-bold">Yes</td>
+              <td class="py-3 px-4 text-center text-[#E53E3E]">No</td>
+              <td class="py-3 px-4 text-center text-[#E53E3E]">No</td>
+            </tr>
+            <tr class="border-b border-[#E2E8F0]">
+              <td class="py-3 px-4 text-[#5A6474]">No account needed</td>
+              <td class="py-3 px-4 text-center text-[#38A169] font-bold">Yes</td>
+              <td class="py-3 px-4 text-center text-[#E53E3E]">No</td>
+              <td class="py-3 px-4 text-center text-[#E53E3E]">No</td>
+            </tr>
+            <tr class="border-b border-[#E2E8F0]">
+              <td class="py-3 px-4 text-[#5A6474]">Cost after 1 year</td>
+              <td class="py-3 px-4 text-center text-[#38A169] font-bold">$39</td>
+              <td class="py-3 px-4 text-center text-[#5A6474]">$240</td>
+              <td class="py-3 px-4 text-center text-[#5A6474]">$240</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 text-[#5A6474]">File analysis</td>
+              <td class="py-3 px-4 text-center text-[#38A169] font-bold">Yes</td>
+              <td class="py-3 px-4 text-center text-[#38A169]">Yes</td>
+              <td class="py-3 px-4 text-center text-[#38A169]">Yes</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -367,217 +289,55 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">Privacy</div>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-4 leading-tight">Your Writing Stays Private</h2>
-        <p class="text-[#5A6474] text-lg max-w-xl mx-auto">No one is watching over your shoulder — not during setup, not while you write, not ever.</p>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-4 leading-tight">Your Conversations Stay Private</h2>
+        <p class="text-[#5A6474] text-lg max-w-xl mx-auto">No one is watching — not during setup, not while you chat, not ever.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        <!-- Privacy Card 1 -->
         <div class="bg-white border-2 border-[#E2E8F0] rounded-2xl p-8 hover:border-[#D4E3F5] transition-colors">
           <div class="w-15 h-15 rounded-full bg-[#EDF2FA] flex items-center justify-center mb-5" style="width:60px;height:60px;">
             <svg class="w-7 h-7 text-[#4B8BD4]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
           <h3 class="font-bold text-[#1B3A5C] text-lg mb-2">Stays on Your Computer</h3>
-          <p class="text-[#5A6474] text-base leading-relaxed">Everything happens right here on your machine. Your writing is never sent anywhere else.</p>
+          <p class="text-[#5A6474] text-sm leading-relaxed">The AI runs directly on your hardware. Your conversations and files never leave your machine — there's no server to send them to.</p>
         </div>
-        <!-- Privacy Card 2 -->
         <div class="bg-white border-2 border-[#E2E8F0] rounded-2xl p-8 hover:border-[#D4E3F5] transition-colors">
           <div class="w-15 h-15 rounded-full bg-[#F0FFF4] flex items-center justify-center mb-5" style="width:60px;height:60px;">
-            <svg class="w-7 h-7 text-[#38A169]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+            <svg class="w-7 h-7 text-[#38A169]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
           </div>
-          <h3 class="font-bold text-[#1B3A5C] text-lg mb-2">No One Can See What You Write</h3>
-          <p class="text-[#5A6474] text-base leading-relaxed">No company collects your work, no algorithm reads your drafts, and no ads follow you around based on what you write.</p>
+          <h3 class="font-bold text-[#1B3A5C] text-lg mb-2">No Data Collection</h3>
+          <p class="text-[#5A6474] text-sm leading-relaxed">We don't collect telemetry, analytics, or usage data. The only network call the app makes is an optional update check.</p>
         </div>
-        <!-- Privacy Card 3 -->
         <div class="bg-white border-2 border-[#E2E8F0] rounded-2xl p-8 hover:border-[#D4E3F5] transition-colors">
           <div class="w-15 h-15 rounded-full bg-[#EDF2FA] flex items-center justify-center mb-5" style="width:60px;height:60px;">
-            <svg class="w-7 h-7 text-[#4B8BD4]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/><line x1="18" y1="8" x2="23" y2="13"/><line x1="23" y1="8" x2="18" y2="13"/></svg>
+            <svg class="w-7 h-7 text-[#4B8BD4]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
           </div>
-          <h3 class="font-bold text-[#1B3A5C] text-lg mb-2">No Accounts or Sign-ups</h3>
-          <p class="text-[#5A6474] text-base leading-relaxed">No email, no password, no tracking. Just download and start writing.</p>
+          <h3 class="font-bold text-[#1B3A5C] text-lg mb-2">No Account Required</h3>
+          <p class="text-[#5A6474] text-sm leading-relaxed">No sign-ups. No passwords. No email address. Download, open, and start chatting immediately.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Cost Comparison Section -->
-  <section class="py-20 bg-[#F7F9FC] border-t-2 border-[#E2E8F0]">
+  <!-- CTA Section -->
+  <section class="py-20 bg-white border-t-2 border-[#E2E8F0]">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">How the Costs Compare</div>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-4 leading-tight">Here's What You'd Spend on ChatGPT in a Year</h2>
-        <p class="text-lg text-[#5A6474] max-w-lg mx-auto">ChatGPT costs $20 every single month — that's $240 a year, and it never stops. WorkInPrivate starts at just $29 — a one-time payment, and it's yours forever.</p>
-      </div>
-
-      <!-- Comparison cards -->
-      <div class="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
-        <!-- ChatGPT card -->
-        <div class="bg-white border-2 border-[#E2E8F0] rounded-2xl p-8">
-          <div class="text-center mb-6">
-            <div class="text-sm font-bold text-[#5A6474] uppercase tracking-wider mb-1">ChatGPT Plus</div>
-            <div class="font-serif font-bold text-[#8A9AB5] mb-1" style="font-size: 3.5rem; line-height: 1;"><sup style="font-size: 1.4rem; vertical-align: super;">$</sup>20</div>
-            <div class="text-[#8A9AB5] font-semibold text-base">per month, forever</div>
-          </div>
-          <ul class="list-none p-0 m-0 space-y-0">
-            {[
-              ['Year 1 cost', '$240'],
-              ['Year 2 cost', '$240 again'],
-              ['3-year total', '$720'],
-              ['Privacy', 'Cloud servers'],
-              ['Usage limits', 'Limited messages/month'],
-              ['Internet required', 'Always'],
-            ].map(([label, value]) => (
-              <li class="flex items-center justify-between py-2.5 border-b border-[#F0F4F8] last:border-0">
-                <span class="text-[#5A6474] text-base">{label}</span>
-                <span class="font-semibold text-[#8A9AB5] text-sm flex items-center gap-1.5">
-                  <svg class="w-4 h-4 text-[#E53E3E] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
-                  {value}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <!-- WorkInPrivate card -->
-        <div class="bg-white border-[3px] border-[#4B8BD4] rounded-2xl p-8 relative" style="box-shadow: 0 8px 32px rgba(75,139,212,0.12);">
-          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#38A169] text-white text-xs font-bold uppercase tracking-widest px-4 py-1 rounded-full whitespace-nowrap">Pay Once, Use Forever</div>
-          <div class="text-center mb-6 mt-2">
-            <div class="text-sm font-bold text-[#4B8BD4] uppercase tracking-wider mb-1">WorkInPrivate</div>
-            <div class="font-serif font-bold text-[#4B8BD4] mb-1" style="font-size: 3.5rem; line-height: 1;"><sup style="font-size: 1.4rem; vertical-align: super;">$</sup>29</div>
-            <div class="text-[#38A169] font-bold text-base">one-time payment</div>
-          </div>
-          <ul class="list-none p-0 m-0 space-y-0">
-            {[
-              ['Year 1 cost', 'From $29'],
-              ['Year 2 cost', '$0 — already paid'],
-              ['3-year total', 'From $29'],
-              ['Privacy', 'Your computer only'],
-              ['Usage limits', 'Unlimited'],
-              ['Internet required', 'No internet needed'],
-            ].map(([label, value]) => (
-              <li class="flex items-center justify-between py-2.5 border-b border-[#EDF2FA] last:border-0">
-                <span class="text-[#2D3748] text-base">{label}</span>
-                <span class="font-semibold text-[#2D3748] text-sm flex items-center gap-1.5">
-                  <svg class="w-4 h-4 text-[#38A169] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                  {value}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      <!-- Savings highlight bar -->
-      <div class="max-w-2xl mx-auto bg-[#F0FFF4] border-2 border-[#C6F6D5] rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
-        <div class="flex-shrink-0">
-          <div class="w-20 h-20 rounded-full bg-[#38A169] flex items-center justify-center mx-auto sm:mx-0">
-            <span class="text-white font-bold text-sm leading-tight text-center">SAVE<br/>$691</span>
-          </div>
-        </div>
-        <div>
-          <div class="font-serif font-bold text-[#1B3A5C] text-xl mb-1">Save $691 over three years — guaranteed.</div>
-          <div class="text-[#5A6474] text-base leading-relaxed">ChatGPT costs <strong class="text-[#E53E3E]">$720</strong> over three years. WorkInPrivate starts at just <strong class="text-[#38A169]">$29</strong> — a one-time payment. That's hundreds back in your pocket every single year.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing Section -->
-  <section class="py-20 bg-[#EDF2FA] border-t-2 border-[#D4E3F5] text-center">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">Pricing</div>
-      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-4 leading-tight">Pay Once. Keep It Forever.</h2>
-      <p class="text-lg text-[#5A6474] max-w-md mx-auto mb-12">Unlike ChatGPT ($20/month) or other AI services, WorkInPrivate is a one-time purchase. No subscriptions, no recurring fees.</p>
-      <div class="max-w-[490px] mx-auto bg-white rounded-[20px] p-12 border-[3px] border-[#4B8BD4]" style="box-shadow: 0 8px 40px rgba(75,139,212,0.12);">
-        <div class="font-serif font-bold text-[#1B3A5C] text-xl mb-2">WorkInPrivate</div>
-        <div class="text-[#5A6474] font-semibold text-lg mb-2">Starting at</div>
-        <div class="font-serif font-bold text-[#4B8BD4] mb-2" style="font-size: 4.5rem; line-height: 1;"><sup style="font-size: 2rem; vertical-align: super;">$</sup>29</div>
-        <div class="text-[#5A6474] font-semibold text-lg mb-2">One-time payment</div>
-        <div class="text-[#4B8BD4] font-semibold text-base mb-6">No subscriptions. No monthly charges.</div>
-        <ul class="text-left mb-7 bg-[#F7F9FC] rounded-xl px-5 py-2 border border-[#E2E8F0] list-none space-y-0">
-          {[
-            'Choose from 7 specialized writing modules',
-            'Write as many articles as you want',
-            'Runs 100% on your computer — private',
-            'No internet needed after setup',
-            'Works on Windows, Mac, and Linux',
-          ].map(item => (
-            <li class="py-3 flex items-center gap-3 text-base text-[#2D3748] font-medium border-b border-[#E2E8F0] last:border-0">
-              <svg class="w-5 h-5 text-[#38A169] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-              {item}
-            </li>
-          ))}
-        </ul>
-        <a href="/pricing" class="flex items-center justify-center gap-2 w-full px-9 py-5 rounded-xl text-white font-bold text-lg bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none; box-shadow: 0 2px 8px rgba(75,139,212,0.3);">
-          See Pricing Options
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-5">Ready for a Private AI?</h2>
+        <p class="text-lg text-[#5A6474] mb-8">Stop paying monthly subscriptions. Stop sending your data to the cloud. Get WorkInPrivate and own your AI experience.</p>
+        <a href="/pricing" class="inline-flex items-center gap-2.5 px-10 py-4 rounded-[10px] text-white font-bold text-lg bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none; box-shadow: 0 2px 8px rgba(75,139,212,0.3);">
+          Buy Now — $39
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <div class="mt-6 bg-[#F0FFF4] border-2 border-[#C6F6D5] rounded-xl p-4 flex items-center gap-3 text-left">
-          <svg class="w-8 h-8 text-[#38A169] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <div>
-            <strong class="block text-[#38A169] text-base font-bold">30-Day Money-Back Guarantee</strong>
-            <span class="text-[#5A6474] text-sm">If you're not completely satisfied, we'll give you a full refund. No questions asked, no hassle.</span>
-          </div>
-        </div>
+        <p class="text-[#8A9AB5] text-sm mt-4">30-day money-back guarantee. Works on Windows, macOS, and Linux.</p>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Preview Section -->
-  <section class="py-20 bg-white">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">Common Questions</div>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] leading-tight">You Might Be Wondering...</h2>
-      </div>
-      <div class="max-w-[700px] mx-auto space-y-3">
-        <details class="border-2 border-[#E2E8F0] rounded-xl overflow-hidden group">
-          <summary class="px-6 py-5 font-bold text-[#1B3A5C] cursor-pointer flex justify-between items-center bg-[#F7F9FC] hover:bg-[#EDF2FA] transition-colors list-none text-base">
-            Do I need to be good with computers to use this?
-            <svg class="w-5 h-5 text-[#4B8BD4] flex-shrink-0 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"/></svg>
-          </summary>
-          <div class="px-6 pb-5 text-[#5A6474] text-base leading-relaxed bg-[#F7F9FC]">Not at all! If you can browse the internet and use email, you have all the skills you need. WorkInPrivate guides you through everything step by step.</div>
-        </details>
-        <details class="border-2 border-[#E2E8F0] rounded-xl overflow-hidden group">
-          <summary class="px-6 py-5 font-bold text-[#1B3A5C] cursor-pointer flex justify-between items-center bg-[#F7F9FC] hover:bg-[#EDF2FA] transition-colors list-none text-base">
-            How is this different from ChatGPT?
-            <svg class="w-5 h-5 text-[#4B8BD4] flex-shrink-0 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"/></svg>
-          </summary>
-          <div class="px-6 pb-5 text-[#5A6474] text-base leading-relaxed bg-[#F7F9FC]">ChatGPT runs on the internet and costs $20/month. WorkInPrivate runs on your own computer for a one-time fee of $29. Your writing stays completely private and you never need an internet connection to use it.</div>
-        </details>
-        <details class="border-2 border-[#E2E8F0] rounded-xl overflow-hidden group">
-          <summary class="px-6 py-5 font-bold text-[#1B3A5C] cursor-pointer flex justify-between items-center bg-[#F7F9FC] hover:bg-[#EDF2FA] transition-colors list-none text-base">
-            What if I don't like it? Can I get my money back?
-            <svg class="w-5 h-5 text-[#4B8BD4] flex-shrink-0 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"/></svg>
-          </summary>
-          <div class="px-6 pb-5 text-[#5A6474] text-base leading-relaxed bg-[#F7F9FC]">Absolutely. You have 30 full days to try it. If it's not right for you, just let us know and we'll refund your money completely. No questions asked.</div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- Final CTA Section -->
-  <section class="py-20 text-center" style="background: linear-gradient(135deg, #4B8BD4 0%, #2E6BB5 100%);">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight">Ready to Give AI Writing a Try?</h2>
-      <p class="text-lg mb-8 max-w-md mx-auto leading-relaxed" style="color: rgba(255,255,255,0.85);">It's easy, it's private, and it's affordable. Start exploring what AI can do for your writing today. You might be surprised how much fun it is!</p>
-      <a href="/pricing" class="inline-flex items-center gap-2.5 px-9 py-5 rounded-xl bg-white text-[#2E6BB5] font-bold text-lg hover:-translate-y-0.5 transition-all no-underline" style="text-decoration: none; box-shadow: 0 4px 16px rgba(0,0,0,0.15);">
-        Get Started — From $29
-        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </section>
-
-<style>
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(16px);
+  <style>
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>
+  </style>
 
 </BaseLayout>

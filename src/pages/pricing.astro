@@ -1,22 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-// Module display names for add-on cards
-const MODULES = [
-  { id: 'seo_writer', name: 'Blog Writer', desc: 'Write SEO-optimized blog articles that help people find your website through Google searches.', emoji: '✍️' },
-  { id: 'tech_docs', name: 'Tech Docs', desc: 'Create clear technical documentation, how-to guides, and software references.', emoji: '💻' },
-  { id: 'academic', name: 'Academic', desc: 'Generate research-style papers and educational articles with proper citations and formatting.', emoji: '📚' },
-  { id: 'finance', name: 'Finance', desc: 'Write articles about money management, investing basics, and personal finance tips.', emoji: '💰' },
-  { id: 'healthcare', name: 'Healthcare', desc: 'Create health and wellness articles, patient guides, and medical information content.', emoji: '🩺' },
-  { id: 'legal', name: 'Legal', desc: 'Write articles about legal topics, policies, and regulatory information for everyday readers.', emoji: '⚖️' },
-  { id: 'small_business', name: 'Small Business', desc: 'Marketing copy, announcements, and content tailored for small businesses and side projects.', emoji: '💼' },
-];
-
-const SUPABASE_URL = 'https://peungwkkkqorgzxfhyaa.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBldW5nd2tra3Fvcmd6eGZoeWFhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE1NTI3MzgsImV4cCI6MjA4NzEyODczOH0.9fjWeAXZbOefOXn3tJFC5Qj9VtEdBY50EOPwQbxfSbs';
 ---
 
-<BaseLayout title="Pricing - WorkInPrivate" description="Get WorkInPrivate starting at $29 for the base package with one module. Add specialized modules for $19 each. No subscriptions, no API costs — pay once, own it forever.">
+<BaseLayout title="Pricing - WorkInPrivate" description="Get WorkInPrivate for $39 one-time. No subscriptions, no API costs, no usage limits. Your private AI chatbot, forever.">
 
   <!-- Pricing Hero -->
   <section class="py-16 sm:py-20 bg-gradient-to-b from-white to-[#F7F9FC]">
@@ -26,226 +12,96 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
         One-time payment — no subscriptions
       </div>
       <h1 class="font-serif text-4xl sm:text-5xl font-bold text-[#1B3A5C] mb-5 leading-tight">Simple, Honest Pricing</h1>
-      <p class="text-xl text-[#5A6474] max-w-2xl mx-auto leading-relaxed">Pay once and it's yours forever. No monthly fees, no hidden costs, no surprises on your credit card statement.</p>
+      <p class="text-xl text-[#5A6474] max-w-2xl mx-auto leading-relaxed">One app. One price. No monthly bills, no usage limits, no surprises.</p>
     </div>
   </section>
 
-  <!-- Promo Code Bar -->
-  <section class="bg-[#F7F9FC] pt-10 pb-0 border-t-2 border-[#E2E8F0]">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-md mx-auto">
-        <label for="promo-input" class="block text-sm font-semibold text-[#5A6474] mb-2 text-center">Have a promo code?</label>
-        <div class="flex gap-2">
-          <input
-            id="promo-input"
-            type="text"
-            placeholder="Enter code"
-            class="flex-1 px-4 py-3 rounded-lg bg-white border-2 border-[#E2E8F0] text-[#1B3A5C] font-semibold text-sm focus:outline-none focus:border-[#4B8BD4] placeholder-[#8A9AB5] uppercase"
-          />
-          <button
-            id="promo-apply-btn"
-            type="button"
-            class="px-6 py-3 rounded-lg text-sm font-bold bg-[#EDF2FA] text-[#4B8BD4] border-2 border-[#D4E3F5] hover:bg-[#D4E3F5] transition-colors"
-          >
-            Apply
-          </button>
-        </div>
-        <div id="promo-result" class="mt-3 text-sm text-center hidden"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Package Deal Card (shown when package promo applied) -->
-  <section id="package-deal-section" class="bg-[#F7F9FC] pt-8 pb-0 hidden">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mx-auto rounded-2xl border-[3px] border-[#4B8BD4] overflow-hidden bg-white relative" style="box-shadow: 0 8px 32px rgba(75,139,212,0.12);">
-        <div class="absolute -top-0 right-4">
-          <span class="inline-block bg-[#38A169] text-white text-xs font-bold px-3 py-1 rounded-b-lg uppercase tracking-wide">Special Deal</span>
-        </div>
-        <div class="bg-[#EDF2FA] px-8 py-4 text-center border-b-2 border-[#D4E3F5]">
-          <span id="package-deal-title" class="text-sm font-bold text-[#4B8BD4] uppercase tracking-wide">Special Package</span>
-        </div>
-        <div class="px-8 py-10 text-center">
-          <p id="package-deal-desc" class="text-[#5A6474] mb-4"></p>
-          <div class="mb-4">
-            <span id="package-deal-price" class="font-serif text-5xl font-bold text-[#4B8BD4]"></span>
-            <span class="text-[#8A9AB5] ml-2">one-time</span>
-          </div>
-          <p id="package-deal-modules" class="text-sm text-[#5A6474] mb-6"></p>
-          <button
-            id="package-deal-btn"
-            type="button"
-            class="inline-block w-full max-w-sm px-8 py-4 text-lg font-bold rounded-xl text-white bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-colors no-underline" style="text-decoration: none; box-shadow: 0 2px 8px rgba(75,139,212,0.3);"
-          >
-            Get This Deal
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing Cards -->
+  <!-- Pricing Card -->
   <section class="py-16 bg-[#F7F9FC]">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-        <!-- Base Package -->
-        <div class="rounded-2xl border-2 border-[#E2E8F0] overflow-hidden bg-white hover:border-[#D4E3F5] transition-all" style="box-shadow: 0 2px 12px rgba(27,58,92,0.06);">
-          <div class="bg-[#F7F9FC] px-8 py-4 text-center border-b-2 border-[#E2E8F0]">
-            <span class="text-xs font-bold text-[#5A6474] uppercase tracking-widest">Starter</span>
-          </div>
-          <div class="px-8 py-10 text-center">
-            <h2 class="font-serif text-2xl font-bold text-[#1B3A5C] mb-2">Base Package</h2>
-            <p class="text-[#5A6474] mb-6">The app + 1 writing module of your choice</p>
-            <div class="mb-6" id="base-price-display">
-              <span class="font-serif font-bold text-[#4B8BD4]" id="base-price" style="font-size: 3.5rem; line-height: 1;"><sup style="font-size: 1.4rem; vertical-align: super;">$</sup>29</span>
-              <div class="text-[#38A169] font-bold text-base mt-1">one-time payment</div>
+      <div class="max-w-lg mx-auto">
+        <div class="bg-white border-2 border-[#D4E3F5] rounded-2xl overflow-hidden" style="box-shadow: 0 8px 32px rgba(27,58,92,0.10);">
+          <!-- Card Header -->
+          <div class="bg-[#4B8BD4] px-8 py-8 text-center text-white">
+            <h2 class="font-serif text-2xl font-bold mb-2">WorkInPrivate</h2>
+            <p class="text-[#D4E3F5] text-sm">Your private AI chatbot</p>
+            <div class="mt-4">
+              <span class="text-5xl font-bold">$39</span>
+              <span class="text-[#D4E3F5] text-lg ml-2">one-time</span>
             </div>
-            <ul class="text-left space-y-3 mb-6 list-none p-0 m-0">
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-[#38A169] mt-0.5 mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                <span class="text-[#2D3748]">WorkInPrivate desktop app</span>
+          </div>
+
+          <!-- Card Body -->
+          <div class="px-8 py-8">
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#38A169] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                <span class="text-[#1B3A5C]"><strong>Full chat interface</strong> — ask anything, write anything</span>
               </li>
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-[#38A169] mt-0.5 mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                <span class="text-[#2D3748]">1 writing module of your choice</span>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#38A169] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                <span class="text-[#1B3A5C]"><strong>File analysis</strong> — PDFs, Word docs, images, code</span>
               </li>
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-[#38A169] mt-0.5 mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                <span class="text-[#2D3748]">Works on Windows, Mac, and Linux</span>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#38A169] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                <span class="text-[#1B3A5C]"><strong>Conversation history</strong> — search past chats</span>
               </li>
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-[#38A169] mt-0.5 mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                <span class="text-[#2D3748]">Save as Markdown, Text, HTML, or PDF</span>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#38A169] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                <span class="text-[#1B3A5C]"><strong>Multiple AI models</strong> — choose the best for your needs</span>
               </li>
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-[#38A169] mt-0.5 mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                <span class="text-[#2D3748]">100% private — your writing never leaves your computer</span>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#38A169] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                <span class="text-[#1B3A5C]"><strong>Dark & light themes</strong> — comfortable day or night</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#38A169] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                <span class="text-[#1B3A5C]"><strong>Works offline</strong> — no internet needed after setup</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#38A169] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                <span class="text-[#1B3A5C]"><strong>Windows, macOS, Linux</strong> — all platforms included</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#38A169] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                <span class="text-[#1B3A5C]"><strong>Free updates</strong> — new features as they come</span>
               </li>
             </ul>
 
-            <!-- Module selector -->
-            <div class="mb-6 text-left">
-              <label for="base-module-select" class="block text-sm font-bold text-[#1B3A5C] mb-2">
-                Choose your writing module:
-              </label>
-              <select
-                id="base-module-select"
-                class="w-full px-4 py-3 rounded-lg bg-white border-2 border-[#E2E8F0] text-[#1B3A5C] text-sm focus:outline-none focus:border-[#4B8BD4] cursor-pointer"
-              >
-                <option value="seo_writer">Blog Writer — articles for your blog or website</option>
-                <option value="tech_docs">Tech Docs — technical guides and documentation</option>
-                <option value="academic">Academic — research papers and essays</option>
-                <option value="small_business">Small Business — marketing and business content</option>
-                <option value="legal">Legal — legal topics and compliance</option>
-                <option value="healthcare">Healthcare — health and wellness articles</option>
-                <option value="finance">Finance — money and investing articles</option>
-              </select>
-            </div>
+            <a href="/download" class="block w-full text-center px-8 py-4 rounded-[10px] text-white font-bold text-lg bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none; box-shadow: 0 2px 8px rgba(75,139,212,0.3);">
+              Buy Now — $39
+            </a>
 
-            <button
-              id="base-buy-btn"
-              type="button"
-              class="block w-full text-center px-8 py-4 text-lg font-bold rounded-xl text-white bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-colors no-underline" style="text-decoration: none; box-shadow: 0 2px 8px rgba(75,139,212,0.3);"
-            >
-              Get Started &mdash; $29
-            </button>
+            <p class="text-center text-[#8A9AB5] text-sm mt-4">30-day money-back guarantee</p>
           </div>
-        </div>
-
-        <!-- Complete Bundle -->
-        <div class="rounded-2xl border-[3px] border-[#4B8BD4] overflow-hidden relative bg-white" style="box-shadow: 0 8px 32px rgba(75,139,212,0.12);">
-          <div class="absolute -top-0 right-4">
-            <span class="inline-block bg-[#38A169] text-white text-xs font-bold px-3 py-1 rounded-b-lg uppercase tracking-wide">Best Value</span>
-          </div>
-          <div class="bg-[#EDF2FA] px-8 py-4 text-center border-b-2 border-[#D4E3F5]">
-            <span class="text-xs font-bold text-[#4B8BD4] uppercase tracking-widest">Complete Bundle</span>
-          </div>
-          <div class="px-8 py-10 text-center">
-            <h2 class="font-serif text-2xl font-bold text-[#1B3A5C] mb-2">All 7 Writing Modules</h2>
-            <p class="text-[#5A6474] mb-6">The app + every module included</p>
-            <div class="mb-2" id="bundle-price-display">
-              <span class="font-serif font-bold text-[#4B8BD4]" id="bundle-price" style="font-size: 3.5rem; line-height: 1;"><sup style="font-size: 1.4rem; vertical-align: super;">$</sup>99</span>
-              <div class="text-[#38A169] font-bold text-base mt-1">one-time payment</div>
-            </div>
-            <p class="text-sm text-[#38A169] font-semibold mb-6" id="bundle-savings">Save $63 vs. buying separately ($162)</p>
-            <ul class="text-left space-y-3 mb-8 list-none p-0 m-0">
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-[#38A169] mt-0.5 mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                <span class="text-[#2D3748]">WorkInPrivate desktop app</span>
-              </li>
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-[#38A169] mt-0.5 mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                <span class="text-[#1B3A5C] font-semibold">All 7 writing modules included</span>
-              </li>
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-[#38A169] mt-0.5 mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                <span class="text-[#2D3748]">Works on Windows, Mac, and Linux</span>
-              </li>
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-[#38A169] mt-0.5 mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                <span class="text-[#2D3748]">Save as Markdown, Text, HTML, or PDF</span>
-              </li>
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-[#38A169] mt-0.5 mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                <span class="text-[#2D3748]">100% private — your writing never leaves your computer</span>
-              </li>
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-[#38A169] mt-0.5 mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                <span class="text-[#2D3748]">Future module updates included</span>
-              </li>
-            </ul>
-            <button
-              id="bundle-buy-btn"
-              type="button"
-              class="block w-full text-center px-8 py-4 text-lg font-bold rounded-xl text-white bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none; box-shadow: 0 4px 16px rgba(75,139,212,0.3);"
-            >
-              Get Complete Bundle &mdash; $99
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Money-back guarantee -->
-      <div class="max-w-5xl mx-auto mt-8 text-center">
-        <div class="inline-flex items-center gap-2.5 bg-[#F0FFF4] border-2 border-[#C6F6D5] rounded-xl px-5 py-3">
-          <svg class="w-5 h-5 text-[#38A169] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <span class="text-[#2D3748] text-sm font-semibold">30-day money-back guarantee on all purchases — no questions asked.</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Add-on Modules -->
+  <!-- Cost Comparison -->
   <section class="py-16 bg-white border-t-2 border-[#E2E8F0]">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">Expand Your Toolkit</div>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-4 leading-tight">Add-on Writing Modules</h2>
-        <p class="text-lg text-[#5A6474] max-w-2xl mx-auto">Already have the base package? Add more writing modules for <span class="font-bold text-[#4B8BD4]">$19 each</span>.</p>
+        <h2 class="font-serif text-3xl font-bold text-[#1B3A5C] mb-4">Stop Paying Monthly</h2>
+        <p class="text-lg text-[#5A6474]">Here's what AI chatbot subscriptions really cost over time:</p>
       </div>
-      <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-
-        {MODULES.map((mod, i) => (
-          <div class={`bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6 flex flex-col hover:border-[#D4E3F5] transition-colors${i === MODULES.length - 1 ? ' sm:col-span-2 lg:col-span-1' : ''}`}>
-            <div class="w-12 h-12 rounded-xl bg-[#EDF2FA] flex items-center justify-center flex-shrink-0 text-2xl mb-3">
-              {mod.emoji}
-            </div>
-            <h3 class="font-bold text-[#1B3A5C] text-base mb-2">{mod.name}</h3>
-            <p class="text-[#5A6474] text-sm leading-relaxed flex-grow mb-5">{mod.desc}</p>
-            <div class="flex items-center justify-between">
-              <span class="text-2xl font-bold text-[#1B3A5C] addon-price" data-module={mod.id}>$19</span>
-              <button
-                type="button"
-                data-product-type="addon"
-                data-module={mod.id}
-                class="addon-buy-btn inline-flex items-center px-5 py-2.5 text-sm font-bold rounded-lg text-[#4B8BD4] border-2 border-[#D4E3F5] hover:bg-[#EDF2FA] hover:border-[#4B8BD4] transition-colors"
-              >
-                Add Module
-              </button>
-            </div>
-          </div>
-        ))}
-
+      <div class="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6">
+          <div class="text-3xl font-bold text-[#4B8BD4] mb-2">$39</div>
+          <div class="text-sm text-[#5A6474] font-semibold">WorkInPrivate</div>
+          <div class="text-xs text-[#8A9AB5] mt-1">One-time, forever</div>
+        </div>
+        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6">
+          <div class="text-3xl font-bold text-[#E53E3E] mb-2">$240</div>
+          <div class="text-sm text-[#5A6474] font-semibold">ChatGPT Plus</div>
+          <div class="text-xs text-[#8A9AB5] mt-1">$20/mo for 1 year</div>
+        </div>
+        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6">
+          <div class="text-3xl font-bold text-[#E53E3E] mb-2">$240</div>
+          <div class="text-sm text-[#5A6474] font-semibold">Claude Pro</div>
+          <div class="text-xs text-[#8A9AB5] mt-1">$20/mo for 1 year</div>
+        </div>
       </div>
     </div>
   </section>
@@ -253,350 +109,31 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
   <!-- System Requirements -->
   <section class="py-16 bg-[#F7F9FC] border-t-2 border-[#E2E8F0]">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-12">
-          <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">Before You Buy</div>
-          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-4 leading-tight">What Your Computer Needs</h2>
-          <p class="text-lg text-[#5A6474]">WorkInPrivate runs on your own computer. Here's what you'll need to get started.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Requirements -->
-          <div class="bg-white rounded-2xl p-8 border-2 border-[#E2E8F0]">
-            <h3 class="font-serif text-lg font-bold text-[#1B3A5C] mb-4">Hardware</h3>
-            <ul class="space-y-3 list-none p-0 m-0">
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-[#38A169] mt-0.5 mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                <div>
-                  <span class="font-bold text-[#1B3A5C]">Memory (RAM):</span>
-                  <span class="text-[#5A6474]"> 8 GB minimum, 16 GB or more is ideal</span>
-                </div>
-              </li>
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-[#38A169] mt-0.5 mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                <div>
-                  <span class="font-bold text-[#1B3A5C]">Graphics card:</span>
-                  <span class="text-[#5A6474]"> Optional, but makes writing faster</span>
-                </div>
-              </li>
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-[#38A169] mt-0.5 mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                <div>
-                  <span class="font-bold text-[#1B3A5C]">Hard drive space:</span>
-                  <span class="text-[#5A6474]"> About 5 GB for the app and AI models</span>
-                </div>
-              </li>
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-[#38A169] mt-0.5 mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                <div>
-                  <span class="font-bold text-[#1B3A5C]">Internet:</span>
-                  <span class="text-[#5A6474]"> Only needed once during first-time setup</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <!-- Platform Availability -->
-          <div class="bg-white rounded-2xl p-8 border-2 border-[#E2E8F0]">
-            <h3 class="font-serif text-lg font-bold text-[#1B3A5C] mb-4">Works On</h3>
-            <ul class="space-y-3 list-none p-0 m-0">
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-[#38A169] mt-0.5 mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                <div>
-                  <span class="font-bold text-[#1B3A5C]">Windows</span>
-                  <span class="text-[#5A6474]"> — download and run, no installation needed</span>
-                </div>
-              </li>
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-[#38A169] mt-0.5 mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                <div>
-                  <span class="font-bold text-[#1B3A5C]">macOS</span>
-                  <span class="text-[#5A6474]"> — works on both Intel and Apple Silicon Macs</span>
-                </div>
-              </li>
-              <li class="flex items-start">
-                <svg class="w-5 h-5 text-[#38A169] mt-0.5 mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                <div>
-                  <span class="font-bold text-[#1B3A5C]">Linux</span>
-                  <span class="text-[#5A6474]"> — portable download, works on most distributions</span>
-                </div>
-              </li>
-            </ul>
-            <div class="mt-6 p-4 bg-[#EDF2FA] rounded-xl border-2 border-[#D4E3F5]">
-              <p class="text-sm text-[#5A6474]">
-                <span class="font-bold text-[#1B3A5C]">Easy first-time setup</span> — when you open the program for the first time, it walks you through everything automatically.
-              </p>
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-serif text-2xl font-bold text-[#1B3A5C] mb-6 text-center">System Requirements</h2>
+        <div class="bg-white border-2 border-[#E2E8F0] rounded-xl p-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+            <div>
+              <div class="font-bold text-[#1B3A5C] mb-1">Operating System</div>
+              <div class="text-[#5A6474]">Windows 10+, macOS 12+, or Linux</div>
+            </div>
+            <div>
+              <div class="font-bold text-[#1B3A5C] mb-1">RAM (Memory)</div>
+              <div class="text-[#5A6474]">8 GB minimum, 16 GB recommended</div>
+            </div>
+            <div>
+              <div class="font-bold text-[#1B3A5C] mb-1">Disk Space</div>
+              <div class="text-[#5A6474]">5 GB free for the app + AI models</div>
+            </div>
+            <div>
+              <div class="font-bold text-[#1B3A5C] mb-1">GPU (optional)</div>
+              <div class="text-[#5A6474]">NVIDIA or Apple Silicon for faster responses</div>
             </div>
           </div>
+          <p class="text-xs text-[#8A9AB5] mt-4">The app automatically detects your hardware and recommends the best AI model for your computer.</p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Final CTA -->
-  <section class="py-20 text-center" style="background: linear-gradient(135deg, #4B8BD4 0%, #2E6BB5 100%);">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight">Ready to Start Writing?</h2>
-      <p class="text-lg mb-8 max-w-md mx-auto leading-relaxed" style="color: rgba(255,255,255,0.85);">One simple purchase. No monthly fees. No cloud. Just a writing tool that's yours to keep — running right on your own computer.</p>
-      <div class="flex flex-wrap items-center justify-center gap-4">
-        <a href="#" onclick="document.querySelector('#base-buy-btn').scrollIntoView({behavior:'smooth'});return false;" class="inline-flex items-center gap-2.5 px-9 py-5 rounded-xl bg-white text-[#2E6BB5] font-bold text-lg hover:-translate-y-0.5 transition-all no-underline" style="text-decoration: none; box-shadow: 0 4px 16px rgba(0,0,0,0.15);">
-          Get Started — From $29
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-      <div class="mt-6 flex items-center justify-center gap-2.5 text-white/80 text-sm font-semibold">
-        <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        30-day money-back guarantee — if you don't love it, get a full refund.
-      </div>
-    </div>
-  </section>
-
-  <script define:vars={{ SUPABASE_URL, SUPABASE_ANON_KEY }}>
-    // ── State ──
-    let activePromo = null; // null or { promo_type, code, discount_percent, ... }
-
-    // ── API helpers ──
-    async function callEdgeFunction(name, body) {
-      const res = await fetch(`${SUPABASE_URL}/functions/v1/${name}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-          'apikey': SUPABASE_ANON_KEY,
-        },
-        body: JSON.stringify(body),
-      });
-      return res.json();
-    }
-
-    // ── Promo validation ──
-    async function validatePromo() {
-      const input = document.getElementById('promo-input');
-      const result = document.getElementById('promo-result');
-      const btn = document.getElementById('promo-apply-btn');
-      const code = input.value.trim();
-
-      if (!code) return;
-
-      btn.textContent = 'Checking...';
-      btn.disabled = true;
-
-      try {
-        const data = await callEdgeFunction('validate-promo', { code });
-        result.classList.remove('hidden');
-
-        if (data.valid) {
-          activePromo = data;
-          result.className = 'mt-3 text-sm text-center text-[#38A169] font-semibold';
-
-          if (data.promo_type === 'discount') {
-            const desc = data.discount_percent
-              ? `${data.discount_percent}% off`
-              : `$${(data.discount_amount_cents / 100).toFixed(0)} off`;
-            result.textContent = `${data.code} applied — ${desc}!`;
-            applyDiscountUI(data);
-          } else if (data.promo_type === 'package') {
-            result.textContent = `${data.code} applied — special package deal!`;
-            applyPackageUI(data);
-          }
-
-          btn.textContent = 'Clear';
-          btn.disabled = false;
-          btn.onclick = clearPromo;
-        } else {
-          activePromo = null;
-          result.className = 'mt-3 text-sm text-center text-[#E53E3E] font-semibold';
-          result.textContent = data.error || 'Invalid promo code.';
-          btn.textContent = 'Apply';
-          btn.disabled = false;
-        }
-      } catch {
-        result.classList.remove('hidden');
-        result.className = 'mt-3 text-sm text-center text-[#E53E3E] font-semibold';
-        result.textContent = 'Unable to validate code. Try again.';
-        btn.textContent = 'Apply';
-        btn.disabled = false;
-      }
-    }
-
-    function clearPromo() {
-      activePromo = null;
-      document.getElementById('promo-input').value = '';
-      document.getElementById('promo-result').classList.add('hidden');
-
-      const btn = document.getElementById('promo-apply-btn');
-      btn.textContent = 'Apply';
-      btn.onclick = validatePromo;
-
-      // Reset prices
-      document.getElementById('base-price').innerHTML = '<sup style="font-size: 1.4rem; vertical-align: super;">$</sup>29';
-      document.getElementById('base-buy-btn').textContent = 'Get Started \u2014 $29';
-      document.getElementById('bundle-price').innerHTML = '<sup style="font-size: 1.4rem; vertical-align: super;">$</sup>99';
-      document.getElementById('bundle-buy-btn').textContent = 'Get Complete Bundle \u2014 $99';
-      document.getElementById('bundle-savings').textContent = 'Save $63 vs. buying separately ($162)';
-
-      // Remove strikethrough prices
-      document.querySelectorAll('.promo-original-price').forEach(el => el.remove());
-
-      // Reset addon prices
-      document.querySelectorAll('.addon-price').forEach(el => {
-        el.textContent = '$19';
-      });
-      document.querySelectorAll('.addon-original-price').forEach(el => el.remove());
-
-      // Hide package deal
-      document.getElementById('package-deal-section').classList.add('hidden');
-    }
-
-    function applyDiscountUI(promo) {
-      const pct = promo.discount_percent;
-      const fixedCents = promo.discount_amount_cents;
-
-      function discountedPrice(originalCents) {
-        if (pct) return Math.round(originalCents * (1 - pct / 100));
-        if (fixedCents) return Math.max(0, originalCents - fixedCents);
-        return originalCents;
-      }
-
-      function formatPrice(cents) {
-        return '$' + (cents / 100).toFixed(cents % 100 === 0 ? 0 : 2);
-      }
-
-      // Base package
-      const baseNew = discountedPrice(2900);
-      const basePriceEl = document.getElementById('base-price');
-      basePriceEl.textContent = formatPrice(baseNew);
-      addStrikethrough(basePriceEl.parentElement, '$29');
-      document.getElementById('base-buy-btn').textContent = `Get Started \u2014 ${formatPrice(baseNew)}`;
-
-      // Bundle
-      const bundleNew = discountedPrice(9900);
-      const bundlePriceEl = document.getElementById('bundle-price');
-      bundlePriceEl.textContent = formatPrice(bundleNew);
-      addStrikethrough(bundlePriceEl.parentElement, '$99');
-      document.getElementById('bundle-buy-btn').textContent = `Get Complete Bundle \u2014 ${formatPrice(bundleNew)}`;
-      document.getElementById('bundle-savings').textContent =
-        `Save ${formatPrice(16200 - bundleNew)} vs. buying separately ($162)`;
-
-      // Addons
-      document.querySelectorAll('.addon-price').forEach(el => {
-        const addonNew = discountedPrice(1900);
-        el.textContent = formatPrice(addonNew);
-        addStrikethrough(el.parentElement, '$19', 'addon-original-price');
-      });
-    }
-
-    function addStrikethrough(container, originalText, extraClass) {
-      // Don't add duplicate
-      if (container.querySelector('.promo-original-price, .addon-original-price')) return;
-      const span = document.createElement('span');
-      span.className = `text-lg text-[#8A9AB5] line-through mr-2 ${extraClass || 'promo-original-price'}`;
-      span.textContent = originalText;
-      container.prepend(span);
-    }
-
-    function applyPackageUI(promo) {
-      const section = document.getElementById('package-deal-section');
-      section.classList.remove('hidden');
-
-      document.getElementById('package-deal-title').textContent = promo.description || promo.code;
-      document.getElementById('package-deal-desc').textContent = `Code: ${promo.code}`;
-      document.getElementById('package-deal-price').textContent =
-        '$' + (promo.package_price_cents / 100).toFixed(promo.package_price_cents % 100 === 0 ? 0 : 2);
-
-      const modules = (promo.package_modules || [])
-        .map(m => m.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase()))
-        .join(', ');
-      document.getElementById('package-deal-modules').textContent = `Includes: ${modules}`;
-
-      // Scroll into view
-      section.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-
-    // ── Checkout ──
-    let checkoutInProgress = false;
-
-    async function createCheckout(productType, moduleName) {
-      if (checkoutInProgress) return;
-      checkoutInProgress = true;
-
-      // Disable all buy buttons and show loading
-      const allBuyBtns = document.querySelectorAll('#base-buy-btn, #bundle-buy-btn, #package-deal-btn, .addon-buy-btn');
-      const originalTexts = new Map();
-      allBuyBtns.forEach(btn => {
-        originalTexts.set(btn, btn.textContent);
-        btn.disabled = true;
-      });
-
-      // Show loading on the clicked button category
-      const clickedBtns = productType === 'bundle'
-        ? [document.getElementById('bundle-buy-btn')]
-        : productType === 'addon' && moduleName
-          ? [...document.querySelectorAll(`.addon-buy-btn[data-module="${moduleName}"]`)]
-          : [document.getElementById('base-buy-btn')];
-      clickedBtns.forEach(btn => { if (btn) btn.textContent = 'Redirecting...'; });
-
-      const body = { product_type: productType };
-      if (moduleName) body.module = moduleName;
-      if (activePromo) body.promo_code = activePromo.code;
-
-      try {
-        const data = await callEdgeFunction('create-checkout-session', body);
-        if (data.url) {
-          window.location.href = data.url;
-          return; // keep buttons disabled during redirect
-        }
-        showCheckoutError(data.error || 'Failed to start checkout. Please try again.');
-      } catch {
-        showCheckoutError('Failed to start checkout. Please try again.');
-      }
-
-      // Restore buttons on error
-      allBuyBtns.forEach(btn => {
-        btn.textContent = originalTexts.get(btn);
-        btn.disabled = false;
-      });
-      checkoutInProgress = false;
-    }
-
-    function showCheckoutError(message) {
-      // Show error near the promo result area (visible on page)
-      const result = document.getElementById('promo-result');
-      result.classList.remove('hidden');
-      result.className = 'mt-3 text-sm text-center text-[#E53E3E] font-semibold';
-      result.textContent = message;
-      result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-
-    // ── Wire up buttons ──
-    document.addEventListener('DOMContentLoaded', () => {
-      // Promo input
-      document.getElementById('promo-apply-btn').addEventListener('click', validatePromo);
-      document.getElementById('promo-input').addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') validatePromo();
-      });
-
-      // Base package buy
-      document.getElementById('base-buy-btn').addEventListener('click', () => {
-        const mod = document.getElementById('base-module-select').value;
-        createCheckout('base', mod);
-      });
-
-      // Bundle buy
-      document.getElementById('bundle-buy-btn').addEventListener('click', () => {
-        createCheckout('bundle');
-      });
-
-      // Package deal buy
-      document.getElementById('package-deal-btn').addEventListener('click', () => {
-        createCheckout('bundle'); // package promos go through the checkout with promo_code set
-      });
-
-      // Add-on buttons
-      document.querySelectorAll('.addon-buy-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          createCheckout(btn.dataset.productType, btn.dataset.module);
-        });
-      });
-    });
-  </script>
 
 </BaseLayout>
