@@ -1,102 +1,125 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const baseUrl = 'https://github.com/wallco26/workinprivate-site/releases/latest/download';
 ---
 
-<BaseLayout title="Purchase Successful - WorkInPrivate" description="Thank you for purchasing WorkInPrivate. Follow the steps below to activate your license and unlock your modules.">
+<BaseLayout title="Purchase Successful - WorkInPrivate" description="Thank you for purchasing WorkInPrivate. Download the app for your platform below.">
 
-  <section class="bg-[#0a0e17] min-h-screen py-20">
+  <!-- Success Hero -->
+  <section class="py-16 sm:py-20 bg-gradient-to-b from-white to-[#F7F9FC]">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl mx-auto text-center">
 
         <!-- Success icon -->
-        <div class="w-20 h-20 bg-green-900/40 rounded-full flex items-center justify-center mx-auto mb-8 border-2 border-green-500">
-          <svg class="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <div class="w-20 h-20 bg-[#F0FFF4] rounded-full flex items-center justify-center mx-auto mb-8 border-2 border-[#C6F6D5]">
+          <svg class="w-10 h-10 text-[#38A169]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
 
-        <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">Purchase Successful!</h1>
-        <p class="text-xl text-gray-400 mb-12">
-          Your license key has been emailed to you. Follow the steps below to activate WorkInPrivate.
+        <h1 class="font-serif text-4xl sm:text-5xl font-bold text-[#1B3A5C] mb-4">Purchase Successful!</h1>
+        <p class="text-xl text-[#5A6474] mb-4">
+          Thank you for buying WorkInPrivate. A receipt has been sent to your email.
+        </p>
+        <p class="text-[#8A9AB5] mb-12">
+          Download the app for your platform below and you're all set.
         </p>
 
-        <!-- Steps -->
-        <div class="text-left space-y-6 mb-12">
+      </div>
+    </div>
+  </section>
 
-          <!-- Step 1 -->
-          <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <div class="flex items-start gap-4">
-              <div class="w-8 h-8 bg-green-900/50 rounded-full flex items-center justify-center flex-shrink-0 border border-green-700 font-mono font-bold text-green-400 text-sm">1</div>
-              <div>
-                <h3 class="text-white font-semibold mb-1">Check your email</h3>
-                <p class="text-gray-400 text-sm">
-                  Your license key (<span class="font-mono text-green-400">WIP-XXXX-XXXX-XXXX-XXXX</span>) has been sent to the email address you used at checkout.
-                  Check your spam folder if you don't see it within a few minutes.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <div class="flex items-start gap-4">
-              <div class="w-8 h-8 bg-green-900/50 rounded-full flex items-center justify-center flex-shrink-0 border border-green-700 font-mono font-bold text-green-400 text-sm">2</div>
-              <div>
-                <h3 class="text-white font-semibold mb-1">Download WorkInPrivate</h3>
-                <p class="text-gray-400 text-sm mb-3">
-                  If you haven't already, download the app for your platform.
-                </p>
-                <a href="/download" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-700 text-gray-300 hover:border-green-600 hover:text-green-400 transition-colors text-sm font-semibold font-mono">
-                  Download WorkInPrivate
-                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <div class="flex items-start gap-4">
-              <div class="w-8 h-8 bg-green-900/50 rounded-full flex items-center justify-center flex-shrink-0 border border-green-700 font-mono font-bold text-green-400 text-sm">3</div>
-              <div>
-                <h3 class="text-white font-semibold mb-2">Activate your license</h3>
-                <p class="text-gray-400 text-sm">
-                  Open WorkInPrivate — it will ask for your license key on first launch. Just paste your key when prompted.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Step 4 -->
-          <div class="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-            <div class="flex items-start gap-4">
-              <div class="w-8 h-8 bg-green-900/50 rounded-full flex items-center justify-center flex-shrink-0 border border-green-700 font-mono font-bold text-green-400 text-sm">4</div>
-              <div>
-                <h3 class="text-white font-semibold mb-1">Start creating</h3>
-                <p class="text-gray-400 text-sm">
-                  Once activated, your licensed modules are unlocked and work fully offline — no internet required after the first activation.
-                </p>
-              </div>
-            </div>
-          </div>
-
+  <!-- Download Buttons -->
+  <section class="py-16 bg-white border-t-2 border-[#E2E8F0]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-serif text-2xl font-bold text-[#1B3A5C] mb-8 text-center">Download WorkInPrivate</h2>
+      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Windows -->
+        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-2xl p-8 text-center hover:border-[#D4E3F5] transition-colors">
+          <div class="text-4xl mb-4">&#x1FA9F;</div>
+          <h3 class="font-bold text-[#1B3A5C] text-lg mb-2">Windows</h3>
+          <p class="text-[#5A6474] text-sm mb-4">Windows 10 or later</p>
+          <a href={`${baseUrl}/WorkInPrivate-Win64.zip`} class="inline-flex items-center gap-2 px-6 py-3 rounded-[10px] text-white font-bold bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none;">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download
+          </a>
         </div>
 
-        <!-- FAQ note -->
-        <div class="bg-green-900/20 rounded-xl border border-green-800 p-6 text-left mb-10">
-          <h3 class="text-green-400 font-semibold mb-2">Need help?</h3>
-          <p class="text-gray-400 text-sm">
-            Check the <a href="/faq" class="text-green-400 hover:underline">FAQ</a> for common setup questions, or
-            <a href="mailto:support@workinprivate.com" class="text-green-400 hover:underline">contact support</a> if you
-            have trouble activating. We respond within 24 hours.
+        <!-- macOS -->
+        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-2xl p-8 text-center hover:border-[#D4E3F5] transition-colors">
+          <div class="text-4xl mb-4">&#x1F34E;</div>
+          <h3 class="font-bold text-[#1B3A5C] text-lg mb-2">macOS</h3>
+          <p class="text-[#5A6474] text-sm mb-4">macOS 12 or later</p>
+          <a href={`${baseUrl}/WorkInPrivate-macOS-ARM.zip`} class="inline-flex items-center gap-2 px-6 py-3 rounded-[10px] text-white font-bold bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none;">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download (Apple Silicon)
+          </a>
+          <a href={`${baseUrl}/WorkInPrivate-macOS-Intel.zip`} class="block mt-2 text-sm text-[#4B8BD4] hover:underline">Intel Mac? Download here</a>
+        </div>
+
+        <!-- Linux -->
+        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-2xl p-8 text-center hover:border-[#D4E3F5] transition-colors">
+          <div class="text-4xl mb-4">&#x1F427;</div>
+          <h3 class="font-bold text-[#1B3A5C] text-lg mb-2">Linux</h3>
+          <p class="text-[#5A6474] text-sm mb-4">Ubuntu, Fedora, Arch, etc.</p>
+          <a href={`${baseUrl}/WorkInPrivate-Linux.tar.gz`} class="inline-flex items-center gap-2 px-6 py-3 rounded-[10px] text-white font-bold bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none;">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Getting Started -->
+  <section class="py-16 bg-[#F7F9FC] border-t-2 border-[#E2E8F0]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="font-serif text-2xl font-bold text-[#1B3A5C] mb-8 text-center">Getting Started</h2>
+        <div class="space-y-6">
+          <div class="flex gap-4">
+            <div class="w-8 h-8 rounded-full bg-[#4B8BD4] text-white flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+            <div>
+              <h3 class="font-bold text-[#1B3A5C] mb-1">Download and open</h3>
+              <p class="text-[#5A6474] text-sm">Download the file for your platform above and double-click to open WorkInPrivate. On macOS, drag it to Applications first.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-8 h-8 rounded-full bg-[#4B8BD4] text-white flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+            <div>
+              <h3 class="font-bold text-[#1B3A5C] mb-1">Follow the setup wizard</h3>
+              <p class="text-[#5A6474] text-sm">The app checks your hardware and helps you pick the best AI model. It handles everything automatically.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-8 h-8 rounded-full bg-[#4B8BD4] text-white flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+            <div>
+              <h3 class="font-bold text-[#1B3A5C] mb-1">Start chatting</h3>
+              <p class="text-[#5A6474] text-sm">Once setup is complete, you're ready! Type a message and start your private AI conversation. No internet needed after setup.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Help -->
+  <section class="py-12 bg-white border-t-2 border-[#E2E8F0]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="bg-[#F0FFF4] rounded-xl border-2 border-[#C6F6D5] p-6">
+          <h3 class="font-bold text-[#1B3A5C] mb-2">Need help?</h3>
+          <p class="text-[#5A6474] text-sm">
+            Check the <a href="/faq" class="text-[#4B8BD4] hover:underline">FAQ</a> for common setup questions, or
+            <a href="mailto:support@workinprivate.com" class="text-[#4B8BD4] hover:underline">contact support</a> if you
+            have trouble getting started. We respond within 24 hours.
           </p>
         </div>
-
-        <a href="/" class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm">
+        <a href="/" class="inline-flex items-center gap-2 text-[#8A9AB5] hover:text-[#1B3A5C] transition-colors text-sm mt-6">
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
           Back to homepage
         </a>
-
       </div>
     </div>
   </section>

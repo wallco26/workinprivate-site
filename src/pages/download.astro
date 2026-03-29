@@ -1,95 +1,57 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-const version = process.env.CLI_VERSION || 'latest';
-const baseUrl = 'https://github.com/wallco26/workinprivate/releases/latest/download';
 ---
 
-<BaseLayout title="Download WorkInPrivate" description="Download WorkInPrivate for Windows, macOS, or Linux. Your private AI chatbot.">
+<BaseLayout title="Download WorkInPrivate" description="Purchase WorkInPrivate to get instant download access for Windows, macOS, or Linux.">
 
   <!-- Hero -->
   <section class="py-16 sm:py-20 bg-gradient-to-b from-white to-[#F7F9FC]">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="w-16 h-16 bg-[#F0FFF4] rounded-full flex items-center justify-center mx-auto mb-6 border-2 border-[#C6F6D5]">
-        <svg class="w-8 h-8 text-[#38A169]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-        </svg>
-      </div>
       <h1 class="font-serif text-4xl sm:text-5xl font-bold text-[#1B3A5C] mb-4">Download WorkInPrivate</h1>
-      <p class="text-xl text-[#5A6474] max-w-2xl mx-auto">Choose your platform below to get started.</p>
+      <p class="text-xl text-[#5A6474] max-w-2xl mx-auto mb-8">Purchase WorkInPrivate to get instant download access for Windows, macOS, and Linux.</p>
+      <a href="https://buy.stripe.com/4gM9ATfo15Li8eX9PDaR20g" class="inline-flex items-center gap-2 px-8 py-4 rounded-[10px] text-white font-bold text-lg bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none; box-shadow: 0 2px 8px rgba(75,139,212,0.3);">
+        Buy Now — $39
+      </a>
+      <p class="text-[#8A9AB5] text-sm mt-4">One-time payment. Download links provided immediately after purchase.</p>
     </div>
   </section>
 
-  <!-- Download Buttons -->
-  <section class="py-16 bg-white">
+  <!-- System Requirements -->
+  <section class="py-16 bg-white border-t-2 border-[#E2E8F0]">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Windows -->
-        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-2xl p-8 text-center hover:border-[#D4E3F5] transition-colors">
-          <div class="text-4xl mb-4">🪟</div>
-          <h3 class="font-bold text-[#1B3A5C] text-lg mb-2">Windows</h3>
-          <p class="text-[#5A6474] text-sm mb-4">Windows 10 or later</p>
-          <a href={`${baseUrl}/WorkInPrivate-Windows.zip`} class="inline-flex items-center gap-2 px-6 py-3 rounded-[10px] text-white font-bold bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none;">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download
-          </a>
-        </div>
-
-        <!-- macOS -->
-        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-2xl p-8 text-center hover:border-[#D4E3F5] transition-colors">
-          <div class="text-4xl mb-4">🍎</div>
-          <h3 class="font-bold text-[#1B3A5C] text-lg mb-2">macOS</h3>
-          <p class="text-[#5A6474] text-sm mb-4">macOS 12 or later</p>
-          <a href={`${baseUrl}/WorkInPrivate-macOS-ARM.zip`} class="inline-flex items-center gap-2 px-6 py-3 rounded-[10px] text-white font-bold bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none;">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download (Apple Silicon)
-          </a>
-          <a href={`${baseUrl}/WorkInPrivate-macOS-Intel.zip`} class="block mt-2 text-sm text-[#4B8BD4] hover:underline">Intel Mac? Download here</a>
-        </div>
-
-        <!-- Linux -->
-        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-2xl p-8 text-center hover:border-[#D4E3F5] transition-colors">
-          <div class="text-4xl mb-4">🐧</div>
-          <h3 class="font-bold text-[#1B3A5C] text-lg mb-2">Linux</h3>
-          <p class="text-[#5A6474] text-sm mb-4">Ubuntu, Fedora, Arch, etc.</p>
-          <a href={`${baseUrl}/WorkInPrivate-Linux.zip`} class="inline-flex items-center gap-2 px-6 py-3 rounded-[10px] text-white font-bold bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none;">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download
-          </a>
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-serif text-2xl font-bold text-[#1B3A5C] mb-6 text-center">System Requirements</h2>
+        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+            <div>
+              <div class="font-bold text-[#1B3A5C] mb-1">Operating System</div>
+              <div class="text-[#5A6474]">Windows 10+, macOS 12+, or Linux</div>
+            </div>
+            <div>
+              <div class="font-bold text-[#1B3A5C] mb-1">RAM (Memory)</div>
+              <div class="text-[#5A6474]">8 GB minimum, 16 GB recommended</div>
+            </div>
+            <div>
+              <div class="font-bold text-[#1B3A5C] mb-1">Disk Space</div>
+              <div class="text-[#5A6474]">5 GB free for the app + AI models</div>
+            </div>
+            <div>
+              <div class="font-bold text-[#1B3A5C] mb-1">GPU (optional)</div>
+              <div class="text-[#5A6474]">NVIDIA or Apple Silicon for faster responses</div>
+            </div>
+          </div>
+          <p class="text-xs text-[#8A9AB5] mt-4">The app automatically detects your hardware and recommends the best AI model for your computer.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Setup Guide -->
-  <section class="py-16 bg-[#F7F9FC] border-t-2 border-[#E2E8F0]">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl mx-auto">
-        <h2 class="font-serif text-2xl font-bold text-[#1B3A5C] mb-8 text-center">Getting Started</h2>
-        <div class="space-y-6">
-          <div class="flex gap-4">
-            <div class="w-8 h-8 rounded-full bg-[#4B8BD4] text-white flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
-            <div>
-              <h3 class="font-bold text-[#1B3A5C] mb-1">Download and open</h3>
-              <p class="text-[#5A6474] text-sm">Download the file for your platform and double-click to open WorkInPrivate. On macOS, drag it to Applications first.</p>
-            </div>
-          </div>
-          <div class="flex gap-4">
-            <div class="w-8 h-8 rounded-full bg-[#4B8BD4] text-white flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
-            <div>
-              <h3 class="font-bold text-[#1B3A5C] mb-1">Follow the setup wizard</h3>
-              <p class="text-[#5A6474] text-sm">The app checks your hardware and helps you pick the best AI model. It handles everything automatically.</p>
-            </div>
-          </div>
-          <div class="flex gap-4">
-            <div class="w-8 h-8 rounded-full bg-[#4B8BD4] text-white flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
-            <div>
-              <h3 class="font-bold text-[#1B3A5C] mb-1">Start chatting</h3>
-              <p class="text-[#5A6474] text-sm">Once setup is complete, you're ready! Type a message and start your private AI conversation.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- Already purchased? -->
+  <section class="py-12 bg-[#F7F9FC] border-t-2 border-[#E2E8F0]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-[#5A6474] text-sm">
+        Already purchased? Check your email for the download links, or <a href="mailto:support@workinprivate.com" class="text-[#4B8BD4] hover:underline">contact support</a> for help.
+      </p>
     </div>
   </section>
 

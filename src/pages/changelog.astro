@@ -5,10 +5,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout title="Changelog - WorkInPrivate" description="Release notes and version history for WorkInPrivate.">
 
   <!-- Hero -->
-  <section class="bg-gradient-to-br from-indigo-50 via-white to-indigo-50 py-16 sm:py-20">
+  <section class="py-16 sm:py-20 bg-gradient-to-b from-white to-[#F7F9FC]">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Changelog</h1>
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto">Release notes and version history for WorkInPrivate.</p>
+      <h1 class="font-serif text-4xl sm:text-5xl font-bold text-[#1B3A5C] mb-4">Changelog</h1>
+      <p class="text-xl text-[#5A6474] max-w-2xl mx-auto">Release notes and version history for WorkInPrivate.</p>
     </div>
   </section>
 
@@ -19,13 +19,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <!-- Loading state -->
         <div id="changelog-loading" class="text-center py-12">
-          <div class="inline-block w-8 h-8 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin"></div>
-          <p class="mt-4 text-gray-500">Loading release notes...</p>
+          <div class="inline-block w-8 h-8 border-4 border-[#D4E3F5] border-t-[#4B8BD4] rounded-full animate-spin"></div>
+          <p class="mt-4 text-[#8A9AB5]">Loading release notes...</p>
         </div>
 
         <!-- Error state -->
         <div id="changelog-error" class="hidden text-center py-12">
-          <p class="text-gray-500">Unable to load release notes. Please try again later.</p>
+          <p class="text-[#8A9AB5]">Unable to load release notes. Please try again later.</p>
         </div>
 
         <!-- Changelog entries rendered here -->
@@ -73,7 +73,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         var headerMatch = line.match(/^## (.+)/);
         if (headerMatch) {
           var title = headerMatch[1].trim();
-          // Skip the version header (e.g. "v1.0.1 (2026-02-28)")
           if (title.match(/^v\d/)) continue;
           currentSection = { title: title, items: [] };
           sections.push(currentSection);
@@ -107,27 +106,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       var date = formatDate(version.created_at);
       var badge = severityBadge(version.severity);
 
-      var html = '<article class="border border-gray-200 rounded-2xl overflow-hidden">';
+      var html = '<article class="border-2 border-[#E2E8F0] rounded-2xl overflow-hidden">';
 
-      // Version header
-      html += '<div class="px-6 py-5 bg-gray-50 border-b border-gray-200">';
+      html += '<div class="px-6 py-5 bg-[#F7F9FC] border-b-2 border-[#E2E8F0]">';
       html += '<div class="flex flex-wrap items-center gap-3">';
-      html += '<h2 class="text-2xl font-bold text-gray-900 font-mono">v' + escapeHtml(version.version) + '</h2>';
+      html += '<h2 class="text-2xl font-bold text-[#1B3A5C] font-mono">v' + escapeHtml(version.version) + '</h2>';
       html += badge;
       html += '</div>';
-      html += '<p class="mt-1 text-sm text-gray-500">' + escapeHtml(date) + '</p>';
+      html += '<p class="mt-1 text-sm text-[#8A9AB5]">' + escapeHtml(date) + '</p>';
       html += '</div>';
 
-      // Sections
       html += '<div class="px-6 py-5 space-y-6">';
 
       if (sections.length === 0) {
-        html += '<p class="text-gray-600">' + escapeHtml(version.release_notes || 'Initial release.') + '</p>';
+        html += '<p class="text-[#5A6474]">' + escapeHtml(version.release_notes || 'Initial release.') + '</p>';
       }
 
       for (var i = 0; i < sections.length; i++) {
         var section = sections[i];
-        // Skip internal/maintenance entries — not useful for end users
         if (section.title === 'Internal' || section.title === 'Docs') continue;
         var meta = CATEGORY_META[section.title] || { icon: '&#x1F4CB;', color: 'gray' };
         var colors = COLOR_CLASSES[meta.color];
@@ -140,7 +136,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         html += '<ul class="space-y-1.5">';
 
         for (var j = 0; j < section.items.length; j++) {
-          html += '<li class="flex items-start gap-2 text-sm text-gray-700">';
+          html += '<li class="flex items-start gap-2 text-sm text-[#5A6474]">';
           html += '<span class="mt-1.5 w-1.5 h-1.5 rounded-full ' + colors.dot + ' flex-shrink-0"></span>';
           html += '<span>' + escapeHtml(section.items[j]) + '</span>';
           html += '</li>';
