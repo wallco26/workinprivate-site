@@ -25,7 +25,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-indigo-600 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-              <span>We only collect data necessary to process your purchase and deliver your license</span>
+              <span>We only collect data necessary to process your purchase</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-indigo-600 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
@@ -39,7 +39,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Information You Provide</h3>
         <p>When you make a purchase or interact with us, we may collect:</p>
         <ul class="list-disc pl-6 space-y-2">
-          <li><strong>Email address</strong> — provided during checkout for license key delivery and account communication</li>
+          <li><strong>Email address</strong> — provided during checkout for order records and account communication</li>
           <li><strong>Name</strong> — if provided during checkout</li>
           <li><strong>Purchase details</strong> — which products, modules, and OS version you selected</li>
         </ul>
@@ -59,18 +59,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p>This information is collected through standard server logs by our hosting provider.</p>
 
         <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Customer Database</h3>
-        <p>We use <strong>Supabase</strong> as our database provider to store your email address, purchase history, license key information, and account creation date. See <a href="https://supabase.com/privacy" class="text-indigo-600 hover:text-indigo-700" target="_blank" rel="noopener noreferrer">Supabase's Privacy Policy</a>.</p>
+        <p>We use <strong>Supabase</strong> as our database provider to store your email address, purchase history, and account creation date. See <a href="https://supabase.com/privacy" class="text-indigo-600 hover:text-indigo-700" target="_blank" rel="noopener noreferrer">Supabase's Privacy Policy</a>.</p>
 
         <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">3. How We Use Your Information</h2>
         <p>We use the information we collect for:</p>
         <ul class="list-disc pl-6 space-y-2">
-          <li><strong>License delivery</strong> — Sending your license key via email after purchase</li>
+          <li><strong>Purchase records</strong> — Maintaining records of your purchase</li>
           <li><strong>Module ownership tracking</strong> — Recording which modules you have purchased</li>
           <li><strong>Payment processing</strong> — Processing your purchase through Stripe</li>
           <li><strong>Customer support</strong> — Responding to your questions and requests</li>
           <li><strong>Order fulfillment</strong> — Delivering the correct OS version and modules</li>
           <li><strong>Legal compliance</strong> — Meeting our legal obligations (e.g., tax records)</li>
-          <li><strong>Communication</strong> — Sending transactional emails (order confirmations, license delivery, important product updates)</li>
+          <li><strong>Communication</strong> — Sending important product updates if necessary</li>
         </ul>
         <p>We do <strong>not</strong> use your information for selling to third parties, targeted advertising, or profiling.</p>
 
@@ -95,7 +95,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
             <div>
               <p class="font-semibold text-gray-900">Supabase (Database Hosting)</p>
-              <p class="text-gray-700 text-sm">Receives: email, purchase history, license information</p>
+              <p class="text-gray-700 text-sm">Receives: email, purchase history</p>
               <p class="text-gray-700 text-sm">Policy: <a href="https://supabase.com/privacy" class="text-indigo-600 hover:text-indigo-700" target="_blank" rel="noopener noreferrer">supabase.com/privacy</a></p>
             </div>
             <div>
@@ -128,7 +128,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <ul class="list-disc pl-6 space-y-2">
           <li><strong>Email address:</strong> Retained as long as your license is active, plus 3 years</li>
           <li><strong>Purchase history:</strong> 7 years (tax and legal compliance)</li>
-          <li><strong>License key records:</strong> As long as your license is active, plus 1 year</li>
+          <li><strong>Purchase records:</strong> As long as your account is active, plus 1 year</li>
           <li><strong>Website analytics:</strong> 26 months</li>
           <li><strong>Support correspondence:</strong> 3 years after last communication</li>
         </ul>
