@@ -15,6 +15,33 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const siteUrl = 'https://www.workinprivate.com';
+
+// Build breadcrumb list from URL path
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+const breadcrumbItems = [
+  { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl }
+];
+const pageNames: Record<string, string> = {
+  'pricing': 'Pricing',
+  'download': 'Download',
+  'faq': 'FAQ',
+  'changelog': 'Changelog',
+  'privacy': 'Privacy Policy',
+  'terms': 'Terms of Sale',
+  'license': 'License Agreement',
+  'refund': 'Refund Policy',
+};
+if (pathSegments.length > 0) {
+  const segment = pathSegments[0];
+  const name = pageNames[segment] || segment.charAt(0).toUpperCase() + segment.slice(1);
+  breadcrumbItems.push({
+    "@type": "ListItem",
+    "position": 2,
+    "name": name,
+    "item": `${siteUrl}/${segment}`
+  });
+}
 
 // Set PUBLIC_SITE_PREVIEW=false to hide the preview banner (e.g. for local testing).
 // Defaults to true (banner shown) when the env var is absent.
@@ -46,6 +73,49 @@ const isPreview = import.meta.env.PUBLIC_SITE_PREVIEW !== 'false';
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
+
+    <!-- Organization schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Wallco Digital Labs LLC",
+      "url": siteUrl,
+      "logo": `${siteUrl}/favicon.svg`,
+      "brand": {
+        "@type": "Brand",
+        "name": "WorkInPrivate"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "support@workinprivate.com"
+      }
+    })} />
+
+    <!-- WebSite schema with SearchAction -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "WorkInPrivate",
+      "url": siteUrl,
+      "description": "Your private AI chatbot — runs 100% on your computer. No cloud. No accounts. Just you.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Wallco Digital Labs LLC"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": `${siteUrl}/faq?q={search_term_string}`,
+        "query-input": "required name=search_term_string"
+      }
+    })} />
+
+    <!-- BreadcrumbList schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": breadcrumbItems
+    })} />
 
     <!-- Google Fonts - Source Sans 3 & Merriweather -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
