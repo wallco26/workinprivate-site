@@ -4,6 +4,94 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="FAQ - WorkInPrivate" description="Common questions about WorkInPrivate — the private AI chatbot that runs on your own computer. No subscriptions, complete privacy.">
 
+  <!-- FAQ Schema (FAQPage structured data for Google rich results) -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What exactly is WorkInPrivate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WorkInPrivate is a private AI chatbot — like ChatGPT, but it runs entirely on your computer. You can chat with it, ask questions, write emails, brainstorm ideas, analyze documents, and more. Everything stays on your machine. Nothing is sent to the cloud."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is this different from ChatGPT?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The main difference is privacy and cost. ChatGPT sends everything you type to OpenAI's servers and costs $20/month. WorkInPrivate runs the AI on your own computer — your conversations never leave your machine. And it's a one-time purchase ($39), not a subscription."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it really not send any data to the internet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Correct. The only network call the app ever makes is an optional check to see if a new version is available. Your conversations, documents, and files never leave your computer. You can even disconnect from the internet entirely after the initial setup and it works perfectly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What can I use it for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Anything you'd use ChatGPT for! Write and edit documents, draft emails, brainstorm ideas, summarize PDFs or Word docs, analyze images, explain complex topics, write code, and more. It's a general-purpose AI assistant."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the system requirements?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Minimum: 8 GB RAM, 5 GB free disk space, Windows 10+, macOS 12+, or Linux. Recommended: 16 GB RAM with an NVIDIA GPU or Apple Silicon (M1/M2/M3) for faster responses. The app automatically detects your hardware and recommends the best AI model for your computer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What AI models are included?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WorkInPrivate uses open-source AI models like Llama, Mistral, and Gemma through Ollama. During setup, the app recommends the best model for your hardware. You can also download additional models any time — there are models for general chat, image analysis, coding, and more. All free to use."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I upload files?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! You can upload PDFs, Word documents, text files, code files, and images. The AI reads the content and helps you analyze, summarize, or work with it. For images, you'll need a vision-capable model (the app will recommend one if needed)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a money-back guarantee?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. If you're not happy for any reason, contact us within 30 days for a full refund. No questions asked."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need technical skills?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not at all. If you can use a chat app on your phone, you can use WorkInPrivate. You download it, double-click to open, and a friendly setup wizard walks you through everything. No command lines, no configuration files, no programming."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast are the responses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on your hardware. With a modern GPU (NVIDIA or Apple Silicon), responses stream in real-time — similar to ChatGPT. On CPU-only machines, responses are slower but still usable. The app recommends lighter models for slower hardware."
+        }
+      }
+    ]
+  })} />
+
   <!-- FAQ Hero -->
   <section class="py-16 sm:py-20 bg-gradient-to-b from-white to-[#F7F9FC]">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
