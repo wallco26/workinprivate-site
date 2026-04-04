@@ -117,6 +117,15 @@ const isPreview = import.meta.env.PUBLIC_SITE_PREVIEW !== 'false';
       "itemListElement": breadcrumbItems
     })} />
 
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSRFQPEBMS"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DSRFQPEBMS');
+    </script>
+
     <!-- Google Fonts - Source Sans 3 & Merriweather -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

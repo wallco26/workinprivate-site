@@ -143,4 +143,21 @@ const baseUrl = 'https://github.com/wallco26/workinprivate-site/releases/latest/
     </div>
   </section>
 
+  <!-- Google Analytics: track purchase conversion -->
+  <script is:inline>
+    if (typeof gtag === 'function') {
+      gtag('event', 'purchase', {
+        transaction_id: new URLSearchParams(window.location.search).get('session_id') || ('wip_' + Date.now()),
+        value: 39.00,
+        currency: 'USD',
+        items: [{
+          item_id: 'workinprivate',
+          item_name: 'WorkInPrivate',
+          price: 39.00,
+          quantity: 1
+        }]
+      });
+    }
+  </script>
+
 </BaseLayout>
