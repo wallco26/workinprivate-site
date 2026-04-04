@@ -40,7 +40,7 @@ const baseUrl = 'https://github.com/wallco26/workinprivate-site/releases/latest/
           <div class="text-4xl mb-4">&#x1FA9F;</div>
           <h3 class="font-bold text-[#1B3A5C] text-lg mb-2">Windows</h3>
           <p class="text-[#5A6474] text-sm mb-4">Windows 10 or later</p>
-          <a href={`${baseUrl}/WorkInPrivate-Win64.zip`} class="inline-flex items-center gap-2 px-6 py-3 rounded-[10px] text-white font-bold bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none;">
+          <a href={`${baseUrl}/WorkInPrivate-Win64.zip`} onclick="gtag('event', 'download', {os: 'windows'});" class="inline-flex items-center gap-2 px-6 py-3 rounded-[10px] text-white font-bold bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none;">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download
           </a>
@@ -51,11 +51,11 @@ const baseUrl = 'https://github.com/wallco26/workinprivate-site/releases/latest/
           <div class="text-4xl mb-4">&#x1F34E;</div>
           <h3 class="font-bold text-[#1B3A5C] text-lg mb-2">macOS</h3>
           <p class="text-[#5A6474] text-sm mb-4">macOS 12 or later</p>
-          <a href={`${baseUrl}/WorkInPrivate-macOS-ARM.zip`} class="inline-flex items-center gap-2 px-6 py-3 rounded-[10px] text-white font-bold bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none;">
+          <a href={`${baseUrl}/WorkInPrivate-macOS-ARM.zip`} onclick="gtag('event', 'download', {os: 'macos_arm'});" class="inline-flex items-center gap-2 px-6 py-3 rounded-[10px] text-white font-bold bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none;">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download (Apple Silicon)
           </a>
-          <a href={`${baseUrl}/WorkInPrivate-macOS-Intel.zip`} class="block mt-2 text-sm text-[#4B8BD4] hover:underline">Intel Mac? Download here</a>
+          <a href={`${baseUrl}/WorkInPrivate-macOS-Intel.zip`} onclick="gtag('event', 'download', {os: 'macos_intel'});" class="block mt-2 text-sm text-[#4B8BD4] hover:underline">Intel Mac? Download here</a>
         </div>
 
         <!-- Linux -->
@@ -63,7 +63,7 @@ const baseUrl = 'https://github.com/wallco26/workinprivate-site/releases/latest/
           <div class="text-4xl mb-4">&#x1F427;</div>
           <h3 class="font-bold text-[#1B3A5C] text-lg mb-2">Linux</h3>
           <p class="text-[#5A6474] text-sm mb-4">Ubuntu, Fedora, Arch, etc.</p>
-          <a href={`${baseUrl}/WorkInPrivate-Linux.tar.gz`} class="inline-flex items-center gap-2 px-6 py-3 rounded-[10px] text-white font-bold bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none;">
+          <a href={`${baseUrl}/WorkInPrivate-Linux.tar.gz`} onclick="gtag('event', 'download', {os: 'linux'});" class="inline-flex items-center gap-2 px-6 py-3 rounded-[10px] text-white font-bold bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none;">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download
           </a>
