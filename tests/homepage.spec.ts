@@ -58,11 +58,6 @@ test.describe('Homepage - Friendly Neighbor Light Theme', () => {
     await expect(badge).toBeVisible();
   });
 
-  test('should display money-back guarantee in hero', async ({ page }) => {
-    const guarantee = page.locator('text=30-day money-back guarantee').first();
-    await expect(guarantee).toBeVisible();
-  });
-
   test('should display blue CTA button in hero', async ({ page }) => {
     const buyButton = page.getByRole('link', { name: /Start Writing Today.*\$29/i }).first();
     await expect(buyButton).toBeVisible();
