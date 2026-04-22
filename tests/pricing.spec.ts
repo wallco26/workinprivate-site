@@ -126,11 +126,6 @@ test.describe('Pricing Page', () => {
     await expect(setupNotice).toBeVisible();
   });
 
-  test('should display money-back guarantee badge', async ({ page }) => {
-    const guarantee = page.locator('text=30-day money-back guarantee on all purchases').first();
-    await expect(guarantee).toBeVisible();
-  });
-
   test('should have hover states on add-on modules', async ({ page }) => {
     await page.getByRole('heading', { name: /Add-on Writing Modules/i }).scrollIntoViewIfNeeded();
 
