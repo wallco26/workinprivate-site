@@ -19,6 +19,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       },
       {
         "@type": "Question",
+        "name": "What does \"local AI\" mean?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Local AI means the AI runs directly on your own computer instead of on a company's servers somewhere on the internet. Tools like ChatGPT send everything you type to the cloud. With local AI, your questions, documents, and files stay on your machine — nothing is sent away. WorkInPrivate handles all the technical setup so you get local AI without needing to understand how it works."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "How is this different from ChatGPT?",
         "acceptedAnswer": {
           "@type": "Answer",
@@ -105,6 +113,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </summary>
           <div class="px-6 pb-5 text-[#5A6474] text-sm leading-relaxed">
             WorkInPrivate is a private AI chatbot — like ChatGPT, but it runs entirely on your computer. You can chat with it, ask questions, write emails, brainstorm ideas, analyze documents, and more. Everything stays on your machine. Nothing is sent to the cloud.
+          </div>
+        </details>
+
+        <details class="group bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl overflow-hidden hover:border-[#D4E3F5] transition-colors">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-bold text-[#1B3A5C] text-base">
+            What does "local AI" mean?
+            <svg class="w-5 h-5 text-[#4B8BD4] group-open:rotate-180 transition-transform flex-shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-[#5A6474] text-sm leading-relaxed">
+            Local AI means the AI runs directly on your own computer instead of on a company's servers somewhere on the internet. Tools like ChatGPT send everything you type to the cloud. With local AI, your questions, documents, and files stay on your machine — nothing is sent away. WorkInPrivate handles all the technical setup so you get local AI without needing to understand how it works.
           </div>
         </details>
 

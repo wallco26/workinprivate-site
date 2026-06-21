@@ -2,14 +2,14 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="WorkInPrivate — Your Private AI Chatbot" description="WorkInPrivate is a private AI chatbot that runs 100% on your computer. No cloud, no accounts, no data leaves your machine. Chat, analyze files, and get AI help — all locally.">
+<BaseLayout title="WorkInPrivate — The Easiest Local AI for Normal People" description="WorkInPrivate is private AI that runs on your own computer. No cloud account, no confusing setup, no sending your files to someone else's server. The easy, friendly way to use local AI.">
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "WorkInPrivate",
-    "description": "A private AI chatbot that runs entirely on your computer. No cloud, no accounts, no data leaves your machine.",
+    "description": "The easiest local AI for normal people. A ChatGPT-like assistant that runs on your own computer — no cloud account, no confusing setup, no data leaving your machine.",
     "url": "https://www.workinprivate.com",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "Windows, macOS, Linux",
@@ -20,11 +20,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       "availability": "https://schema.org/InStock"
     },
     "featureList": [
-      "Runs 100% on your computer",
+      "Runs on your own computer — not the cloud",
       "Chat with AI like ChatGPT — but private",
-      "Analyze documents and images locally",
+      "Guided setup that checks your computer for you",
+      "No accounts, no command line, no jargon",
       "One-time purchase — no subscription",
-      "Works offline after setup",
       "Works on Windows, macOS, and Linux"
     ]
   })} />
@@ -40,10 +40,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             100% private — nothing leaves your computer
           </div>
           <h1 class="font-serif text-4xl sm:text-5xl font-bold text-[#1B3A5C] mb-5 leading-tight" style="animation: fadeUp 0.5s ease 0.1s both;">
-            Your Private AI Chatbot.<br /><span class="text-[#4B8BD4]">No Cloud. No Accounts.</span>
+            The Easiest Local AI<br /><span class="text-[#4B8BD4]">for Normal People.</span>
           </h1>
           <p class="text-lg text-[#5A6474] mb-8 max-w-lg leading-relaxed" style="animation: fadeUp 0.5s ease 0.2s both;">
-            WorkInPrivate is a ChatGPT-like AI that runs entirely on your computer. Chat, write, analyze documents, and get AI help — without any of your data ever leaving your machine.
+            WorkInPrivate gives you a ChatGPT-like assistant that runs on your own computer. No cloud account. No confusing setup. No sending private files to someone else's server.
           </p>
           <div class="flex flex-wrap gap-4 mb-7" style="animation: fadeUp 0.5s ease 0.3s both;">
             <a href="/pricing" class="inline-flex items-center gap-2.5 px-8 py-4 rounded-[10px] text-white font-bold text-lg bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none; box-shadow: 0 2px 8px rgba(75,139,212,0.3);">
@@ -101,17 +101,61 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="py-20 bg-[#EDF2FA] border-t-2 border-b-2 border-[#D4E3F5]">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto text-center">
-        <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">What Is This?</div>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-5 leading-tight">Like ChatGPT, But On Your Computer</h2>
+        <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">What Is Local AI?</div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-5 leading-tight">AI That Runs On Your Computer, Not The Cloud</h2>
+        <p class="text-lg text-[#5A6474] leading-relaxed mb-4">
+          Most AI tools, like ChatGPT, send everything you type to a company's servers over the internet. "Local AI" is different: the AI lives and runs right on your own computer. Your questions, your documents, and your files stay with you — there's no server to send them to.
+        </p>
         <p class="text-lg text-[#5A6474] leading-relaxed">
-          You've probably used ChatGPT or Claude. They're great, but they cost $20+ per month and send everything you type to the cloud. WorkInPrivate gives you the same chat experience, but everything runs right on your computer. Pay once ($14.99), and it's yours forever. No monthly bills. No data collection. No one reading your conversations.
+          WorkInPrivate gives you that same chat experience without the cloud. Pay once ($14.99) and it's yours forever. No monthly bills. No data collection. No one reading your conversations.
         </p>
       </div>
     </div>
   </section>
 
+  <!-- Built For Normal People Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">Built For Normal People</div>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-5 leading-tight">No AI Hobbyist Degree Required</h2>
+          <p class="text-lg text-[#5A6474] leading-relaxed mb-4">
+            Running AI on your own computer usually means wrestling with terminals, model files, and settings that assume you already know what a "GPU" or a "quantization" is. That's fine for hobbyists. It's miserable for everyone else.
+          </p>
+          <p class="text-lg text-[#5A6474] leading-relaxed">
+            WorkInPrivate does the technical part for you. It checks your computer, picks an AI that will run well on it, and sets everything up behind a friendly window — no command line, no config files, no guesswork. You just open it and start typing.
+          </p>
+        </div>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4 bg-[#F0FFF4] border-2 border-[#C6F6D5] rounded-xl p-5">
+            <svg class="w-6 h-6 text-[#38A169] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <div>
+              <h3 class="font-bold text-[#1B3A5C] text-base mb-1">It picks the right AI for you</h3>
+              <p class="text-[#5A6474] text-sm leading-relaxed">No comparing model names or specs. WorkInPrivate looks at your computer and recommends one that fits.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 bg-[#F0FFF4] border-2 border-[#C6F6D5] rounded-xl p-5">
+            <svg class="w-6 h-6 text-[#38A169] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <div>
+              <h3 class="font-bold text-[#1B3A5C] text-base mb-1">No command line, ever</h3>
+              <p class="text-[#5A6474] text-sm leading-relaxed">Everything happens in a normal app window with buttons you can actually understand.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 bg-[#F0FFF4] border-2 border-[#C6F6D5] rounded-xl p-5">
+            <svg class="w-6 h-6 text-[#38A169] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            <div>
+              <h3 class="font-bold text-[#1B3A5C] text-base mb-1">If you can text, you can use it</h3>
+              <p class="text-[#5A6474] text-sm leading-relaxed">It works like any chat app you already know. Type a message, get an answer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- How It Works Section -->
-  <section id="how-it-works" class="py-20 bg-white">
+  <section id="how-it-works" class="py-20 bg-[#F7F9FC] border-t-2 border-[#E2E8F0]">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-4">
         <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">How It Works</div>
@@ -125,8 +169,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <svg class="w-7 h-7 text-[#4B8BD4]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           </div>
           <div class="text-xs font-bold uppercase tracking-wider text-[#4B8BD4] mb-2.5">Step 1</div>
-          <h3 class="font-serif text-lg font-bold text-[#1B3A5C] mb-3">Download & Open</h3>
-          <p class="text-[#5A6474] text-base leading-relaxed">Download WorkInPrivate and double-click to open. A friendly setup wizard walks you through choosing an AI model that works best for your computer.</p>
+          <h3 class="font-serif text-lg font-bold text-[#1B3A5C] mb-3">Install WorkInPrivate</h3>
+          <p class="text-[#5A6474] text-base leading-relaxed">Download the app and double-click to open it — just like installing any other program. No accounts to create, nothing to configure.</p>
         </div>
         <!-- Step 2 -->
         <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-2xl p-9 text-center hover:border-[#D4E3F5] transition-all">
@@ -134,8 +178,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <svg class="w-7 h-7 text-[#4B8BD4]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
           </div>
           <div class="text-xs font-bold uppercase tracking-wider text-[#4B8BD4] mb-2.5">Step 2</div>
-          <h3 class="font-serif text-lg font-bold text-[#1B3A5C] mb-3">Start Chatting</h3>
-          <p class="text-[#5A6474] text-base leading-relaxed">Type anything — ask questions, write emails, brainstorm ideas, analyze documents. Just like ChatGPT, but completely private.</p>
+          <h3 class="font-serif text-lg font-bold text-[#1B3A5C] mb-3">Let It Check Your Computer</h3>
+          <p class="text-[#5A6474] text-base leading-relaxed">WorkInPrivate looks at your computer and sets up an AI that will run well on it. The guided setup handles the technical parts so you don't have to.</p>
         </div>
         <!-- Step 3 -->
         <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-2xl p-9 text-center hover:border-[#D4E3F5] transition-all">
@@ -143,19 +187,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <svg class="w-7 h-7 text-[#4B8BD4]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
           </div>
           <div class="text-xs font-bold uppercase tracking-wider text-[#4B8BD4] mb-2.5">Step 3</div>
-          <h3 class="font-serif text-lg font-bold text-[#1B3A5C] mb-3">Stay Private</h3>
-          <p class="text-[#5A6474] text-base leading-relaxed">Everything you type stays on your machine. No internet connection needed after setup. Your conversations are yours alone — forever.</p>
+          <h3 class="font-serif text-lg font-bold text-[#1B3A5C] mb-3">Start Chatting Privately</h3>
+          <p class="text-[#5A6474] text-base leading-relaxed">Ask questions, write emails, brainstorm, or analyze documents — just like ChatGPT. Everything you type stays on your machine, and it works without an internet connection.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Features Section -->
-  <section class="py-20 bg-[#F7F9FC] border-t-2 border-[#E2E8F0]">
+  <section class="py-20 bg-white border-t-2 border-[#E2E8F0]">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">Features</div>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] leading-tight">Everything You Need</h2>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-4 leading-tight">Everything You Need, Nothing You Don't</h2>
+        <p class="text-lg text-[#5A6474] max-w-lg mx-auto">All the everyday AI help you'd expect — kept completely private and simple to use.</p>
       </div>
       <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div class="bg-white border-2 border-[#E2E8F0] rounded-xl p-7 flex gap-4 hover:border-[#D4E3F5] transition-colors">
@@ -208,8 +253,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <svg class="w-6 h-6 text-[#38A169]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
           <div>
-            <h3 class="font-bold text-[#1B3A5C] text-base mb-1">Smart Setup</h3>
-            <p class="text-[#5A6474] text-sm leading-relaxed">The app detects your hardware and recommends the best AI model for your computer. No technical knowledge needed.</p>
+            <h3 class="font-bold text-[#1B3A5C] text-base mb-1">Guided Setup</h3>
+            <p class="text-[#5A6474] text-sm leading-relaxed">WorkInPrivate checks your computer and picks an AI that runs well on it — so you never have to compare models or touch a command line.</p>
           </div>
         </div>
       </div>
@@ -217,7 +262,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <!-- Comparison Section -->
-  <section class="py-20 bg-white border-t-2 border-[#E2E8F0]">
+  <section class="py-20 bg-[#F7F9FC] border-t-2 border-[#E2E8F0]">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">Compare</div>
@@ -280,13 +325,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- Privacy Section -->
+  <!-- Why Private Section -->
   <section class="py-20 bg-[#EDF2FA] border-t-2 border-[#D4E3F5]">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">Privacy</div>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-4 leading-tight">Your Conversations Stay Private</h2>
-        <p class="text-[#5A6474] text-lg max-w-xl mx-auto">No one is watching — not during setup, not while you chat, not ever.</p>
+        <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">Why Private?</div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-4 leading-tight">Some Things Shouldn't Leave Your Computer</h2>
+        <p class="text-[#5A6474] text-lg max-w-2xl mx-auto">A lot of what we'd ask an AI is personal. With WorkInPrivate, it stays that way — your personal documents, work files, finances, family details, half-formed ideas, and sensitive writing never touch someone else's server.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
         <div class="bg-white border-2 border-[#E2E8F0] rounded-2xl p-8 hover:border-[#D4E3F5] transition-colors">
@@ -318,8 +363,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="py-20 bg-white border-t-2 border-[#E2E8F0]">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl mx-auto text-center">
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-5">Ready for a Private AI?</h2>
-        <p class="text-lg text-[#5A6474] mb-8">Stop paying monthly subscriptions. Stop sending your data to the cloud. Get WorkInPrivate and own your AI experience.</p>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-5">Try Local AI The Easy Way</h2>
+        <p class="text-lg text-[#5A6474] mb-8">No subscriptions. No cloud. No setup headaches. Just private AI that runs on your computer — and a guided setup that does the technical part for you.</p>
         <a href="/pricing" class="inline-flex items-center gap-2.5 px-10 py-4 rounded-[10px] text-white font-bold text-lg bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none; box-shadow: 0 2px 8px rgba(75,139,212,0.3);">
           Buy Now — $14.99
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
