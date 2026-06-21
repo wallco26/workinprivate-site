@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Marketing website for **WorkInPrivate** — a private AI chatbot that runs locally via Ollama. Hosted on GitHub Pages at `www.workinprivate.com`. Sells the product ($39 one-time) built in the sibling `workinprivate/` repo.
+Marketing website for **WorkInPrivate** — a private AI chatbot that runs locally via Ollama. Hosted on GitHub Pages at `www.workinprivate.com`. Sells the product ($14.99 one-time) built in the sibling `workinprivate/` repo.
 
 **Product positioning:** "Your private AI chatbot — runs 100% on your computer. No cloud. No accounts. Just you."
 
@@ -51,8 +51,8 @@ Fonts: Source Sans 3 (body), Merriweather (headings), JetBrains Mono (code).
 - All pages use `BaseLayout` and pass `title` and `description` props for SEO
 - Styling is inline Tailwind utility classes — no separate CSS files
 - The site is fully static (`output: 'static'`)
-- Pricing: single product at $39 one-time (no modules, no subscriptions)
-- Primary CTA: "Buy Now — $39" linking to `/pricing`
+- Pricing: single product at $14.99 one-time (no modules, no subscriptions)
+- Primary CTA: "Buy Now — $14.99" linking to `/pricing`
 
 ## Testing
 
