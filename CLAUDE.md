@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Marketing website for **WorkInPrivate** — a private AI chatbot that runs locally via Ollama. Hosted on GitHub Pages at `www.workinprivate.com`. Sells the product ($14.99 one-time) built in the sibling `workinprivate/` repo.
+Marketing website for **WorkInPrivate** — a private AI chatbot that runs open-source AI models locally (models are downloaded from Hugging Face). Hosted on GitHub Pages at `www.workinprivate.com`. Sells the product ($14.99 one-time) built in the sibling `workinprivate/` repo.
 
 **Product positioning:** "Your private AI chatbot — runs 100% on your computer. No cloud. No accounts. Just you."
 
