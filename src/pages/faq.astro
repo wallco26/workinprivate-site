@@ -88,6 +88,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           "@type": "Answer",
           "text": "It depends on your hardware. With a modern GPU (NVIDIA or Apple Silicon), responses stream in real-time — similar to ChatGPT. On CPU-only machines, responses are slower but still usable. The app recommends lighter models for slower hardware."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a free trial?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. WorkInPrivate is free to download and try for 7 days, with every feature unlocked and no account or credit card required. When the trial ends, you can unlock the app forever with a one-time $29.99 license key, which you enter right in the app."
+        }
       }
     ]
   })} />
@@ -208,6 +216,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
         </details>
 
+        <details class="group bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl overflow-hidden hover:border-[#D4E3F5] transition-colors">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-bold text-[#1B3A5C] text-base">
+            Is there a free trial?
+            <svg class="w-5 h-5 text-[#4B8BD4] group-open:rotate-180 transition-transform flex-shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-[#5A6474] text-sm leading-relaxed">
+            Yes! WorkInPrivate is free to download and try for 7 days &mdash; every feature unlocked, no account or credit card required. When the trial ends, unlock the app forever with a one-time $29.99 license key that you paste right into the app (click &ldquo;Have a key?&rdquo; or Settings &rarr; License).
+          </div>
+        </details>
+
       </div>
     </div>
   </section>
@@ -217,8 +235,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="font-serif text-2xl font-bold text-[#1B3A5C] mb-4">Still have questions?</h2>
       <p class="text-[#5A6474] mb-6">We're happy to help. Reach out any time.</p>
-      <a href="/pricing" class="inline-flex items-center gap-2.5 px-8 py-4 rounded-[10px] text-white font-bold text-lg bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none; box-shadow: 0 2px 8px rgba(75,139,212,0.3);">
-        Get WorkInPrivate — $29.99
+      <a href="/download" class="inline-flex items-center gap-2.5 px-8 py-4 rounded-[10px] text-white font-bold text-lg bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none; box-shadow: 0 2px 8px rgba(75,139,212,0.3);">
+        Download Free — 7-Day Trial
       </a>
     </div>
   </section>

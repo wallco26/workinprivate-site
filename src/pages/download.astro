@@ -1,18 +1,97 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const baseUrl = 'https://github.com/wallco26/workinprivate-site/releases/latest/download';
 ---
 
-<BaseLayout title="Download WorkInPrivate" description="Purchase WorkInPrivate to get instant download access for Windows, macOS, or Linux.">
+<BaseLayout title="Download WorkInPrivate — Free 7-Day Trial" description="Download WorkInPrivate free and try it for 7 days — no account, no credit card. Windows, macOS, and Linux. Unlock forever for a one-time $29.99.">
 
   <!-- Hero -->
   <section class="py-16 sm:py-20 bg-gradient-to-b from-white to-[#F7F9FC]">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#F0FFF4] text-[#38A169] text-sm font-bold mb-5 border border-[#C6F6D5]">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+        Free 7-day trial — no account, no credit card
+      </div>
       <h1 class="font-serif text-4xl sm:text-5xl font-bold text-[#1B3A5C] mb-4">Download WorkInPrivate</h1>
-      <p class="text-xl text-[#5A6474] max-w-2xl mx-auto mb-8">Get instant download access for Windows, macOS, and Linux. Install it like any other app, let the guided setup check your computer, and start chatting privately.</p>
-      <a href="https://buy.stripe.com/4gMfZhb7Lb5Can57HvaR20q" onclick="gtag('event', 'begin_checkout', {currency: 'USD', value: 29.99, checkout_source: 'download_page', items: [{item_id: 'workinprivate', item_name: 'WorkInPrivate', price: 29.99, quantity: 1}]});" class="inline-flex items-center gap-2 px-8 py-4 rounded-[10px] text-white font-bold text-lg bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none; box-shadow: 0 2px 8px rgba(75,139,212,0.3);">
-        Buy Now — $29.99
-      </a>
-      <p class="text-[#8A9AB5] text-sm mt-4">One-time payment. Download links provided immediately after purchase.</p>
+      <p class="text-xl text-[#5A6474] max-w-2xl mx-auto mb-2">Install it like any other app, let the guided setup check your computer, and start chatting privately. Try every feature free for 7 days.</p>
+      <p class="text-[#8A9AB5] text-sm max-w-2xl mx-auto">After the trial, unlock it forever for a one-time <strong class="text-[#5A6474]">$29.99</strong> — no subscription.</p>
+    </div>
+  </section>
+
+  <!-- Download Buttons -->
+  <section class="py-14 bg-white border-t-2 border-[#E2E8F0]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Windows -->
+        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-2xl p-8 text-center hover:border-[#D4E3F5] transition-colors">
+          <div class="text-4xl mb-4">&#x1FA9F;</div>
+          <h3 class="font-bold text-[#1B3A5C] text-lg mb-2">Windows</h3>
+          <p class="text-[#5A6474] text-sm mb-4">Windows 10 or later</p>
+          <a href={`${baseUrl}/WorkInPrivate-Win64.zip`} onclick="gtag('event', 'download', {download_os: 'windows', download_source: 'download_page'});" class="inline-flex items-center gap-2 px-6 py-3 rounded-[10px] text-white font-bold bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none;">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Free
+          </a>
+        </div>
+
+        <!-- macOS -->
+        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-2xl p-8 text-center hover:border-[#D4E3F5] transition-colors">
+          <div class="text-4xl mb-4">&#x1F34E;</div>
+          <h3 class="font-bold text-[#1B3A5C] text-lg mb-2">macOS</h3>
+          <p class="text-[#5A6474] text-sm mb-4">macOS 12 or later</p>
+          <a href={`${baseUrl}/WorkInPrivate-macOS-ARM.zip`} onclick="gtag('event', 'download', {download_os: 'macos_arm', download_source: 'download_page'});" class="inline-flex items-center gap-2 px-6 py-3 rounded-[10px] text-white font-bold bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none;">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Free (Apple Silicon)
+          </a>
+          <a href={`${baseUrl}/WorkInPrivate-macOS-Intel.zip`} onclick="gtag('event', 'download', {download_os: 'macos_intel', download_source: 'download_page'});" class="block mt-2 text-sm text-[#4B8BD4] hover:underline">Intel Mac? Download here</a>
+        </div>
+
+        <!-- Linux -->
+        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-2xl p-8 text-center hover:border-[#D4E3F5] transition-colors">
+          <div class="text-4xl mb-4">&#x1F427;</div>
+          <h3 class="font-bold text-[#1B3A5C] text-lg mb-2">Linux</h3>
+          <p class="text-[#5A6474] text-sm mb-4">Ubuntu, Fedora, Arch, etc.</p>
+          <a href={`${baseUrl}/WorkInPrivate-Linux.tar.gz`} onclick="gtag('event', 'download', {download_os: 'linux', download_source: 'download_page'});" class="inline-flex items-center gap-2 px-6 py-3 rounded-[10px] text-white font-bold bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all no-underline" style="text-decoration: none;">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Free
+          </a>
+        </div>
+      </div>
+      <p class="text-center text-[#8A9AB5] text-sm mt-8">
+        Ready to buy now? <a href="/pricing" class="text-[#4B8BD4] hover:underline font-semibold">See pricing</a> — or just download and decide during your trial.
+      </p>
+    </div>
+  </section>
+
+  <!-- How the trial works -->
+  <section class="py-16 bg-[#F7F9FC] border-t-2 border-[#E2E8F0]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-serif text-2xl font-bold text-[#1B3A5C] mb-8 text-center">How the free trial works</h2>
+<div class="space-y-6">
+          <div class="flex gap-4">
+            <div class="w-8 h-8 rounded-full bg-[#4B8BD4] text-white flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+            <div>
+              <h3 class="font-bold text-[#1B3A5C] mb-1">Download & open</h3>
+              <p class="text-[#5A6474] text-sm">Grab the file for your platform above, unzip, and open it. No account, no sign-up.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-8 h-8 rounded-full bg-[#4B8BD4] text-white flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+            <div>
+              <h3 class="font-bold text-[#1B3A5C] mb-1">Use everything free for 7 days</h3>
+              <p class="text-[#5A6474] text-sm">The full app — private chat, your documents, file analysis, all of it. Nothing is locked during the trial.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-8 h-8 rounded-full bg-[#4B8BD4] text-white flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+            <div>
+              <h3 class="font-bold text-[#1B3A5C] mb-1">Love it? Unlock for $29.99</h3>
+              <p class="text-[#5A6474] text-sm">When the trial ends, buy a one-time license and paste your key into the app (click <em>“Have a key?”</em> or Settings &rarr; License). It's yours forever — your chats stay right where they are.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -50,7 +129,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="py-12 bg-[#F7F9FC] border-t-2 border-[#E2E8F0]">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <p class="text-[#5A6474] text-sm">
-        Already purchased? Check your email for the download links, or <a href="mailto:support@workinprivate.com" class="text-[#4B8BD4] hover:underline">contact support</a> for help.
+        Already purchased? Open the app, click <strong>“Have a key?”</strong> (or Settings &rarr; License), and paste the key from your email. Lost it? <a href="mailto:support@workinprivate.com" class="text-[#4B8BD4] hover:underline">Contact support</a>.
       </p>
     </div>
   </section>
