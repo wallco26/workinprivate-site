@@ -10,7 +10,7 @@ interface Props {
 
 const {
   title,
-  description = 'WorkInPrivate — the easiest local AI for normal people. Private AI that runs on your own computer. No cloud, no accounts, no confusing setup.',
+  description = 'WorkInPrivate — a private ChatGPT alternative that runs on your own computer. Your chats and files never leave your machine. No cloud, no accounts, no data used to train AI.',
   ogImage = '/og-image.png'
 } = Astro.props;
 
@@ -67,12 +67,17 @@ const isPreview = import.meta.env.PUBLIC_SITE_PREVIEW !== 'false';
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content="WorkInPrivate" />
     <meta property="og:image" content={new URL(ogImage, Astro.site)} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="WorkInPrivate — private AI that never leaves your computer" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
+    <meta name="twitter:image:alt" content="WorkInPrivate — private AI that never leaves your computer" />
 
     <!-- Organization schema -->
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -98,7 +103,7 @@ const isPreview = import.meta.env.PUBLIC_SITE_PREVIEW !== 'false';
       "@type": "WebSite",
       "name": "WorkInPrivate",
       "url": siteUrl,
-      "description": "The easiest local AI for normal people — runs on your own computer. No cloud. No accounts. No confusing setup.",
+      "description": "A private ChatGPT alternative that runs on your own computer. Your chats and files never leave your machine. No cloud. No accounts. No data used to train AI.",
       "publisher": {
         "@type": "Organization",
         "name": "Wallco Digital Labs LLC"
