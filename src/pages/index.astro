@@ -436,23 +436,35 @@ const previewPanels = [
         <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-4 leading-tight">Built For Confidential Work</h2>
         <p class="text-lg text-[#5A6474] max-w-2xl mx-auto">If you have a duty to keep client or patient information private, WorkInPrivate keeps it on your machine — no cloud upload, no account, no third party that could ever see it.</p>
       </div>
-      <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6">
-          <h3 class="font-bold text-[#1B3A5C] text-base mb-1">Therapists &amp; counselors</h3>
-          <p class="text-[#5A6474] text-sm leading-relaxed">Draft and summarize session notes without them ever leaving your laptop.</p>
-        </div>
-        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6">
-          <h3 class="font-bold text-[#1B3A5C] text-base mb-1">Lawyers</h3>
+      <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a href="/for-lawyers" class="group bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6 hover:border-[#4B8BD4] transition-colors no-underline" style="text-decoration: none;">
+          <h3 class="font-bold text-[#1B3A5C] text-base mb-1 flex items-center gap-1.5">Lawyers <span class="text-[#4B8BD4] opacity-0 group-hover:opacity-100 transition-opacity">&rarr;</span></h3>
           <p class="text-[#5A6474] text-sm leading-relaxed">Work through privileged documents without sending them to a third-party server.</p>
-        </div>
-        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6">
-          <h3 class="font-bold text-[#1B3A5C] text-base mb-1">Accountants &amp; bookkeepers</h3>
+        </a>
+        <a href="/for-therapists" class="group bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6 hover:border-[#4B8BD4] transition-colors no-underline" style="text-decoration: none;">
+          <h3 class="font-bold text-[#1B3A5C] text-base mb-1 flex items-center gap-1.5">Therapists &amp; counselors <span class="text-[#4B8BD4] opacity-0 group-hover:opacity-100 transition-opacity">&rarr;</span></h3>
+          <p class="text-[#5A6474] text-sm leading-relaxed">Draft and summarize session notes without them ever leaving your laptop.</p>
+        </a>
+        <a href="/for-accountants" class="group bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6 hover:border-[#4B8BD4] transition-colors no-underline" style="text-decoration: none;">
+          <h3 class="font-bold text-[#1B3A5C] text-base mb-1 flex items-center gap-1.5">Accountants &amp; bookkeepers <span class="text-[#4B8BD4] opacity-0 group-hover:opacity-100 transition-opacity">&rarr;</span></h3>
           <p class="text-[#5A6474] text-sm leading-relaxed">Analyze client financials while the numbers stay entirely on your computer.</p>
-        </div>
-        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6">
-          <h3 class="font-bold text-[#1B3A5C] text-base mb-1">Healthcare &amp; journalists</h3>
-          <p class="text-[#5A6474] text-sm leading-relaxed">Keep patient records and source material offline, private by design.</p>
-        </div>
+        </a>
+        <a href="/for-healthcare" class="group bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6 hover:border-[#4B8BD4] transition-colors no-underline" style="text-decoration: none;">
+          <h3 class="font-bold text-[#1B3A5C] text-base mb-1 flex items-center gap-1.5">Healthcare <span class="text-[#4B8BD4] opacity-0 group-hover:opacity-100 transition-opacity">&rarr;</span></h3>
+          <p class="text-[#5A6474] text-sm leading-relaxed">Summarize and draft while patient information stays offline, private by design.</p>
+        </a>
+        <a href="/for-journalists" class="group bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6 hover:border-[#4B8BD4] transition-colors no-underline" style="text-decoration: none;">
+          <h3 class="font-bold text-[#1B3A5C] text-base mb-1 flex items-center gap-1.5">Journalists <span class="text-[#4B8BD4] opacity-0 group-hover:opacity-100 transition-opacity">&rarr;</span></h3>
+          <p class="text-[#5A6474] text-sm leading-relaxed">Search document dumps and organize source material offline, private by design.</p>
+        </a>
+        <a href="/for-researchers" class="group bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6 hover:border-[#4B8BD4] transition-colors no-underline" style="text-decoration: none;">
+          <h3 class="font-bold text-[#1B3A5C] text-base mb-1 flex items-center gap-1.5">Researchers <span class="text-[#4B8BD4] opacity-0 group-hover:opacity-100 transition-opacity">&rarr;</span></h3>
+          <p class="text-[#5A6474] text-sm leading-relaxed">Chat with literature, transcripts, and unpublished data &mdash; all on your device.</p>
+        </a>
+        <a href="/for-writers" class="group bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6 hover:border-[#4B8BD4] transition-colors no-underline" style="text-decoration: none;">
+          <h3 class="font-bold text-[#1B3A5C] text-base mb-1 flex items-center gap-1.5">Writers <span class="text-[#4B8BD4] opacity-0 group-hover:opacity-100 transition-opacity">&rarr;</span></h3>
+          <p class="text-[#5A6474] text-sm leading-relaxed">Draft and edit NDA&rsquo;d manuscripts and unpublished work &mdash; nothing uploaded.</p>
+        </a>
       </div>
       <p class="text-center text-xs text-[#8A9AB5] max-w-2xl mx-auto mt-6">WorkInPrivate keeps your data on your device, which removes the third-party-disclosure risk of cloud AI. It supports your confidentiality obligations — it isn't a substitute for your own compliance program.</p>
     </div>

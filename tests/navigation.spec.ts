@@ -1,138 +1,119 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Navigation - Header & Footer', () => {
+// Header & footer navigation for the current light theme.
+// The header CTA is "Start Free Trial" and links to /download (not /pricing).
+
+test.describe('Navigation — header & footer', () => {
   test.beforeEach(async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
     await page.goto('/');
   });
 
-  test('should display light header with navy serif logo', async ({ page }) => {
+  test('exposes a banner landmark with the WorkInPrivate logo', async ({ page }) => {
     const header = page.getByRole('banner');
     await expect(header).toBeVisible();
-
-    const logo = header.locator('a[href="/"]').first();
-    await expect(logo).toBeVisible();
-    await expect(logo).toContainText('WorkInPrivate');
+    await expect(header.locator('a[href="/"]').first()).toContainText('WorkInPrivate');
   });
 
-  test('should have all navigation links', async ({ page }) => {
+  test('has Home / Pricing / FAQ links in the header', async ({ page }) => {
     const header = page.getByRole('banner');
-
-    // Check for navigation links in the header (visible on desktop)
-    const homeLink = header.locator('a[href="/"]').first();
-    const pricingLink = header.locator('a[href="/pricing"]').first();
-    const faqLink = header.locator('a[href="/faq"]').first();
-
-    await expect(homeLink).toBeVisible();
-    await expect(pricingLink).toBeVisible();
-    await expect(faqLink).toBeVisible();
+    await expect(header.locator('a[href="/"]').first()).toBeVisible();
+    await expect(header.locator('a[href="/pricing"]').first()).toBeVisible();
+    await expect(header.locator('a[href="/faq"]').first()).toBeVisible();
   });
 
-  test('should navigate to pricing page', async ({ page }) => {
-    await page.click('header a[href="/pricing"]');
-    await expect(page).toHaveURL('/pricing');
+  test('navigates to the pricing page', async ({ page }) => {
+    await page.locator('header a[href="/pricing"]').first().click();
+    await expect(page).toHaveURL(/\/pricing\/?$/);
     await expect(page).toHaveTitle(/Pricing/);
   });
 
-  test('should navigate to FAQ page', async ({ page }) => {
-    await page.click('header a[href="/faq"]');
-    await expect(page).toHaveURL('/faq');
+  test('navigates to the FAQ page', async ({ page }) => {
+    await page.locator('header a[href="/faq"]').first().click();
+    await expect(page).toHaveURL(/\/faq\/?$/);
     await expect(page).toHaveTitle(/FAQ/);
   });
 
-  test('should display Get Started button in header with sky blue background', async ({ page }) => {
-    const header = page.getByRole('banner');
-    const ctaButton = header.locator('a', { hasText: 'Get Started' }).first();
-
-    await expect(ctaButton).toBeVisible();
-    const bgColor = await ctaButton.evaluate(el => getComputedStyle(el).backgroundColor);
-    // Sky blue: #4B8BD4 = rgb(75, 139, 212)
-    expect(bgColor).toMatch(/rgb\(75,\s*139,\s*212\)/);
-
-    const href = await ctaButton.getAttribute('href');
-    expect(href).toBe('/pricing');
+  test('header CTA is "Start Free Trial" → /download with a sky-blue background', async ({ page }) => {
+    const cta = page.getByRole('banner').getByRole('link', { name: 'Start Free Trial' }).first();
+    await expect(cta).toBeVisible();
+    expect(await cta.getAttribute('href')).toBe('/download');
+    const bg = await cta.evaluate((el) => getComputedStyle(el).backgroundColor);
+    // Sky blue #4B8BD4 = rgb(75, 139, 212)
+    expect(bg).toMatch(/rgb\(75,\s*139,\s*212\)/);
   });
 
-  test('should display mobile menu button on small screens', async ({ page }) => {
+  test('shows a mobile menu button on small screens', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
-    await page.goto('/'); // Reload at new viewport
-
-    const header = page.getByRole('banner');
-    const mobileMenuButton = header.locator('.mobile-menu-button');
-    await expect(mobileMenuButton).toBeVisible();
+    await page.goto('/');
+    await expect(page.getByRole('banner').locator('.mobile-menu-button')).toBeVisible();
   });
 
-  test('should toggle mobile menu on click', async ({ page }) => {
+  test('toggles the mobile menu open and closed', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
-    await page.goto('/'); // Reload at mobile viewport
+    await page.goto('/');
 
-    const header = page.getByRole('banner');
-    const mobileMenuButton = header.locator('.mobile-menu-button');
-    const mobileMenu = header.locator('.mobile-menu');
+    const button = page.getByRole('banner').locator('.mobile-menu-button');
+    const menu = page.getByRole('banner').locator('.mobile-menu');
+    await expect(button).toBeVisible();
 
-    // Wait for button to be visible and clickable
-    await expect(mobileMenuButton).toBeVisible();
+    const classes = async () => ((await menu.getAttribute('class')) || '').split(/\s+/);
+    expect(await classes()).toContain('hidden');
 
-    // Initially hidden - check for standalone 'hidden' class
-    const initialClasses = (await mobileMenu.getAttribute('class'))?.split(/\s+/) || [];
-    expect(initialClasses).toContain('hidden');
-
-    // Click to open
-    await mobileMenuButton.click();
-    await page.waitForTimeout(200); // Wait for toggle
-
-    // Should not have standalone 'hidden' class when open (md:hidden is OK)
-    const openClasses = (await mobileMenu.getAttribute('class'))?.split(/\s+/) || [];
-    expect(openClasses).not.toContain('hidden');
-
-    // Click to close
-    await mobileMenuButton.click();
+    await button.click();
     await page.waitForTimeout(200);
+    expect(await classes()).not.toContain('hidden');
 
-    // Should have standalone 'hidden' class when closed
-    const closedClasses = (await mobileMenu.getAttribute('class'))?.split(/\s+/) || [];
-    expect(closedClasses).toContain('hidden');
+    await button.click();
+    await page.waitForTimeout(200);
+    expect(await classes()).toContain('hidden');
   });
 
-  test('should display navy footer', async ({ page }) => {
+  test('footer is navy and has the legal links', async ({ page }) => {
     const footer = page.locator('footer');
     await expect(footer).toBeVisible();
-    const bgColor = await footer.evaluate(el => getComputedStyle(el).backgroundColor);
-    // Navy: #1B3A5C = rgb(27, 58, 92)
-    expect(bgColor).toMatch(/rgb\(27,\s*58,\s*92\)/);
+    const bg = await footer.evaluate((el) => getComputedStyle(el).backgroundColor);
+    expect(bg).toMatch(/rgb\(27,\s*58,\s*92\)/);
+    await expect(footer.locator('a[href="/terms"]')).toBeVisible();
+    await expect(footer.locator('a[href="/privacy"]')).toBeVisible();
+    await expect(footer.locator('a[href="/license"]')).toBeVisible();
+    await expect(footer.locator('a[href="/refund"]')).toBeVisible();
   });
 
-  test('should have legal links in footer', async ({ page }) => {
-    const termsLink = page.locator('footer a[href="/terms"]');
-    const privacyLink = page.locator('footer a[href="/privacy"]');
-    const licenseLink = page.locator('footer a[href="/license"]');
-
-    await expect(termsLink).toBeVisible();
-    await expect(privacyLink).toBeVisible();
-    await expect(licenseLink).toBeVisible();
-  });
-
-  test('should have white hover states on footer links', async ({ page }) => {
-    const footerLink = page.locator('footer a[href="/terms"]');
-    await expect(footerLink).toHaveClass(/hover:text-white/);
-  });
-
-  test('should display copyright year', async ({ page }) => {
-    const copyright = page.locator('footer', { hasText: '2026 Wallco Digital Labs LLC' });
-    await expect(copyright).toBeVisible();
-  });
-
-  test('should navigate through all pages from header', async ({ page }) => {
-    const pages = [
-      { link: '/pricing', title: /Pricing/ },
-      { link: '/faq', title: /FAQ/ },
-      { link: '/', title: /WorkInPrivate/ }
+  test('footer links to every professional segment page', async ({ page }) => {
+    const footer = page.locator('footer');
+    const slugs = [
+      'for-lawyers',
+      'for-therapists',
+      'for-accountants',
+      'for-healthcare',
+      'for-journalists',
+      'for-researchers',
+      'for-writers',
     ];
+    for (const slug of slugs) {
+      await expect(footer.locator(`a[href="/${slug}"]`)).toBeVisible();
+    }
+  });
 
-    for (const { link, title } of pages) {
-      await page.click(`header a[href="${link}"]`);
-      await expect(page).toHaveURL(link);
+  test('footer legal links have a white hover state', async ({ page }) => {
+    await expect(page.locator('footer a[href="/terms"]')).toHaveClass(/hover:text-white/);
+  });
+
+  test('footer shows the current copyright', async ({ page }) => {
+    await expect(page.locator('footer', { hasText: '2026 Wallco Digital Labs LLC' })).toBeVisible();
+  });
+
+  test('navigates through all header pages', async ({ page }) => {
+    const routes = [
+      { link: '/pricing', url: /\/pricing\/?$/, title: /Pricing/ },
+      { link: '/faq', url: /\/faq\/?$/, title: /FAQ/ },
+      { link: '/', url: /\/$/, title: /WorkInPrivate/ },
+    ];
+    for (const { link, url, title } of routes) {
+      await page.locator(`header a[href="${link}"]`).first().click();
+      await expect(page).toHaveURL(url);
       await expect(page).toHaveTitle(title);
     }
   });
 });
-
