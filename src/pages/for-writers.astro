@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SegmentPage from '../components/SegmentPage.astro';
+import { segments } from '../data/segments';
+
+const segment = segments['for-writers'];
+---
+
+<BaseLayout title={segment.seoTitle} description={segment.metaDescription}>
+  <SegmentPage segment={segment} />
+</BaseLayout>

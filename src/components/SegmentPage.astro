@@ -1,0 +1,169 @@
+---
+import type { Segment } from '../data/segments';
+import { segments, PRIVACY_PROOF, CTA_SUBLINE } from '../data/segments';
+
+interface Props {
+  segment: Segment;
+}
+
+const { segment } = Astro.props;
+const related = (segment.seeAlso ?? [])
+  .map((slug) => segments[slug])
+  .filter(Boolean);
+---
+
+<!-- Hero -->
+<section class="py-20 sm:py-24 bg-gradient-to-b from-white to-[#F7F9FC]">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">For Professionals</div>
+    <h1 class="font-serif text-4xl sm:text-5xl font-bold text-[#1B3A5C] mb-5 leading-tight max-w-4xl mx-auto">{segment.h1}</h1>
+    <p class="text-xl text-[#5A6474] max-w-2xl mx-auto leading-relaxed mb-8">{segment.subhead}</p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
+      <a href="/download" class="inline-flex items-center px-7 py-3.5 text-base font-bold rounded-[10px] text-white bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-colors no-underline" style="text-decoration: none; box-shadow: 0 4px 14px rgba(75,139,212,0.35);">
+        Start Free Trial
+      </a>
+      <a href="/pricing" class="inline-flex items-center px-7 py-3.5 text-base font-bold rounded-[10px] text-[#2E6BB5] bg-white border-2 border-[#D4E3F5] hover:border-[#4B8BD4] transition-colors no-underline" style="text-decoration: none;">
+        See Pricing
+      </a>
+    </div>
+
+    <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-[#5A6474]">
+      {segment.trustStrip.map((item) => (
+        <span class="inline-flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-[#38A169] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" /></svg>
+          {item}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Pain -->
+<section class="py-20 bg-white border-t-2 border-[#E2E8F0]">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-4 leading-tight">{segment.painHeading}</h2>
+    </div>
+    <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-5">
+      {segment.pains.map((pain) => (
+        <div class="flex items-start gap-3 bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6">
+          <svg class="w-5 h-5 text-[#4B8BD4] flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          <p class="text-[#5A6474] leading-relaxed" set:html={pain} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- How it maps to your workflow -->
+<section class="py-20 bg-[#EDF2FA] border-t-2 border-[#D4E3F5]">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">How It Fits Your Work</div>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-4 leading-tight">Real features, mapped to your day</h2>
+    </div>
+    <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {segment.features.map((f) => (
+        <div class="bg-white border-2 border-[#E2E8F0] rounded-xl p-7">
+          <div class="text-xs font-bold uppercase tracking-wider text-[#4B8BD4] mb-2">{f.feature}</div>
+          <h3 class="font-serif font-bold text-[#1B3A5C] text-lg mb-2 leading-snug">{f.benefit}</h3>
+          <p class="text-[#5A6474] text-base leading-relaxed">{f.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Privacy proof -->
+<section class="py-20 bg-white border-t-2 border-[#E2E8F0]">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">Private By Design</div>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-4 leading-tight">Private by architecture, not by promise</h2>
+      <p class="text-lg text-[#5A6474] max-w-2xl mx-auto">There's no server for your data to travel to — because the AI runs on your own machine.</p>
+    </div>
+    <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
+      {PRIVACY_PROOF.map((p) => (
+        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6">
+          <svg class="w-8 h-8 text-[#38A169] mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          <h3 class="font-bold text-[#1B3A5C] text-lg mb-2">{p.title}</h3>
+          <p class="text-[#5A6474] text-sm leading-relaxed">{p.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Trust / compliance line -->
+<section class="py-12 bg-[#EDF2FA] border-t-2 border-[#D4E3F5]">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto bg-white border-2 border-[#D4E3F5] rounded-xl p-6 sm:p-7">
+      <p class="text-[#5A6474] text-base leading-relaxed text-center">{segment.complianceLine}</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial (renders only when a real, verified quote is supplied) -->
+{segment.testimonial && (
+  <section class="py-16 bg-white border-t-2 border-[#E2E8F0]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mx-auto text-center">
+        <svg class="w-10 h-10 text-[#D4E3F5] mx-auto mb-4" viewBox="0 0 24 24" fill="currentColor"><path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" /></svg>
+        <blockquote class="font-serif text-xl sm:text-2xl text-[#1B3A5C] leading-relaxed mb-4">{segment.testimonial.quote}</blockquote>
+        <div class="text-sm font-semibold text-[#5A6474]">— {segment.testimonial.role}</div>
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- FAQ -->
+<section class="py-20 bg-[#F7F9FC] border-t-2 border-[#E2E8F0]">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-4 leading-tight">Common questions</h2>
+    </div>
+    <div class="max-w-3xl mx-auto space-y-4">
+      {segment.faqs.map((faq) => (
+        <details class="group bg-white border-2 border-[#E2E8F0] rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer px-6 py-5 font-bold text-[#1B3A5C] list-none">
+            {faq.q}
+            <svg class="w-5 h-5 text-[#4B8BD4] flex-shrink-0 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6" /></svg>
+          </summary>
+          <div class="px-6 pb-5 text-[#5A6474] leading-relaxed">{faq.a}</div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- See also -->
+{related.length > 0 && (
+  <section class="py-16 bg-white border-t-2 border-[#E2E8F0]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">See Also</div>
+        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#1B3A5C] leading-tight">Also built for confidential work</h2>
+      </div>
+      <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-5">
+        {related.map((r) => (
+          <a href={`/${r.slug}`} class="block bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6 hover:border-[#4B8BD4] transition-colors no-underline" style="text-decoration: none;">
+            <h3 class="font-bold text-[#1B3A5C] text-base mb-1">{r.label}</h3>
+            <p class="text-[#5A6474] text-sm leading-relaxed">{r.cardBlurb}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- Final CTA -->
+<section class="py-20 bg-[#1B3A5C]">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight max-w-2xl mx-auto">{segment.finalCtaH2}</h2>
+    <a href="/download" class="inline-flex items-center px-8 py-4 text-base font-bold rounded-[10px] text-[#1B3A5C] bg-white hover:bg-[#EDF2FA] transition-colors no-underline" style="text-decoration: none;">
+      Start Free Trial
+    </a>
+    <p class="text-[#D4E3F5] text-sm mt-5">{CTA_SUBLINE}</p>
+  </div>
+</section>

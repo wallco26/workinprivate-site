@@ -1,234 +1,172 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Homepage - Friendly Neighbor Light Theme', () => {
+// Homepage tests for the current "Friendly Neighbor" light theme.
+// A desktop viewport is forced so these pass across every configured project
+// (including the Mobile Chrome/Safari projects, where the desktop nav is hidden).
+
+test.describe('Homepage — Friendly Neighbor light theme', () => {
   test.beforeEach(async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
     await page.goto('/');
   });
 
-  test('should load homepage successfully', async ({ page }) => {
+  test('loads with a WorkInPrivate title', async ({ page }) => {
     await expect(page).toHaveTitle(/WorkInPrivate/);
   });
 
-  test('should display light background theme', async ({ page }) => {
-    const body = page.locator('body');
-    const bgColor = await body.evaluate(el => getComputedStyle(el).backgroundColor);
-    // Check for white/light background (rgb 255,255,255)
-    expect(bgColor).toMatch(/rgb\(255,\s*255,\s*255\)/);
+  test('uses a light (white) body background', async ({ page }) => {
+    const bg = await page.locator('body').evaluate((el) => getComputedStyle(el).backgroundColor);
+    expect(bg).toMatch(/rgb\(255,\s*255,\s*255\)/);
   });
 
-  test('should display header with white background', async ({ page }) => {
-    const header = page.locator('header').first();
+  test('header has a white background and the WorkInPrivate logo', async ({ page }) => {
+    const header = page.getByRole('banner');
     await expect(header).toBeVisible();
-    const bgColor = await header.evaluate(el => getComputedStyle(el).backgroundColor);
-    expect(bgColor).toMatch(/rgb\(255,\s*255,\s*255\)/);
+    const bg = await header.evaluate((el) => getComputedStyle(el).backgroundColor);
+    expect(bg).toMatch(/rgb\(255,\s*255,\s*255\)/);
+    await expect(header.locator('a[href="/"]').first()).toContainText('WorkInPrivate');
   });
 
-  test('should display logo with serif font and navy color', async ({ page }) => {
-    const logo = page.locator('header a[href="/"]').first();
-    await expect(logo).toBeVisible();
-    await expect(logo).toContainText('WorkInPrivate');
+  test('header shows Home / Pricing / FAQ links', async ({ page }) => {
+    const header = page.getByRole('banner');
+    await expect(header.locator('a[href="/"]').first()).toBeVisible();
+    await expect(header.locator('a[href="/pricing"]').first()).toBeVisible();
+    await expect(header.locator('a[href="/faq"]').first()).toBeVisible();
   });
 
-  test('should display nav links with sky blue hover color', async ({ page }) => {
-    const homeLink = page.locator('header').getByRole('link', { name: 'Home' });
-    await expect(homeLink).toBeVisible();
-
-    const pricingLink = page.locator('header').getByRole('link', { name: 'Pricing' });
-    await expect(pricingLink).toBeVisible();
-
-    const faqLink = page.locator('header').getByRole('link', { name: 'FAQ' });
-    await expect(faqLink).toBeVisible();
+  test('header CTA is "Start Free Trial" → /download with a sky-blue background', async ({ page }) => {
+    const cta = page.getByRole('banner').getByRole('link', { name: 'Start Free Trial' }).first();
+    await expect(cta).toBeVisible();
+    expect(await cta.getAttribute('href')).toBe('/download');
+    const bg = await cta.evaluate((el) => getComputedStyle(el).backgroundColor);
+    // Sky blue #4B8BD4 = rgb(75, 139, 212)
+    expect(bg).toMatch(/rgb\(75,\s*139,\s*212\)/);
   });
 
-  test('should display CTA button in header', async ({ page }) => {
-    const ctaButton = page.locator('header').getByRole('link', { name: 'Get Started' });
-    await expect(ctaButton).toBeVisible();
-    const bgColor = await ctaButton.evaluate(el => getComputedStyle(el).backgroundColor);
-    // Sky blue: #4B8BD4 = rgb(75, 139, 212)
-    expect(bgColor).toMatch(/rgb\(75,\s*139,\s*212\)/);
+  test('hero shows the privacy badge and headline', async ({ page }) => {
+    await expect(page.locator('text=nothing leaves your computer').first()).toBeVisible();
+    await expect(
+      page.getByRole('heading', { name: /Private AI that never leaves your computer/i })
+    ).toBeVisible();
   });
 
-  test('should display hero section with friendly heading', async ({ page }) => {
-    const heroHeading = page.getByRole('heading', { name: /Write Articles With AI/i });
-    await expect(heroHeading).toBeVisible();
+  test('hero primary CTA is "Start Your Free Trial" → /download', async ({ page }) => {
+    const cta = page.getByRole('link', { name: /Start Your Free Trial/i }).first();
+    await expect(cta).toBeVisible();
+    expect(await cta.getAttribute('href')).toBe('/download');
+    const bg = await cta.evaluate((el) => getComputedStyle(el).backgroundColor);
+    expect(bg).toMatch(/rgb\(75,\s*139,\s*212\)/);
   });
 
-  test('should display hero badge with guarantee message', async ({ page }) => {
-    const badge = page.locator('text=Easy to use').first();
-    await expect(badge).toBeVisible();
+  test('hero secondary CTA links to #how-it-works', async ({ page }) => {
+    const link = page.getByRole('link', { name: /See How It Works/i });
+    await expect(link).toBeVisible();
+    expect(await link.getAttribute('href')).toBe('#how-it-works');
   });
 
-  test('should display blue CTA button in hero', async ({ page }) => {
-    const buyButton = page.getByRole('link', { name: /Start Writing Today.*\$29/i }).first();
-    await expect(buyButton).toBeVisible();
-    const bgColor = await buyButton.evaluate(el => getComputedStyle(el).backgroundColor);
-    // Sky blue: rgb(75, 139, 212)
-    expect(bgColor).toMatch(/rgb\(75,\s*139,\s*212\)/);
-  });
-
-  test('should display "What Is This?" section', async ({ page }) => {
-    const heading = page.getByRole('heading', { name: /A Writing Helper That Runs on Your Computer/i });
-    await heading.scrollIntoViewIfNeeded();
-    await expect(heading).toBeVisible();
-  });
-
-  test('should display three steps section', async ({ page }) => {
-    const heading = page.getByRole('heading', { name: /Three Simple Steps/i });
-    await heading.scrollIntoViewIfNeeded();
-    await expect(heading).toBeVisible();
-
-    const step1 = page.getByRole('heading', { name: /Download the Program/i });
-    const step2 = page.getByRole('heading', { name: /Type Your Topic/i });
-    const step3 = page.getByRole('heading', { name: /Get Your Article/i });
-
-    await expect(step1).toBeVisible();
-    await expect(step2).toBeVisible();
-    await expect(step3).toBeVisible();
-  });
-
-  test('should display all 7 module types', async ({ page }) => {
-    await page.getByRole('heading', { name: /Seven Types of Content/i }).scrollIntoViewIfNeeded();
-
-    const modules = [
-      'Blog Writer',
-      'Small Business',
-      'Finance',
-      'Healthcare',
-      'Academic',
-      'Legal',
-      'Tech',
-    ];
-
-    for (const moduleName of modules) {
-      const module = page.locator(`text=${moduleName}`).first();
-      await expect(module).toBeVisible();
-    }
-  });
-
-  test('should display pricing section with $29 price', async ({ page }) => {
-    await page.getByRole('heading', { name: /Pay Once\. Keep It Forever/i }).scrollIntoViewIfNeeded();
-    const price = page.locator('text=$29').first();
-    await expect(price).toBeVisible();
-  });
-
-  test('should display FAQ section with at least 3 items', async ({ page }) => {
-    const faqSection = page.locator('section').filter({
-      has: page.getByRole('heading', { name: /You Might Be Wondering/i }),
+  test('shows the "How It\'s Different" explainer', async ({ page }) => {
+    const heading = page.getByRole('heading', {
+      name: /A ChatGPT Alternative That Runs On Your Computer/i,
     });
-    await faqSection.scrollIntoViewIfNeeded();
-
-    const faqItems = faqSection.locator('details');
-    const count = await faqItems.count();
-    expect(count).toBeGreaterThanOrEqual(3);
-
-    const faqItem = faqSection.locator('summary', { hasText: /Do I need to be good with computers/i }).first();
-    await expect(faqItem).toBeVisible();
-  });
-
-  test('should display final CTA section', async ({ page }) => {
-    const heading = page.getByRole('heading', { name: /Ready to Give AI Writing a Try/i });
     await heading.scrollIntoViewIfNeeded();
     await expect(heading).toBeVisible();
-
-    const ctaButton = page.getByRole('link', { name: /Get Started.*\$29/i });
-    await expect(ctaButton).toBeVisible();
   });
 
-  test('should display footer with navy background', async ({ page }) => {
-    const footer = page.locator('footer').first();
-    await footer.scrollIntoViewIfNeeded();
-    await expect(footer).toBeVisible();
-    const bgColor = await footer.evaluate(el => getComputedStyle(el).backgroundColor);
-    // Navy: #1B3A5C = rgb(27, 58, 92)
-    expect(bgColor).toMatch(/rgb\(27,\s*58,\s*92\)/);
+  test('shows the three setup steps', async ({ page }) => {
+    await page.getByRole('heading', { name: /Three Simple Steps/i }).scrollIntoViewIfNeeded();
+    await expect(page.getByRole('heading', { name: /Install WorkInPrivate/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /Let It Check Your Computer/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /Start Chatting Privately/i })).toBeVisible();
   });
 
-  test('should display footer links', async ({ page }) => {
-    const footer = page.locator('footer').first();
-    await footer.scrollIntoViewIfNeeded();
-
-    const links = ['Terms of Service', 'Privacy Policy', 'Refund Policy'];
-    for (const linkText of links) {
-      const link = footer.getByRole('link', { name: linkText });
-      await expect(link).toBeVisible();
+  test('shows the feature grid', async ({ page }) => {
+    await page
+      .getByRole('heading', { name: /Everything You Need, Nothing You Don't/i })
+      .scrollIntoViewIfNeeded();
+    const features = [
+      'Free-Form Chat',
+      'File Analysis',
+      'Complete Privacy',
+      'One-Time Purchase',
+      'Works Offline',
+      'Guided Setup',
+    ];
+    for (const feature of features) {
+      await expect(page.getByRole('heading', { name: feature }).first()).toBeVisible();
     }
   });
 
-  test('should have working pricing link from hero', async ({ page }) => {
-    const buyButton = page.getByRole('link', { name: /Start Writing Today.*\$29/i }).first();
-    const href = await buyButton.getAttribute('href');
-    expect(href).toBe('/pricing');
+  test('shows the pricing comparison with one-time $29.99', async ({ page }) => {
+    await page.getByRole('heading', { name: /Stop Paying Monthly/i }).scrollIntoViewIfNeeded();
+    await expect(page.locator('text=$29.99 one-time').first()).toBeVisible();
+    await expect(page.locator('text=$20/month').first()).toBeVisible();
   });
 
-  test('should display sample output section with three article cards', async ({ page }) => {
-    const heading = page.getByRole('heading', { name: /See What WorkInPrivate Creates/i });
-    await heading.scrollIntoViewIfNeeded();
-    await expect(heading).toBeVisible();
-
-    const card1 = page.getByRole('heading', { name: /10 Easy Container Garden Ideas/i });
-    await card1.scrollIntoViewIfNeeded();
-    await expect(card1).toBeVisible();
-    await expect(page.getByRole('heading', { name: /Grand Opening Announcement/i })).toBeVisible();
-    await expect(page.getByRole('heading', { name: /Understanding Seasonal Allergies/i })).toBeVisible();
-
-    await expect(page.locator('text=SEO Blog Post').first()).toBeVisible();
-    await expect(page.locator('text=Business Post').first()).toBeVisible();
-    await expect(page.locator('text=Health Guide').first()).toBeVisible();
-  });
-
-  test('should display privacy section with three cards', async ({ page }) => {
-    const heading = page.getByRole('heading', { name: /Your Writing Stays Private/i });
-    await heading.scrollIntoViewIfNeeded();
-    await expect(heading).toBeVisible();
-
+  test('shows the privacy pillars', async ({ page }) => {
+    await page
+      .getByRole('heading', { name: /Some Things Shouldn't Leave Your Computer/i })
+      .scrollIntoViewIfNeeded();
     await expect(page.getByRole('heading', { name: /Stays on Your Computer/i })).toBeVisible();
-    await expect(page.getByRole('heading', { name: /No One Can See What You Write/i })).toBeVisible();
-    await expect(page.getByRole('heading', { name: /No Accounts or Sign-ups/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /No Data Collection/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /No Account Required/i })).toBeVisible();
   });
 
-  test('should display cost comparison section with savings content', async ({ page }) => {
-    const heading = page.getByRole('heading', { name: /What You'd Spend on ChatGPT/i });
-    await heading.scrollIntoViewIfNeeded();
-    await expect(heading).toBeVisible();
-
-    // Verify the comparison table content rendered (not just the heading)
-    await expect(page.locator('text=Save $691').first()).toBeVisible();
-    await expect(page.locator('text=3-year total').first()).toBeVisible();
-  });
-
-  test('hero CTA buttons should not use monospace font', async ({ page }) => {
-    const ctaLinks = [
-      page.getByRole('link', { name: /Start Writing Today.*\$29/i }).first(),
-      page.getByRole('link', { name: 'Get Started' }).first(),
+  test('confidential-work hub links to all seven segment pages', async ({ page }) => {
+    const section = page.locator('section').filter({
+      has: page.getByRole('heading', { name: /Built For Confidential Work/i }),
+    });
+    await section.scrollIntoViewIfNeeded();
+    const slugs = [
+      'for-lawyers',
+      'for-therapists',
+      'for-accountants',
+      'for-healthcare',
+      'for-journalists',
+      'for-researchers',
+      'for-writers',
     ];
-
-    for (const btn of ctaLinks) {
-      await expect(btn).toBeVisible();
-      const fontFamily = await btn.evaluate(el => getComputedStyle(el).fontFamily);
-      expect(fontFamily.toLowerCase()).not.toContain('monospace');
-      expect(fontFamily.toLowerCase()).not.toContain('courier');
+    for (const slug of slugs) {
+      await expect(section.locator(`a[href="/${slug}"]`)).toBeVisible();
     }
   });
 
-  test('should have all main sections visible', async ({ page }) => {
-    const sections = [
-      /Write Articles With AI/i,
-      /A Writing Helper That Runs on Your Computer/i,
-      /Three Simple Steps/i,
-      /See What WorkInPrivate Creates/i,
-      /Simple, Private, and Affordable/i,
-      /Seven Types of Content/i,
-      /Your Writing Stays Private/i,
-      /What You'd Spend on ChatGPT/i,
-      /Pay Once\. Keep It Forever/i,
-      /You Might Be Wondering/i,
-      /Ready to Give AI Writing a Try/i,
-    ];
+  test('shows the offline-proof section and final CTA', async ({ page }) => {
+    await expect(
+      page.getByRole('heading', { name: /Unplug The Internet\. It Still Works\./i })
+    ).toBeVisible();
 
-    for (const sectionPattern of sections) {
-      const heading = page.getByRole('heading', { name: sectionPattern });
-      await heading.scrollIntoViewIfNeeded();
-      await expect(heading).toBeVisible();
+    const finalHeading = page.getByRole('heading', { name: /Private AI, The Easy Way/i });
+    await finalHeading.scrollIntoViewIfNeeded();
+    await expect(finalHeading).toBeVisible();
+
+    const finalCta = page.getByRole('link', { name: /Start Your Free Trial/i }).last();
+    await expect(finalCta).toBeVisible();
+    expect(await finalCta.getAttribute('href')).toBe('/download');
+  });
+
+  test('footer has a navy background and legal links', async ({ page }) => {
+    const footer = page.locator('footer').first();
+    await footer.scrollIntoViewIfNeeded();
+    const bg = await footer.evaluate((el) => getComputedStyle(el).backgroundColor);
+    // Navy #1B3A5C = rgb(27, 58, 92)
+    expect(bg).toMatch(/rgb\(27,\s*58,\s*92\)/);
+    for (const name of ['Terms of Service', 'Privacy Policy', 'Refund Policy', 'License Agreement']) {
+      await expect(footer.getByRole('link', { name })).toBeVisible();
+    }
+  });
+
+  test('CTA buttons do not use a monospace font', async ({ page }) => {
+    const buttons = [
+      page.getByRole('link', { name: /Start Your Free Trial/i }).first(),
+      page.getByRole('banner').getByRole('link', { name: 'Start Free Trial' }).first(),
+    ];
+    for (const button of buttons) {
+      await expect(button).toBeVisible();
+      const fontFamily = (
+        await button.evaluate((el) => getComputedStyle(el).fontFamily)
+      ).toLowerCase();
+      expect(fontFamily).not.toContain('monospace');
+      expect(fontFamily).not.toContain('courier');
     }
   });
 });

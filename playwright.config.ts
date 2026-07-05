@@ -2,7 +2,7 @@ import { defineConfig, devices } from '@playwright/test';
 
 /**
  * Playwright configuration for WorkInPrivate site testing
- * Tests the dark terminal-themed redesign
+ * Tests the current "Friendly Neighbor" light theme
  */
 export default defineConfig({
   testDir: './tests',

@@ -1,12 +1,12 @@
 # Frontend Test Suite
 
-Comprehensive Playwright E2E tests for the WorkInPrivate website dark terminal redesign.
+Comprehensive Playwright E2E tests for the WorkInPrivate website ("Friendly Neighbor" light theme).
 
 ## Test Files
 
-- **homepage.spec.ts** - Homepage functionality, dark theme, terminal mockup, modules, testimonials
-- **pricing.spec.ts** - Pricing cards, add-on modules, Stripe links, system requirements
-- **navigation.spec.ts** - Header, footer, mobile menu, page navigation
+- **homepage.spec.ts** - Homepage: light theme, hero, setup steps, feature grid, pricing comparison, confidential-work hub, CTAs
+- **segments.spec.ts** - The seven /for-* confidential-work landing pages (titles, hero, CTAs, pricing, compliance-safe copy)
+- **navigation.spec.ts** - Header, footer, mobile menu, professional segment links, page navigation
 - **accessibility.spec.ts** - Keyboard navigation, responsiveness, semantic HTML, ARIA labels
 
 ## Quick Start

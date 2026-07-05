@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#EDF2FA"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Brand logo mark (matches the header + favicon) -->
+  <g transform="translate(90,78)">
+    <rect width="60" height="60" rx="14" fill="#4B8BD4"/>
+    <g transform="scale(0.6)">
+      <path d="M37 23 L56 23 L68 35 L68 72 Q68 77 63 77 L37 77 Q32 77 32 72 L32 28 Q32 23 37 23 Z" fill="#FFFFFF"/>
+      <path d="M56 23 L68 35 L56 35 Z" fill="#D4E3F5"/>
+      <rect x="39" y="43" width="22" height="4.5" rx="2.25" fill="#4B8BD4"/>
+      <rect x="39" y="52" width="22" height="4.5" rx="2.25" fill="#4B8BD4"/>
+      <rect x="39" y="61" width="15" height="4.5" rx="2.25" fill="#4B8BD4"/>
+    </g>
+  </g>
+  <text x="170" y="123" font-family="Merriweather, Georgia, serif" font-size="40" font-weight="700" fill="#1B3A5C">WorkInPrivate</text>
+
+  <!-- Headline (mirrors the hero H1) -->
+  <g font-family="Merriweather, Georgia, serif" font-size="56" font-weight="700">
+    <text x="90" y="250" fill="#1B3A5C">Private AI that</text>
+    <text x="90" y="316" fill="#4B8BD4">never leaves your</text>
+    <text x="90" y="382" fill="#4B8BD4">computer.</text>
+  </g>
+
+  <!-- Subline -->
+  <g font-family="'Source Sans 3', Helvetica, Arial, sans-serif" font-size="24" fill="#5A6474">
+    <text x="92" y="432">A ChatGPT alternative that runs on your own</text>
+    <text x="92" y="463">machine. No cloud. No account. No telemetry.</text>
+  </g>
+
+  <!-- Trust chips -->
+  <g font-family="'Source Sans 3', Helvetica, Arial, sans-serif" font-size="22" font-weight="600" fill="#1B3A5C">
+    <g transform="translate(92,512)"><circle cx="10" cy="10" r="10" fill="#38A169"/><path d="M5.5 10.5 L9 14 L15 6.5" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <text x="120" y="528">100% local</text>
+    <g transform="translate(290,512)"><circle cx="10" cy="10" r="10" fill="#38A169"/><path d="M5.5 10.5 L9 14 L15 6.5" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <text x="318" y="528">No account</text>
+    <g transform="translate(490,512)"><circle cx="10" cy="10" r="10" fill="#38A169"/><path d="M5.5 10.5 L9 14 L15 6.5" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <text x="518" y="528">Works offline</text>
+  </g>
+
+  <!-- Bottom meta -->
+  <text x="92" y="590" font-family="'Source Sans 3', Helvetica, Arial, sans-serif" font-size="20" fill="#8A9AB5">$29.99 one-time &#183; Windows &#183; macOS &#183; Linux</text>
+  <text x="1110" y="590" text-anchor="end" font-family="'Source Sans 3', Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#4B8BD4">workinprivate.com</text>
+
+  <!-- Chat mockup card -->
+  <rect x="744" y="156" width="380" height="330" rx="22" fill="#1B3A5C" opacity="0.06"/>
+  <rect x="740" y="150" width="380" height="330" rx="22" fill="#FFFFFF" stroke="#D4E3F5" stroke-width="2"/>
+
+  <!-- Card header -->
+  <circle cx="772" cy="188" r="6" fill="#38A169"/>
+  <text x="788" y="194" font-family="'Source Sans 3', Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#1B3A5C">WorkInPrivate</text>
+  <text x="1096" y="194" text-anchor="end" font-family="'Source Sans 3', Helvetica, Arial, sans-serif" font-size="14" fill="#8A9AB5">100% local</text>
+  <line x1="740" y1="214" x2="1120" y2="214" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- User bubble -->
+  <rect x="818" y="236" width="284" height="72" rx="16" fill="#4B8BD4"/>
+  <g font-family="'Source Sans 3', Helvetica, Arial, sans-serif" font-size="16" fill="#FFFFFF">
+    <text x="836" y="266">Summarize the key dates in</text>
+    <text x="836" y="288">this contract.</text>
+  </g>
+
+  <!-- AI bubble -->
+  <rect x="760" y="326" width="300" height="112" rx="16" fill="#F7F9FC" stroke="#E2E8F0" stroke-width="1"/>
+  <g font-family="'Source Sans 3', Helvetica, Arial, sans-serif" font-size="15" fill="#1B3A5C">
+    <text x="778" y="354">Key dates: signing on Mar 3,</text>
+    <text x="778" y="376">delivery by Apr 15, and a</text>
+    <text x="778" y="398">renewal notice due May 1.</text>
+  </g>
+
+  <!-- Privacy proof line -->
+  <g transform="translate(760,450)">
+    <circle cx="9" cy="9" r="9" fill="#38A169"/><path d="M4.8 9.4 L8 12.4 L13.4 5.8" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="784" y="464" font-family="'Source Sans 3', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#38A169">Processed on your device &#8212; nothing was uploaded.</text>
+</svg>
