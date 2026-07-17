@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const dateFmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const siteUrl = 'https://www.workinprivate.com';
+---
+
+<BaseLayout
+  title="Blog — Private AI, Confidentiality & Local Models | WorkInPrivate"
+  description="Guides and plain-English answers on keeping your AI use private: how local models work, what cloud AI does with your data, and how professionals stay confidential."
+>
+  <!-- Blog listing schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "WorkInPrivate Blog",
+    "url": `${siteUrl}/blog`,
+    "description": "Guides on private AI, confidentiality, and running AI models locally.",
+    "blogPost": posts.map((p) => ({
+      "@type": "BlogPosting",
+      "headline": p.data.title,
+      "description": p.data.description,
+      "datePublished": p.data.pubDate.toISOString(),
+      "url": `${siteUrl}/blog/${p.id}`,
+    })),
+  })} />
+
+  <!-- Hero -->
+  <section class="py-20 sm:py-24 bg-gradient-to-b from-white to-[#F7F9FC]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">The WorkInPrivate Blog</div>
+      <h1 class="font-serif text-4xl sm:text-5xl font-bold text-[#1B3A5C] mb-5 leading-tight max-w-3xl mx-auto">Private AI, explained in plain English</h1>
+      <p class="text-xl text-[#5A6474] max-w-2xl mx-auto leading-relaxed">How local AI works, what cloud tools really do with your data, and how to keep confidential work confidential.</p>
+    </div>
+  </section>
+
+  <!-- Posts -->
+  <section class="py-16 bg-white border-t-2 border-[#E2E8F0]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      {posts.length === 0 ? (
+        <p class="text-center text-[#5A6474]">New posts are on the way — check back soon.</p>
+      ) : (
+        <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {posts.map((post) => (
+            <a href={`/blog/${post.id}`} class="group block bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-2xl p-7 hover:border-[#4B8BD4] transition-colors no-underline" style="text-decoration: none;">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#4B8BD4] bg-[#EDF2FA] px-2.5 py-1 rounded-full">{post.data.category}</span>
+                <span class="text-xs text-[#8A9AB5]">{dateFmt(post.data.pubDate)}</span>
+              </div>
+              <h2 class="font-serif text-xl font-bold text-[#1B3A5C] mb-2 leading-snug group-hover:text-[#2E6BB5] transition-colors">{post.data.title}</h2>
+              <p class="text-[#5A6474] text-sm leading-relaxed mb-4">{post.data.description}</p>
+              <span class="inline-flex items-center gap-1.5 text-[#4B8BD4] font-bold text-sm">
+                Read more
+                <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+              </span>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-[#1B3A5C]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight max-w-2xl mx-auto">Private AI that never leaves your computer</h2>
+      <a href="/download" class="inline-flex items-center px-8 py-4 text-base font-bold rounded-[10px] text-[#1B3A5C] bg-white hover:bg-[#EDF2FA] transition-colors no-underline" style="text-decoration: none;">
+        Start Free Trial
+      </a>
+      <p class="text-[#D4E3F5] text-sm mt-5">Free 7-day trial — no account, no credit card. Then $29.99 one-time.</p>
+    </div>
+  </section>
+</BaseLayout>

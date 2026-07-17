@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ComparisonPage from '../components/ComparisonPage.astro';
+import { comparisons } from '../data/comparisons';
+
+const page = comparisons['chatgpt-alternative-private'];
+---
+
+<BaseLayout title={page.seoTitle} description={page.metaDescription}>
+  <ComparisonPage page={page} />
+</BaseLayout>

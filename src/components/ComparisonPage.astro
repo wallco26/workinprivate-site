@@ -1,0 +1,167 @@
+---
+import type { ComparisonPage } from '../data/comparisons';
+
+interface Props {
+  page: ComparisonPage;
+}
+
+const { page } = Astro.props;
+
+// Cell colour is driven by explicit per-row `tones` in the data (see
+// comparisons.ts). Tone can't be inferred from the value word alone — for a
+// negatively-phrased row like "Account required", "No" is the GOOD answer — so
+// each row states its own tones. Fallback to neutral if a row omits them.
+type Tone = 'good' | 'bad' | 'neutral';
+const toneColor: Record<Tone, string> = {
+  good: 'text-[#38A169]',
+  bad: 'text-[#E53E3E]',
+  neutral: 'text-[#5A6474]',
+};
+function toneFor(row: { tones?: Tone[] }, i: number): Tone {
+  return row.tones?.[i] ?? 'neutral';
+}
+---
+
+<!-- Hero -->
+<section class="py-20 sm:py-24 bg-gradient-to-b from-white to-[#F7F9FC]">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">{page.eyebrow}</div>
+    <h1 class="font-serif text-4xl sm:text-5xl font-bold text-[#1B3A5C] mb-5 leading-tight max-w-4xl mx-auto">{page.h1}</h1>
+    <p class="text-xl text-[#5A6474] max-w-2xl mx-auto leading-relaxed mb-8">{page.subhead}</p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+      <a href="/download" class="inline-flex items-center px-7 py-3.5 text-base font-bold rounded-[10px] text-white bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-colors no-underline" style="text-decoration: none; box-shadow: 0 4px 14px rgba(75,139,212,0.35);">
+        Start Free Trial
+      </a>
+      <a href="/pricing" class="inline-flex items-center px-7 py-3.5 text-base font-bold rounded-[10px] text-[#2E6BB5] bg-white border-2 border-[#D4E3F5] hover:border-[#4B8BD4] transition-colors no-underline" style="text-decoration: none;">
+        See Pricing
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Intro -->
+<section class="py-16 bg-white border-t-2 border-[#E2E8F0]">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto space-y-5">
+      {page.intro.map((p) => (
+        <p class="text-lg text-[#5A6474] leading-relaxed">{p}</p>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Comparison table -->
+<section class="py-16 bg-[#F7F9FC] border-t-2 border-[#E2E8F0]">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10">
+      <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">Side by Side</div>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] leading-tight">How they compare</h2>
+    </div>
+    <div class="max-w-3xl mx-auto overflow-x-auto">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="border-b-2 border-[#E2E8F0]">
+            <th class="py-4 px-4"></th>
+            {page.columns.map((col) => (
+              <th class="py-4 px-4 text-center">
+                <div class={`font-bold ${col.us ? 'text-[#4B8BD4]' : 'text-[#5A6474]'}`}>{col.name}</div>
+                {col.sub && <div class="text-xs text-[#8A9AB5]">{col.sub}</div>}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody class="text-sm">
+          {page.rows.map((row) => (
+            <tr class="border-b border-[#E2E8F0]">
+              <td class="py-3 px-4 text-[#5A6474]">{row.label}</td>
+              {row.values.map((value, i) => {
+                const tone = toneFor(row, i);
+                const isUs = page.columns[i]?.us;
+                return (
+                  <td class={`py-3 px-4 text-center ${toneColor[tone]} ${isUs && tone === 'good' ? 'font-bold' : ''}`}>{value}</td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Reasons -->
+<section class="py-20 bg-white border-t-2 border-[#E2E8F0]">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <div class="text-xs font-bold uppercase tracking-widest text-[#4B8BD4] mb-3">The Difference</div>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] leading-tight">{page.reasonsHeading}</h2>
+    </div>
+    <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {page.reasons.map((r) => (
+        <div class="bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-7 flex gap-4">
+          <svg class="w-6 h-6 text-[#38A169] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" /></svg>
+          <div>
+            <h3 class="font-bold text-[#1B3A5C] text-base mb-1">{r.title}</h3>
+            <p class="text-[#5A6474] text-sm leading-relaxed">{r.body}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Honest take (builds trust) -->
+<section class="py-16 bg-[#EDF2FA] border-t-2 border-[#D4E3F5]">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto bg-white border-2 border-[#D4E3F5] rounded-2xl p-8 sm:p-10">
+      <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#1B3A5C] mb-4 leading-tight">{page.honestTake.heading}</h2>
+      <div class="space-y-4">
+        {page.honestTake.body.map((p) => (
+          <p class="text-[#5A6474] leading-relaxed">{p}</p>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-20 bg-white border-t-2 border-[#E2E8F0]">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1B3A5C] leading-tight">Common questions</h2>
+    </div>
+    <div class="max-w-3xl mx-auto space-y-4">
+      {page.faqs.map((faq) => (
+        <details class="group bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer px-6 py-5 font-bold text-[#1B3A5C] list-none">
+            {faq.q}
+            <svg class="w-5 h-5 text-[#4B8BD4] flex-shrink-0 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6" /></svg>
+          </summary>
+          <div class="px-6 pb-5 text-[#5A6474] leading-relaxed">{faq.a}</div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="py-20 bg-[#1B3A5C]">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight max-w-2xl mx-auto">{page.ctaH2}</h2>
+    <a href="/download" class="inline-flex items-center px-8 py-4 text-base font-bold rounded-[10px] text-[#1B3A5C] bg-white hover:bg-[#EDF2FA] transition-colors no-underline" style="text-decoration: none;">
+      Start Free Trial
+    </a>
+    <p class="text-[#D4E3F5] text-sm mt-5">{page.ctaSub}</p>
+  </div>
+</section>
+
+<!-- FAQPage structured data -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": page.faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.a },
+  })),
+})} />
