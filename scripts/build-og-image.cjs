@@ -31,7 +31,7 @@ function pill({ x, y, w, h, fill, stroke }) {
   const badgeTextX = badgeX + padX + iconW + iconGap;
 
   // --- Top-right price chip ---
-  const priceText = "$29.99 once · no subscription";
+  const priceText = "$49.99 once · no subscription";
   const priceSize = 23;
   const pTextW = await textWidth(priceText, priceSize, 700);
   const chipPad = 30;

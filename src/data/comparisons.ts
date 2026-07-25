@@ -59,7 +59,7 @@ export interface ComparisonPage {
 }
 
 const TRIAL_SUB =
-  "Free 7-day trial — no account, no credit card. Then $29.99 one-time. Windows, macOS & Linux.";
+  "Free 7-day trial — no account, no credit card. Then $49.99 one-time. Windows, macOS & Linux.";
 
 export const comparisonOrder = [
   "chatgpt-alternative-private",
@@ -73,7 +73,7 @@ export const comparisons: Record<string, ComparisonPage> = {
     slug: "chatgpt-alternative-private",
     seoTitle: "Private ChatGPT Alternative That Runs on Your Computer | WorkInPrivate",
     metaDescription:
-      "Looking for a private ChatGPT alternative? WorkInPrivate runs an AI assistant entirely on your own computer — no cloud, no account, no data used to train AI. $29.99 one-time, free 7-day trial.",
+      "Looking for a private ChatGPT alternative? WorkInPrivate runs an AI assistant entirely on your own computer — no cloud, no account, no data used to train AI. $49.99 one-time, free 7-day trial.",
     eyebrow: "ChatGPT Alternative",
     h1: "A private ChatGPT alternative that runs on your own computer",
     subhead:
@@ -83,7 +83,7 @@ export const comparisons: Record<string, ComparisonPage> = {
       "WorkInPrivate is built for exactly those moments. It's a desktop app that runs an open-source AI model locally, so your conversations and files stay on your device. No account, no telemetry, and it keeps working with the Wi-Fi off.",
     ],
     columns: [
-      { name: "WorkInPrivate", sub: "$29.99 one-time", us: true },
+      { name: "WorkInPrivate", sub: "$49.99 one-time", us: true },
       { name: "ChatGPT Plus", sub: "$20/month" },
     ],
     rows: [
@@ -93,7 +93,7 @@ export const comparisons: Record<string, ComparisonPage> = {
       { label: "Your chats can train the AI", values: ["Never", "Possible"], tones: ["good", "bad"] },
       { label: "Works with no internet", values: ["Yes, after setup", "No"], tones: ["good", "bad"] },
       { label: "File analysis (PDF, DOCX, images)", values: ["Yes", "Yes"], tones: ["good", "good"] },
-      { label: "Cost after one year", values: ["$29.99", "$240"], tones: ["good", "neutral"] },
+      { label: "Cost after one year", values: ["$49.99", "$240"], tones: ["good", "neutral"] },
       { label: "Best-in-class frontier model", values: ["No — good local models", "Yes"], tones: ["neutral", "good"] },
     ],
     reasonsHeading: "Why people switch to WorkInPrivate",
@@ -104,7 +104,7 @@ export const comparisons: Record<string, ComparisonPage> = {
       },
       {
         title: "Pay once, not every month",
-        body: "$29.99 one time replaces a $240/year subscription. No usage caps, no metering, no surprise bill.",
+        body: "$49.99 one time replaces a $240/year subscription. No usage caps, no metering, no surprise bill.",
       },
       {
         title: "No account, no setup headaches",
@@ -133,7 +133,7 @@ export const comparisons: Record<string, ComparisonPage> = {
       },
       {
         q: "Is it really a one-time price?",
-        a: "Yes. $29.99 once, no subscription and no usage limits. You can try it free for 7 days first with no account or credit card.",
+        a: "Yes. $49.99 once, no subscription and no usage limits. You can try it free for 7 days first with no account or credit card.",
       },
       {
         q: "Which platforms are supported?",
@@ -158,7 +158,7 @@ export const comparisons: Record<string, ComparisonPage> = {
       "But most people aren't developers. WorkInPrivate takes the same idea — AI running locally on your device — and wraps it in a guided desktop app: no terminal, no config files, no separate UI to install. It checks your hardware, picks a model, and opens like any chat app you already know.",
     ],
     columns: [
-      { name: "WorkInPrivate", sub: "$29.99 one-time", us: true },
+      { name: "WorkInPrivate", sub: "$49.99 one-time", us: true },
       { name: "Ollama", sub: "Free" },
     ],
     rows: [
@@ -168,7 +168,7 @@ export const comparisons: Record<string, ComparisonPage> = {
       { label: "Picks a model that fits your PC", values: ["Yes, automatically", "You choose & manage"], tones: ["good", "neutral"] },
       { label: "File analysis built in", values: ["Yes", "Not out of the box"], tones: ["good", "bad"] },
       { label: "Guided setup for non-technical users", values: ["Yes", "No — built for developers"], tones: ["good", "bad"] },
-      { label: "Price", values: ["$29.99 once", "Free"], tones: ["neutral", "neutral"] },
+      { label: "Price", values: ["$49.99 once", "Free"], tones: ["neutral", "neutral"] },
       { label: "Customer support", values: ["Email support included", "Community only"], tones: ["good", "neutral"] },
     ],
     reasonsHeading: "What you're paying for with WorkInPrivate",
@@ -194,12 +194,12 @@ export const comparisons: Record<string, ComparisonPage> = {
       heading: "When Ollama is the better choice",
       body: [
         "If you're a developer, love the terminal, and want to script your own pipelines or plug models into your code, Ollama is excellent and free. You don't need us — and we'd rather tell you that than sell you something you won't use.",
-        "WorkInPrivate earns its $29.99 with people who want the same privacy without the setup: they'd rather pay once than spend an afternoon wiring up a runtime, a model, and a chat UI. If that's you, the time saved is worth more than the price.",
+        "WorkInPrivate earns its $49.99 with people who want the same privacy without the setup: they'd rather pay once than spend an afternoon wiring up a runtime, a model, and a chat UI. If that's you, the time saved is worth more than the price.",
       ],
     },
     faqs: [
       {
-        q: "Isn't Ollama free? Why pay $29.99?",
+        q: "Isn't Ollama free? Why pay $49.99?",
         a: "You're paying for the experience, not the model. Ollama is a developer tool that needs a command line and a separate chat interface. WorkInPrivate bundles the engine, a friendly chat app, automatic model selection, file analysis, and email support into one install — so a non-technical person can be chatting privately in minutes.",
       },
       {
@@ -219,7 +219,7 @@ export const comparisons: Record<string, ComparisonPage> = {
     slug: "lm-studio-alternative",
     seoTitle: "An LM Studio Alternative Built for Non-Technical Users | WorkInPrivate",
     metaDescription:
-      "Looking for an LM Studio alternative that's simpler? WorkInPrivate runs open-source AI locally with a guided setup — no model catalogs or quantization settings to figure out. $29.99 one-time.",
+      "Looking for an LM Studio alternative that's simpler? WorkInPrivate runs open-source AI locally with a guided setup — no model catalogs or quantization settings to figure out. $49.99 one-time.",
     eyebrow: "LM Studio Alternative",
     h1: "A simpler LM Studio alternative — private AI without the tinkering",
     subhead:
@@ -229,7 +229,7 @@ export const comparisons: Record<string, ComparisonPage> = {
       "WorkInPrivate is for the person who doesn't want to become a local-AI hobbyist. Same core benefit — the AI runs privately on your own machine — but the technical decisions are made for you, so there's nothing to configure before you can start chatting with your documents.",
     ],
     columns: [
-      { name: "WorkInPrivate", sub: "$29.99 one-time", us: true },
+      { name: "WorkInPrivate", sub: "$49.99 one-time", us: true },
       { name: "LM Studio", sub: "Free" },
     ],
     rows: [
@@ -239,7 +239,7 @@ export const comparisons: Record<string, ComparisonPage> = {
       { label: "Automatic hardware check", values: ["Yes", "Manual"], tones: ["good", "neutral"] },
       { label: "File analysis built in", values: ["Yes", "Varies by setup"], tones: ["good", "neutral"] },
       { label: "Made for confidential professional work", values: ["Yes — with segment guides", "General-purpose"], tones: ["good", "neutral"] },
-      { label: "Price", values: ["$29.99 once", "Free"], tones: ["neutral", "neutral"] },
+      { label: "Price", values: ["$49.99 once", "Free"], tones: ["neutral", "neutral"] },
       { label: "Email support", values: ["Included", "Community only"], tones: ["good", "neutral"] },
     ],
     reasonsHeading: "Why choose WorkInPrivate over LM Studio",
@@ -265,7 +265,7 @@ export const comparisons: Record<string, ComparisonPage> = {
       heading: "When LM Studio is the better choice",
       body: [
         "If you like to tinker — swapping models, testing quantizations, tuning inference settings — LM Studio is free and gives you that control. Enthusiasts will feel more at home there, and we won't pretend otherwise.",
-        "WorkInPrivate is for people who see all those options as friction. If you'd rather have the decisions made for you and just get to work privately, that's exactly what the $29.99 buys.",
+        "WorkInPrivate is for people who see all those options as friction. If you'd rather have the decisions made for you and just get to work privately, that's exactly what the $49.99 buys.",
       ],
     },
     faqs: [
@@ -275,7 +275,7 @@ export const comparisons: Record<string, ComparisonPage> = {
       },
       {
         q: "Why pay when LM Studio is free?",
-        a: "The same reason people buy polished software over free tools: the $29.99 buys a guided, decision-free experience and support. If configuring models yourself sounds fun, LM Studio is a fine free choice.",
+        a: "The same reason people buy polished software over free tools: the $49.99 buys a guided, decision-free experience and support. If configuring models yourself sounds fun, LM Studio is a fine free choice.",
       },
       {
         q: "Can I use it for confidential client work?",

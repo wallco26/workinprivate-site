@@ -48,7 +48,7 @@ You download it, it sets itself up, and you start typing. If you can use a texti
 2. **Let it check your computer.** It looks at your hardware and sets up an AI that will run well — the guided setup handles the technical parts.
 3. **Start chatting privately.** Ask questions, write, or drop in a document. Everything stays on your machine, and it keeps working with the Wi-Fi off.
 
-There's a free 7-day trial with no account or credit card, so you can confirm it works on your computer before paying anything. After that it's a one-time $29.99 — no subscription.
+There's a free 7-day trial with no account or credit card, so you can confirm it works on your computer before paying anything. After that it's a one-time $49.99 — no subscription.
 
 ## Which path is right for you?
 
