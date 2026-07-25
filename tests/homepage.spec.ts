@@ -96,9 +96,9 @@ test.describe('Homepage — Friendly Neighbor light theme', () => {
     }
   });
 
-  test('shows the pricing comparison with one-time $29.99', async ({ page }) => {
+  test('shows the pricing comparison with one-time $49.99', async ({ page }) => {
     await page.getByRole('heading', { name: /Stop Paying Monthly/i }).scrollIntoViewIfNeeded();
-    await expect(page.locator('text=$29.99 one-time').first()).toBeVisible();
+    await expect(page.locator('text=$49.99 one-time').first()).toBeVisible();
     await expect(page.locator('text=$20/month').first()).toBeVisible();
   });
 

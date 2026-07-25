@@ -42,7 +42,7 @@ export interface Segment {
 }
 
 // Shared reassurance line under every primary CTA.
-export const CTA_SUBLINE = "$29.99 one-time · 7-day free trial · Windows / macOS / Linux";
+export const CTA_SUBLINE = "$49.99 one-time · 7-day free trial · Windows / macOS / Linux";
 
 // Shared "private by design" proof points (identical on every page — privacy
 // is architectural, not per-profession).
@@ -81,7 +81,7 @@ export const segments: Record<string, Segment> = {
     cardBlurb: "Work through privileged documents without sending them to a third-party server.",
     seoTitle: "Private AI for Lawyers — Your Files Never Leave Your Device | WorkInPrivate",
     metaDescription:
-      "A local AI assistant for attorneys. Analyze case documents, draft, and research on your own machine — no cloud, no account, no telemetry. $29.99 one-time, 7-day free trial.",
+      "A local AI assistant for attorneys. Analyze case documents, draft, and research on your own machine — no cloud, no account, no telemetry. $49.99 one-time, 7-day free trial.",
     h1: "An AI assistant that never sends your client files to the cloud.",
     subhead:
       "WorkInPrivate runs entirely on your computer. Analyze discovery, draft, and summarize — without a single document leaving your device. No account. No telemetry. Offline after a one-time setup.",
@@ -140,7 +140,7 @@ export const segments: Record<string, Segment> = {
     cardBlurb: "Draft and summarize session notes without them ever leaving your laptop.",
     seoTitle: "Private AI for Therapists & Counselors — On-Device, Confidential | WorkInPrivate",
     metaDescription:
-      "A local AI assistant for mental health professionals. Draft notes, summarize, and organize your work on your own device — no cloud, no account, no telemetry. $29.99 one-time, 7-day trial.",
+      "A local AI assistant for mental health professionals. Draft notes, summarize, and organize your work on your own device — no cloud, no account, no telemetry. $49.99 one-time, 7-day trial.",
     h1: "AI for your notes and paperwork — that keeps client confidence on your device.",
     subhead:
       "WorkInPrivate runs locally on your computer, so you can lighten the admin load without sending a word about a client to the cloud. No account. No telemetry. Offline after setup.",
@@ -199,7 +199,7 @@ export const segments: Record<string, Segment> = {
     cardBlurb: "Analyze client financials while the numbers stay entirely on your computer.",
     seoTitle: "Private AI for Accountants & Bookkeepers — Local & Confidential | WorkInPrivate",
     metaDescription:
-      "A local AI assistant for accountants and bookkeepers. Review statements, reconcile, and draft on your own machine — no cloud, no account, no telemetry. $29.99 one-time, 7-day trial.",
+      "A local AI assistant for accountants and bookkeepers. Review statements, reconcile, and draft on your own machine — no cloud, no account, no telemetry. $49.99 one-time, 7-day trial.",
     h1: "Analyze client financials — with the numbers never leaving your machine.",
     subhead:
       "WorkInPrivate runs entirely on your computer. Summarize statements, draft client emails, and organize working papers without uploading a single figure. No account. No telemetry. Offline after setup.",
@@ -258,7 +258,7 @@ export const segments: Record<string, Segment> = {
     cardBlurb: "Summarize and draft while patient information stays offline, private by design.",
     seoTitle: "Private AI for Healthcare Professionals — On-Device & Offline | WorkInPrivate",
     metaDescription:
-      "A local AI assistant for clinicians and private practices. Summarize and draft on your own device — no cloud, no account, no telemetry. $29.99 one-time, 7-day trial.",
+      "A local AI assistant for clinicians and private practices. Summarize and draft on your own device — no cloud, no account, no telemetry. $49.99 one-time, 7-day trial.",
     h1: "A private AI assistant that keeps patient information on your device.",
     subhead:
       "WorkInPrivate runs locally on your computer, so you can summarize, draft, and organize without sending patient information to the cloud. No account. No telemetry. Offline after setup.",
@@ -317,7 +317,7 @@ export const segments: Record<string, Segment> = {
     cardBlurb: "Search document dumps and organize source material offline, private by design.",
     seoTitle: "Private AI for Journalists — Protect Sources, Work Offline | WorkInPrivate",
     metaDescription:
-      "A local AI assistant for reporters. Search documents, summarize, and organize source material on your own machine — no cloud, no account, no telemetry. $29.99 one-time, 7-day trial.",
+      "A local AI assistant for reporters. Search documents, summarize, and organize source material on your own machine — no cloud, no account, no telemetry. $49.99 one-time, 7-day trial.",
     h1: "Work through source material — without uploading it to anyone.",
     subhead:
       "WorkInPrivate runs entirely on your computer. Summarize leaks, search document dumps, and organize research while your sources stay on your device. No account. No telemetry. Offline after setup.",
@@ -376,7 +376,7 @@ export const segments: Record<string, Segment> = {
     cardBlurb: "Chat with literature, transcripts, and unpublished data — all on your device.",
     seoTitle: "Private AI for Researchers — Chat With Your Data, Locally | WorkInPrivate",
     metaDescription:
-      "A local AI assistant for academic and independent researchers. Query papers, transcripts, and unpublished data on your own machine — no cloud, no account, no telemetry. $29.99 one-time.",
+      "A local AI assistant for academic and independent researchers. Query papers, transcripts, and unpublished data on your own machine — no cloud, no account, no telemetry. $49.99 one-time.",
     h1: "Chat with your literature and data — without uploading unpublished work.",
     subhead:
       "WorkInPrivate runs entirely on your computer. Query papers, interview transcripts, and pre-publication data locally, so embargoed work never leaves your device. No account. No telemetry. Offline after setup.",
@@ -435,7 +435,7 @@ export const segments: Record<string, Segment> = {
     cardBlurb: "Draft and edit NDA'd manuscripts and unpublished work — nothing uploaded.",
     seoTitle: "Private AI for Writers — Draft NDA'd Work Offline | WorkInPrivate",
     metaDescription:
-      "A local AI assistant for authors, ghostwriters, and editors. Draft and edit unpublished manuscripts on your own machine — no cloud, no account, no telemetry. $29.99 one-time.",
+      "A local AI assistant for authors, ghostwriters, and editors. Draft and edit unpublished manuscripts on your own machine — no cloud, no account, no telemetry. $49.99 one-time.",
     h1: "Draft and edit unpublished work — without handing it to a cloud model.",
     subhead:
       "WorkInPrivate runs entirely on your computer. Brainstorm, draft, and edit manuscripts and NDA'd material while your words stay on your device. No account. No telemetry. Offline after setup.",

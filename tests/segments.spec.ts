@@ -38,9 +38,9 @@ test.describe('Segment landing pages', () => {
       expect(await pricing.getAttribute('href')).toBe('/pricing');
     });
 
-    test(`${seg.slug} shows one-time $29.99 and no placeholder testimonial`, async ({ page }) => {
+    test(`${seg.slug} shows one-time $49.99 and no placeholder testimonial`, async ({ page }) => {
       await page.goto(`/${seg.slug}`);
-      await expect(page.locator('text=$29.99 one-time').first()).toBeVisible();
+      await expect(page.locator('text=$49.99 one-time').first()).toBeVisible();
       // Testimonials are intentionally omitted until real, verified quotes exist.
       await expect(page.locator('blockquote')).toHaveCount(0);
     });
