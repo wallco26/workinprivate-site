@@ -1,7 +1,7 @@
 ---
 title: "The Things You Don't Type Into ChatGPT"
 description: "Almost everyone edits themselves before hitting enter — swapping the real name for 'a colleague,' rounding the number, leaving out the part that matters. Here's what that habit quietly costs you, and what changes when nobody's on the other end."
-pubDate: 2026-09-02
+pubDate: 2026-09-04
 category: "Privacy"
 ---
 
