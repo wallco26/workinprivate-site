@@ -1,9 +1,8 @@
 ---
 title: "Most Americans Don't Trust AI Companies With Their Data. They Use AI Anyway."
 description: "Polls this year show a strange split: AI use keeps climbing while trust in the companies behind it keeps falling. Ads in chatbots, chat logs handed over in court and fights over data retention explain why. Here's how to keep the useful part without having to trust anyone."
-pubDate: 2026-10-27
+pubDate: 2026-10-25
 category: "Privacy"
-draft: true
 ---
 
 Here's a statistic that should be stranger than it feels: the people who use AI the most trust the companies behind it the least.
