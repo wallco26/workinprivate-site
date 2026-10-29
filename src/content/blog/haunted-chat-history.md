@@ -15,21 +15,23 @@ So in the spirit of the season, grab a flashlight. We're taking a tour of the pa
 
 You clicked delete. The conversation vanished from your sidebar. It's gone, right?
 
-Not necessarily. Deleting a chat removes it from *your* view. What happens on the provider's side is up to their policy: copies are commonly kept for some period afterward for abuse monitoring, backups and operations. And that period isn't guaranteed either. When a court orders a company to preserve records, its normal deletion schedule can be suspended. That's exactly what happened in the *New York Times v. OpenAI* case, where OpenAI was ordered in 2025 to preserve ChatGPT logs, including ones users had deleted. We covered the details in [why most Americans don't trust AI companies with their data](/blog/using-ai-you-dont-trust).
+Not necessarily. Deleting a chat removes it from *your* view. What happens on the provider's side is up to their policy: copies are commonly kept for some period afterward for abuse monitoring, backups and operations. And that period isn't guaranteed either. When a court orders a company to preserve records, its normal deletion schedule can be suspended. That's exactly what happened in the *New York Times v. OpenAI* case. In May 2025, a judge [ordered OpenAI to preserve ChatGPT logs](https://simonwillison.net/2025/Jun/5/openai-court-order/) it would normally have deleted, including chats users had deleted themselves and "Temporary Chat" sessions. The order was lifted for new chats that fall, but the logs saved while it was in force are still kept. We covered the case in more detail in [why most Americans don't trust AI companies with their data](/blog/using-ai-you-dont-trust).
+
+Some attics are built into the plans. Google's [Gemini Apps Privacy Hub](https://support.google.com/gemini/answer/13594961) says that chats reviewed by human reviewers aren't deleted when you delete your activity. They're stored separately from your account and kept for up to three years.
 
 The attic isn't evil. It's just full of boxes you thought you'd thrown away.
 
 ## Room 2: The Séance Room, where strangers read your words
 
-Some cloud AI providers have human reviewers read a sample of conversations to improve quality and safety. This isn't hidden. It's usually in the privacy notice, sometimes alongside a plainly worded warning not to enter anything confidential you wouldn't want a reviewer to see. Google's notice for its Gemini apps, for example, has said exactly that.
+Some cloud AI providers have human reviewers read a sample of conversations to improve quality and safety. This isn't hidden. It's usually in the privacy notice, sometimes alongside a plainly worded warning. Google's privacy notice for its Gemini apps, for example, [asks users](https://www.searchenginejournal.com/google-gemini-privacy-warning/507818/) not to enter confidential information they wouldn't want a reviewer to see.
 
-Reviewed conversations are typically separated from your account name first, which helps. But "de-identified" is a slippery word when the conversation itself says *"I'm a nurse at the only hospital in a town of 4,000 and I need help writing up what happened with my patient last night."* The details you type are often more identifying than your name.
+Google says it disconnects conversations from your Google Account before reviewers see them, which helps. But "de-identified" is a slippery word when the conversation itself says *"I'm a nurse at the only hospital in a town of 4,000 and I need help writing up what happened with my patient last night."* The details you type are often more identifying than your name.
 
 Picture it: a candle flickers, and somewhere, someone you'll never meet is reading your 2 a.m. question about that weird mole.
 
 ## Room 3: The Hall of Mirrors, where a shared link ends up on Google
 
-In the summer of 2025, people discovered that thousands of shared ChatGPT conversations were showing up in Google search results. Users had clicked "share," and some had ticked a box making the link discoverable, without realizing that meant *search engines* could find it. Résumés, therapy-style confessions and work documents turned up for anyone who searched the right words. OpenAI removed the option quickly, but copies had already been cached and archived elsewhere.
+In the summer of 2025, Fast Company found [about 4,500 shared ChatGPT conversations](https://www.searchenginejournal.com/openai-is-pulling-shared-chatgpt-chats-from-google-search/552671/) showing up in Google search results. Users had clicked "share" and ticked a small box labeled "Make this chat discoverable," and many didn't realize that meant *search engines* could find it. Some of the chats were about mental health, drug use, sex lives and traumatic experiences. OpenAI called the feature a "short-lived experiment" and [removed it within days](https://fortune.com/2025/08/05/openai-google-search-chat-history/). By then, researchers reported that more than 100,000 shared chats had already been saved by the Internet Archive's Wayback Machine.
 
 Nobody was hacked. A conversation was just reflected one more time than its author expected, and in a hall of mirrors that's all it takes.
 
@@ -37,7 +39,7 @@ Nobody was hacked. A conversation was just reflected one more time than its auth
 
 ## Room 4: The Basement, where your words become part of the house
 
-Many consumer chatbots can use your conversations to help train future models unless you find the setting and opt out. The details vary by provider and plan, and they change often, which is a story of its own: we wrote about [what happens when the terms of service change](/blog/when-terms-of-service-change) after you've already handed over your data.
+Many consumer chatbots can use your conversations to help train future models unless you find the setting and opt out. On personal ChatGPT accounts, for example, the setting called "Improve the model for everyone" is [on by default](https://www.techradar.com/computing/artificial-intelligence/your-chatgpt-data-automatically-trains-its-ai-models-unless-you-turn-off-this-setting). Turning it off covers future chats; it can't pull your words out of a model that's already been trained. The details vary by provider and plan, and they change often, which is a story of its own: we wrote about [what happens when the terms of service change](/blog/when-terms-of-service-change) after you've already handed over your data.
 
 Training doesn't mean the model memorizes your chat word for word and repeats it to the next person. But it does mean your words have been absorbed into the foundations of something you don't own. Once something goes into the basement, there's no realistic way to dig it back out.
 
@@ -70,7 +72,7 @@ These help. But notice that every one of them is a way of managing the house, no
 
 Here's the thing about haunted houses: they're only scary because they're bigger than you think. Unknown rooms, unseen occupants, doors you didn't open.
 
-An AI that runs [entirely on your own computer](/blog/local-ai-vs-cloud-ai) is a house with exactly the rooms you can see. The model is a file on your hard drive. Your conversations are saved on your drive and nowhere else. There's no attic on someone else's server, no séance room full of reviewers, no basement where your words become training data, and no share button that can wander onto Google. When you delete a chat, the only copy is the one you just deleted.
+An AI that runs [entirely on your own computer](/blog/local-ai-vs-cloud-ai) is a house with exactly the rooms you can see. The model is a file on your hard drive. Your conversations are saved on your drive and nowhere else. There's no attic on someone else's server, no séance room full of reviewers, no basement where your words become training data, and no share button that can wander onto Google. When you delete a chat, there's no second copy on a server somewhere waiting out a retention period.
 
 You don't have to take our word for that, either. Turn off your Wi-Fi and keep chatting. If it still works, your words have nowhere to go. Our guide on [checking whether an AI is really private](/blog/verify-your-ai-is-really-private) walks you through a few more tests that take about fifteen minutes and need no technical background.
 
