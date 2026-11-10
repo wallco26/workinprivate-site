@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /purchase-success
+Disallow: /purchase-cancel
+
+Sitemap: https://www.workinprivate.com/sitemap-index.xml
