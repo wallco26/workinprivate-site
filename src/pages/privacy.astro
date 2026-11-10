@@ -8,7 +8,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto prose prose-gray prose-indigo">
         <h1 class="text-4xl font-bold text-gray-900 mb-2">Privacy Policy</h1>
-        <p class="text-sm text-gray-500 mb-10">Last updated: February 22, 2026</p>
+        <p class="text-sm text-gray-500 mb-10">Last updated: November 10, 2026</p>
 
         <p>This Privacy Policy describes how Wallco Digital Labs LLC ("we," "us," or "our") collects, uses, and shares your personal information when you visit www.workinprivate.com ("Website"), purchase our software, or use our services.</p>
 
@@ -25,7 +25,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-indigo-600 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-              <span>We only collect data necessary to process your purchase and deliver your license</span>
+              <span>On this website, we collect what is needed to process your purchase and deliver your license, plus basic visitor statistics through Google Analytics</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-indigo-600 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
@@ -42,6 +42,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <li><strong>Email address</strong> — provided during checkout for license key delivery and account communication</li>
           <li><strong>Name</strong> — if provided during checkout</li>
           <li><strong>Purchase details</strong> — which products, modules, and OS version you selected</li>
+          <li><strong>Email address for a download link</strong> — only if you choose to enter it in the "Email me the link" form on our download page. We use it to send you the download link and store it with our database provider, Supabase. We do not add it to a marketing list. Email us to have it deleted at any time.</li>
         </ul>
 
         <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Payment Information</h3>
@@ -56,7 +57,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <li>Pages visited and time spent on pages</li>
           <li>Referring website or source</li>
         </ul>
-        <p>This information is collected through standard server logs by our hosting provider.</p>
+        <p>This information is collected through standard server logs by our hosting provider and through Google Analytics, which also records actions on the Website such as clicking a download or buy button. Google Analytics estimates your general location (country and city) from your IP address.</p>
 
         <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Customer Database</h3>
         <p>We use <strong>Supabase</strong> as our database provider to store your email address, purchase history, license key information, and account creation date. See <a href="https://supabase.com/privacy" class="text-indigo-600 hover:text-indigo-700" target="_blank" rel="noopener noreferrer">Supabase's Privacy Policy</a>.</p>
@@ -99,6 +100,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <p class="text-gray-700 text-sm">Policy: <a href="https://supabase.com/privacy" class="text-indigo-600 hover:text-indigo-700" target="_blank" rel="noopener noreferrer">supabase.com/privacy</a></p>
             </div>
             <div>
+              <p class="font-semibold text-gray-900">Google Analytics (Website Statistics)</p>
+              <p class="text-gray-700 text-sm">Receives: pages visited, actions on the Website, browser and device information, IP address, general location</p>
+              <p class="text-gray-700 text-sm">Policy: <a href="https://policies.google.com/privacy" class="text-indigo-600 hover:text-indigo-700" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></p>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-900">Google Fonts (Website Typefaces)</p>
+              <p class="text-gray-700 text-sm">Receives: IP address and browser info when your browser loads the fonts</p>
+              <p class="text-gray-700 text-sm">Policy: <a href="https://policies.google.com/privacy" class="text-indigo-600 hover:text-indigo-700" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></p>
+            </div>
+            <div>
               <p class="font-semibold text-gray-900">GitHub Pages (Website Hosting)</p>
               <p class="text-gray-700 text-sm">Receives: standard web server logs (IP address, browser info)</p>
               <p class="text-gray-700 text-sm">Policy: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" class="text-indigo-600 hover:text-indigo-700" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a></p>
@@ -109,11 +120,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p>We may also disclose your information if required by law or in response to valid legal requests.</p>
 
         <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">6. Data We Do NOT Collect</h2>
-        <p>To be explicit, we do <strong>not</strong> collect:</p>
+        <p>To be explicit, the WorkInPrivate application does <strong>not</strong> send us:</p>
         <ul class="list-disc pl-6 space-y-2">
           <li>Your prompts or inputs to the application</li>
           <li>Content generated by the application</li>
-          <li>Usage patterns or application analytics</li>
+          <li>Usage patterns or analytics from the application</li>
           <li>Location data</li>
         </ul>
 
@@ -121,12 +132,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p>WorkInPrivate runs open-source AI models locally on your device. Models are downloaded from <a href="https://huggingface.co" class="text-indigo-600 hover:text-indigo-700" target="_blank" rel="noopener noreferrer">Hugging Face</a>, an open library of free AI models. While the models run locally, the initial download is subject to Hugging Face's privacy practices. Once downloaded, models operate entirely offline.</p>
 
         <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">8. Cookies and Tracking</h2>
-        <p>This website uses only essential cookies required for the checkout process. We do not use tracking cookies or third-party analytics scripts. We respect Do Not Track (DNT) browser signals.</p>
-        <p>You can control cookies through your browser settings. Disabling essential cookies may affect checkout functionality.</p>
+        <p>This website uses Google Analytics to understand how many people visit and which pages and buttons they use. Google Analytics sets cookies in your browser (such as <code>_ga</code>) to tell visitors apart. We do not use advertising cookies, and we do not use Analytics data to identify you personally.</p>
+        <p>Checkout is handled by Stripe, which sets its own cookies on its checkout page to process payments and prevent fraud.</p>
+        <p>You can block or delete cookies in your browser settings, or install Google's <a href="https://tools.google.com/dlpage/gaoptout" class="text-indigo-600 hover:text-indigo-700" target="_blank" rel="noopener noreferrer">Analytics opt-out add-on</a>. The Website works normally without Analytics cookies. This section covers the Website only; the WorkInPrivate application contains no analytics.</p>
 
         <h2 class="text-2xl font-semibold text-gray-900 mt-10 mb-4">9. Data Retention</h2>
         <ul class="list-disc pl-6 space-y-2">
           <li><strong>Email address:</strong> Retained as long as your license is active, plus 3 years</li>
+          <li><strong>Download-link email requests:</strong> 12 months, or until you ask us to delete them</li>
           <li><strong>Purchase history:</strong> 7 years (tax and legal compliance)</li>
           <li><strong>License key records:</strong> As long as your license is active, plus 1 year</li>
           <li><strong>Website analytics:</strong> 26 months</li>

@@ -115,10 +115,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       },
       {
         "@type": "Question",
-        "name": "On a Mac, it says the app cannot be opened or should be moved to the Trash. How do I open it?",
+        "name": "Can I get a refund?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "This is expected and safe. WorkInPrivate is made by an independent developer and is not yet signed through Apple's paid program, so macOS shows a caution the first time you open it. It does not mean your download is broken or unsafe. To open it: double-click WorkInPrivate and click Cancel on the warning, then open the Apple menu, System Settings, Privacy & Security. Scroll to the Security section and click Open Anyway next to WorkInPrivate, enter your password or use Touch ID, then click Open. macOS remembers your choice, so you only do this once. The download also includes a READ ME FIRST file with these steps."
+          "text": "Yes. Every purchase comes with a 30-day money-back guarantee. If WorkInPrivate isn't right for you, email support@workinprivate.com within 30 days of buying and we'll refund you in full. You can also try the app free for 7 days before you buy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to do anything special to open it on a Mac?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. WorkInPrivate for Mac is signed and notarized with Apple, so it opens normally with no security warnings. Open the downloaded .dmg, drag WorkInPrivate into Applications, and open it from there. It needs macOS 12 or later on an Apple Silicon Mac (M1 or newer). If macOS says the app is damaged, the download was probably incomplete: delete the .dmg and download it again."
         }
       },
       {
@@ -280,18 +288,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <details class="group bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl overflow-hidden hover:border-[#D4E3F5] transition-colors">
           <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-bold text-[#1B3A5C] text-base">
-            On a Mac, it says the app &ldquo;can&rsquo;t be opened&rdquo; or should be moved to the Trash. How do I open it?
+            Can I get a refund?
             <svg class="w-5 h-5 text-[#4B8BD4] group-open:rotate-180 transition-transform flex-shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"/></svg>
           </summary>
           <div class="px-6 pb-5 text-[#5A6474] text-sm leading-relaxed">
-            This is expected &mdash; and safe. WorkInPrivate is made by an independent developer and isn&rsquo;t yet signed through Apple&rsquo;s paid program, so macOS shows a caution the first time you open it. It does <strong>not</strong> mean your download is broken or unsafe, and you should <strong>not</strong> move it to the Trash. Here&rsquo;s how to open it:
+            Yes. Every purchase comes with a 30-day money-back guarantee. If WorkInPrivate isn&rsquo;t right for you, email <a href="mailto:support@workinprivate.com" class="text-[#4B8BD4] hover:underline">support@workinprivate.com</a> within 30 days of buying and we&rsquo;ll refund you in full. You can also try the app free for 7 days before you buy. See the <a href="/refund/" class="text-[#4B8BD4] hover:underline">refund policy</a>.
+          </div>
+        </details>
+
+        <details class="group bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl overflow-hidden hover:border-[#D4E3F5] transition-colors">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-bold text-[#1B3A5C] text-base">
+            Do I need to do anything special to open it on a Mac?
+            <svg class="w-5 h-5 text-[#4B8BD4] group-open:rotate-180 transition-transform flex-shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-[#5A6474] text-sm leading-relaxed">
+            No. WorkInPrivate for Mac is signed and notarized with Apple, so it opens normally &mdash; no security warnings and no workarounds.
             <ol class="list-decimal ml-5 mt-3 space-y-1">
-              <li>Double-click <strong>WorkInPrivate</strong>, then click <strong>Cancel</strong> on the warning (not &ldquo;Move to Trash&rdquo;).</li>
-              <li>Open the Apple menu &rarr; <strong>System Settings</strong> &rarr; <strong>Privacy &amp; Security</strong>.</li>
-              <li>Scroll to the <strong>Security</strong> section and click <strong>Open Anyway</strong> next to WorkInPrivate.</li>
-              <li>Enter your password or use Touch ID, then click <strong>Open</strong>.</li>
+              <li>Open the downloaded <strong>.dmg</strong> file.</li>
+              <li>Drag <strong>WorkInPrivate</strong> into the <strong>Applications</strong> folder.</li>
+              <li>Open it from Applications, Launchpad, or Spotlight.</li>
             </ol>
-            <p class="mt-3">macOS remembers your choice, so you only do this once. The &ldquo;Open Anyway&rdquo; button only appears right after you try to open the app, so if you don&rsquo;t see it, double-click the app once more and check again. The download also includes a <strong>READ ME FIRST</strong> file with these same steps.</p>
+            <p class="mt-3">It needs macOS 12 or later on an Apple Silicon Mac (M1 or newer); Intel Macs aren&rsquo;t supported. If macOS says the app &ldquo;is damaged and can&rsquo;t be opened&rdquo;, the download was probably incomplete &mdash; delete the .dmg and download it again.</p>
           </div>
         </details>
 

@@ -1,11 +1,14 @@
 ---
 title: "Does Local AI Work Without the Internet? Using AI Offline, Anywhere"
-description: "One of the quiet superpowers of running AI on your own computer is that it keeps working when your connection doesn't — on a plane, in a cabin, or anywhere with no signal. Here's why local AI runs fully offline, and what that actually changes."
+description: "Yes. Local AI runs with no internet once the model is downloaded. Here's why, what works offline, and the one time you need a connection."
 pubDate: 2026-08-08
+updatedDate: 2026-11-10
 category: "Guides"
 ---
 
 Here's a question that gets to the heart of what [local AI](/blog/local-ai-vs-cloud-ai/) actually is: *does it still work when you're offline?* With cloud tools like ChatGPT, the answer is simple and unforgiving — no internet, no AI. Close the laptop lid on a flight, drive somewhere with no signal, or lose your Wi-Fi for an afternoon, and the AI you were relying on is just gone. Local AI flips that completely. Once it's on your computer, it works whether you're connected or not. Let's unpack why — and why it matters more than it first sounds.
+
+**The short answer:** yes. A local AI needs the internet once, to download its model. After that it runs entirely on your computer and works with no connection at all.
 
 ## Why cloud AI needs the internet (and local AI doesn't)
 
@@ -42,6 +45,18 @@ There's also a subtler benefit: **it's always there.** No outages, no "service i
 To be straight with you: you do need the internet *once*, up front. When you first set things up, the software downloads your AI model — that's a one-time download of a file, a bit like installing any other app. After that, it's yours to run offline as much as you like. If you later want to try a bigger or newer model, you'll go online again just long enough to fetch it. Day to day, though, you're free.
 
 This is also the part that used to make local AI a hassle — figuring out *which* model to download and getting it running. That's the job [WorkInPrivate](/) quietly does for you: on first launch it checks your computer, picks a model that fits, downloads it, and from then on you can chat with it whether you're connected or not.
+
+## Quick answers
+
+**Does local AI need the internet?** Only for the first download of the model. Answering your questions happens on your own computer and needs no connection.
+
+**Can you use AI without internet?** Yes, as long as it's a local model that's already on your machine. Cloud tools like ChatGPT stop working the moment you're offline.
+
+**Can I use AI on a plane?** Yes. Download the model before you leave, and it works in airplane mode for the whole flight.
+
+**Is offline AI worse than online AI?** A local model gives the same quality answers offline as it does online. It is smaller than the largest cloud models, so it's less strong on the hardest reasoning tasks, but for writing, summarizing and working with your own documents it holds up well.
+
+**What can't it do offline?** Anything that needs live information: today's news, current prices, or the contents of a web page.
 
 ## The bottom line
 

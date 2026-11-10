@@ -1,11 +1,14 @@
 ---
 title: "How to Run AI Privately on Your Own Computer (No Coding Required)"
-description: "You don't need to be a developer to run a ChatGPT-style AI that keeps everything on your machine. Here's what 'local AI' means, what you need, and the easiest way to get started."
+description: "Run a ChatGPT-style AI on your own computer without coding: what local AI is, what you need, and the easiest way to set it up."
 pubDate: 2026-07-10
+updatedDate: 2026-11-10
 category: "Guides"
 ---
 
 "Local AI" has a reputation for being a hobby for developers — something involving a command line, cryptic model names, and an afternoon of setup. It doesn't have to be. Here's a plain-English guide to running a private AI assistant on your own computer, even if you've never touched a terminal in your life.
+
+**The short version:** install a desktop app that bundles an open-source AI model, let it download the model once, and chat with it like you would with ChatGPT. Nothing you type is sent to a server. You need a reasonably modern computer with 8 GB of RAM or more, and no technical skills.
 
 ## What "running AI locally" actually means
 
@@ -49,6 +52,18 @@ You download it, it sets itself up, and you start typing. If you can use a texti
 3. **Start chatting privately.** Ask questions, write, or drop in a document. Everything stays on your machine, and it keeps working with the Wi-Fi off.
 
 There's a free 7-day trial with no account or credit card, so you can confirm it works on your computer before paying anything. After that it's a one-time $49.99 — no subscription.
+
+## Common questions
+
+**Can I run ChatGPT itself on my computer?** No. ChatGPT only runs on OpenAI's servers. What you can run locally are open-source models that work the same way: you type a question and get a written answer.
+
+**Is running AI locally free?** The models themselves are free and open source. The developer tools are free too. Guided apps like WorkInPrivate charge for doing the setup for you; ours is a one-time $49.99 after a free 7-day trial.
+
+**Do I need the internet?** Only to download the model the first time. After that it [works offline](/blog/does-local-ai-work-offline/).
+
+**Will it work on my computer?** If it has 8 GB of RAM or more, very likely. Here's [how to check](/blog/do-you-need-a-powerful-computer-to-run-ai-locally/) in under a minute.
+
+**Do I need a server to run private AI?** Not for personal use. A "private AI server" is something a team sets up to share one model between many people. For one person, the model simply runs on your own laptop or desktop.
 
 ## Which path is right for you?
 

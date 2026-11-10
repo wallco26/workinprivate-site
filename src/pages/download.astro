@@ -60,6 +60,20 @@ const baseUrl = 'https://github.com/wallco26/workinprivate-site/releases/latest/
       <p class="text-center text-[#5A6474] text-sm mt-8 max-w-2xl mx-auto">
         <strong class="text-[#1B3A5C]">Your privacy is on by default.</strong> After setup, WorkInPrivate works with no internet at all — your chats and files never leave your computer.
       </p>
+      <!-- Email me the link (optional; for visitors on a phone or another computer) -->
+      <div class="max-w-xl mx-auto mt-10 bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-2xl p-6 text-center">
+        <h2 class="font-bold text-[#1B3A5C] text-lg mb-1">On your phone, or not at your computer?</h2>
+        <p class="text-[#5A6474] text-sm mb-4">Leave your email and we'll send you the download link, usually within a day. It's optional, and we'll use it only for that.</p>
+        <form id="link-request-form" class="flex flex-col sm:flex-row gap-3 justify-center" novalidate>
+          <label for="link-request-email" class="sr-only">Email address</label>
+          <input id="link-request-email" name="email" type="email" required autocomplete="email" maxlength="254" placeholder="you@example.com" class="flex-1 min-w-0 px-4 py-3 rounded-[10px] border-2 border-[#D4E3F5] text-[#1B3A5C] text-base focus:outline-none focus:border-[#4B8BD4]" />
+          <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" class="hidden" />
+          <button type="submit" class="px-6 py-3 rounded-[10px] text-white font-bold bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-all disabled:opacity-60">Email me the link</button>
+        </form>
+        <p id="link-request-status" class="text-sm mt-3 min-h-[1.25rem]" role="status" aria-live="polite"></p>
+        <p class="text-xs text-[#8A9AB5]">See our <a href="/privacy/" class="text-[#4B8BD4] hover:underline">privacy policy</a>.</p>
+      </div>
+
       <p class="text-center text-[#8A9AB5] text-sm mt-3">
         Ready to buy now? <a href="/pricing/" class="text-[#4B8BD4] hover:underline font-semibold">See pricing</a> — or just download and decide during your trial.
       </p>
@@ -136,5 +150,44 @@ const baseUrl = 'https://github.com/wallco26/workinprivate-site/releases/latest/
       </p>
     </div>
   </section>
+
+  <script is:inline>
+    (function () {
+      var form = document.getElementById('link-request-form');
+      if (!form) return;
+      var status = document.getElementById('link-request-status');
+      var button = form.querySelector('button');
+      var ENDPOINT = 'https://peungwkkkqorgzxfhyaa.supabase.co/rest/v1/download_link_requests';
+      var KEY = 'sb_publishable_Vw4qXhE8QwQlquwnGhdUdg_MQefVgaY'; // public, insert-only
+
+      function say(text, ok) {
+        status.textContent = text;
+        status.style.color = ok ? '#38A169' : '#C53030';
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = form.email.value.trim();
+        if (form.company.value) return; // honeypot: bots fill hidden fields
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+          say('Please enter a valid email address.', false);
+          return;
+        }
+        button.disabled = true;
+        fetch(ENDPOINT, {
+          method: 'POST',
+          headers: { 'apikey': KEY, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
+          body: JSON.stringify({ email: email, source_page: location.pathname })
+        }).then(function (res) {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          form.reset();
+          say("Thanks — we'll email you the download link.", true);
+          if (typeof gtag === 'function') gtag('event', 'generate_lead', { lead_source: 'download_link_request' });
+        }).catch(function () {
+          say('Sorry, that didn\'t go through. Please try again, or email support@workinprivate.com.', false);
+        }).then(function () { button.disabled = false; });
+      });
+    })();
+  </script>
 
 </BaseLayout>
