@@ -7,7 +7,7 @@ category: "Guides"
 
 Most people who try local AI do it the same way: they install something on a Tuesday evening, ask it two questions, decide it's "not quite ChatGPT," and never open it again. Then they go back to pasting client files into a cloud chatbot and feeling vaguely bad about it.
 
-The problem isn't the software. It's that a chatbot is a *habit*, and habits don't move because you read an article about [why local AI is more private](/blog/local-ai-vs-cloud-ai). They move when you actually run your real work through the new thing for long enough to find out where it holds up.
+The problem isn't the software. It's that a chatbot is a *habit*, and habits don't move because you read an article about [why local AI is more private](/blog/local-ai-vs-cloud-ai/). They move when you actually run your real work through the new thing for long enough to find out where it holds up.
 
 So here's a plan. Four weeks, one change at a time, using the work you already have on your plate. By the end you'll know — from evidence, not vibes — how much of your AI use can live entirely on your own computer.
 
@@ -15,7 +15,7 @@ So here's a plan. Four weeks, one change at a time, using the work you already h
 
 You don't need to research models, compare quantization formats, or read benchmark charts. That's the rabbit hole that eats people's evenings and produces nothing.
 
-Check that your computer has 8 GB of memory or more ([here's how, and why it's the number that matters](/blog/do-you-need-a-powerful-computer-to-run-ai-locally)), install one thing, and start. If you're using [WorkInPrivate](/), it looks at your machine and picks a model that fits it, so there's nothing to choose. If you're using a developer tool, take whatever it recommends first and move on. You can tune later; you cannot tune your way out of never starting.
+Check that your computer has 8 GB of memory or more ([here's how, and why it's the number that matters](/blog/do-you-need-a-powerful-computer-to-run-ai-locally/)), install one thing, and start. If you're using [WorkInPrivate](/), it looks at your machine and picks a model that fits it, so there's nothing to choose. If you're using a developer tool, take whatever it recommends first and move on. You can tune later; you cannot tune your way out of never starting.
 
 One more bit of prep, and it's the useful one: **for one day, keep a note of every single thing you ask an AI to do.** Not what you think you use it for — what you actually typed. That list is the real subject of the next four weeks.
 
@@ -33,7 +33,7 @@ Move these over immediately:
 
 These are the bread and butter of most people's AI use, and a modern local model handles them well. If you kept that list of what you actually asked for, there's a good chance most of it is on this page already.
 
-The one thing to expect: if an answer comes back flatter than you're used to, it's usually the prompt, not the model. A big cloud model fills in the blanks when you're vague; a smaller local one does exactly what you said. [Being specific about role, format, and length](/blog/how-to-prompt-a-local-ai-model) closes most of the gap, and it takes about ten minutes to learn.
+The one thing to expect: if an answer comes back flatter than you're used to, it's usually the prompt, not the model. A big cloud model fills in the blanks when you're vague; a smaller local one does exactly what you said. [Being specific about role, format, and length](/blog/how-to-prompt-a-local-ai-model/) closes most of the gap, and it takes about ten minutes to learn.
 
 ## Week 2: The work you were editing yourself around
 
@@ -49,9 +49,9 @@ This is the category where local AI isn't a slightly worse ChatGPT — it's the 
 
 Two habits to add, both of which push past what a cloud tab does comfortably.
 
-**Point it at your own files.** Instead of pasting excerpts, [give it the documents themselves](/blog/chat-with-your-documents-privately) — the contract, the policy, the stack of research papers, last quarter's notes — and ask questions against them. This is the point where a lot of people stop thinking of it as "a chatbot" and start thinking of it as a research assistant that has read their filing cabinet.
+**Point it at your own files.** Instead of pasting excerpts, [give it the documents themselves](/blog/chat-with-your-documents-privately/) — the contract, the policy, the stack of research papers, last quarter's notes — and ask questions against them. This is the point where a lot of people stop thinking of it as "a chatbot" and start thinking of it as a research assistant that has read their filing cabinet.
 
-**Use it somewhere with no signal.** On a flight, on a train, in the one meeting room where the Wi-Fi dies. [Local AI doesn't need the internet](/blog/does-local-ai-work-offline), and the first time you use it offline, the difference stops being theoretical. A cloud chatbot is a service that can be down, rate-limited, or unreachable. This one is a program on your laptop.
+**Use it somewhere with no signal.** On a flight, on a train, in the one meeting room where the Wi-Fi dies. [Local AI doesn't need the internet](/blog/does-local-ai-work-offline/), and the first time you use it offline, the difference stops being theoretical. A cloud chatbot is a service that can be down, rate-limited, or unreachable. This one is a program on your laptop.
 
 ## Week 4: Be honest about what stays in the cloud
 
@@ -75,10 +75,10 @@ Three small things separate the people who switch from the people who drift back
 
 1. **Put the local app where the browser tab was** — dock, taskbar, keyboard shortcut. Convenience decides more of this than quality does.
 2. **Don't run both in parallel forever.** Comparing every answer side by side keeps you anchored to the old tool. Use local as the default and reach for the cloud only when you hit one of the exceptions above.
-3. **Do the math once.** A $20/month subscription is $240 a year, every year. A one-time purchase isn't. [The comparison is less close than it looks](/blog/local-ai-cost-vs-chatgpt-subscription) once you're past the first year.
+3. **Do the math once.** A $20/month subscription is $240 a year, every year. A one-time purchase isn't. [The comparison is less close than it looks](/blog/local-ai-cost-vs-chatgpt-subscription/) once you're past the first year.
 
 ## The bottom line
 
 You don't need to decide whether local AI is good enough in the abstract. You need four weeks of your own work to find out — starting with the easy wins, then the things you'd been editing yourself around, then your documents, then an honest look at what's left.
 
-The [free trial](/download) runs for seven days on the computer you already own, which covers Week 1 and the start of Week 2 — comfortably enough to know whether the rest is worth it.
+The [free trial](/download/) runs for seven days on the computer you already own, which covers Week 1 and the start of Week 2 — comfortably enough to know whether the rest is worth it.

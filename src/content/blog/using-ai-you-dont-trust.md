@@ -31,7 +31,7 @@ You don't need a scandal to be uneasy. The ordinary, documented business of runn
 
 **3. Even big businesses are fighting over retention.** Fortune [reported](https://fortune.com/2026/10/05/openai-and-anthropic-battle-over-zero-data-retention-zdr-data-privacy-companies-look-to-open-models-and-sovereign-ai/) this month that how long AI providers keep customer data has become a real point of contention between companies and their AI vendors, and that a growing number of businesses are moving toward open models they can run on infrastructure they control. These are organizations with lawyers and negotiating power. If they don't feel comfortable, an individual with a free account has even less say.
 
-It's worth being fair: the major AI labs employ serious privacy engineers, and many of their policies are better than the rest of the internet's. As we wrote when we looked at [what makes a privacy policy change](/blog/when-terms-of-service-change), the problem isn't that these companies are villains. It's that a promise is the only thing protecting your data, and promises depend on business models, courts and boardrooms you don't control.
+It's worth being fair: the major AI labs employ serious privacy engineers, and many of their policies are better than the rest of the internet's. As we wrote when we looked at [what makes a privacy policy change](/blog/when-terms-of-service-change/), the problem isn't that these companies are villains. It's that a promise is the only thing protecting your data, and promises depend on business models, courts and boardrooms you don't control.
 
 ## What the big companies are doing about it
 
@@ -52,17 +52,17 @@ It turns "do I trust this company?" into a question you don't need to ask.
 
 A company selling privacy software asking you to trust it would miss the point of this post. So don't.
 
-We wrote a guide to [checking whether any AI app is really private](/blog/verify-your-ai-is-really-private). It takes about fifteen minutes and needs no technical background. The simplest test: download a model, turn off your Wi-Fi and keep chatting. If it still works, your words have nowhere to go. Run the same test on any tool you're considering, including ours.
+We wrote a guide to [checking whether any AI app is really private](/blog/verify-your-ai-is-really-private/). It takes about fifteen minutes and needs no technical background. The simplest test: download a model, turn off your Wi-Fi and keep chatting. If it still works, your words have nowhere to go. Run the same test on any tool you're considering, including ours.
 
 That's the real difference. A cloud service asks for your trust. Software that runs on your own machine can be checked.
 
 ## The honest trade-off
 
-Local AI isn't a free lunch. The models that run on a typical laptop are smaller than the giant ones in the cloud. They're excellent at everyday work, like rewriting an email, summarizing a contract, brainstorming or answering questions about [your own documents](/blog/ai-that-knows-less-on-purpose). They're less impressive at frontier-level tasks like long chains of complicated reasoning.
+Local AI isn't a free lunch. The models that run on a typical laptop are smaller than the giant ones in the cloud. They're excellent at everyday work, like rewriting an email, summarizing a contract, brainstorming or answering questions about [your own documents](/blog/ai-that-knows-less-on-purpose/). They're less impressive at frontier-level tasks like long chains of complicated reasoning.
 
 For most people, that's a good trade, especially for the conversations you'd least want in someone else's database: your health, your money, your job, your family. You don't need the biggest model in the world to help you word a hard email to your landlord. You need one that won't remember it for anyone else.
 
-If you're wondering whether your computer is up to it, the answer is [probably yes](/blog/do-you-need-a-powerful-computer-to-run-ai-locally). If you're not sure which model to pick, here's [a plain-English guide](/blog/which-local-ai-model-should-you-run).
+If you're wondering whether your computer is up to it, the answer is [probably yes](/blog/do-you-need-a-powerful-computer-to-run-ai-locally/). If you're not sure which model to pick, here's [a plain-English guide](/blog/which-local-ai-model-should-you-run/).
 
 ## You can keep the useful part
 
@@ -70,6 +70,6 @@ The polls describe people stuck between two true things: AI is useful, and the c
 
 There's a better way to resolve it. Keep the AI and drop the middleman. Run it on your own computer, where privacy doesn't depend on anyone's promise, policy or court docket.
 
-WorkInPrivate is a private AI chatbot that runs open-source models entirely on your computer. It's a [one-time purchase](/pricing), with no account, no subscription and no ads. You can [download it here](/download) and test the Wi-Fi claim yourself.
+WorkInPrivate is a private AI chatbot that runs open-source models entirely on your computer. It's a [one-time purchase](/pricing/), with no account, no subscription and no ads. You can [download it here](/download/) and test the Wi-Fi claim yourself.
 
 *Survey figures and news reports are summarized from the linked sources as of October 2026. Cloud AI policies change often, so check a provider's current terms before relying on them.*

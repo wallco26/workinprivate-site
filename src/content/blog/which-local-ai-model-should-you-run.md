@@ -5,11 +5,11 @@ pubDate: 2026-07-23
 category: "Guides"
 ---
 
-Once you've decided to [run AI on your own computer](/blog/run-ai-privately-no-coding), you hit a question that cloud tools never ask you: *which model do you want?* ChatGPT just gives you one AI and hides the machinery. Run AI locally and you get to choose — which is powerful, and a little confusing the first time. Here's a plain-English guide to what you're actually choosing between.
+Once you've decided to [run AI on your own computer](/blog/run-ai-privately-no-coding/), you hit a question that cloud tools never ask you: *which model do you want?* ChatGPT just gives you one AI and hides the machinery. Run AI locally and you get to choose — which is powerful, and a little confusing the first time. Here's a plain-English guide to what you're actually choosing between.
 
 ## What "a model" even is
 
-A **model** is the AI itself — the trained brain that reads your message and writes a response. When you use ChatGPT, there's a model running on OpenAI's servers. When you run AI [locally](/blog/local-ai-vs-cloud-ai), a copy of a model lives on your own machine and does the thinking right there.
+A **model** is the AI itself — the trained brain that reads your message and writes a response. When you use ChatGPT, there's a model running on OpenAI's servers. When you run AI [locally](/blog/local-ai-vs-cloud-ai/), a copy of a model lives on your own machine and does the thinking right there.
 
 The reason you have a choice is that the AI world runs on **open-source models** — AIs that companies and research labs have released for anyone to download and use. Names you'll see include Llama (from Meta), Mistral, Qwen, Gemma, and Phi. They're free, they're capable, and because you can hold a full copy of one on your laptop, they're what makes private AI possible in the first place.
 
@@ -49,7 +49,7 @@ You can keep more than one on your computer and switch depending on the task —
 
 Honest answer: the very largest cloud models are still ahead of what most laptops can run, especially on hard reasoning. But the gap is smaller than people expect, and it keeps shrinking. For the everyday work most of us actually do — drafting emails, summarizing documents, brainstorming, cleaning up writing, answering questions — a good local model is genuinely excellent.
 
-And there's a trade the comparison usually forgets: a local model keeps everything on your machine. For [anything confidential](/blog/is-it-safe-to-put-client-data-in-ai), a private model that's 90% as clever is worth far more than a cloud one that's slightly sharper but has [seen all your data](/blog/chatgpt-confidential-documents).
+And there's a trade the comparison usually forgets: a local model keeps everything on your machine. For [anything confidential](/blog/is-it-safe-to-put-client-data-in-ai/), a private model that's 90% as clever is worth far more than a cloud one that's slightly sharper but has [seen all your data](/blog/chatgpt-confidential-documents/).
 
 ## The short version
 

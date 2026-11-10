@@ -43,15 +43,15 @@ This is exactly what [WorkInPrivate](/) is built for. It's a desktop app that ru
 
 Different professions run into the same wall from different angles. We've written more specific guides for several:
 
-- [Private AI for lawyers](/for-lawyers) — work through privileged documents without third-party servers
-- [Private AI for therapists](/for-therapists) — draft and summarize notes that never leave your laptop
-- [Private AI for accountants](/for-accountants) — analyze client financials that stay on your machine
-- [Private AI for healthcare](/for-healthcare) — summarize and draft with patient information kept offline
+- [Private AI for lawyers](/for-lawyers/) — work through privileged documents without third-party servers
+- [Private AI for therapists](/for-therapists/) — draft and summarize notes that never leave your laptop
+- [Private AI for accountants](/for-accountants/) — analyze client financials that stay on your machine
+- [Private AI for healthcare](/for-healthcare/) — summarize and draft with patient information kept offline
 
 ## The bottom line
 
 Can you use ChatGPT for confidential or privileged documents? Technically yes — but it means trusting that a third party's servers, staff, and settings all behave the way you hope, and accepting that the data has left your control. For work you're ethically or legally bound to protect, that's a hard promise to keep.
 
-Running the AI on your own device sidesteps the whole question. If you want to see the difference laid out side by side, here's [how a private ChatGPT alternative compares](/chatgpt-alternative-private), and a deeper look at [whether ChatGPT is really private](/is-chatgpt-private).
+Running the AI on your own device sidesteps the whole question. If you want to see the difference laid out side by side, here's [how a private ChatGPT alternative compares](/chatgpt-alternative-private/), and a deeper look at [whether ChatGPT is really private](/is-chatgpt-private/).
 
 *WorkInPrivate keeps your data on your device, which removes the third-party-disclosure risk of cloud AI. It supports your confidentiality obligations — it isn't a substitute for your own compliance program.*

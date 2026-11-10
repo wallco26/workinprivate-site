@@ -27,9 +27,9 @@ Smaller models know fewer facts than the giant cloud ones, and they're more like
 
 Instead of *"what does our refund policy usually say about partial months?"*, paste the policy and ask the question about the text in front of it. Instead of *"summarize the Smith case,"* give it the document.
 
-This is the habit that changes local AI from "a chatbot that sometimes bluffs" into a genuinely reliable tool — because when the answer has to come from text you supplied, there's much less room to invent one. It's also why [chatting with your own documents](/blog/chat-with-your-documents-privately) matters so much: pointing the model at your actual PDFs and notes is the same trick, automated, with citations back to the source.
+This is the habit that changes local AI from "a chatbot that sometimes bluffs" into a genuinely reliable tool — because when the answer has to come from text you supplied, there's much less room to invent one. It's also why [chatting with your own documents](/blog/chat-with-your-documents-privately/) matters so much: pointing the model at your actual PDFs and notes is the same trick, automated, with citations back to the source.
 
-And here's the part that only works locally: you can paste the *real* document. Not a scrubbed version with the names taken out, not a vague paraphrase that protects the client — the actual file, because [it never leaves your machine](/blog/is-it-safe-to-put-client-data-in-ai). The best prompt is usually the one with the real material in it, and that's a prompt you simply can't write into a cloud tool.
+And here's the part that only works locally: you can paste the *real* document. Not a scrubbed version with the names taken out, not a vague paraphrase that protects the client — the actual file, because [it never leaves your machine](/blog/is-it-safe-to-put-client-data-in-ai/). The best prompt is usually the one with the real material in it, and that's a prompt you simply can't write into a cloud tool.
 
 ## 3. One job per message
 
@@ -86,7 +86,7 @@ A few common symptoms and what usually causes them:
 | It's slow | Model is large for your machine | Try a smaller or quantized model |
 | It's fast but shallow | Model may be smaller than it needs to be | Step up a size if your memory allows |
 
-Those last two are worth reading together with our guides on [choosing a model size](/blog/which-local-ai-model-should-you-run) and [what your computer actually needs](/blog/do-you-need-a-powerful-computer-to-run-ai-locally). If your answers are consistently thin across many well-written prompts, that's the point where model size genuinely is the answer — and swapping is a download, not a decision you're stuck with.
+Those last two are worth reading together with our guides on [choosing a model size](/blog/which-local-ai-model-should-you-run/) and [what your computer actually needs](/blog/do-you-need-a-powerful-computer-to-run-ai-locally/). If your answers are consistently thin across many well-written prompts, that's the point where model size genuinely is the answer — and swapping is a download, not a decision you're stuck with.
 
 ## What local models are quietly great at
 

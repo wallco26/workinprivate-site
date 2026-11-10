@@ -31,11 +31,11 @@ test.describe('Segment landing pages', () => {
 
       const trial = page.getByRole('link', { name: 'Start Free Trial' }).first();
       await expect(trial).toBeVisible();
-      expect(await trial.getAttribute('href')).toBe('/download');
+      expect(await trial.getAttribute('href')).toBe('/download/');
 
       const pricing = page.getByRole('link', { name: 'See Pricing' }).first();
       await expect(pricing).toBeVisible();
-      expect(await pricing.getAttribute('href')).toBe('/pricing');
+      expect(await pricing.getAttribute('href')).toBe('/pricing/');
     });
 
     test(`${seg.slug} shows one-time $49.99 and no placeholder testimonial`, async ({ page }) => {
@@ -60,7 +60,7 @@ test.describe('Segment landing pages', () => {
       has: page.getByRole('heading', { name: /Built For Confidential Work/i }),
     });
     for (const seg of SEGMENTS) {
-      await expect(section.locator(`a[href="/${seg.slug}"]`)).toHaveCount(1);
+      await expect(section.locator(`a[href="/${seg.slug}/"]`)).toHaveCount(1);
     }
   });
 });

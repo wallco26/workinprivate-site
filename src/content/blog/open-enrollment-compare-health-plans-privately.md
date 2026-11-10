@@ -15,14 +15,14 @@ There's a catch. To answer that question well, the AI needs your real details: y
 
 ## Why this is the wrong thing to paste into a cloud chatbot
 
-When you type into ChatGPT, Gemini or a similar tool, your message goes to the company's servers. Depending on the service and your settings, it may be stored, reviewed by staff or used to improve future models. We've covered the general version of this [elsewhere](/blog/local-ai-vs-cloud-ai). Health information makes it worse in a few specific ways:
+When you type into ChatGPT, Gemini or a similar tool, your message goes to the company's servers. Depending on the service and your settings, it may be stored, reviewed by staff or used to improve future models. We've covered the general version of this [elsewhere](/blog/local-ai-vs-cloud-ai/). Health information makes it worse in a few specific ways:
 
 - **HIPAA almost certainly doesn't cover it.** The privacy law most Americans think of as "protecting my medical information" applies to doctors, insurers and their business partners. It generally doesn't apply to a consumer chatbot you've chosen to tell things to.
 - **It's unusually detailed.** A plan comparison doesn't just mention "a health issue." It lists exact drug names and dosages, how often you see a therapist, and the procedure you're expecting. Taken together, that's a fairly complete health profile.
 - **It's about other people too.** If you're picking a family plan, you're typing in your spouse's and children's information. They didn't agree to that.
-- **It sticks around.** Privacy policies [can change](/blog/when-terms-of-service-change), and data you share this November is governed by whatever the policy says years from now.
+- **It sticks around.** Privacy policies [can change](/blog/when-terms-of-service-change/), and data you share this November is governed by whatever the policy says years from now.
 
-Most people know this on some level, so they [edit themselves](/blog/the-things-you-dont-type-into-chatgpt). They write "a common medication" instead of the drug name, or "some specialist visits" instead of "monthly." The answer they get back is vaguer as a result, which defeats the point.
+Most people know this on some level, so they [edit themselves](/blog/the-things-you-dont-type-into-chatgpt/). They write "a common medication" instead of the drug name, or "some specialist visits" instead of "monthly." The answer they get back is vaguer as a result, which defeats the point.
 
 The fix is to run the AI on your own computer. A local model reads the same documents and does the same reasoning, but nothing leaves your machine. You can use real names, real drugs and real numbers.
 
@@ -33,7 +33,7 @@ The fix is to run the AI on your own computer. A local model reads the same docu
   - The **drug list** (sometimes called the *formulary*), if you take any regular prescriptions.
   - Any **premium sheet** from your employer or the marketplace showing what each plan costs per paycheck or per month.
 - **Your own notes.** Make a short plain-text list of what your household actually used this year: medications, roughly how many doctor visits, any specialists, therapy, and anything big you expect next year, such as a baby, a surgery or braces. Last year's insurance statements (the "Explanation of Benefits" letters) are a good place to jog your memory.
-- **A local AI app with document chat.** We'll use [WorkInPrivate](/blog/chat-with-your-documents-privately) here because that's what we make. The same approach works with any tool that reads your files without uploading them.
+- **A local AI app with document chat.** We'll use [WorkInPrivate](/blog/chat-with-your-documents-privately/) here because that's what we make. The same approach works with any tool that reads your files without uploading them.
 
 ## Step 1: Put everything in one knowledge base
 
@@ -71,7 +71,7 @@ Then try the year you hope you won't have:
 
 The bad-year number is usually just the yearly premiums plus the out-of-pocket maximum. It's the figure that tells you how much financial risk each plan really carries.
 
-**A word on arithmetic.** AI models, especially the smaller ones that run on a laptop, are better at reading and reasoning than at long chains of math. That's why the prompt asks for working: if the AI shows each step, you can spot a wrong number. For the final totals, copy the figures into a spreadsheet or calculator, or compare them with the plan cost estimator your employer or the marketplace provides. Use the AI to find and organize the numbers, and do the final sums yourself. More tips on getting good results are in [our prompting guide](/blog/how-to-prompt-a-local-ai-model).
+**A word on arithmetic.** AI models, especially the smaller ones that run on a laptop, are better at reading and reasoning than at long chains of math. That's why the prompt asks for working: if the AI shows each step, you can spot a wrong number. For the final totals, copy the figures into a spreadsheet or calculator, or compare them with the plan cost estimator your employer or the marketplace provides. Use the AI to find and organize the numbers, and do the final sums yourself. More tips on getting good results are in [our prompting guide](/blog/how-to-prompt-a-local-ai-model/).
 
 ## Step 5: Ask the questions you'd feel awkward asking HR
 
@@ -99,6 +99,6 @@ The AI does the reading. These checks are still yours:
 
 Choosing a health plan is a reading-and-comparison problem, and that suits AI well. It's also a problem that involves your family's most private information. You can get help with it without making that trade-off: when the AI runs on your own computer, you can describe your real situation, get a specific answer, and keep it to yourself.
 
-If you already have WorkInPrivate, create a "Benefits 2027" knowledge base this week and see what it finds. If you don't, you can [download it here](/download). It's a one-time purchase with no account, and it works without an internet connection. You can also see [whether your computer is ready](/blog/do-you-need-a-powerful-computer-to-run-ai-locally) first.
+If you already have WorkInPrivate, create a "Benefits 2027" knowledge base this week and see what it finds. If you don't, you can [download it here](/download/). It's a one-time purchase with no account, and it works without an internet connection. You can also see [whether your computer is ready](/blog/do-you-need-a-powerful-computer-to-run-ai-locally/) first.
 
 *This article is general information, not medical, legal, tax or financial advice. Plan details, drug lists and deadlines vary and change, so confirm anything important with your insurer, your employer's benefits team or the official marketplace before you enroll.*

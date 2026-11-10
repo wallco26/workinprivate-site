@@ -55,7 +55,7 @@ The rule most firms land on is simple: **AI never speaks for the firm unless a h
 
 Keep a short list of tools people may use, and require a quick check-in before anyone adds a new one. This is the part that keeps your policy alive as the market shifts — you don't rewrite the policy for each new app, you just update the list.
 
-For each approved tool, you should be able to answer: where does the data get processed, is it retained, is it used for training, and is there a contract covering it? (We walk through those questions in more detail in [is it safe to put client data into AI?](/blog/is-it-safe-to-put-client-data-in-ai).)
+For each approved tool, you should be able to answer: where does the data get processed, is it retained, is it used for training, and is there a contract covering it? (We walk through those questions in more detail in [is it safe to put client data into AI?](/blog/is-it-safe-to-put-client-data-in-ai/).)
 
 ### 5. When you disclose AI use
 
@@ -85,7 +85,7 @@ Notice how much of the work above exists because the AI tool is somewhere else. 
 
 Change that fact and most of the policy gets shorter.
 
-When the AI model runs [on your own computer](/blog/local-ai-vs-cloud-ai), the document is processed on your machine and never uploaded. There's no vendor account holding your client's file, no retention window to track, no training-data setting to re-verify every time terms change, and nothing sitting on a third party's server to be exposed in their breach or produced under a subpoena directed at them. You can verify it yourself: pull the network cable and a local AI [keeps working](/blog/does-local-ai-work-offline), because there was never anywhere for the data to go.
+When the AI model runs [on your own computer](/blog/local-ai-vs-cloud-ai/), the document is processed on your machine and never uploaded. There's no vendor account holding your client's file, no retention window to track, no training-data setting to re-verify every time terms change, and nothing sitting on a third party's server to be exposed in their breach or produced under a subpoena directed at them. You can verify it yourself: pull the network cable and a local AI [keeps working](/blog/does-local-ai-work-offline/), because there was never anywhere for the data to go.
 
 That doesn't erase the other two risks — accuracy and disclosure still need human review and a clear answer. But it collapses the confidentiality section from a page of vendor analysis into a sentence.
 
@@ -109,6 +109,6 @@ You don't need a twenty-page AI policy. You need a short document that names the
 
 And if you want the confidentiality half of that problem to mostly go away, the shortest path is to keep the AI on your own machines. [WorkInPrivate](/) runs an open-source AI model entirely on your computer — no cloud, no account, no telemetry — so client material never leaves the building in the first place.
 
-We've written more specific guidance for the professions that hit this hardest: [lawyers](/for-lawyers), [accountants and bookkeepers](/for-accountants), [therapists](/for-therapists), and [healthcare](/for-healthcare). And if you're weighing tools, here's [whether ChatGPT is really private](/is-chatgpt-private) and [what a private alternative looks like](/chatgpt-alternative-private).
+We've written more specific guidance for the professions that hit this hardest: [lawyers](/for-lawyers/), [accountants and bookkeepers](/for-accountants/), [therapists](/for-therapists/), and [healthcare](/for-healthcare/). And if you're weighing tools, here's [whether ChatGPT is really private](/is-chatgpt-private/) and [what a private alternative looks like](/chatgpt-alternative-private/).
 
 *This article is general information to help you think through a firm AI policy — it isn't legal advice, and it doesn't replace guidance from your own counsel or professional body. WorkInPrivate keeps your data on your device, which supports your confidentiality obligations; it isn't a substitute for your own compliance program.*

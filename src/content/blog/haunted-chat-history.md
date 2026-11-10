@@ -15,7 +15,7 @@ So in the spirit of the season, grab a flashlight. We're taking a tour of the pa
 
 You clicked delete. The conversation vanished from your sidebar. It's gone, right?
 
-Not necessarily. Deleting a chat removes it from *your* view. What happens on the provider's side is up to their policy: copies are commonly kept for some period afterward for abuse monitoring, backups and operations. And that period isn't guaranteed either. When a court orders a company to preserve records, its normal deletion schedule can be suspended. That's exactly what happened in the *New York Times v. OpenAI* case. In May 2025, a judge [ordered OpenAI to preserve ChatGPT logs](https://simonwillison.net/2025/Jun/5/openai-court-order/) it would normally have deleted, including chats users had deleted themselves and "Temporary Chat" sessions. The order was lifted for new chats that fall, but the logs saved while it was in force are still kept. We covered the case in more detail in [why most Americans don't trust AI companies with their data](/blog/using-ai-you-dont-trust).
+Not necessarily. Deleting a chat removes it from *your* view. What happens on the provider's side is up to their policy: copies are commonly kept for some period afterward for abuse monitoring, backups and operations. And that period isn't guaranteed either. When a court orders a company to preserve records, its normal deletion schedule can be suspended. That's exactly what happened in the *New York Times v. OpenAI* case. In May 2025, a judge [ordered OpenAI to preserve ChatGPT logs](https://simonwillison.net/2025/Jun/5/openai-court-order/) it would normally have deleted, including chats users had deleted themselves and "Temporary Chat" sessions. The order was lifted for new chats that fall, but the logs saved while it was in force are still kept. We covered the case in more detail in [why most Americans don't trust AI companies with their data](/blog/using-ai-you-dont-trust/).
 
 Some attics are built into the plans. Google's [Gemini Apps Privacy Hub](https://support.google.com/gemini/answer/13594961) says that chats reviewed by human reviewers aren't deleted when you delete your activity. They're stored separately from your account and kept for up to three years.
 
@@ -39,7 +39,7 @@ Nobody was hacked. A conversation was just reflected one more time than its auth
 
 ## Room 4: The Basement, where your words become part of the house
 
-Many consumer chatbots can use your conversations to help train future models unless you find the setting and opt out. On personal ChatGPT accounts, for example, the setting called "Improve the model for everyone" is [on by default](https://www.techradar.com/computing/artificial-intelligence/your-chatgpt-data-automatically-trains-its-ai-models-unless-you-turn-off-this-setting). Turning it off covers future chats; it can't pull your words out of a model that's already been trained. The details vary by provider and plan, and they change often, which is a story of its own: we wrote about [what happens when the terms of service change](/blog/when-terms-of-service-change) after you've already handed over your data.
+Many consumer chatbots can use your conversations to help train future models unless you find the setting and opt out. On personal ChatGPT accounts, for example, the setting called "Improve the model for everyone" is [on by default](https://www.techradar.com/computing/artificial-intelligence/your-chatgpt-data-automatically-trains-its-ai-models-unless-you-turn-off-this-setting). Turning it off covers future chats; it can't pull your words out of a model that's already been trained. The details vary by provider and plan, and they change often, which is a story of its own: we wrote about [what happens when the terms of service change](/blog/when-terms-of-service-change/) after you've already handed over your data.
 
 Training doesn't mean the model memorizes your chat word for word and repeats it to the next person. But it does mean your words have been absorbed into the foundations of something you don't own. Once something goes into the basement, there's no realistic way to dig it back out.
 
@@ -63,7 +63,7 @@ If you use cloud AI (and plenty of people do, for good reasons), you don't need 
 - **Check the memory settings.** Look at what it has remembered about you. You might be surprised.
 - **Use temporary or incognito chats** for anything sensitive, where the provider offers them. Read what they actually promise; "not saved to history" isn't the same as "never stored."
 - **Never share a link** to a conversation you wouldn't post publicly.
-- **Strip out names and specifics** before you paste. If it's too late for that, here's [what to do if you already pasted something sensitive](/blog/pasted-sensitive-data-into-chatgpt).
+- **Strip out names and specifics** before you paste. If it's too late for that, here's [what to do if you already pasted something sensitive](/blog/pasted-sensitive-data-into-chatgpt/).
 - **Turn on two-factor authentication** for your AI account, the same as you would for email.
 
 These help. But notice that every one of them is a way of managing the house, not leaving it. The rooms are still there.
@@ -72,13 +72,13 @@ These help. But notice that every one of them is a way of managing the house, no
 
 Here's the thing about haunted houses: they're only scary because they're bigger than you think. Unknown rooms, unseen occupants, doors you didn't open.
 
-An AI that runs [entirely on your own computer](/blog/local-ai-vs-cloud-ai) is a house with exactly the rooms you can see. The model is a file on your hard drive. Your conversations are saved on your drive and nowhere else. There's no attic on someone else's server, no séance room full of reviewers, no basement where your words become training data, and no share button that can wander onto Google. When you delete a chat, there's no second copy on a server somewhere waiting out a retention period.
+An AI that runs [entirely on your own computer](/blog/local-ai-vs-cloud-ai/) is a house with exactly the rooms you can see. The model is a file on your hard drive. Your conversations are saved on your drive and nowhere else. There's no attic on someone else's server, no séance room full of reviewers, no basement where your words become training data, and no share button that can wander onto Google. When you delete a chat, there's no second copy on a server somewhere waiting out a retention period.
 
-You don't have to take our word for that, either. Turn off your Wi-Fi and keep chatting. If it still works, your words have nowhere to go. Our guide on [checking whether an AI is really private](/blog/verify-your-ai-is-really-private) walks you through a few more tests that take about fifteen minutes and need no technical background.
+You don't have to take our word for that, either. Turn off your Wi-Fi and keep chatting. If it still works, your words have nowhere to go. Our guide on [checking whether an AI is really private](/blog/verify-your-ai-is-really-private/) walks you through a few more tests that take about fifteen minutes and need no technical background.
 
 ## Bonus: a few spooky prompts for Halloween night
 
-Since you'll be at home handing out candy anyway, here are some ways to get into the spirit with an AI that doesn't mind how strange your requests get. (For more, see our [12 fun things to do with an offline AI](/blog/fun-things-to-do-with-offline-ai).)
+Since you'll be at home handing out candy anyway, here are some ways to get into the spirit with an AI that doesn't mind how strange your requests get. (For more, see our [12 fun things to do with an offline AI](/blog/fun-things-to-do-with-offline-ai/).)
 
 **A campfire story:** *"Tell me a spooky but not too scary story for kids aged 8 to 11 about a lighthouse that turns on by itself every night. Build suspense slowly and end with a twist that's funny instead of frightening."*
 
@@ -96,7 +96,7 @@ Use real names, your kids' inside jokes and the floor plan of your actual house.
 
 The scariest stories aren't the ones with monsters. They're the ones where you realize, too late, that you weren't alone the whole time.
 
-[WorkInPrivate](/) is a private AI chatbot that runs open-source AI models entirely on your computer. No account, no subscription, no cloud, and nobody in the attic. It's a [one-time purchase](/pricing), and you can [try it free](/download) tonight, ideally with the lights off.
+[WorkInPrivate](/) is a private AI chatbot that runs open-source AI models entirely on your computer. No account, no subscription, no cloud, and nobody in the attic. It's a [one-time purchase](/pricing/), and you can [try it free](/download/) tonight, ideally with the lights off.
 
 Happy Halloween.
 

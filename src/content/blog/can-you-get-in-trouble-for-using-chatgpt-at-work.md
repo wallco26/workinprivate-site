@@ -11,7 +11,7 @@ A lot of people are quietly using ChatGPT at work — to draft an email, summari
 
 Employers aren't banning AI because they're anti-technology — most want their teams using it. What they're reacting to is where the data goes. Every time you type something into a cloud AI tool, that text leaves your computer and travels to a company's servers, where it may be stored, reviewed, or in some cases used to improve the underlying model. For a company handling client files, financial records, health information, or unreleased product plans, that's a real exposure — one paragraph pasted into the wrong chat window can turn into a compliance incident.
 
-So legal and IT teams have started writing rules: no client data in AI tools, no source code in AI tools, no anything-not-already-public in AI tools. Some companies ban consumer AI outright. Others allow only an approved, paid enterprise version with specific data-handling terms. The rules vary, but the underlying worry is the same one driving [law firms](/for-lawyers), [accounting firms](/for-accountants), and [healthcare practices](/for-healthcare) to think hard about [where their AI conversations actually go](/blog/is-it-safe-to-put-client-data-in-ai).
+So legal and IT teams have started writing rules: no client data in AI tools, no source code in AI tools, no anything-not-already-public in AI tools. Some companies ban consumer AI outright. Others allow only an approved, paid enterprise version with specific data-handling terms. The rules vary, but the underlying worry is the same one driving [law firms](/for-lawyers/), [accounting firms](/for-accountants/), and [healthcare practices](/for-healthcare/) to think hard about [where their AI conversations actually go](/blog/is-it-safe-to-put-client-data-in-ai/).
 
 ## Where employees actually run into trouble
 
@@ -20,9 +20,9 @@ It's rarely "I used ChatGPT" that causes the problem — it's what got typed int
 - **Pasting a client contract or case file** into ChatGPT to get a summary, without realizing that content is now sitting on an outside server.
 - **Dropping in a spreadsheet of customer data** to "clean it up" or reformat it, which can violate a privacy policy or even a data-protection law depending on what's in it.
 - **Sharing unreleased code or product details** to debug something faster, which can breach a confidentiality agreement or trade-secret protections.
-- **Uploading a patient chart or session notes** for a therapist or clinician trying to save time on documentation — a direct [HIPAA](/for-healthcare) concern.
+- **Uploading a patient chart or session notes** for a therapist or clinician trying to save time on documentation — a direct [HIPAA](/for-healthcare/) concern.
 
-None of this comes from bad intent. It comes from AI being genuinely useful and convenient — fast enough that people reach for it before thinking through [what happens to confidential documents](/blog/chatgpt-confidential-documents) once they're pasted in. The convenience is real. So is the exposure.
+None of this comes from bad intent. It comes from AI being genuinely useful and convenient — fast enough that people reach for it before thinking through [what happens to confidential documents](/blog/chatgpt-confidential-documents/) once they're pasted in. The convenience is real. So is the exposure.
 
 ## "But I read the privacy policy" isn't much of a defense
 
@@ -32,11 +32,11 @@ That's frustrating if you're someone who just wants help writing an email faster
 
 ## The alternative: AI that never sends anything anywhere
 
-This is the specific problem [local AI](/blog/local-ai-vs-cloud-ai) solves. When the AI model runs directly on your own computer instead of a company's server, there's no upload step to worry about — nothing you type is transmitted anywhere, because the entire conversation happens on the machine in front of you. You can paste in a client file, a contract, a patient note, or a chunk of source code, and it never leaves your hard drive.
+This is the specific problem [local AI](/blog/local-ai-vs-cloud-ai/) solves. When the AI model runs directly on your own computer instead of a company's server, there's no upload step to worry about — nothing you type is transmitted anywhere, because the entire conversation happens on the machine in front of you. You can paste in a client file, a contract, a patient note, or a chunk of source code, and it never leaves your hard drive.
 
 That changes the compliance conversation entirely. A policy written to keep data off external servers doesn't need to ban a tool that never puts data on an external server in the first place. It's the difference between "don't bring your notebook to the copier down the hall" and "there is no copier" — the risk the policy was written to prevent simply isn't present.
 
-[WorkInPrivate](/) is built around exactly this: it runs an open-source AI model entirely on your own computer, with no account, no server, and no internet connection required once it's set up. You get the same day-to-day help — drafting, summarizing, brainstorming, [answering questions about your own documents](/blog/chat-with-your-documents-privately) — without the part that gets flagged in a compliance review.
+[WorkInPrivate](/) is built around exactly this: it runs an open-source AI model entirely on your own computer, with no account, no server, and no internet connection required once it's set up. You get the same day-to-day help — drafting, summarizing, brainstorming, [answering questions about your own documents](/blog/chat-with-your-documents-privately/) — without the part that gets flagged in a compliance review.
 
 ## What to do if your workplace has (or needs) an AI policy
 
@@ -48,4 +48,4 @@ A few practical notes, whichever side of this you're on:
 
 ## The bottom line
 
-Getting "in trouble" for using ChatGPT at work is almost never about the act of using AI — it's about company data quietly leaving the building through a tool nobody vetted for that. The fix isn't using AI less; it's using AI that doesn't have that exposure built in. Local AI gives you the same help with the data staying exactly where it already has permission to be: on your own computer. If that sounds like what your workplace actually needs, the [free trial](/download) is worth ten minutes to try — no account, no cloud, nothing to explain to IT.
+Getting "in trouble" for using ChatGPT at work is almost never about the act of using AI — it's about company data quietly leaving the building through a tool nobody vetted for that. The fix isn't using AI less; it's using AI that doesn't have that exposure built in. Local AI gives you the same help with the data staying exactly where it already has permission to be: on your own computer. If that sounds like what your workplace actually needs, the [free trial](/download/) is worth ten minutes to try — no account, no cloud, nothing to explain to IT.

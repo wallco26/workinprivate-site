@@ -17,7 +17,7 @@ const dateFmt = (d: Date) =>
   d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
 const siteUrl = 'https://www.workinprivate.com';
-const url = `${siteUrl}/blog/${post.id}`;
+const url = `${siteUrl}/blog/${post.id}/`;
 ---
 
 <BaseLayout title={`${post.data.title} | WorkInPrivate`} description={post.data.description}>
@@ -61,7 +61,7 @@ const url = `${siteUrl}/blog/${post.id}`;
         <div class="mt-12 bg-[#EDF2FA] border-2 border-[#D4E3F5] rounded-2xl p-8 text-center">
           <h2 class="font-serif text-2xl font-bold text-[#1B3A5C] mb-3">Keep your work private</h2>
           <p class="text-[#5A6474] mb-6 leading-relaxed">WorkInPrivate runs an AI assistant entirely on your own computer — no cloud, no account, no data used to train AI.</p>
-          <a href="/download" class="inline-flex items-center px-7 py-3.5 text-base font-bold rounded-[10px] text-white bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-colors no-underline" style="text-decoration: none; box-shadow: 0 4px 14px rgba(75,139,212,0.35);">
+          <a href="/download/" class="inline-flex items-center px-7 py-3.5 text-base font-bold rounded-[10px] text-white bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-colors no-underline" style="text-decoration: none; box-shadow: 0 4px 14px rgba(75,139,212,0.35);">
             Start Free Trial
           </a>
           <p class="text-[#8A9AB5] text-sm mt-4">Free 7-day trial — no credit card. Then $49.99 one-time.</p>
@@ -69,7 +69,7 @@ const url = `${siteUrl}/blog/${post.id}`;
 
         <!-- Back link -->
         <div class="mt-10 text-center">
-          <a href="/blog" class="inline-flex items-center gap-1.5 text-[#4B8BD4] font-bold no-underline hover:text-[#2E6BB5]" style="text-decoration: none;">
+          <a href="/blog/" class="inline-flex items-center gap-1.5 text-[#4B8BD4] font-bold no-underline hover:text-[#2E6BB5]" style="text-decoration: none;">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
             All posts
           </a>

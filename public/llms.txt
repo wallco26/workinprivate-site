@@ -1,0 +1,50 @@
+# WorkInPrivate
+
+> WorkInPrivate is a desktop AI chat app for Windows, macOS, and Linux that runs open-source AI models entirely on the user's own computer. Chats and files stay on the machine: no cloud, no account, and nothing is used to train AI. It is aimed at non-technical people and professionals who handle confidential material.
+
+## Key facts
+
+- Price: $49.99 one-time purchase, no subscription.
+- Free trial: 7 days, full features, no account, no credit card, no email.
+- Platforms: Windows 10 or later, macOS 12 or later (Apple Silicon only), Linux.
+- Requirements: 8 GB RAM minimum (16 GB recommended), about 5 GB free disk space. A GPU is optional.
+- Setup: a guided installer checks the computer's hardware and recommends a model. No command line.
+- Models: open-source models downloaded from Hugging Face.
+- Works offline after setup.
+- Features: ChatGPT-style chat, chat with your own documents, file analysis.
+- Licence: one key per computer, unlocks the app permanently.
+- Publisher: Wallco Digital Labs LLC. Support: support@workinprivate.com
+
+## Product pages
+
+- [Home](https://www.workinprivate.com/): overview and how it works
+- [Download](https://www.workinprivate.com/download/): installers and free trial
+- [Pricing](https://www.workinprivate.com/pricing/): one-time price and what is included
+- [FAQ](https://www.workinprivate.com/faq/): privacy, hardware, and installation questions
+- [Changelog](https://www.workinprivate.com/changelog/): release history
+
+## Comparisons
+
+- [Private ChatGPT alternative](https://www.workinprivate.com/chatgpt-alternative-private/)
+- [Is ChatGPT private?](https://www.workinprivate.com/is-chatgpt-private/)
+- [Ollama vs WorkInPrivate](https://www.workinprivate.com/ollama-vs-workinprivate/)
+- [LM Studio alternative](https://www.workinprivate.com/lm-studio-alternative/)
+
+## For professionals
+
+- [Lawyers](https://www.workinprivate.com/for-lawyers/)
+- [Therapists](https://www.workinprivate.com/for-therapists/)
+- [Accountants](https://www.workinprivate.com/for-accountants/)
+- [Healthcare](https://www.workinprivate.com/for-healthcare/)
+- [Journalists](https://www.workinprivate.com/for-journalists/)
+- [Researchers](https://www.workinprivate.com/for-researchers/)
+- [Writers](https://www.workinprivate.com/for-writers/)
+
+## Guides
+
+- [Do you need a powerful computer to run AI locally?](https://www.workinprivate.com/blog/do-you-need-a-powerful-computer-to-run-ai-locally/)
+- [How to run AI privately on your own computer (no coding)](https://www.workinprivate.com/blog/run-ai-privately-no-coding/)
+- [Which local AI model should you run?](https://www.workinprivate.com/blog/which-local-ai-model-should-you-run/)
+- [Does local AI work without the internet?](https://www.workinprivate.com/blog/does-local-ai-work-offline/)
+- [How to check whether an AI app is really private](https://www.workinprivate.com/blog/verify-your-ai-is-really-private/)
+- [All posts](https://www.workinprivate.com/blog/)
