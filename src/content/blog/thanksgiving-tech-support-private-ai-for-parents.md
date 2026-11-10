@@ -20,11 +20,11 @@ Here's what nobody in the family group chat says out loud: **your parents are pr
 - Copying an email into a chatbot to ask, "Is this real?"
 - Asking about a lump, a rash, a bill, a lawyer's letter, a confusing bank notice
 
-That's all reasonable. It's also a list of the most sensitive things a person owns, typed into a website run by a company they've never thought about. Most people don't know that chats on cloud services can be [kept, reviewed or turned over in court](/blog/haunted-chat-history), or that a "delete" button doesn't always mean what it says. Your parents almost certainly haven't read the privacy policy. (To be fair, neither have you.)
+That's all reasonable. It's also a list of the most sensitive things a person owns, typed into a website run by a company they've never thought about. Most people don't know that chats on cloud services can be [kept, reviewed or turned over in court](/blog/haunted-chat-history/), or that a "delete" button doesn't always mean what it says. Your parents almost certainly haven't read the privacy policy. (To be fair, neither have you.)
 
 You're not going to stop them from asking a computer about their health. Nobody stops their parents from doing anything. But you can change where the asking happens.
 
-An AI that [runs entirely on their own computer](/blog/run-ai-privately-no-coding) gives them the same kind of help, and the questions never leave the house. No account to create, no password to forget, no data on anyone's server. When they ask it about their blood pressure pills, the only one who knows is the laptop.
+An AI that [runs entirely on their own computer](/blog/run-ai-privately-no-coding/) gives them the same kind of help, and the questions never leave the house. No account to create, no password to forget, no data on anyone's server. When they ask it about their blood pressure pills, the only one who knows is the laptop.
 
 ## Before you drive over: check their computer
 
@@ -36,7 +36,7 @@ You're looking for:
 - **At least 8 GB of memory**, with 16 GB being comfortable
 - **About 5 GB of free disk space**, plus room for the model
 
-The one that catches families out: **older Intel Macs aren't supported.** If Dad's MacBook dates from 2018 and he's very proud of how well he's kept it, this isn't the project for this visit. (Here's [more on what hardware you actually need](/blog/do-you-need-a-powerful-computer-to-run-ai-locally). The short version: most computers from the last few years are fine.)
+The one that catches families out: **older Intel Macs aren't supported.** If Dad's MacBook dates from 2018 and he's very proud of how well he's kept it, this isn't the project for this visit. (Here's [more on what hardware you actually need](/blog/do-you-need-a-powerful-computer-to-run-ai-locally/). The short version: most computers from the last few years are fine.)
 
 ## Thanksgiving morning: start the download early
 
@@ -44,7 +44,7 @@ The AI model is a file of a few gigabytes. Your parents' internet is, let's say,
 
 So do the download first, before anything else, while there's still coffee:
 
-1. [Download WorkInPrivate](/download) on their computer and install it like any other app.
+1. [Download WorkInPrivate](/download/) on their computer and install it like any other app.
 2. Let the guided setup check the computer. It will recommend a model sized for their machine.
 3. Start the model download, then walk away. Baste something.
 
@@ -129,7 +129,7 @@ Fill in the blanks for their computer. "Click the blue icon at the bottom of the
 
 **Don't snoop.** Their chat history lives on their computer, and that's the point. You'll be tempted to scroll through it next visit "to see if they're using it." Ask them instead. Privacy that only applies until the kids show up isn't privacy.
 
-**It doesn't know today's news.** A local model knows what it learned during training. It won't know about this week's recall, today's weather, or the new pharmacy hours. If your parents expect it to "look things up," set that expectation now, or they'll decide it's broken. (More on [what local models know and don't](/blog/which-local-ai-model-should-you-run).)
+**It doesn't know today's news.** A local model knows what it learned during training. It won't know about this week's recall, today's weather, or the new pharmacy hours. If your parents expect it to "look things up," set that expectation now, or they'll decide it's broken. (More on [what local models know and don't](/blog/which-local-ai-model-should-you-run/).)
 
 **Licenses are personal.** The trial lasts seven days with no account and no credit card. After that, WorkInPrivate is a one-time $49.99 license for devices the buyer owns or controls. One license can't be shared between your computer and theirs, so when the trial ends, your parents get their own. The good news: it's a single purchase, not another monthly charge they'll find on their card statement in March and call you about.
 
@@ -139,6 +139,6 @@ Fill in the blanks for their computer. "Click the blue icon at the bottom of the
 
 Most of the tech support you do over the holidays is about stopping things from going wrong: removing the malware, changing the reused password, turning off the pop-ups. This is one of the few jobs that gives your parents something new. They get someone to ask about the confusing letter at 9pm on a Sunday, and that someone can't sell the question to anyone.
 
-[Grab the free trial](/download) before you leave on Wednesday. Then, when someone hands you a laptop before you've taken your coat off, you'll know what to do with it.
+[Grab the free trial](/download/) before you leave on Wednesday. Then, when someone hands you a laptop before you've taken your coat off, you'll know what to do with it.
 
 Happy Thanksgiving.

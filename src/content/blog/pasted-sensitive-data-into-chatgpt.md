@@ -74,7 +74,7 @@ If you're at an organization with a policy, follow it — that's what it's for, 
 
 What helps here is the record from step one. "On Tuesday I pasted a client contract into a personal ChatGPT account, deleted it within an hour, and training was off" is a manageable set of facts. Vagueness is what turns a small incident into a long one.
 
-And if your firm doesn't have a policy, this is the moment to write the short one — [it takes an afternoon](/blog/ai-policy-for-small-firms), not a legal project.
+And if your firm doesn't have a policy, this is the moment to write the short one — [it takes an afternoon](/blog/ai-policy-for-small-firms/), not a legal project.
 
 ## Step 6: Notice the pattern, not just the incident
 
@@ -82,9 +82,9 @@ Here's the part worth sitting with. Almost nobody does this once.
 
 The paste happened because AI was genuinely useful for that task and the sensitive material was the actual substance of the question. That pressure doesn't go away after an apology. It shows up again next Tuesday, on a different document, when you're just as busy.
 
-Which leaves three real options. You can keep using cloud AI and get disciplined about redacting — workable, but it's a permanent tax on your attention, and [the parts you strip out are usually the parts that made the question worth asking](/blog/the-things-you-dont-type-into-chatgpt). You can decide certain categories of work are off-limits for AI, and accept losing the help there. Or you can move the sensitive work to a tool where pasting the real thing isn't a mistake in the first place.
+Which leaves three real options. You can keep using cloud AI and get disciplined about redacting — workable, but it's a permanent tax on your attention, and [the parts you strip out are usually the parts that made the question worth asking](/blog/the-things-you-dont-type-into-chatgpt/). You can decide certain categories of work are off-limits for AI, and accept losing the help there. Or you can move the sensitive work to a tool where pasting the real thing isn't a mistake in the first place.
 
-That last option is why [local AI](/blog/local-ai-vs-cloud-ai) exists. When the model runs on your own computer, the document is processed on your machine and never uploaded — there's no vendor account holding it, no retention window to reason about, no training setting to re-verify when terms change, and nothing on a third party's server to surface in their breach or under a subpoena aimed at them. It doesn't require any technical setup [to get started](/blog/run-ai-privately-no-coding), and you can verify the claim yourself: disconnect from the internet and a local model [keeps working](/blog/does-local-ai-work-offline), because there was never anywhere for your words to go.
+That last option is why [local AI](/blog/local-ai-vs-cloud-ai/) exists. When the model runs on your own computer, the document is processed on your machine and never uploaded — there's no vendor account holding it, no retention window to reason about, no training setting to re-verify when terms change, and nothing on a third party's server to surface in their breach or under a subpoena aimed at them. It doesn't require any technical setup [to get started](/blog/run-ai-privately-no-coding/), and you can verify the claim yourself: disconnect from the internet and a local model [keeps working](/blog/does-local-ai-work-offline/), because there was never anywhere for your words to go.
 
 ## The thing not to conclude
 

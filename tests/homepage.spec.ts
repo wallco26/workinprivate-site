@@ -30,14 +30,14 @@ test.describe('Homepage — Friendly Neighbor light theme', () => {
   test('header shows Home / Pricing / FAQ links', async ({ page }) => {
     const header = page.getByRole('banner');
     await expect(header.locator('a[href="/"]').first()).toBeVisible();
-    await expect(header.locator('a[href="/pricing"]').first()).toBeVisible();
-    await expect(header.locator('a[href="/faq"]').first()).toBeVisible();
+    await expect(header.locator('a[href="/pricing/"]').first()).toBeVisible();
+    await expect(header.locator('a[href="/faq/"]').first()).toBeVisible();
   });
 
   test('header CTA is "Start Free Trial" → /download with a sky-blue background', async ({ page }) => {
     const cta = page.getByRole('banner').getByRole('link', { name: 'Start Free Trial' }).first();
     await expect(cta).toBeVisible();
-    expect(await cta.getAttribute('href')).toBe('/download');
+    expect(await cta.getAttribute('href')).toBe('/download/');
     const bg = await cta.evaluate((el) => getComputedStyle(el).backgroundColor);
     // Sky blue #4B8BD4 = rgb(75, 139, 212)
     expect(bg).toMatch(/rgb\(75,\s*139,\s*212\)/);
@@ -53,7 +53,7 @@ test.describe('Homepage — Friendly Neighbor light theme', () => {
   test('hero primary CTA is "Start Your Free Trial" → /download', async ({ page }) => {
     const cta = page.getByRole('link', { name: /Start Your Free Trial/i }).first();
     await expect(cta).toBeVisible();
-    expect(await cta.getAttribute('href')).toBe('/download');
+    expect(await cta.getAttribute('href')).toBe('/download/');
     const bg = await cta.evaluate((el) => getComputedStyle(el).backgroundColor);
     expect(bg).toMatch(/rgb\(75,\s*139,\s*212\)/);
   });
@@ -126,7 +126,7 @@ test.describe('Homepage — Friendly Neighbor light theme', () => {
       'for-writers',
     ];
     for (const slug of slugs) {
-      await expect(section.locator(`a[href="/${slug}"]`)).toBeVisible();
+      await expect(section.locator(`a[href="/${slug}/"]`)).toBeVisible();
     }
   });
 
@@ -141,7 +141,7 @@ test.describe('Homepage — Friendly Neighbor light theme', () => {
 
     const finalCta = page.getByRole('link', { name: /Start Your Free Trial/i }).last();
     await expect(finalCta).toBeVisible();
-    expect(await finalCta.getAttribute('href')).toBe('/download');
+    expect(await finalCta.getAttribute('href')).toBe('/download/');
   });
 
   test('footer has a navy background and legal links', async ({ page }) => {

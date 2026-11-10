@@ -49,7 +49,7 @@ const siteUrl = 'https://www.workinprivate.com';
       ) : (
         <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
           {posts.map((post) => (
-            <a href={`/blog/${post.id}`} class="group block bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-2xl p-7 hover:border-[#4B8BD4] transition-colors no-underline" style="text-decoration: none;">
+            <a href={`/blog/${post.id}/`} class="group block bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-2xl p-7 hover:border-[#4B8BD4] transition-colors no-underline" style="text-decoration: none;">
               <div class="flex items-center gap-3 mb-3">
                 <span class="text-xs font-bold uppercase tracking-wider text-[#4B8BD4] bg-[#EDF2FA] px-2.5 py-1 rounded-full">{post.data.category}</span>
                 <span class="text-xs text-[#8A9AB5]">{dateFmt(post.data.pubDate)}</span>
@@ -71,7 +71,7 @@ const siteUrl = 'https://www.workinprivate.com';
   <section class="py-20 bg-[#1B3A5C]">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight max-w-2xl mx-auto">Private AI that never leaves your computer</h2>
-      <a href="/download" class="inline-flex items-center px-8 py-4 text-base font-bold rounded-[10px] text-[#1B3A5C] bg-white hover:bg-[#EDF2FA] transition-colors no-underline" style="text-decoration: none;">
+      <a href="/download/" class="inline-flex items-center px-8 py-4 text-base font-bold rounded-[10px] text-[#1B3A5C] bg-white hover:bg-[#EDF2FA] transition-colors no-underline" style="text-decoration: none;">
         Start Free Trial
       </a>
       <p class="text-[#D4E3F5] text-sm mt-5">Free 7-day trial — no account, no credit card. Then $49.99 one-time.</p>

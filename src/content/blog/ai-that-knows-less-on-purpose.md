@@ -11,7 +11,7 @@ It hasn't read your lease. It's telling you what leases in general tend to say, 
 
 Here's the counterintuitive fix: **make the AI know less.** Not a weaker model, just a narrower world. Tell it, "for this conversation, the only things that count are these twelve documents," and it gets much more useful.
 
-That's what a knowledge base in WorkInPrivate does. We [introduced the feature](/blog/chat-with-your-documents-privately) in July and explained how it works under the hood. This post is about how to think about it, because once the idea clicks you'll find uses for it everywhere.
+That's what a knowledge base in WorkInPrivate does. We [introduced the feature](/blog/chat-with-your-documents-privately/) in July and explained how it works under the hood. This post is about how to think about it, because once the idea clicks you'll find uses for it everywhere.
 
 ## Why chatbots guess
 
@@ -58,7 +58,7 @@ A general chatbot has one world: everything it ever trained on, mixed together. 
 
 Every useful knowledge base is full of documents you wouldn't post publicly: contracts, medical records, client files, tax returns, drafts, notes. A cloud "chat with your PDF" tool has to upload all of that to someone else's servers before it can do anything with it.
 
-In WorkInPrivate, the whole thing happens on your machine: storing the documents, searching them and writing the answer. The small model that powers the meaning-based search runs locally too. It downloads automatically the first time you use a knowledge base and only starts up when you need it. After that, you can switch off Wi-Fi and it keeps working, because there's nowhere for your files to go. (If you'd like to confirm that for yourself, here's [how to check whether any AI app is really private](/blog/verify-your-ai-is-really-private).)
+In WorkInPrivate, the whole thing happens on your machine: storing the documents, searching them and writing the answer. The small model that powers the meaning-based search runs locally too. It downloads automatically the first time you use a knowledge base and only starts up when you need it. After that, you can switch off Wi-Fi and it keeps working, because there's nowhere for your files to go. (If you'd like to confirm that for yourself, here's [how to check whether any AI app is really private](/blog/verify-your-ai-is-really-private/).)
 
 That's what makes the narrow-world approach practical. The documents that make the AI most useful are exactly the ones you'd never upload.
 
@@ -67,10 +67,10 @@ That's what makes the narrow-world approach practical. The documents that make t
 A few habits make a big difference:
 
 1. **One purpose per knowledge base.** "Kitchen Renovation" beats "Misc Documents." The tighter the collection, the more relevant the passages the AI finds.
-2. **Add a notes file.** A short plain-text file with context the documents don't spell out ("we signed the Hendricks quote, not the Alvarez one"; "Maya takes these three medications") saves you from retyping it every time. We used this trick in our [open-enrollment walkthrough](/blog/open-enrollment-compare-health-plans-privately).
+2. **Add a notes file.** A short plain-text file with context the documents don't spell out ("we signed the Hendricks quote, not the Alvarez one"; "Maya takes these three medications") saves you from retyping it every time. We used this trick in our [open-enrollment walkthrough](/blog/open-enrollment-compare-health-plans-privately/).
 3. **Retire outdated versions.** If last year's draft and this year's final are both in there, the AI may quote either one. Remove what's superseded, or keep old versions in a separate knowledge base.
 4. **Text in, text out.** Knowledge bases work with PDFs, Word documents and plain text. Images aren't indexed as documents, so a photo of a receipt won't be searchable. A scanned PDF needs to contain real text, not just a picture of a page.
-5. **Ask for the source, then check it.** "Quote the sentence that says this" is a great follow-up. Smaller local models are good readers, but they can still misread a dense table, so verify anything you're going to act on. More tips are in [our prompting guide](/blog/how-to-prompt-a-local-ai-model).
+5. **Ask for the source, then check it.** "Quote the sentence that says this" is a great follow-up. Smaller local models are good readers, but they can still misread a dense table, so verify anything you're going to act on. More tips are in [our prompting guide](/blog/how-to-prompt-a-local-ai-model/).
 
 ## Five knowledge bases worth making this week
 
@@ -88,6 +88,6 @@ The big cloud chatbots compete on knowing more: more training data, more facts, 
 
 That's a smaller world, deliberately chosen, and it never has to leave your computer.
 
-If you already have WorkInPrivate, pick one item from the list above and build it tonight. If you don't, you can [download it here](/download). It's a one-time purchase, with no account and no subscription, and it runs entirely on your own machine.
+If you already have WorkInPrivate, pick one item from the list above and build it tonight. If you don't, you can [download it here](/download/). It's a one-time purchase, with no account and no subscription, and it runs entirely on your own machine.
 
 *WorkInPrivate keeps your documents on your device. Answers grounded in your files can still contain mistakes, so check anything important against the source document, and talk to a qualified professional for legal, financial or medical decisions.*

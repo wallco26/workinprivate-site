@@ -20,10 +20,10 @@ const related = (segment.seeAlso ?? [])
     <p class="text-xl text-[#5A6474] max-w-2xl mx-auto leading-relaxed mb-8">{segment.subhead}</p>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
-      <a href="/download" class="inline-flex items-center px-7 py-3.5 text-base font-bold rounded-[10px] text-white bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-colors no-underline" style="text-decoration: none; box-shadow: 0 4px 14px rgba(75,139,212,0.35);">
+      <a href="/download/" class="inline-flex items-center px-7 py-3.5 text-base font-bold rounded-[10px] text-white bg-[#4B8BD4] hover:bg-[#2E6BB5] transition-colors no-underline" style="text-decoration: none; box-shadow: 0 4px 14px rgba(75,139,212,0.35);">
         Start Free Trial
       </a>
-      <a href="/pricing" class="inline-flex items-center px-7 py-3.5 text-base font-bold rounded-[10px] text-[#2E6BB5] bg-white border-2 border-[#D4E3F5] hover:border-[#4B8BD4] transition-colors no-underline" style="text-decoration: none;">
+      <a href="/pricing/" class="inline-flex items-center px-7 py-3.5 text-base font-bold rounded-[10px] text-[#2E6BB5] bg-white border-2 border-[#D4E3F5] hover:border-[#4B8BD4] transition-colors no-underline" style="text-decoration: none;">
         See Pricing
       </a>
     </div>
@@ -147,7 +147,7 @@ const related = (segment.seeAlso ?? [])
       </div>
       <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-5">
         {related.map((r) => (
-          <a href={`/${r.slug}`} class="block bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6 hover:border-[#4B8BD4] transition-colors no-underline" style="text-decoration: none;">
+          <a href={`/${r.slug}/`} class="block bg-[#F7F9FC] border-2 border-[#E2E8F0] rounded-xl p-6 hover:border-[#4B8BD4] transition-colors no-underline" style="text-decoration: none;">
             <h3 class="font-bold text-[#1B3A5C] text-base mb-1">{r.label}</h3>
             <p class="text-[#5A6474] text-sm leading-relaxed">{r.cardBlurb}</p>
           </a>
@@ -161,7 +161,7 @@ const related = (segment.seeAlso ?? [])
 <section class="py-20 bg-[#1B3A5C]">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight max-w-2xl mx-auto">{segment.finalCtaH2}</h2>
-    <a href="/download" class="inline-flex items-center px-8 py-4 text-base font-bold rounded-[10px] text-[#1B3A5C] bg-white hover:bg-[#EDF2FA] transition-colors no-underline" style="text-decoration: none;">
+    <a href="/download/" class="inline-flex items-center px-8 py-4 text-base font-bold rounded-[10px] text-[#1B3A5C] bg-white hover:bg-[#EDF2FA] transition-colors no-underline" style="text-decoration: none;">
       Start Free Trial
     </a>
     <p class="text-[#D4E3F5] text-sm mt-5">{CTA_SUBLINE}</p>

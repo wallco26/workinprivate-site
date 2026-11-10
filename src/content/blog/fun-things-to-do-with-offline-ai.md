@@ -5,9 +5,9 @@ pubDate: 2026-09-27
 category: "Just for Fun"
 ---
 
-Most of what gets written about AI, including a fair amount on this blog, is serious business: contracts, client data, [privacy policies](/blog/when-terms-of-service-change), productivity. All important. But it leaves out something anyone who's spent an evening with a chatbot already knows: these things are *fun*.
+Most of what gets written about AI, including a fair amount on this blog, is serious business: contracts, client data, [privacy policies](/blog/when-terms-of-service-change/), productivity. All important. But it leaves out something anyone who's spent an evening with a chatbot already knows: these things are *fun*.
 
-And an AI that runs [entirely on your own computer](/blog/run-ai-privately-no-coding) turns out to be especially good for fun. It doesn't need Wi-Fi, so it comes with you to the cabin, the campsite, and seat 34B. It isn't keeping a record of your chats on someone else's server, so you can be as silly, weird, or oddly specific as you like. Nobody is going to build an ad profile from the fact that you spent forty minutes arguing about what your cat would do for a living.
+And an AI that runs [entirely on your own computer](/blog/run-ai-privately-no-coding/) turns out to be especially good for fun. It doesn't need Wi-Fi, so it comes with you to the cabin, the campsite, and seat 34B. It isn't keeping a record of your chats on someone else's server, so you can be as silly, weird, or oddly specific as you like. Nobody is going to build an ad profile from the fact that you spent forty minutes arguing about what your cat would do for a living.
 
 So here are a dozen ways to play with it. No productivity required.
 
@@ -21,7 +21,7 @@ The best part is that it works when you're somewhere with no internet, which, if
 
 ## 2. Host trivia night at 35,000 feet
 
-Long flights are a good time to [discover that your AI works offline](/blog/does-local-ai-work-offline). Have it write a trivia round on any theme you can think of: '90s cartoons, world capitals, famous dogs in history. Then quiz whoever is sitting next to you (with their consent, ideally).
+Long flights are a good time to [discover that your AI works offline](/blog/does-local-ai-work-offline/). Have it write a trivia round on any theme you can think of: '90s cartoons, world capitals, famous dogs in history. Then quiz whoever is sitting next to you (with their consent, ideally).
 
 One honest tip: a local model knows what it learned in training, not today's news, and like any AI it can occasionally be confidently wrong. Keep the questions to classic stuff and treat any "fact" that sounds too good as a fun debate, not a ruling.
 
@@ -87,7 +87,7 @@ Take turns. You write a sentence, it writes the next one. The story will go some
 
 ## 12. Ask the questions you'd never type into a search bar
 
-"Is it weird that I've never understood how tides work?" "Explain cryptocurrency like I'm a medieval peasant." "What would happen if everyone on Earth jumped at the same time?" Curiosity is at its best when there's no judgment and no record of it, and that's what [you get when nobody's on the other end](/blog/the-things-you-dont-type-into-chatgpt).
+"Is it weird that I've never understood how tides work?" "Explain cryptocurrency like I'm a medieval peasant." "What would happen if everyone on Earth jumped at the same time?" Curiosity is at its best when there's no judgment and no record of it, and that's what [you get when nobody's on the other end](/blog/the-things-you-dont-type-into-chatgpt/).
 
 **Try:** *"Explain how the stock market works, but as if you're a pirate explaining it to his crew."*
 
@@ -96,7 +96,7 @@ Take turns. You write a sentence, it writes the next one. The story will go some
 - **Give it a character.** "You are a grumpy wizard" or "You're a sports commentator" gets much livelier answers than a plain request.
 - **Ask for more than you need.** "Give me 20 options" beats "give me a name." The fifteenth idea is usually the funny one.
 - **Keep the conversation going.** You can build on stories, games, and characters across a whole chat, and it'll remember what happened earlier.
-- **Don't treat it as an encyclopedia.** For fun, the occasional made-up fact is part of the charm. For anything that matters, double-check. (We have [more tips on getting good answers](/blog/how-to-prompt-a-local-ai-model) if you want them.)
+- **Don't treat it as an encyclopedia.** For fun, the occasional made-up fact is part of the charm. For anything that matters, double-check. (We have [more tips on getting good answers](/blog/how-to-prompt-a-local-ai-model/) if you want them.)
 
 ## Why this is better on your own computer
 
@@ -104,4 +104,4 @@ You can do plenty of these with a cloud chatbot, as long as you have a connectio
 
 [WorkInPrivate](/) runs open-source AI models entirely on the computer you already own. Download it once and it works anywhere, with or without Wi-Fi. There are no accounts, no subscriptions, and nobody reading along.
 
-If you'd like a game master, trivia host, and bedtime storyteller that fits in your laptop bag, the [free trial](/download) is a good place to start. Biscuit the beagle recommends it.
+If you'd like a game master, trivia host, and bedtime storyteller that fits in your laptop bag, the [free trial](/download/) is a good place to start. Biscuit the beagle recommends it.

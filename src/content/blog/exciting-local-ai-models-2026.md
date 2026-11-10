@@ -15,7 +15,7 @@ So let's do a tour. Three you can realistically run on a normal computer, and on
 
 Almost everything below comes down to two things, and neither is complicated.
 
-**Parameters** are the internal dials a model adjusts as it learns. A "9-billion-parameter model" has nine billion of them. More dials generally means a smarter model — and a bigger file that needs more of your computer's memory to hold. That's why you'll see sizes quoted constantly: size is the headline fact about any model. ([The longer version is here.](/blog/which-local-ai-model-should-you-run))
+**Parameters** are the internal dials a model adjusts as it learns. A "9-billion-parameter model" has nine billion of them. More dials generally means a smarter model — and a bigger file that needs more of your computer's memory to hold. That's why you'll see sizes quoted constantly: size is the headline fact about any model. ([The longer version is here.](/blog/which-local-ai-model-should-you-run/))
 
 **Memory** means your computer's RAM — the working space it uses for whatever it's running right now, not the storage where your files live. A model has to fit in there, all at once, to run. This is the single number that decides what you can and can't use, and it matters far more than how fast your processor is.
 
@@ -25,7 +25,7 @@ That's the whole vocabulary. And if you'd rather not think about any of it, that
 
 **From Google, released April 2026. Free for anyone to use, including commercially. Needs about 5 GB of memory.**
 
-Google's Gemma 4 family arrived in April, and the small one is the star. It goes by the slightly unfriendly name *E4B* — that just marks it as the compact version — and it has roughly 4 billion parameters. Squeezed down a bit (the technical term is [quantizing](/blog/which-local-ai-model-should-you-run), and it's a standard, well-understood way of shrinking a model with very little loss of quality), it fits in about 5 GB. Which means it runs on a bog-standard laptop with 8 GB of memory. Nothing exotic required.
+Google's Gemma 4 family arrived in April, and the small one is the star. It goes by the slightly unfriendly name *E4B* — that just marks it as the compact version — and it has roughly 4 billion parameters. Squeezed down a bit (the technical term is [quantizing](/blog/which-local-ai-model-should-you-run/), and it's a standard, well-understood way of shrinking a model with very little loss of quality), it fits in about 5 GB. Which means it runs on a bog-standard laptop with 8 GB of memory. Nothing exotic required.
 
 Here's the fun part. It doesn't just read text. Gemma 4's small models take **audio and images directly** — the same model that writes your email can also listen to a voice clip and look at a photo. There's no separate transcription program bolted on the front, no second piece of software converting your speech to text first. You hand it thirty seconds of audio and it just *understands* it.
 
@@ -45,7 +45,7 @@ But the number worth staring at is how much it can read at once.
 
 Every AI model has a limit on how much material it can hold in mind at one time — your question, its answer, and everything you've pasted in along the way. Think of it as desk space. This one's desk fits **roughly 600 to 800 pages of text.** On a model small enough to run on a mid-range laptop.
 
-That changes what the tool is *for*. A small desk means AI is something you paste paragraphs into. A desk this size means you can hand it an entire contract, a full deposition transcript, a quarter's worth of board minutes, or a stack of research papers, and ask questions across all of it at once. It stops being a chatbot and starts being something closer to [a research assistant that has read your filing cabinet](/blog/chat-with-your-documents-privately).
+That changes what the tool is *for*. A small desk means AI is something you paste paragraphs into. A desk this size means you can hand it an entire contract, a full deposition transcript, a quarter's worth of board minutes, or a stack of research papers, and ask questions across all of it at once. It stops being a chatbot and starts being something closer to [a research assistant that has read your filing cabinet](/blog/chat-with-your-documents-privately/).
 
 It also handles a genuinely silly number of languages — more than 200 — and, like Gemma 4, it can switch between thinking hard and answering fast depending on what you asked it.
 
@@ -87,7 +87,7 @@ Here's why this matters to you even though you will never run it. Three years ag
 
 ## So what fits your machine?
 
-The one number that governs all of this is your computer's memory. [Here's how to check yours.](/blog/do-you-need-a-powerful-computer-to-run-ai-locally)
+The one number that governs all of this is your computer's memory. [Here's how to check yours.](/blog/do-you-need-a-powerful-computer-to-run-ai-locally/)
 
 | Your machine | Reach for | What you get |
 | --- | --- | --- |
@@ -96,7 +96,7 @@ The one number that governs all of this is your computer's memory. [Here's how t
 | 32 GB memory | Qwen3.6 (35B-A3B) | Big-model quality at small-model speed, excellent at code |
 | A small datacenter | DeepSeek V4-Pro | Bragging rights, mostly |
 
-Two things are true of every model in that table, and they're the reason any of this is worth your attention. All of them are free. And all of them run entirely on your own hardware — which means the document you're asking about, the recording you're transcribing, and the question you were slightly embarrassed to ask [never leave the building](/blog/local-ai-vs-cloud-ai).
+Two things are true of every model in that table, and they're the reason any of this is worth your attention. All of them are free. And all of them run entirely on your own hardware — which means the document you're asking about, the recording you're transcribing, and the question you were slightly embarrassed to ask [never leave the building](/blog/local-ai-vs-cloud-ai/).
 
 ## The short version
 

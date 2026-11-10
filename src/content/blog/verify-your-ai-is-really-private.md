@@ -7,7 +7,7 @@ category: "Guides"
 
 Every AI product on the market says it takes your privacy seriously. We say it too. So does the company that trains on your chats by default, and so does the browser extension that uploads everything you type to a server you've never heard of.
 
-When every product makes the same claim, the claim stops meaning much. Earlier this week we wrote about why [a cloud privacy policy is a promise, not a property](/blog/when-terms-of-service-change) — a document the company can rewrite. This post is the practical follow-up: if privacy is supposed to be a property of the software, you should be able to *check* it. Not by reading a policy, but by watching what the program actually does.
+When every product makes the same claim, the claim stops meaning much. Earlier this week we wrote about why [a cloud privacy policy is a promise, not a property](/blog/when-terms-of-service-change/) — a document the company can rewrite. This post is the practical follow-up: if privacy is supposed to be a property of the software, you should be able to *check* it. Not by reading a policy, but by watching what the program actually does.
 
 You can. It takes about fifteen minutes, costs nothing, and doesn't require you to know what a packet is. Here are four checks, from easiest to most thorough.
 
@@ -23,7 +23,7 @@ If you get an answer, the thinking happened on your computer. There's no other p
 
 If you get a spinner, an error, or a polite "please check your internet connection," the AI lives somewhere else. That doesn't make the app bad — it just means it's a window onto a cloud service, and its privacy depends on that service's policy.
 
-Try the same thing with ChatGPT, Claude, Gemini, or Copilot and you'll get the error. That's not a criticism; those are cloud products and they're built that way on purpose. But it's worth knowing that "private" and "cloud" can't both be fully true, and ten seconds with the Wi-Fi switch tells you which one you're dealing with. (We wrote more about what [running AI fully offline](/blog/does-local-ai-work-offline) actually changes, if you're curious.)
+Try the same thing with ChatGPT, Claude, Gemini, or Copilot and you'll get the error. That's not a criticism; those are cloud products and they're built that way on purpose. But it's worth knowing that "private" and "cloud" can't both be fully true, and ten seconds with the Wi-Fi switch tells you which one you're dealing with. (We wrote more about what [running AI fully offline](/blog/does-local-ai-work-offline/) actually changes, if you're curious.)
 
 **What this check doesn't prove:** an app could, in principle, work offline and then upload a backlog of your conversations the moment you reconnect. That's rare and would be a genuinely hostile design, but "rare" isn't "impossible," so if the stakes are high, keep going.
 
@@ -86,14 +86,14 @@ Since we asked you not to take our word for it, here's what we'd expect those ch
 - **Pull the plug:** it keeps working. Chat, document questions, all of it, with the network off.
 - **Traffic meter:** nothing going out while you chat. Your prompts, documents, and answers stay on your machine.
 - **Firewall:** you'll see the model download from Hugging Face the first time you pick a model, and an optional check for new versions. If you turn on web search, your search queries go to DuckDuckGo — that feature is off unless you choose it. That's the whole list.
-- **Fine print:** our [privacy policy](/privacy) says no telemetry, no analytics, no accounts, and that we never receive your prompts or generated content. You now know how to confirm that yourself.
+- **Fine print:** our [privacy policy](/privacy/) says no telemetry, no analytics, no accounts, and that we never receive your prompts or generated content. You now know how to confirm that yourself.
 
 If you ever see something that doesn't match, we genuinely want to hear about it.
 
 ## The habit worth keeping
 
-You don't need to run these checks on every app you install. But for the tools you hand your [confidential work](/blog/chatgpt-confidential-documents), your [client's data](/blog/is-it-safe-to-put-client-data-in-ai), or [the things you'd never type into ChatGPT](/blog/the-things-you-dont-type-into-chatgpt), fifteen minutes of checking is a small price for knowing — instead of hoping.
+You don't need to run these checks on every app you install. But for the tools you hand your [confidential work](/blog/chatgpt-confidential-documents/), your [client's data](/blog/is-it-safe-to-put-client-data-in-ai/), or [the things you'd never type into ChatGPT](/blog/the-things-you-dont-type-into-chatgpt/), fifteen minutes of checking is a small price for knowing — instead of hoping.
 
 The most trustworthy privacy claim is the one you can test. And the easiest test in the world is still the Wi-Fi switch.
 
-WorkInPrivate is a private AI assistant that runs entirely on your own computer. The [free 7-day trial](/download) has every feature unlocked and needs no account — so you can run every check above before you spend a cent.
+WorkInPrivate is a private AI assistant that runs entirely on your own computer. The [free 7-day trial](/download/) has every feature unlocked and needs no account — so you can run every check above before you spend a cent.

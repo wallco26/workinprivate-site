@@ -24,9 +24,9 @@ Two details make this genuinely useful rather than just impressive:
 
 ## Why this matters
 
-Plenty of tools let you "chat with a PDF." Almost all of them work by sending your document up to a server, where the reading, searching, and answering all happen on hardware you don't control. Your file gets copied to a third party, and you're left trusting their storage, their staff, and their retention policies with something you may be [ethically or legally bound to protect](/blog/chatgpt-confidential-documents).
+Plenty of tools let you "chat with a PDF." Almost all of them work by sending your document up to a server, where the reading, searching, and answering all happen on hardware you don't control. Your file gets copied to a third party, and you're left trusting their storage, their staff, and their retention policies with something you may be [ethically or legally bound to protect](/blog/chatgpt-confidential-documents/).
 
-WorkInPrivate takes the opposite approach. **Everything happens on your computer** — the documents, the search, and the AI. Nothing is uploaded. You can pull the ethernet cable, turn off Wi-Fi, and it keeps working, because there's no server for your files to travel to. That's the whole point of [running AI locally](/blog/local-ai-vs-cloud-ai): the only data that can't leak is data that never leaves your device.
+WorkInPrivate takes the opposite approach. **Everything happens on your computer** — the documents, the search, and the AI. Nothing is uploaded. You can pull the ethernet cable, turn off Wi-Fi, and it keeps working, because there's no server for your files to travel to. That's the whole point of [running AI locally](/blog/local-ai-vs-cloud-ai/): the only data that can't leak is data that never leaves your device.
 
 ## How it works, without the jargon
 
@@ -57,6 +57,6 @@ Because knowledge bases are separate, you can keep different projects — or dif
 
 "Chat with your documents" has quietly become one of the most useful things AI can do. Until now, using it meant handing your files to the cloud. WorkInPrivate brings that same capability to your own computer, where your documents belong — grounded answers, real citations, and nothing uploaded, ever.
 
-If you already have WorkInPrivate, create your first knowledge base and try asking it something only your files would know. If you don't yet, this is a good reason to [take a look](/download) — it runs an open-source AI model entirely on your machine, no cloud and no account required.
+If you already have WorkInPrivate, create your first knowledge base and try asking it something only your files would know. If you don't yet, this is a good reason to [take a look](/download/) — it runs an open-source AI model entirely on your machine, no cloud and no account required.
 
 *WorkInPrivate keeps your documents on your device, which removes the third-party-disclosure risk of cloud tools. It supports your confidentiality obligations — it isn't a substitute for your own compliance program.*

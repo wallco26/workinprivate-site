@@ -42,7 +42,7 @@ It's tempting to tell yourself you're being precious about this. You're not. The
 
 When you type into a cloud chatbot, your words travel to a company's computers and land in an account with your name on it. In most cases they're kept — for a while, or a long while. Staff can sometimes review conversations. Policies get rewritten. Companies get bought, breached, or subpoenaed. And your chat history sits there being a surprisingly complete diary of what you were worried about, month by month.
 
-That's not a conspiracy; it's just [how cloud services work](/blog/local-ai-vs-cloud-ai). And it means the pause before you hit enter is your brain correctly noticing that a permanent record is being created somewhere you don't control. If you use AI at work, [there's a second layer to it](/blog/can-you-get-in-trouble-for-using-chatgpt-at-work) — and if you handle other people's confidential information, [a third](/blog/is-it-safe-to-put-client-data-in-ai).
+That's not a conspiracy; it's just [how cloud services work](/blog/local-ai-vs-cloud-ai/). And it means the pause before you hit enter is your brain correctly noticing that a permanent record is being created somewhere you don't control. If you use AI at work, [there's a second layer to it](/blog/can-you-get-in-trouble-for-using-chatgpt-at-work/) — and if you handle other people's confidential information, [a third](/blog/is-it-safe-to-put-client-data-in-ai/).
 
 The strange part is how quickly we all just... absorbed this. We adapted around it, quietly editing ourselves, and mostly never mentioned it to anyone.
 
@@ -74,4 +74,4 @@ Here's the only homework: for the next week, notice the moment you edit yourself
 
 If it turns out you're leaving out the important half most of the time, that's not a reason to trust the AI more. It's a reason to use one that doesn't ask you to.
 
-[WorkInPrivate](/) is a private AI assistant that runs entirely on your own computer — no cloud, no account, nothing sent anywhere. It sets itself up in a few clicks, and the [free trial](/download) runs on the machine you already own. Type the whole thing.
+[WorkInPrivate](/) is a private AI assistant that runs entirely on your own computer — no cloud, no account, nothing sent anywhere. It sets itself up in a few clicks, and the [free trial](/download/) runs on the machine you already own. Type the whole thing.

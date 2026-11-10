@@ -44,7 +44,7 @@ You download it, it sets itself up, and you start typing. If you can use a texti
 
 ## How to get started (the easy way)
 
-1. **Download the app.** Grab WorkInPrivate for [Windows, macOS, or Linux](/download) and open it like any other program.
+1. **Download the app.** Grab WorkInPrivate for [Windows, macOS, or Linux](/download/) and open it like any other program.
 2. **Let it check your computer.** It looks at your hardware and sets up an AI that will run well — the guided setup handles the technical parts.
 3. **Start chatting privately.** Ask questions, write, or drop in a document. Everything stays on your machine, and it keeps working with the Wi-Fi off.
 
@@ -52,6 +52,6 @@ There's a free 7-day trial with no account or credit card, so you can confirm it
 
 ## Which path is right for you?
 
-If you love the command line and want maximum control, the free developer tools are great — here's an honest look at [Ollama vs WorkInPrivate](/ollama-vs-workinprivate) and a [simpler alternative to LM Studio](/lm-studio-alternative) if you've found those too fiddly.
+If you love the command line and want maximum control, the free developer tools are great — here's an honest look at [Ollama vs WorkInPrivate](/ollama-vs-workinprivate/) and a [simpler alternative to LM Studio](/lm-studio-alternative/) if you've found those too fiddly.
 
 If you'd rather skip all of that and just have private AI that *works*, the guided route will get you there in a few minutes. Either way, the important part is the same: your data stays on your computer, where it belongs.

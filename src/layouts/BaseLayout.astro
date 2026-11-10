@@ -51,7 +51,7 @@ if (pathSegments.length > 0) {
     "@type": "ListItem",
     "position": 2,
     "name": name,
-    "item": `${siteUrl}/${segment}`
+    "item": `${siteUrl}/${segment}/`
   });
 }
 
@@ -141,6 +141,23 @@ const isPreview = import.meta.env.PUBLIC_SITE_PREVIEW !== 'false';
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-DSRFQPEBMS');
+
+      // Funnel tracking: record every click that moves a visitor toward the
+      // trial (/download/) or the price (/pricing/), with where it came from.
+      document.addEventListener('click', function (e) {
+        var link = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+        if (!link) return;
+        var path = link.getAttribute('href').replace(/\/$/, '');
+        var name = path === '/download' ? 'trial_cta_click'
+                 : path === '/pricing' ? 'pricing_cta_click'
+                 : null;
+        if (!name) return;
+        gtag('event', name, {
+          cta_page: location.pathname,
+          cta_text: (link.textContent || '').trim().slice(0, 60),
+          cta_location: link.closest('header') ? 'header' : link.closest('footer') ? 'footer' : 'body'
+        });
+      });
     </script>
 
     <!-- Google Fonts - Source Sans 3 & Merriweather -->

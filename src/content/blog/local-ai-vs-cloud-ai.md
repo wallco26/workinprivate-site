@@ -24,7 +24,7 @@ This is the biggest gap.
 - **Cloud AI:** Everything you type is transmitted to and stored by the provider. It may be used to train future models and can sometimes be reviewed by staff. For sensitive or confidential work, that's a real consideration.
 - **Local AI:** Your words never leave your device. There's no server to send them to, no account, and nothing to store or train on. It's private by architecture, not by policy.
 
-If you're working with anything confidential — client files, patient information, unpublished writing, personal finances — local AI removes the disclosure risk entirely. (We go deeper on this in [is it safe to put client data into AI?](/blog/is-it-safe-to-put-client-data-in-ai))
+If you're working with anything confidential — client files, patient information, unpublished writing, personal finances — local AI removes the disclosure risk entirely. (We go deeper on this in [is it safe to put client data into AI?](/blog/is-it-safe-to-put-client-data-in-ai/))
 
 ### Cost
 
@@ -66,9 +66,9 @@ That's the gap [WorkInPrivate](/) fills. It's local AI packaged as a normal desk
 
 If you want to compare the options directly:
 
-- [Ollama vs WorkInPrivate](/ollama-vs-workinprivate) — free-but-technical vs guided-and-simple
-- [A simpler LM Studio alternative](/lm-studio-alternative) — if you've found LM Studio too fiddly
-- [A private ChatGPT alternative](/chatgpt-alternative-private) — local AI vs the cloud tool you already know
+- [Ollama vs WorkInPrivate](/ollama-vs-workinprivate/) — free-but-technical vs guided-and-simple
+- [A simpler LM Studio alternative](/lm-studio-alternative/) — if you've found LM Studio too fiddly
+- [A private ChatGPT alternative](/chatgpt-alternative-private/) — local AI vs the cloud tool you already know
 
 ## The bottom line
 

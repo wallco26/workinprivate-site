@@ -57,15 +57,15 @@ This is what [WorkInPrivate](/) is built for — a desktop app that runs an open
 
 We've written focused guides for the professions that run into this wall most often:
 
-- [Private AI for lawyers](/for-lawyers) — work through privileged documents locally
-- [Private AI for accountants & bookkeepers](/for-accountants) — analyze client financials that stay on your machine
-- [Private AI for therapists](/for-therapists) — draft notes that never leave your laptop
-- [Private AI for healthcare](/for-healthcare) — summarize and draft with information kept offline
+- [Private AI for lawyers](/for-lawyers/) — work through privileged documents locally
+- [Private AI for accountants & bookkeepers](/for-accountants/) — analyze client financials that stay on your machine
+- [Private AI for therapists](/for-therapists/) — draft notes that never leave your laptop
+- [Private AI for healthcare](/for-healthcare/) — summarize and draft with information kept offline
 
 ## The bottom line
 
 Is it safe to put client data into AI? With a cloud tool, only to the extent you're comfortable that a third party is now holding your client's confidential information — and that you've checked the settings, the contract, and the retention terms. For many professionals, that's a bigger promise than they can make on a client's behalf.
 
-Running the AI on your own device removes the question. If you want to see the difference laid out plainly, here's [whether ChatGPT is really private](/is-chatgpt-private) and [how a private, on-device alternative compares](/chatgpt-alternative-private).
+Running the AI on your own device removes the question. If you want to see the difference laid out plainly, here's [whether ChatGPT is really private](/is-chatgpt-private/) and [how a private, on-device alternative compares](/chatgpt-alternative-private/).
 
 *WorkInPrivate keeps your data on your device, which removes the third-party-disclosure risk of cloud AI. It supports your confidentiality obligations — it isn't a substitute for your own compliance program or professional judgment.*
